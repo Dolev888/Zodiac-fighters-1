@@ -5,6 +5,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string GamePlayScene = "GamePlayScene";
     [SerializeField] private GameObject commandListPanel;
+    [SerializeField] private GameObject mainMenuBcakground;
     public void Playgame()
     {
         SceneManager.LoadScene(GamePlayScene);
@@ -12,12 +13,14 @@ public class MainMenu : MonoBehaviour
 
     public void OpenCommandList()
     {
-       commandListPanel.SetActive(true);
+        mainMenuBcakground.SetActive(false);
+        commandListPanel.SetActive(true);
     }
 
     public void CloseCommandList()
     {
         commandListPanel.SetActive(false);
+        mainMenuBcakground.SetActive(true);
     }
 
     public void Quitgame ()
