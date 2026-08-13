@@ -1,22 +1,27 @@
 using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(menuName = "Attacks/aris/aris_basic")]
+[CreateAssetMenu(fileName = "attack_aris_basic", menuName = "Attacks/aris/basic")]
 
 public class attack_aris_basic : AttackPearent
 {
     [SerializeField] private GameObject[] _hertBoxList;
     [SerializeField] private GameObject[] _hitBoxList;
-    [SerializeField] private float[] _timePous;
-    public override IEnumerator UseMove(GameObject hert, GameObject hit) 
+    [SerializeField] private float[] _timePuse;
+    
+    
+    public override IEnumerator UseMove(playerattack Playerattack, int ID) 
     {
-        GameObject carentHitBox = Instantiate(_hitBoxList[0],hit.transform);
-        GameObject carentHertBox= Instantiate(_hertBoxList[0],hert.transform);
-        yield return new WaitForSeconds(_timePous[0]);
-        Destroy(carentHertBox);
-        carentHertBox =Instantiate(_hertBoxList[1], hert.transform);
-        yield return new WaitForSeconds(_timePous[1]);
-        Destroy(carentHertBox);
-        Destroy(carentHitBox);
+        
+        Playerattack.ChangeHitBox(_hitBoxList[0]);
+        Playerattack.ChangeHertBox(_hertBoxList[0]);
+        yield return new WaitForSeconds(_timePuse[0]);
+        Playerattack.ChangeHertBox(_hertBoxList[1]);
+        yield return new WaitForSeconds(_timePuse[1]);
+        Playerattack.DestroyHitBox();
+        Playerattack.DestroyHertBox();
+        Playerattack.pmain.FinishAttack();
     }
+    
+
 }

@@ -678,6 +678,8 @@ MonoBehaviour:
   player: {fileID: 708526507}
   rigidP: {fileID: 708526510}
   _airJumpMax: 1
+  routatelock: 0
+  isleft: 0
   _groundCheckSise: {x: 2.66, y: 0.69}
   _groundCheckOffSet: {x: -0.52, y: -10.88, z: 0}
 --- !u!114 &708526514
@@ -692,11 +694,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05fd8fc95215b764ba617cf7eeed3178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerattack
-  playermain: {fileID: 708526513}
+  pmain: {fileID: 708526513}
+  player: {fileID: 708526507}
   hertObject: {fileID: 628227328}
   hitObject: {fileID: 810094433}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
+  - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
 --- !u!1 &810094433
 GameObject:
   m_ObjectHideFlags: 0

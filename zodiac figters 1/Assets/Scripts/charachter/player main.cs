@@ -1,5 +1,5 @@
 using UnityEngine;
-using static UnityEngine.UI.Image;
+
 
 public class playermain : MonoBehaviour
 {
@@ -10,6 +10,8 @@ public class playermain : MonoBehaviour
     [SerializeField] private LayerMask _groundLayer;
     public GameObject player;
     public Rigidbody2D rigidP;
+    private bool _isGrounded;
+    public bool IsGrounded=> _isGrounded;
     
     private STATE curentState;
     public STATE CurentState=> curentState;
@@ -18,6 +20,8 @@ public class playermain : MonoBehaviour
 
     [SerializeField] private int _airJumpMax;
     private int _airJumpCounter;
+    public bool routatelock;
+    public bool isleft;
 
     public enum STATE
     {
@@ -34,37 +38,53 @@ public class playermain : MonoBehaviour
     
     void Start()
     {
-       
+        curentState = STATE.AIR;
     }
     
     void Update()
     {
         
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("ground")&& GroundCheck())
+        if ((collision.gameObject.CompareTag("ground")&& GroundCheck()))
         {
-            
-            ChangeState(STATE.GROUND);
+            _isGrounded = true;
+            switch (curentState)
+            {
+                case STATE.AIR:
+                    ChangeState(STATE.GROUND);
+                    break;
+                default:
+                    break;
+            }
             
         }
     }
     
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("ground"))
+        if (collision.gameObject.CompareTag("ground") )
         {
-            ChangeState(STATE.AIR);
+            _isGrounded = false;
+            switch (curentState)
+            {
+                case STATE.GROUND:
+                    ChangeState(STATE.AIR);
+                    break;
+                default:
+                    break;
+            }
         }
     }
     private void ChangeState(STATE state)
     {
-        ExitState(state);
+        ExitState(curentState);
         previesState = curentState;
         curentState = state;
         EnterState (curentState);
     }
+   
     private void ExitState(STATE state)
     {
         switch (state)
@@ -92,9 +112,11 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 _airJumpCounter = _airJumpMax;
+                _isGrounded = true;
                 break;
 
             case STATE.AIR:
+                _isGrounded = false;
                 break;
 
             case STATE.KNOKCBACK:
@@ -128,6 +150,10 @@ public class playermain : MonoBehaviour
                 break;
         }
     }
+    public void RotationHandel()
+    {
+
+    }
     public void JumpHandle()
     {
         switch (curentState)
@@ -150,9 +176,11 @@ public class playermain : MonoBehaviour
     }
     public void AttackHandel(int imp)
     {
+        
         switch (curentState)
         {
             case STATE.GROUND:
+                ChangeState(STATE.ATTACK);
                 if (imp == 1)
                 {
                     pattack.BasicAttack();
@@ -163,6 +191,7 @@ public class playermain : MonoBehaviour
                 }
                     break;
             case STATE.AIR:
+                ChangeState(STATE.ATTACK);
                 if (imp == 1)
                 {
                     pattack.BasicAttackAir();
@@ -176,6 +205,17 @@ public class playermain : MonoBehaviour
                 break;
         }
     }
+    public void FinishAttack()
+    {
+        if (_isGrounded)
+        {
+            ChangeState(playermain.STATE.GROUND);
+        }
+        else
+        {
+            ChangeState(playermain.STATE.AIR);
+        }
+    }
     private bool GroundCheck()
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero,0, _groundLayer);
@@ -186,4 +226,5 @@ public class playermain : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(player.transform.position + _groundCheckOffSet, _groundCheckSise);
     }
+    
 }

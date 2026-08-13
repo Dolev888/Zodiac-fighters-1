@@ -26,10 +26,12 @@ public class playermovment : MonoBehaviour
     {
         
         rigidP.linearVelocityX = _groundSpeed * dirct;
+        routate(dirct);
     }
     public void AirMove(float dirct)
     {
-        rigidP.linearVelocityX = Mathf.Clamp(rigidP.linearVelocityX+(_airSpeed * dirct), _groundSpeed*(-1),_groundSpeed);
+        rigidP.linearVelocityX = Mathf.Clamp(rigidP.linearVelocityX + (_airSpeed * dirct), _groundSpeed * (-1), _groundSpeed);
+        routate(dirct);
     }
     public void Jump()
     {
@@ -42,5 +44,18 @@ public class playermovment : MonoBehaviour
     public void idle()
     {
         rigidP.linearVelocityX = 0;
+    }
+    public void routate(float dirct)
+    {
+        if (dirct < 0)
+        {
+            rigidP.transform.rotation = new Quaternion(0,180,0,0);
+            pmain.isleft = true;
+        }
+        else if(dirct > 0)
+        {
+            rigidP.transform.rotation = new Quaternion(0, 0, 0, 0);
+            pmain.isleft = false;
+        }
     }
 }

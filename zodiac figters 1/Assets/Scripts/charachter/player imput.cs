@@ -39,6 +39,14 @@ public class playerimput : MonoBehaviour
         {
             pmain.AttackHandel(2);
         }
+        if(Input.GetKeyDown(KeyCode.RightShift))
+        {
+            pmain.routatelock=true;
+        }
+        if (Input.GetKeyUp(KeyCode.RightShift))
+        {
+            pmain.routatelock = false;
+        }
     }
 
 }
