@@ -1,5 +1,8 @@
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -64,6 +67,12 @@ public class PauseMenu : MonoBehaviour
     {
         commandList.SetActive(false);
         pausePanel.SetActive(true) ;
+    }
+
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

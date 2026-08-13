@@ -10,6 +10,7 @@ public class FighterDamage : MonoBehaviour
 
     private void Update()
     {
+        if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(10f);
