@@ -32,12 +32,8 @@ public class playerattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
     }
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-        
-    //}
+   
     public void BasicAttack()
     {
         
@@ -82,6 +78,7 @@ public class playerattack : MonoBehaviour
             Destroy(carentHertBox);
         }
         carentHertBox = Instantiate(frame, hertObject.transform);
+        
         carentHertBox.GetComponent<damageinflector>()._moveID = AttackId;
     }
     public void DestroyHertBox()
