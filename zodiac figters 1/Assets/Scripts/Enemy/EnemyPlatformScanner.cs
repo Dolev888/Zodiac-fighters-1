@@ -98,6 +98,7 @@ public class EnemyPlatformScanner : MonoBehaviour
             //Ignore anything that isn't actually above the enemy.
             if (platform.bounds.center.y <= transform.position.y)
             {
+                Debug.Log(platform.bounds.center.y);
                 continue;
             }
             //get a possible landing position at the top center of this platform.

@@ -307,7 +307,6 @@ GameObject:
   - component: {fileID: 200605360}
   - component: {fileID: 200605361}
   - component: {fileID: 200605362}
-  - component: {fileID: 200605363}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -489,7 +488,7 @@ Transform:
   m_GameObject: {fileID: 200605351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 67, y: 7.1, z: 0}
+  m_LocalPosition: {x: 45.7, y: 7.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -567,23 +566,6 @@ MonoBehaviour:
   lowerCheckVertical: 20
   upperScanWidth: 40
   upperScanheight: 30
---- !u!114 &200605363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200605351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2a04b90b5fcc9e41891d84007c4fc8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack_AI
-  pmain: {fileID: 200605356}
-  targetCollider: {fileID: 708526509}
-  samePlatformHeight: 5
-  attackRangeGN: 5
-  locatePlayer: {fileID: 200605360}
 --- !u!1 &217881293
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     [SerializeField] private float edgeCheckOffset = 3f;
     [SerializeField] private EnemyMovement enemyMovement;
     [SerializeField] private float samePlatformHeight = 5f;
-    [SerializeField] private float JumpHorizontalRange = 10f;
     [SerializeField] private float jumpCooldown = 0.5f;
     [SerializeField] private EnemyPlatformScanner platformScanner;
     [SerializeField] private float jumpHorizontalRange = 10f;
@@ -23,10 +22,19 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     void Start()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (gameObject != null )
+        if (playerObject != null )
         {
             player = playerObject.transform;
         }
+    }
+
+    public bool isPlayerOnSamePlatform()
+    {
+        if (player == null) return false;
+        //find the vertical distance between plater and enemy
+        float distanceY = player.position.y - transform.position.y;
+        return
+            Mathf.Abs(distanceY) <= samePlatformHeight;
     }
 
     // Update is called once per frame
@@ -83,7 +91,7 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
             bool foundUpperplatform = platformScanner.TryFindingUpperPlatform(out upperPlatformposition);
             
 
-            Debug.Log("| new scanner found: " + foundUpperplatform + "| platform position: " +  upperPlatformposition);
+            //Debug.Log("| new scanner found: " + foundUpperplatform + "| platform position: " +  upperPlatformposition);
             
             bool platformAboveLeft =
                 platformScanner.HasPlatformAbove(-1);
@@ -91,58 +99,56 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
             bool platformAboveRight =
                 platformScanner.HasPlatformAbove(1);
 
-            Debug.Log(
+           /* Debug.Log(
                 "Above left: " + platformAboveLeft +
                 " Right: " + platformAboveRight +
                 " distanceX: " + distanceX +
                 " grounded: " + enemyMovement.IsGrounded()
-            );
+            );*/
 
+            // decide which horizontal direction leads towrad the platform selected by the scanner
             int chosenDirection = 0;
 
-            int preferredDirection =
-                distanceX < 0 ? -1 : 1;
+            // calculate how far the detected platform is from the enemy horizontaly
+            float platformDistanceX = upperPlatformposition.x - transform.position.x;
 
-            if (preferredDirection == -1 && platformAboveLeft)
+            // if valip upper platform found move towrads it horizontal
+            if (foundUpperplatform)
             {
-                chosenDirection = -1;
-            }
-            else if (preferredDirection == 1 && platformAboveRight)
-            {
-                chosenDirection = 1;
-            }
-            else if (platformAboveLeft)
-            {
-                chosenDirection = -1;
-            }
-            else if (platformAboveRight)
-            {
-                chosenDirection = 1;
-            }
+                if (platformDistanceX < 0)
+                {
+                    // platform is to the left
+                    chosenDirection = -1;
+                }
+                else if(platformDistanceX > 0)
+                {
+                    // platform is to the right
+                    chosenDirection = 1;
+                }
 
+            }
            
             // Even while searching for an upper route,
             // do not allow the enemy to walk off the current platform.
             if (chosenDirection != 0)
             {
                 Vector2 checkPosition = new Vector2(
-                    transform.position.x +
-                    (edgeCheckOffset * chosenDirection),
-
-                    edgeCheck.position.y
-                );
+                    transform.position.x + (edgeCheckOffset * chosenDirection), upperPlatformposition.y);
 
                 RaycastHit2D groundAhead =
-                    Physics2D.Raycast(
-                        checkPosition,
-                        Vector2.down,
-                        edgeCheckDistance,
-                        groundLayer
-                    );
+                    Physics2D.Raycast( checkPosition, Vector2.down,edgeCheckDistance, groundLayer );
 
                 if (groundAhead.collider != null)
                 {
+                    //continue moving horizantally towards the platform selected by the canner.
                     enemyMovement.GroundMove(chosenDirection);
+                    //check how close the enemy is to the horizantal center of the platform
+                    float distanceToPlatformX = Mathf.Abs(upperPlatformposition.x - transform.position.x);
+                    // when the enemy is close enough to target platform & and is currently standing on the ground jump
+                    if (distanceToPlatformX <= jumpHorizontalRange && enemyMovement.IsGrounded())
+                    {
+                        enemyMovement.JumpTowards(chosenDirection);
+                    }
                 }
                 else
                 {

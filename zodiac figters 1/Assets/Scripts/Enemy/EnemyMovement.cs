@@ -27,6 +27,17 @@ public class EnemyMovement : MonoBehaviour
         rigidP.linearVelocityY = jumpPower;
     }
 
+    public void JumpTowards(float direction)
+    {
+        // jump upward while also moving horizantally -1 for left 1 for right
+        // giving the enemy horizantal speed towrad the target platform
+        rigidP.linearVelocityX = groundSpeed * direction;
+        // upward speed
+        rigidP.linearVelocityY = jumpPower;
+        // turn the enemy so it faces the direction it is jumping
+        FaceDirection(direction) ;
+    }
+
     public bool IsGrounded()
     {
         return
