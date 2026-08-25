@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-[CreateAssetMenu(fileName = "attack_aris_basicJump", menuName = "Attacks/aris/basic jump")]
+[CreateAssetMenu(fileName = "attack_aris_basicJump", menuName = "Attacks/aries/basic jump")]
 public class attack_aris_basicJump : AttackPearent
 {
     [SerializeField] private GameObject[] _hertBoxList;

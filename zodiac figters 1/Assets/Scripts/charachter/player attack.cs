@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class playerattack : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class playerattack : MonoBehaviour
     private int AttackDitectId;
     private Collider2D AttackDitectCollider;
 
+    private HashSet<ColInt> colidDetectList;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,12 +35,8 @@ public class playerattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
     }
-    //private void OnTriggerStay2D(Collider2D collision)
-    //{
-        
-    //}
+   
     public void BasicAttack()
     {
         
@@ -53,13 +52,13 @@ public class playerattack : MonoBehaviour
     }
     public void SpaicleAttack()
     {
-        AttackId = _attackList[0].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[0].UseMove(this, AttackId));
+        AttackId = _attackList[2].GeneratAttackId();
+        IEBasicAttack = StartCoroutine(_attackList[2].UseMove(this, AttackId));
     }
     public void SpaicleAttackAir() 
     {
-        AttackId = _attackList[0].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[0].UseMove(this, AttackId));
+        AttackId = _attackList[3].GeneratAttackId();
+        IEBasicAttack = StartCoroutine(_attackList[3].UseMove(this, AttackId));
     }
     public void ChangeHitBox(GameObject frame)
     {
@@ -82,6 +81,7 @@ public class playerattack : MonoBehaviour
             Destroy(carentHertBox);
         }
         carentHertBox = Instantiate(frame, hertObject.transform);
+        
         carentHertBox.GetComponent<damageinflector>()._moveID = AttackId;
     }
     public void DestroyHertBox()
@@ -117,5 +117,16 @@ public class playerattack : MonoBehaviour
         AttackDitectId = id;
         AttackDitectCollider = collision;
     }
-    
+    public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate )
+    {
+       GameObject iob = Instantiate(Ob);
+        iob.transform.position = new Vector2 (pmain.transform.position.x + offset.x, pmain.transform.position.y + offset.y);
+        iob.transform.rotation = new Quaternion(0, 0, routate, 0);
+    }
+    public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate)
+    {
+        GameObject iob = Instantiate(Ob);
+        iob.transform.position=position;
+        iob.transform.rotation = Quaternion.Euler(0, 0, routate);
+    }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0944a792e8744da48afc64207a7ae322, type: 3}
+  m_Name: SO_attack_aris_spaiceljump
+  m_EditorClassIdentifier: Assembly-CSharp::attack_aries_spaicel
+  _hertBoxList: []
+  _hitBoxList: []
+  _timePuse:
+  - 0.1
+  _firePunchOB: {fileID: 7603133519670263296, guid: 5efb197cb3abece44b69ae2f1733045d, type: 3}
+  _offSet: {x: 5, y: 2.5}
+  _engel: 0

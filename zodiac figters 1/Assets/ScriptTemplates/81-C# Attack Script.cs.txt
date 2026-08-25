@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-[CreateAssetMenu(fileName = "attack_aris_basic", menuName = "Attacks/aries/basic")]
+[CreateAssetMenu(fileName = #SCRIPTNAME# , menuName = "Attacks")]
 
-public class attack_aris_basic : AttackPearent
+
+public class #SCRIPTNAME#  : AttackPearent
 {
     [SerializeField] private GameObject[] _hertBoxList;
     [SerializeField] private GameObject[] _hitBoxList;
@@ -12,16 +13,16 @@ public class attack_aris_basic : AttackPearent
 
     public override IEnumerator UseMove(playerattack Playerattack, int ID)
     {
+        // start fase
         Playerattack.SetVelocity(Vector2.zero);
         Playerattack.ChangeHitBox(_hitBoxList[0]);
         Playerattack.ChangeHertBox(_hertBoxList[0]);
+
         yield return new WaitForSeconds(_timePuse[0]);
-        Playerattack.ChangeHertBox(_hertBoxList[1]);
-        yield return new WaitForSeconds(_timePuse[1]);
+
+        // finish fase 
         Playerattack.DestroyHitBox();
         Playerattack.DestroyHertBox();
         Playerattack.pmain.FinishAttack();
     }
-    
-
 }

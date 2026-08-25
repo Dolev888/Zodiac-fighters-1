@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
 
 public class FighterDamage : MonoBehaviour
 {
@@ -7,17 +10,24 @@ public class FighterDamage : MonoBehaviour
 
     public float DamagePercentage => damagePercentage;
     public float MaxDamage => maxDamage;
+    private HashSet<int> takenId = new HashSet<int>();
 
     private void Update()
     {
         if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10f);
+            TakeDamage(10f,888,4);
         }
     }
-    public void TakeDamage (float amount)
+    public void TakeDamage (float amount, int id,float cooldown)
     {
+        Debug.Log("hit");
+        if (CheckId(id)) return;
+        if (cooldown != 0) 
+        {
+            StartCoroutine(countdown(cooldown,id));
+        }
         if (amount <= 0f) return;
         damagePercentage += amount;
 
@@ -28,10 +38,22 @@ public class FighterDamage : MonoBehaviour
         }
         Debug.Log($"{gameObject.name} Damage: {damagePercentage} %");
     }
+    private IEnumerator countdown(float time,int id)
+    {
+        takenId.Add(id);
+        yield return new WaitForSeconds(time);
+        takenId.Remove(id);
+    }
 
     private void Lose()
     {
         Debug.Log($"{gameObject.name} has lost ") ;
+    }
+    private bool CheckId(int id) 
+    {
+        if (takenId.Contains(id)) return true;
+        return false;
+    
     }
 
    
