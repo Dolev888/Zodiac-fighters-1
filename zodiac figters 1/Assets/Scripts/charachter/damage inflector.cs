@@ -87,8 +87,7 @@ public class damageinflector : MonoBehaviour
                     Debug.Log(hit.gameObject.name);
                     if (hit.GetComponent<FighterDamage>() != null)
                     {
-                        hit.GetComponent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
-                        DamgaeFlag(hit);
+                        Hit(hit);
                     }
 
                 }
@@ -107,8 +106,7 @@ public class damageinflector : MonoBehaviour
                 {
                     Collider2D hit = results[p];
 
-                    hit.GetComponent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
-                    DamgaeFlag(hit);
+                    Hit(hit);
                 }
             }
         }
@@ -159,6 +157,19 @@ public class damageinflector : MonoBehaviour
         if (_hitFlag && pmain != null)
         {
             pattack.AttackHitDetected(collision, _moveID);
+        }
+    }
+    private void Hit(Collider2D hit)
+    {
+        hit.GetComponent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
+        DamgaeFlag(hit);
+        if (_stanTime != 0)
+        {
+            Stan();
+        }
+        if (_knokBack != 0)
+        {
+            Knocback();
         }
     }
 }
