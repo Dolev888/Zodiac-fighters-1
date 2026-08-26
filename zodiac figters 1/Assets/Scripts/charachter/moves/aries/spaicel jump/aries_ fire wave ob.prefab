@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aries_firewave
   _existensTime: 10
-  _existensSpeed: 50
+  _existensSpeed: 100
   _damage: 10
   _stanTime: 0
   _knokBack: 0

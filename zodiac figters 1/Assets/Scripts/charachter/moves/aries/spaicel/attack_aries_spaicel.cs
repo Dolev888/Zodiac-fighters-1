@@ -24,4 +24,8 @@ public class attack_aries_spaicel : AttackPearent
         
         Playerattack.pmain.FinishAttack();
     }
+    public override void anoncehit(Collider2D collision)
+    {
+        return;
+    }
 }

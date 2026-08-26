@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd4cc95f9b058449916dbabc2d921b6, type: 3}
   m_Name: attack_aris_basicJump
   m_EditorClassIdentifier: Assembly-CSharp::attack_aris_basicJump
+  _cooldown: 2
   _hertBoxList:
   - {fileID: 5994614329599020332, guid: d46197be1b985ae41b303e790b739e5e, type: 3}
   _hitBoxList:

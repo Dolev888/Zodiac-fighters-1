@@ -25,4 +25,8 @@ public class attack_aris_spaiceljump  : AttackPearent
 
         Playerattack.pmain.FinishAttack();
     }
+    public override void anoncehit(Collider2D collision)
+    {
+        return;
+    }
 }

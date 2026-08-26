@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class aries_firewave : MonoBehaviour
+
+public class aries_firewave : projectileParent
 {
     [SerializeField] private float _existensTime;
     [SerializeField] private float _existensSpeed;
@@ -16,7 +16,7 @@ public class aries_firewave : MonoBehaviour
     [SerializeField] private float _coolDown;
     [SerializeField] private float _rotation;
     private Rigidbody2D rb;
-    public playermain pmain;
+    //public playermain pmain;
     public playerattack pattack;
     public string playerTag;
     private float _time;
@@ -25,8 +25,19 @@ public class aries_firewave : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocityX = _existensSpeed;
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, _rotation);
+        float direction= _pmain.gameObject.transform.rotation.y;
+        float adj =Mathf.Cos(_rotation * Mathf.Deg2Rad)* _existensSpeed;
+        float ops =Mathf.Sin(_rotation * Mathf.Deg2Rad)* _existensSpeed;
+        Debug.Log(direction);
+        if (direction ==1 )
+        {
+            
+            adj = -adj;
+        }
+        
+        Vector2 angleSpeed = new Vector2(adj, ops);
+        rb.linearVelocity = angleSpeed;
+        gameObject.transform.rotation = Quaternion.Euler(0, direction*180, _rotation);
     }
 
     // Update is called once per frame
