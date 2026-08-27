@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5245b354200c3904e939a25d58f9b021, type: 3}
   m_Name: So_attack_aris_spaiceljump
   m_EditorClassIdentifier: Assembly-CSharp::attack_aris_spaiceljump
+  _cooldown: 0.5
   _hertBoxList: []
   _hitBoxList: []
   _timePuse:
   - 0.1
   _fireWaveOB: {fileID: 4144203621852744289, guid: 4eae313578370c946a0e4a63b8d2e441, type: 3}
   _offSet: {x: 4.5, y: -3.5}
-  _engel: 0
+  _engel: 45

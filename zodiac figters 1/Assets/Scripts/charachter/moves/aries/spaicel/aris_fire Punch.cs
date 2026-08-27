@@ -1,6 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class aris_firePunch : MonoBehaviour
+public class aris_firePunch : projectileParent
 {
     [SerializeField]  private float _existensTime;
     [SerializeField] private float _existensSpeed;
@@ -14,16 +15,21 @@ public class aris_firePunch : MonoBehaviour
     [SerializeField] private bool _hitFlag;
     [SerializeField] private float _coolDown;
     private Rigidbody2D rb;
-    public playermain pmain;
-    public playerattack pattack;
-    public string playerTag;
+    
+    
     private float _time;
     public int _moveID;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocityX = _existensSpeed;
+        float direction = _pmain.gameObject.transform.rotation.y;
+        if (direction == 1)
+        {
+
+            rb.linearVelocityX = _existensSpeed *(-1);
+        }
+        else  rb.linearVelocityX = _existensSpeed;
     }
 
     // Update is called once per frame

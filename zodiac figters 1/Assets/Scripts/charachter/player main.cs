@@ -22,6 +22,7 @@ public class playermain : MonoBehaviour
     private int _airJumpCounter;
     public bool routatelock;
     public bool isleft;
+    public bool canAirAttack;
 
     public enum STATE
     {
@@ -112,6 +113,7 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 _airJumpCounter = _airJumpMax;
+                canAirAttack = true;
                 _isGrounded = true;
                 break;
 
@@ -191,7 +193,9 @@ public class playermain : MonoBehaviour
                 }
                     break;
             case STATE.AIR:
+                if (!canAirAttack) { break; }
                 ChangeState(STATE.ATTACK);
+                canAirAttack = false;
                 if (imp == 1)
                 {
                     pattack.BasicAttackAir();

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0944a792e8744da48afc64207a7ae322, type: 3}
   m_Name: SO_attack_aris_spaiceljump
   m_EditorClassIdentifier: Assembly-CSharp::attack_aries_spaicel
+  _cooldown: 0.5
   _hertBoxList: []
   _hitBoxList: []
   _timePuse:

@@ -1,6 +1,6 @@
 using System.Collections;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 public class playerattack : MonoBehaviour
 {
@@ -14,15 +14,17 @@ public class playerattack : MonoBehaviour
     [SerializeField] GameObject hitObject;
     private int activeAtack;
 
-    private Coroutine IEBasicAttack;
+    private Coroutine[] IEBasicAttack=new Coroutine[4];
 
     [SerializeField] AttackPearent[] _attackList;
 
     private GameObject carentHitBox;
     private GameObject carentHertBox;
-    private  int AttackId = 0;
+    private  int[] AttackId = new int[4];
     private int AttackDitectId;
     private Collider2D AttackDitectCollider;
+    private float[] _coldownList= new float[4];
+    private float[] _coldowntick= new float[4];
 
     private HashSet<ColInt> colidDetectList;
 
@@ -30,35 +32,68 @@ public class playerattack : MonoBehaviour
     void Start()
     {
         player = pmain.player;
+        for (int i = 0; i < _attackList.Length; i++)
+        {
+            _coldownList[i] = _attackList[i]._cooldown;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        cooldownCounter();
     }
    
     public void BasicAttack()
     {
         
-        AttackId = _attackList[0].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[0].UseMove(this, AttackId));
-       
-
+        int D = 0;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
+        AttackId[D] = _attackList[D].GeneratAttackId();
+        
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void BasicAttackAir()
     {
-        AttackId = _attackList[1].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[1].UseMove(this, AttackId));
+        int D = 1;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
+        AttackId[D] = _attackList[D].GeneratAttackId();
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
+        
     }
     public void SpaicleAttack()
     {
-        AttackId = _attackList[2].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[2].UseMove(this, AttackId));
+        int D = 2;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
+        AttackId[D] = _attackList[D].GeneratAttackId();
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void SpaicleAttackAir() 
     {
-        AttackId = _attackList[3].GeneratAttackId();
-        IEBasicAttack = StartCoroutine(_attackList[3].UseMove(this, AttackId));
+        int D = 3;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
+        AttackId[D] = _attackList[D].GeneratAttackId();
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void ChangeHitBox(GameObject frame)
     {
@@ -74,7 +109,7 @@ public class playerattack : MonoBehaviour
         Destroy(carentHitBox);
         carentHitBox = null;
     }
-    public void ChangeHertBox(GameObject frame)
+    public void ChangeHertBox(GameObject frame,int id)
     {
         if (carentHertBox != null)
         {
@@ -82,7 +117,7 @@ public class playerattack : MonoBehaviour
         }
         carentHertBox = Instantiate(frame, hertObject.transform);
         
-        carentHertBox.GetComponent<damageinflector>()._moveID = AttackId;
+        carentHertBox.GetComponent<damageinflector>()._moveID = id;
     }
     public void DestroyHertBox()
     {
@@ -108,25 +143,66 @@ public class playerattack : MonoBehaviour
             collision = AttackDitectCollider;
             
         }
+        
         return collision;
 
 
     }
     public void AttackHitDetected(Collider2D collision, int id)
     {
-        AttackDitectId = id;
-        AttackDitectCollider = collision;
+        //AttackDitectId = id;
+        //AttackDitectCollider = collision;
+        //colidDetectList.Add(new ColInt(id,collision));
+        for (int i = 0; i < _attackList.Length; i++) 
+        {
+            if (AttackId[i] == id)
+            {
+                _attackList[i].anoncehit(collision);
+            }
+        }
     }
     public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate )
     {
        GameObject iob = Instantiate(Ob);
+        if (pmain.gameObject.transform.rotation.y > 0)
+        {
+            offset.x = offset.x * (-1);
+        }
         iob.transform.position = new Vector2 (pmain.transform.position.x + offset.x, pmain.transform.position.y + offset.y);
-        iob.transform.rotation = new Quaternion(0, 0, routate, 0);
+        iob.transform.rotation = Quaternion.Euler(0, 0, routate);
+        if (iob.GetComponent<projectileParent>() !=null )
+        {
+            projectileParent projectile = iob.GetComponent<projectileParent>();
+            projectile._pmain = pmain;
+            projectile._pattack = this;
+            projectile.playerTag= gameObject.tag;
+        }
     }
     public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate)
     {
+        if (pmain.gameObject.transform.rotation.y > 0)
+        {
+            position.x = position.x * (-1);
+        }
         GameObject iob = Instantiate(Ob);
         iob.transform.position=position;
         iob.transform.rotation = Quaternion.Euler(0, 0, routate);
+        if (iob.GetComponent<projectileParent>() != null)
+        {
+           
+            iob.GetComponent<projectileParent>()._pmain = pmain;
+        }
+    }
+    private void cooldownCounter()
+    {
+        for (int i = 0; i<_coldownList.Length; i++) 
+        {
+            if (_coldowntick[i]< _coldownList[i])
+            {
+
+                _coldowntick[i] += Time.deltaTime;
+            }
+
+        }
     }
 }

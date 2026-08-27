@@ -9,21 +9,27 @@ public class attack_aris_basicJump : AttackPearent
     [SerializeField] private GameObject[] _hitBoxList;
     [SerializeField] private float[] _timePuse;
     [SerializeField] private Vector2 _velocitiAdd;
+    private bool _ifhit=false;
+    private bool _canhit = false;
 
 
     public override IEnumerator UseMove(playerattack Playerattack,int ID)
     {
         Debug.Log(ID);
         Playerattack.ChangeHitBox(_hitBoxList[0]);
-        Playerattack.ChangeHertBox(_hertBoxList[0]);
+        Playerattack.ChangeHertBox(_hertBoxList[0], ID);
         yield return new WaitForSeconds(_timePuse[0]);
         Playerattack.SetVelocity(_velocitiAdd);
         float clock = _timePuse[1];
-        while (!CheckHit(Playerattack, ID)&& clock>0)
+        _canhit =true;
+        while (!_ifhit && clock > 0)
         {
+            
             clock -= Time.deltaTime;
             yield return null;
         }
+        _ifhit = false;
+        _canhit = false;
         Playerattack.DestroyHitBox();
         Playerattack.DestroyHertBox();
         Playerattack.pmain.FinishAttack();
@@ -38,5 +44,17 @@ public class attack_aris_basicJump : AttackPearent
         }
         return false;
     }
-    
+    public override void anoncehit(Collider2D collision)
+    {
+        if (!_canhit || collision == null) return;
+        if (collision.CompareTag("ground") || collision.gameObject.layer == LayerMask.NameToLayer("hit"))
+        {
+
+            _ifhit = true;
+        }
+       
+
+    }
+
+
 }

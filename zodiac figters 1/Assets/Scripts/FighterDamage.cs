@@ -22,7 +22,7 @@ public class FighterDamage : MonoBehaviour
     }
     public void TakeDamage (float amount, int id,float cooldown)
     {
-        Debug.Log("hit");
+        
         if (CheckId(id)) return;
         if (cooldown != 0) 
         {
