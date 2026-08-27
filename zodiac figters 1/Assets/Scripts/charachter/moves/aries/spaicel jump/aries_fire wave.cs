@@ -16,9 +16,8 @@ public class aries_firewave : projectileParent
     [SerializeField] private float _coolDown;
     [SerializeField] private float _rotation;
     private Rigidbody2D rb;
-    //public playermain pmain;
-    public playerattack pattack;
-    public string playerTag;
+    
+    
     private float _time;
     public int _moveID;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,10 +27,9 @@ public class aries_firewave : projectileParent
         float direction= _pmain.gameObject.transform.rotation.y;
         float adj =Mathf.Cos(_rotation * Mathf.Deg2Rad)* _existensSpeed;
         float ops =Mathf.Sin(_rotation * Mathf.Deg2Rad)* _existensSpeed;
-        Debug.Log(direction);
+       
         if (direction ==1 )
-        {
-            
+        {    
             adj = -adj;
         }
         

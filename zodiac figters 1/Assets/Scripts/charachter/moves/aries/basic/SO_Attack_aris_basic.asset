@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a0b26d1971121439662d903e9013e7, type: 3}
   m_Name: SO_Attack_aris_basic
   m_EditorClassIdentifier: Assembly-CSharp::attack_aris_basic
-  _cooldown: 2
+  _cooldown: 0.6
   _hertBoxList:
   - {fileID: 1213614636736238012, guid: 82c62ef76ca924341817a205a62ecf08, type: 3}
   - {fileID: 786146834042028847, guid: 4cb0fda573d4a5446a3f12f5834f3e95, type: 3}
   _hitBoxList:
   - {fileID: 722629788844720676, guid: c6511be220100ab478164e65170056e7, type: 3}
   _timePuse:
-  - 0.1
-  - 0.4
+  - 0.05
+  - 0.2

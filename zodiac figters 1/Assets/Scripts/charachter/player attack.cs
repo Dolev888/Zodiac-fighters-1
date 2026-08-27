@@ -24,6 +24,7 @@ public class playerattack : MonoBehaviour
     private int AttackDitectId;
     private Collider2D AttackDitectCollider;
     private float[] _coldownList= new float[4];
+    private float[] _coldowntick= new float[4];
 
     private HashSet<ColInt> colidDetectList;
 
@@ -40,17 +41,32 @@ public class playerattack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        cooldownCounter();
     }
    
     public void BasicAttack()
     {
+        
         int D = 0;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
+        
         IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void BasicAttackAir()
     {
         int D = 1;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
         IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
         
@@ -58,12 +74,24 @@ public class playerattack : MonoBehaviour
     public void SpaicleAttack()
     {
         int D = 2;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
         IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void SpaicleAttackAir() 
     {
         int D = 3;
+        if (_coldowntick[D] < _coldownList[D])
+        {
+            pmain.FinishAttack();
+            return;
+        }
+        _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
         IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
@@ -136,18 +164,45 @@ public class playerattack : MonoBehaviour
     public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate )
     {
        GameObject iob = Instantiate(Ob);
+        if (pmain.gameObject.transform.rotation.y > 0)
+        {
+            offset.x = offset.x * (-1);
+        }
         iob.transform.position = new Vector2 (pmain.transform.position.x + offset.x, pmain.transform.position.y + offset.y);
         iob.transform.rotation = Quaternion.Euler(0, 0, routate);
         if (iob.GetComponent<projectileParent>() !=null )
         {
-            Debug.Log("pop");
-            iob.GetComponent<projectileParent>()._pmain = pmain;
+            projectileParent projectile = iob.GetComponent<projectileParent>();
+            projectile._pmain = pmain;
+            projectile._pattack = this;
+            projectile.playerTag= gameObject.tag;
         }
     }
     public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate)
     {
+        if (pmain.gameObject.transform.rotation.y > 0)
+        {
+            position.x = position.x * (-1);
+        }
         GameObject iob = Instantiate(Ob);
         iob.transform.position=position;
         iob.transform.rotation = Quaternion.Euler(0, 0, routate);
+        if (iob.GetComponent<projectileParent>() != null)
+        {
+           
+            iob.GetComponent<projectileParent>()._pmain = pmain;
+        }
+    }
+    private void cooldownCounter()
+    {
+        for (int i = 0; i<_coldownList.Length; i++) 
+        {
+            if (_coldowntick[i]< _coldownList[i])
+            {
+
+                _coldowntick[i] += Time.deltaTime;
+            }
+
+        }
     }
 }
