@@ -16,13 +16,15 @@ public class attack_aris_basicJump : AttackPearent
     public override IEnumerator UseMove(playerattack Playerattack,int ID)
     {
         Debug.Log(ID);
+        Playerattack.SetVelocity(Vector2.zero);    
         Playerattack.ChangeHitBox(_hitBoxList[0]);
         Playerattack.ChangeHertBox(_hertBoxList[0], ID);
         yield return new WaitForSeconds(_timePuse[0]);
+        Playerattack.pmain.PlayAttackAnimation(1);
         Playerattack.SetVelocity(_velocitiAdd);
         float clock = _timePuse[1];
         _canhit =true;
-        while (!_ifhit && clock > 0)
+        while (!_ifhit && clock > 0 && !Playerattack.pmain.IsGrounded)
         {
             
             clock -= Time.deltaTime;
@@ -30,6 +32,7 @@ public class attack_aris_basicJump : AttackPearent
         }
         _ifhit = false;
         _canhit = false;
+        Playerattack.pmain.StopAttackAnimation();
         Playerattack.DestroyHitBox();
         Playerattack.DestroyHertBox();
         Playerattack.pmain.FinishAttack();

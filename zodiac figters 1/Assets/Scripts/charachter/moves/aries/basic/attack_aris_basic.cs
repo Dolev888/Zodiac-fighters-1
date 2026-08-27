@@ -16,15 +16,19 @@ public class attack_aris_basic : AttackPearent
     {
         
         Playerattack.SetVelocity(Vector2.zero);
+        Playerattack.pmain.PlayAttackAnimation(0);
         Playerattack.ChangeHitBox(_hitBoxList[0]);
         Playerattack.ChangeHertBox(_hertBoxList[0],ID);
         yield return new WaitForSeconds(_timePuse[0]);
+        
         Playerattack.ChangeHertBox(_hertBoxList[1],ID);
         yield return new WaitForSeconds(_timePuse[1]);
+        Playerattack.pmain.StopAttackAnimation();
+        Playerattack.pmain.FinishAttack();
         Playerattack.DestroyHitBox();
         Playerattack.DestroyHertBox();
         
-        Playerattack.pmain.FinishAttack();
+       
         
     }
 

@@ -47,15 +47,17 @@ public class playermovment : MonoBehaviour
     }
     public void routate(float dirct)
     {
-        if (dirct < 0)
-        {
-            rigidP.transform.rotation = new Quaternion(0,180,0,0);
-            pmain.isleft = true;
-        }
-        else if(dirct > 0)
-        {
-            rigidP.transform.rotation = new Quaternion(0, 0, 0, 0);
-            pmain.isleft = false;
+        if (!pmain.routatelock) {
+            if (dirct < 0)
+            {
+                rigidP.transform.rotation = new Quaternion(0, 180, 0, 0);
+                pmain.isleft = true;
+            }
+            else if (dirct > 0)
+            {
+                rigidP.transform.rotation = new Quaternion(0, 0, 0, 0);
+                pmain.isleft = false;
+            }
         }
     }
 }
