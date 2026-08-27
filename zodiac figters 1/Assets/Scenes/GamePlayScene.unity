@@ -265,7 +265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &98832779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +394,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 0}
+  _hitBoxlist: []
   player: {fileID: 98832778}
   rigidP: {fileID: 98832782}
   _airJumpMax: 1
@@ -777,6 +779,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 0}
+  _hitBoxlist: []
   player: {fileID: 200605351}
   rigidP: {fileID: 200605355}
   _airJumpMax: 1
@@ -2182,7 +2186,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &549164776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2404,6 +2408,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 0}
+  _hitBoxlist: []
   player: {fileID: 549164775}
   rigidP: {fileID: 549164783}
   _airJumpMax: 1
@@ -3206,6 +3212,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  _animator: {fileID: 0}
+  _hitBoxlist: []
   player: {fileID: 708526507}
   rigidP: {fileID: 708526510}
   _airJumpMax: 1

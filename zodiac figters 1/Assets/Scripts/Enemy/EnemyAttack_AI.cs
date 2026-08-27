@@ -47,17 +47,17 @@ public class EnemyAttack_AI : MonoBehaviour
         // find the horizontal distance between enemy and player's collider
         float distanceX = targetCollider.transform.position.x - transform.position.x;
         float absDistanceX = Mathf.Abs(distanceX);
-        Debug.Log("Enemy state: " + pmain.CurentState);
+        //Debug.Log("Enemy state: " + pmain.CurentState);
         if(pmain.CurentState == playermain.STATE.AIR)
         {
-            Debug.Log("AirDistance: " + absDistanceX + " AN range: " + attackRangeAN + "AS range" + attackRangeAS);
+            //Debug.Log("AirDistance: " + absDistanceX + " AN range: " + attackRangeAN + "AS range" + attackRangeAS);
             
             // aerial normal
             if (absDistanceX <= attackRangeAN)
             {
                 if(Time.time >= nextANAttackTime)
                 {
-                    Debug.Log("AttackAI: aerial normal");
+                   // Debug.Log("AttackAI: aerial normal");
                     pmain.AttackHandel(1); // 1= normal, the air state check determines weather we will use the aerial or grounded normal
                     nextANAttackTime = Time.time + attackCoolDownAN;
                 }
@@ -66,7 +66,7 @@ public class EnemyAttack_AI : MonoBehaviour
             {
                 if (Time.time >= nextASAttackTime)
                 {
-                    Debug.Log("AttackAI: aerial special");
+                   // Debug.Log("AttackAI: aerial special");
                     pmain.AttackHandel(2); // 2= special
                     nextASAttackTime = Time.time + attackCoolDownAS;
                 }
@@ -84,7 +84,7 @@ public class EnemyAttack_AI : MonoBehaviour
             {
                 if (Time.time >= nextGN_AtackTime)
                 {
-                    Debug.Log("AttackAI: ground normal");
+                   // Debug.Log("AttackAI: ground normal");
                     pmain.AttackHandel(1);
                     nextGN_AtackTime = Time.time + attackCoolDownGN;
                 }
@@ -93,7 +93,7 @@ public class EnemyAttack_AI : MonoBehaviour
             {
                 if (Time.time >= nextGSAttackTime)
                 {
-                    Debug.Log("AttackAI: ground special");
+                   // Debug.Log("AttackAI: ground special");
                     pmain.AttackHandel(2);
                     nextGSAttackTime = Time.time + attackCoolDownGS;
                 }
