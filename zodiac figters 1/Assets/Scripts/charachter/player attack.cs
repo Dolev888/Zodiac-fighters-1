@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class playerattack : MonoBehaviour
 {
     [SerializeField] public playermain pmain;
@@ -102,7 +103,10 @@ public class playerattack : MonoBehaviour
             Destroy(carentHitBox);
         }
         carentHitBox = Instantiate(frame, hitObject.transform);
-        
+        carentHitBox.gameObject.tag = pmain.gameObject.tag;
+        pmain.SetHitbox(-1);
+
+
     }
     public void DestroyHitBox()
     {

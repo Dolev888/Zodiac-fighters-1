@@ -4,7 +4,7 @@ public class playerimput : MonoBehaviour
 {
     [SerializeField] private playermovment pmove;
     [SerializeField] private playermain pmain;
-    
+  
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -39,14 +39,16 @@ public class playerimput : MonoBehaviour
         {
             pmain.AttackHandel(2);
         }
-        if(Input.GetKeyDown(KeyCode.RightShift))
+        if(Input.GetKeyDown(KeyCode.RightShift)|| Input.GetKeyDown(KeyCode.LeftShift))
         {
             pmain.routatelock=true;
         }
-        if (Input.GetKeyUp(KeyCode.RightShift))
+        if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
         {
             pmain.routatelock = false;
         }
+        
+        
     }
 
 }

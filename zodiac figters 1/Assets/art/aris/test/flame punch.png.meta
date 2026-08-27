@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a1556c0d70e917148bcef547df4fa4cf
+guid: a311a4c907344b846a55aab001979dce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7386459849670392478
-    second: pixil-frame-72 (2)_0
+      213: 7004794710001823058
+    second: flame punch_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixil-frame-72 (2)_0
+      name: flame punch_0
       rect:
         serializedVersion: 2
-        x: 182
-        y: 46
-        width: 218
+        x: 52
+        y: 116
+        width: 270
         height: 273
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 26506b0e6e50e7990800000000000000
-      internalID: -7386459849670392478
+      spriteID: 25da13efca7063160800000000000000
+      internalID: 7004794710001823058
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 631b322742461734faf575082e414450
+    spriteID: 2b48ce2c4eeeb0c45a399dd7afa911ea
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixil-frame-72 (2)_0: -7386459849670392478
+      flame punch_0: 7004794710001823058
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
