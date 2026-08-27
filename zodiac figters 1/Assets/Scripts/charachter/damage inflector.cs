@@ -75,7 +75,9 @@ public class damageinflector : MonoBehaviour
     {
         for (int i = 0; i < _hitBoxOb.Length; i++)
         {
-            if (_hitBoxOb[i].GetComponent<BoxCollider2D>() !=null) {
+            
+            if (_hitBoxOb[i].GetComponent<BoxCollider2D>() !=null )
+            {
                 Vector2 point = new Vector2(_hitBoxOb[i].transform.position.x, _hitBoxOb[i].transform.position.y);
 
                 BoxCollider2D box = _hitBoxOb[i].GetComponent<BoxCollider2D>();
@@ -154,15 +156,21 @@ public class damageinflector : MonoBehaviour
     }
     private void DamgaeFlag(Collider2D collision)
     {
-        if (_hitFlag && pmain != null)
+       
+        if (_hitFlag && pattack != null)
         {
             pattack.AttackHitDetected(collision, _moveID);
         }
     }
     private void Hit(Collider2D hit)
     {
-        hit.GetComponent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
         DamgaeFlag(hit);
+        if ( hit.gameObject.tag == pmain.gameObject.tag || hit.GetComponentInParent<FighterDamage>()== null)
+        {
+            return;
+        }
+        hit.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
+        
         if (_stanTime != 0)
         {
             Stan();

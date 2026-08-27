@@ -197,7 +197,7 @@ MonoBehaviour:
   _knokBack: 0
   hitlayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 320
   _color: {r: 1, g: 0, b: 0, a: 1}
   _hitFlag: 1
   _coolDown: 10

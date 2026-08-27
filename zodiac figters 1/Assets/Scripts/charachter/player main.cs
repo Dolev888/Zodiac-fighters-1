@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 
@@ -12,6 +13,7 @@ public class playermain : MonoBehaviour
     [SerializeField] private Animator _animator;
     [Header("hit box list")]
     [SerializeField] public GameObject[] _hitBoxlist;
+    private Collider2D[] _carentColiders;
     [Header("else")]
     public GameObject player;
     public Rigidbody2D rigidP;
@@ -53,16 +55,14 @@ public class playermain : MonoBehaviour
     void Update()
     {
         
-            
-        
+
+
     }
-    private void OnCollisionStay2D(Collision2D collision)
+    private void FixedUpdate()
     {
-        if ((collision.gameObject.CompareTag("ground") && GroundCheck()))
+        if (GroundCheck())
         {
-            
             _isGrounded = true;
-            
             switch (curentState)
             {
                 case STATE.AIR:
@@ -71,14 +71,8 @@ public class playermain : MonoBehaviour
                 default:
                     break;
             }
-
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        
-        if (collision.gameObject.CompareTag("ground"))
+        else
         {
             _isGrounded = false;
             switch (curentState)
@@ -89,7 +83,43 @@ public class playermain : MonoBehaviour
                 default:
                     break;
             }
+
         }
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        //if ((collision.gameObject.CompareTag("ground") && GroundCheck()))
+        //{
+
+        //    _isGrounded = true;
+
+        //    switch (curentState)
+        //    {
+        //        case STATE.AIR:
+        //            ChangeState(STATE.GROUND);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+
+        //}
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+        //if (collision.gameObject.CompareTag("ground"))
+        //{
+        //    _isGrounded = false;
+        //    switch (curentState)
+        //    {
+        //        case STATE.GROUND:
+        //            ChangeState(STATE.AIR);
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
     }
     private void ChangeState(STATE state)
     {
@@ -147,7 +177,7 @@ public class playermain : MonoBehaviour
             case STATE.ATTACK:
                 break;
             case STATE.NUTRAL:
-                if (_isGrounded)
+                if (GroundCheck())
                 {
                     ChangeState(STATE.GROUND);
                 }
@@ -258,7 +288,18 @@ public class playermain : MonoBehaviour
     private bool GroundCheck()
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero, 0, _groundLayer);
-        return hit.collider != null;
+
+        
+        for (int i = 0; i < _carentColiders.Length; i++)
+        {
+            if (_carentColiders[i].IsTouchingLayers(_groundLayer))
+            {
+                
+             return hit.collider != null;
+            }
+        }
+        return false;
+        
     }
     private void OnDrawGizmosSelected()
     {
@@ -296,11 +337,26 @@ public class playermain : MonoBehaviour
         {
             Debug.Log(hitbox);
             _hitBoxlist[hitbox].gameObject.SetActive(true);
+            Collider2D[] tempcolid= _hitBoxlist[hitbox].GetComponents<Collider2D>();
+            _carentColiders = new Collider2D[tempcolid.Length];
+            for (int i = 0; i< tempcolid.Length; i++)
+            {
+                _carentColiders[i] = tempcolid[i];
+            }
+            
         }
     }
     private void idelAnimation(bool B)
     {
         _animator.SetBool("idel", B);  
+    }
+    public void setColiders(Collider2D[] tempcolid)
+    {
+        _carentColiders = new Collider2D[tempcolid.Length];
+        for (int i = 0; i < tempcolid.Length; i++)
+        {
+            _carentColiders[i] = tempcolid[i];
+        }
     }
 
 }

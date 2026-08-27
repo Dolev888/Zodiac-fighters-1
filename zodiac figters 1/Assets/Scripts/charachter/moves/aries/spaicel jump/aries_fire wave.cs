@@ -53,9 +53,9 @@ public class aries_firewave : projectileParent
         {
             Destroy(gameObject);
         }
-        if (collision.tag != playerTag && collision.gameObject.layer == LayerMask.NameToLayer("hit"))
+        if (collision.tag != playerTag && collision.gameObject.layer == LayerMask.NameToLayer("hit") && collision.GetComponentInParent<FighterDamage>() != null)
         {
-            collision.GetComponent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
+            collision.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
             Destroy(gameObject);
 
         }

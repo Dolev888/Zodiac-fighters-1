@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 
 public class playerattack : MonoBehaviour
@@ -105,6 +106,8 @@ public class playerattack : MonoBehaviour
         carentHitBox = Instantiate(frame, hitObject.transform);
         carentHitBox.gameObject.tag = pmain.gameObject.tag;
         pmain.SetHitbox(-1);
+        Collider2D[] tempcolid = frame.GetComponents<Collider2D>();
+        pmain.setColiders(tempcolid);
 
 
     }
@@ -168,7 +171,7 @@ public class playerattack : MonoBehaviour
     public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate )
     {
        GameObject iob = Instantiate(Ob);
-        if (pmain.gameObject.transform.rotation.y > 0)
+        if (pmain.gameObject.transform.rotation.y != 0)
         {
             offset.x = offset.x * (-1);
         }
