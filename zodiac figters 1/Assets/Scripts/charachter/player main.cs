@@ -8,6 +8,7 @@ public class playermain : MonoBehaviour
     [SerializeField] private playerimput pimput;
     [SerializeField] private playerattack pattack;
     [SerializeField] private LayerMask _groundLayer;
+    [SerializeField] private Animator _animator;
     public GameObject player;
     public Rigidbody2D rigidP;
     private bool _isGrounded;
@@ -229,6 +230,15 @@ public class playermain : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(player.transform.position + _groundCheckOffSet, _groundCheckSise);
+    }
+    public void PlayAttackAnimation(int A)
+    {
+        _animator.SetInteger("move choose", A);
+        _animator.SetBool("attaking",true);
+    }
+    public void StopAttackAnimation()
+    {
+        _animator.SetBool("attaking", false);
     }
     
 }

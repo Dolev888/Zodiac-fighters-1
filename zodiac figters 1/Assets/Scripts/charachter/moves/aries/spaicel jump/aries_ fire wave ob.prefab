@@ -84,7 +84,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 4014033274348876098, guid: e2f1746defff879499cf3b16d3b0caaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -132,7 +132,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 20, y: 20}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -160,6 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d1435862c90b0f4f91231dc6378ee89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::aries_firewave
+  playerTag: 
+  _pattack: {fileID: 0}
+  _pmain: {fileID: 0}
   _existensTime: 10
   _existensSpeed: 100
   _damage: 10
@@ -168,13 +171,10 @@ MonoBehaviour:
   hitlayer:
     serializedVersion: 2
     m_Bits: 0
-  _color: {r: 1, g: 0.23277296, b: 0, a: 1}
+  _color: {r: 0, g: 0, b: 0, a: 1}
   _hitFlag: 0
   _coolDown: 2
   _rotation: -24
-  pmain: {fileID: 0}
-  pattack: {fileID: 0}
-  playerTag: 
   _moveID: 0
 --- !u!50 &7094613875154680790
 Rigidbody2D:
