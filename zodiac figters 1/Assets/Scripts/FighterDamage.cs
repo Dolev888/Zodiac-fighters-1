@@ -8,6 +8,10 @@ public class FighterDamage : MonoBehaviour
     [SerializeField] private float damagePercentage = 0f;
     [SerializeField] private float maxDamage = 100f;
 
+    [SerializeField] private MatchManager matchManager;
+
+    [SerializeField] private bool isPlayer;
+
     public float DamagePercentage => damagePercentage;
     public float MaxDamage => maxDamage;
     private HashSet<int> takenId = new HashSet<int>();
@@ -48,6 +52,13 @@ public class FighterDamage : MonoBehaviour
     private void Lose()
     {
         Debug.Log($"{gameObject.name} has lost ") ;
+        if (matchManager == null)
+        {
+            return;
+           
+        }
+        // if this fighter is the player then player lost and if it is the enemy then player won.
+        matchManager.EndMatch(!isPlayer, gameObject);
     }
     private bool CheckId(int id) 
     {

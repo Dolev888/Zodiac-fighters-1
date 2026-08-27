@@ -17,6 +17,18 @@ public class EnemyAttack_AI : MonoBehaviour
 
     private float nextGSAttackTime;
 
+    [SerializeField] private float attackRangeAN = 12f; //AN = aerial normal
+
+    [SerializeField] private float attackCoolDownAN = 3f;
+
+    private float nextANAttackTime;
+
+    [SerializeField] private float attackRangeAS = 18f; // AS = aerial special
+
+    [SerializeField] private float attackCoolDownAS = 5f;
+
+    private float nextASAttackTime;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,32 +44,62 @@ public class EnemyAttack_AI : MonoBehaviour
         {
             return;
         }
-        // ask EnemyAI_LocatePlayer if the player is currently on the same platform
-        if(locatePlayer.isPlayerOnSamePlatform())
+        // find the horizontal distance between enemy and player's collider
+        float distanceX = targetCollider.transform.position.x - transform.position.x;
+        float absDistanceX = Mathf.Abs(distanceX);
+        Debug.Log("Enemy state: " + pmain.CurentState);
+        if(pmain.CurentState == playermain.STATE.AIR)
         {
-           // find the horizontal distance between enemy and player's collider
-           float distanceX = targetCollider.transform.position.x - transform.position.x;
-            if (Mathf.Abs(distanceX) <= attackRangeGN)
+            Debug.Log("AirDistance: " + absDistanceX + " AN range: " + attackRangeAN + "AS range" + attackRangeAS);
+            
+            // aerial normal
+            if (absDistanceX <= attackRangeAN)
             {
-                // only attack if cooldown has finished
-                if (Time.time >= nextGN_AtackTime)
+                if(Time.time >= nextANAttackTime)
                 {
-                    Debug.Log(" AttackAI: using ground normal attack");
-                    pmain.AttackHandel(1);
-                    nextGN_AtackTime = Time.time + attackCoolDownGN; // start cooldown before the next attack
+                    Debug.Log("AttackAI: aerial normal");
+                    pmain.AttackHandel(1); // 1= normal, the air state check determines weather we will use the aerial or grounded normal
+                    nextANAttackTime = Time.time + attackCoolDownAN;
                 }
             }
-            else if(Mathf.Abs(distanceX) <= attackRangeGS)
+            else if (absDistanceX <= attackRangeAS)
+            {
+                if (Time.time >= nextASAttackTime)
+                {
+                    Debug.Log("AttackAI: aerial special");
+                    pmain.AttackHandel(2); // 2= special
+                    nextASAttackTime = Time.time + attackCoolDownAS;
+                }
+            }
+            return;
+
+          
+        }
+        //ground attacks using locatePlayer
+
+        if (locatePlayer.isPlayerOnSamePlatform())
+        {
+            //ground normal
+            if (absDistanceX <= attackRangeGN)
+            {
+                if (Time.time >= nextGN_AtackTime)
+                {
+                    Debug.Log("AttackAI: ground normal");
+                    pmain.AttackHandel(1);
+                    nextGN_AtackTime = Time.time + attackCoolDownGN;
+                }
+            }
+            else if (absDistanceX <= attackRangeGS)
             {
                 if (Time.time >= nextGSAttackTime)
                 {
-                    Debug.Log("AttackAI: using ground special");
+                    Debug.Log("AttackAI: ground special");
                     pmain.AttackHandel(2);
-                    nextGN_AtackTime = Time.time + attackCoolDownGS;
+                    nextGSAttackTime = Time.time + attackCoolDownGS;
                 }
             }
         }
-        
+
 
     }
 }
