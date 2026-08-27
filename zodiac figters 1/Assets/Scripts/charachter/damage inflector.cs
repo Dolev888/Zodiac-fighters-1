@@ -87,7 +87,7 @@ public class damageinflector : MonoBehaviour
                 foreach (Collider2D hit in hits)
                 {
                     Debug.Log(hit.gameObject.name);
-                    if (hit.GetComponent<FighterDamage>() != null)
+                    if (hit.GetComponentInParent<FighterDamage>() != null)
                     {
                         Hit(hit);
                     }
@@ -169,6 +169,7 @@ public class damageinflector : MonoBehaviour
         {
             return;
         }
+        
         hit.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
         
         if (_stanTime != 0)

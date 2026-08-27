@@ -174,7 +174,7 @@ MonoBehaviour:
   _pmain: {fileID: 0}
   _existensTime: 5
   _existensSpeed: 50
-  _damage: 10
+  _damage: 2
   _stanTime: 0
   _knokBack: 0
   hitlayer:

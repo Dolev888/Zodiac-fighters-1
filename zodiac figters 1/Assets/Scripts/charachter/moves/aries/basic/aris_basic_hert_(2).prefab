@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a66cb34827cad479acd02f5e84c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
-  _damage: 10
+  _damage: 5
   _stanTime: 0
   _knokBack: 0
   hitlayer:
@@ -100,7 +100,7 @@ MonoBehaviour:
     m_Bits: 256
   _color: {r: 0, g: 0, b: 0, a: 0}
   _hitFlag: 0
-  _coolDown: 2
+  _coolDown: 1
   _hitBoxParmeter: []
   _hitBoxOb:
   - {fileID: 5121072029908105849}

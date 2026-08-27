@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a66cb34827cad479acd02f5e84c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
-  _damage: 5
+  _damage: 3
   _stanTime: 0
   _knokBack: 0
   hitlayer:
