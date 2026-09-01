@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject commandList;
 
+    [SerializeField] private MatchManager matchManager;
+
     private bool isPaused = false;
 
    private  void Start()
@@ -19,7 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !matchManager.MatchEnded)
         {
             if (commandList.activeSelf) CloseCommandList(); // making sure the command list isn't immdiatly open when pausing;
 

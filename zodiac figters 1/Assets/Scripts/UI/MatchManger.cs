@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Security.Cryptography.X509Certificates;
 
 public class MatchManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class MatchManager : MonoBehaviour
     [SerializeField] private TMP_Text resultText;
 
     private bool matchEnded = false;
+    
+    public bool MatchEnded
+    {  get { return matchEnded; } }
 
     public void EndMatch(bool playerWon, GameObject loser)
     {
@@ -37,6 +41,8 @@ public class MatchManager : MonoBehaviour
         {
             resultText.text = "YOU LOSE!";
         }
+
+        matchEnded = true;
     }
 
     public void Rematch()
