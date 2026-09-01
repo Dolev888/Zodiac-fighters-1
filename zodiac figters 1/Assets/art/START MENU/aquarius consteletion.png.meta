@@ -1,10 +1,43 @@
 fileFormatVersion: 2
-guid: 19b44f9154744724c81abe26f800cf39
+guid: 042a867ce98e32044bf3225883a4f24e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 188238616003858494
-    second: scorpio consteletion full_0
+      213: 825390279145685233
+    second: aquarius consteletion_0
+  - first:
+      213: 3820658963914855342
+    second: aquarius consteletion_1
+  - first:
+      213: -4718794700183080071
+    second: aquarius consteletion_2
+  - first:
+      213: -1674285716353324144
+    second: aquarius consteletion_3
+  - first:
+      213: -649263661965663798
+    second: aquarius consteletion_4
+  - first:
+      213: 3366961066462727550
+    second: aquarius consteletion_5
+  - first:
+      213: 294290540599168326
+    second: aquarius consteletion_6
+  - first:
+      213: 3937171853842340282
+    second: aquarius consteletion_7
+  - first:
+      213: -1941710267917810016
+    second: aquarius consteletion_8
+  - first:
+      213: -9126921020098883987
+    second: aquarius consteletion_9
+  - first:
+      213: -1164603947208295332
+    second: aquarius consteletion_10
+  - first:
+      213: 6618239429270502300
+    second: aquarius consteletion_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +146,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scorpio consteletion full_0
+      name: aquarius consteletion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 968
-        height: 1007
+        width: 1071
+        height: 687
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30dbef1602cc9200800000000000000
-      internalID: 188238616003858494
+      spriteID: 1f00a85f510647b00800000000000000
+      internalID: 825390279145685233
       vertices: []
       indices: 
       edges: []
@@ -138,7 +171,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e0b355cace2a2904c99c9009b4d0950d
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +179,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1071.0,"y":687.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      scorpio consteletion full_0: 188238616003858494
+      aquarius consteletion_0: 825390279145685233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,28 @@
 fileFormatVersion: 2
-guid: 19b44f9154744724c81abe26f800cf39
+guid: 47336be3ae8e15a469b8e26d7a2582f1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 188238616003858494
-    second: scorpio consteletion full_0
+      213: -3128412305670727561
+    second: libra concteletion_0
+  - first:
+      213: -7246458103121277592
+    second: libra concteletion_1
+  - first:
+      213: -1438458193186908455
+    second: libra concteletion_2
+  - first:
+      213: -6352487925880858592
+    second: libra concteletion_3
+  - first:
+      213: -5370823412130244747
+    second: libra concteletion_4
+  - first:
+      213: -5485445705193240345
+    second: libra concteletion_5
+  - first:
+      213: 8257217117061618012
+    second: libra concteletion_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +131,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scorpio consteletion full_0
+      name: libra concteletion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 968
-        height: 1007
+        width: 844
+        height: 1139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30dbef1602cc9200800000000000000
-      internalID: 188238616003858494
+      spriteID: 77819814595a594d0800000000000000
+      internalID: -3128412305670727561
       vertices: []
       indices: 
       edges: []
@@ -138,7 +156,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: eba532801dafc4f49911c9465806afee
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +164,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":844.0,"y":1139.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      scorpio consteletion full_0: 188238616003858494
+      libra concteletion_0: -3128412305670727561
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

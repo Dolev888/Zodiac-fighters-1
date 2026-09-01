@@ -1,10 +1,31 @@
 fileFormatVersion: 2
-guid: 19b44f9154744724c81abe26f800cf39
+guid: 829b6c08d4aa03846b09cc6a42b549c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 188238616003858494
-    second: scorpio consteletion full_0
+      213: -1565002762036253713
+    second: capricorn consteletion_0
+  - first:
+      213: 6756429332648337106
+    second: capricorn consteletion_1
+  - first:
+      213: -375248626481301116
+    second: capricorn consteletion_2
+  - first:
+      213: 9024825449554635184
+    second: capricorn consteletion_3
+  - first:
+      213: -1362333909686244216
+    second: capricorn consteletion_4
+  - first:
+      213: 2136936936711064727
+    second: capricorn consteletion_5
+  - first:
+      213: -7819903443746061096
+    second: capricorn consteletion_6
+  - first:
+      213: -4276485774628863841
+    second: capricorn consteletion_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +134,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scorpio consteletion full_0
+      name: capricorn consteletion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 968
-        height: 1007
+        width: 1029
+        height: 681
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30dbef1602cc9200800000000000000
-      internalID: 188238616003858494
+      spriteID: febe258974ef74ae0800000000000000
+      internalID: -1565002762036253713
       vertices: []
       indices: 
       edges: []
@@ -138,7 +159,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a4149b3dc3e4e2849b407480ea403e38
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +167,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1029.0,"y":681.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      scorpio consteletion full_0: 188238616003858494
+      capricorn consteletion_0: -1565002762036253713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 19b44f9154744724c81abe26f800cf39
+guid: b92ee6ddbf12d1040ad4b791de158ebe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 188238616003858494
-    second: scorpio consteletion full_0
+      213: 605162050437240712
+    second: sun_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scorpio consteletion full_0
+      name: sun_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 968
-        height: 1007
+        width: 1810
+        height: 976
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30dbef1602cc9200800000000000000
-      internalID: 188238616003858494
+      spriteID: 887dbd7bda7f56800800000000000000
+      internalID: 605162050437240712
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scorpio consteletion full_0: 188238616003858494
+      sun_0: 605162050437240712
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

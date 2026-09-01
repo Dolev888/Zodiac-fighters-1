@@ -1,10 +1,55 @@
 fileFormatVersion: 2
-guid: 19b44f9154744724c81abe26f800cf39
+guid: d01d185dbca582b49856cb64668e80c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 188238616003858494
-    second: scorpio consteletion full_0
+      213: -6971982487326252233
+    second: pisces consteletion_0
+  - first:
+      213: -8350651793994806525
+    second: pisces consteletion_1
+  - first:
+      213: 8421254165244612855
+    second: pisces consteletion_2
+  - first:
+      213: -6848488567137174190
+    second: pisces consteletion_3
+  - first:
+      213: -2256358420553916883
+    second: pisces consteletion_4
+  - first:
+      213: -5542834643931223214
+    second: pisces consteletion_5
+  - first:
+      213: 7775296500762064059
+    second: pisces consteletion_6
+  - first:
+      213: 4876911862516268474
+    second: pisces consteletion_7
+  - first:
+      213: 8340263554736433209
+    second: pisces consteletion_8
+  - first:
+      213: -5500088534369249533
+    second: pisces consteletion_9
+  - first:
+      213: 7993504122660113401
+    second: pisces consteletion_10
+  - first:
+      213: 7808487590385239814
+    second: pisces consteletion_11
+  - first:
+      213: 7522920304460155301
+    second: pisces consteletion_12
+  - first:
+      213: 349465206837534612
+    second: pisces consteletion_13
+  - first:
+      213: 1451023008865642613
+    second: pisces consteletion_14
+  - first:
+      213: -7221056919212368255
+    second: pisces consteletion_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +158,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scorpio consteletion full_0
+      name: pisces consteletion_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 968
-        height: 1007
+        width: 995
+        height: 945
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e30dbef1602cc9200800000000000000
-      internalID: 188238616003858494
+      spriteID: 733acaeedda8e3f90800000000000000
+      internalID: -6971982487326252233
       vertices: []
       indices: 
       edges: []
@@ -138,7 +183,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a385c29456f60984786100f280926de5
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +191,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":995.0,"y":945.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      scorpio consteletion full_0: 188238616003858494
+      pisces consteletion_0: -6971982487326252233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
