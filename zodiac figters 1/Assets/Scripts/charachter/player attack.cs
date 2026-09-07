@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
+
 
 
 public class playerattack : MonoBehaviour
@@ -211,5 +211,18 @@ public class playerattack : MonoBehaviour
             }
 
         }
+    }
+    public void StopAttack()
+    {
+        for (int i = 0; i < IEBasicAttack.Length; i++)
+        {
+            if (IEBasicAttack[i] != null)
+            {
+                StopCoroutine(IEBasicAttack[i]);
+                
+            }
+        }
+        pmain.StopAttackAnimation();
+        
     }
 }

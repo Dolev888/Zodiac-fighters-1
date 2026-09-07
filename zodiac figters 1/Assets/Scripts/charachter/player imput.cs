@@ -14,7 +14,19 @@ public class playerimput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        switch (pmain.CurentState)
+        {
+            case playermain.STATE.STUN:
 
+                break;
+            default:
+                InputHandel();
+                break;
+        }
+             
+    }
+    private void InputHandel()
+    {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             pmain.WalkHandel(-1);
@@ -39,16 +51,15 @@ public class playerimput : MonoBehaviour
         {
             pmain.AttackHandel(2);
         }
-        if(Input.GetKeyDown(KeyCode.RightShift)|| Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
         {
-            pmain.routatelock=true;
+            pmain.routatelock = true;
         }
         if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
         {
             pmain.routatelock = false;
         }
-        
-        
+
     }
 
 }

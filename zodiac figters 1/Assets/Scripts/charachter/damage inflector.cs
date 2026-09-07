@@ -4,8 +4,10 @@ public class damageinflector : MonoBehaviour
 {
 
     [SerializeField]private float _damage; 
-    [SerializeField] private float _stanTime;
+    [SerializeField] private float _stnTime;
     [SerializeField] private float _knokBack;
+    [SerializeField] private float _knockBackEngel;
+    
     [SerializeField] private LayerMask hitlayer;
     [SerializeField] private Color _color;
     [SerializeField] private bool _hitFlag;
@@ -57,13 +59,22 @@ public class damageinflector : MonoBehaviour
     //{
     //    Debug.Log("Enter2D");
     //}
-    private void Stan()
+    private void Stan(Collider2D hit)
     {
-
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stnTime);
     }
-    private void Knocback()
+    private void Knocback(Collider2D hit)
     {
+        float x = Mathf.Cos(_knockBackEngel * Mathf.Deg2Rad) * _knokBack;
+        float y = Mathf.Sin(_knockBackEngel * Mathf.Deg2Rad) * _knokBack;
 
+        if (hit.GetComponentInParent<FighterDamage>().transform.position.x< pmain.transform.position.x)
+        {
+            x = -x;
+        }
+
+        Vector2 knockBackForce = new Vector2(x, y);
+        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce);
     }
     private void OnDrawGizmos()
     {
@@ -172,13 +183,13 @@ public class damageinflector : MonoBehaviour
         
         hit.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
         
-        if (_stanTime != 0)
+        if (_stnTime != 0)
         {
-            Stan();
+            Stan(hit);
         }
         if (_knokBack != 0)
         {
-            Knocback();
+            Knocback(hit);
         }
     }
 }

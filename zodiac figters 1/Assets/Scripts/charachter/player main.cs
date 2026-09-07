@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
-
 
 
 public class playermain : MonoBehaviour
@@ -30,6 +28,8 @@ public class playermain : MonoBehaviour
     public bool routatelock;
     public bool isleft;
     public bool canAirAttack;
+    private Vector2 spawnPoint;
+    [SerializeField] private float _FallLine;
 
     public enum STATE
     {
@@ -50,12 +50,11 @@ public class playermain : MonoBehaviour
         curentState = STATE.AIR;
         hitboxttagset();
         SetHitbox(0);
+        spawnPoint = transform.position;
     }
 
     void Update()
     {
-        
-
 
     }
     private void FixedUpdate()
@@ -84,6 +83,11 @@ public class playermain : MonoBehaviour
                     break;
             }
 
+        }
+        if(_FallLine>= transform.position.y)
+        {
+            transform.position = spawnPoint;
+            GetComponent<FighterDamage>().TakeDamage(20, -1, 0);
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -172,6 +176,7 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.STUN:
+                pattack.StopAttack();
                 break;
 
             case STATE.ATTACK:
@@ -289,7 +294,7 @@ public class playermain : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero, 0, _groundLayer);
 
-        
+        Debug.Log(_carentColiders.Length);
         for (int i = 0; i < _carentColiders.Length; i++)
         {
             if (_carentColiders[i].IsTouchingLayers(_groundLayer))
@@ -339,6 +344,7 @@ public class playermain : MonoBehaviour
             _hitBoxlist[hitbox].gameObject.SetActive(true);
             Collider2D[] tempcolid= _hitBoxlist[hitbox].GetComponents<Collider2D>();
             _carentColiders = new Collider2D[tempcolid.Length];
+            
             for (int i = 0; i< tempcolid.Length; i++)
             {
                 _carentColiders[i] = tempcolid[i];
@@ -357,6 +363,14 @@ public class playermain : MonoBehaviour
         {
             _carentColiders[i] = tempcolid[i];
         }
+    }
+    public void EnterStun()
+    {
+        ChangeState(STATE.STUN);
+    }
+    public void ExitStun()
+    {
+        ChangeState(STATE.NUTRAL);
     }
 
 }

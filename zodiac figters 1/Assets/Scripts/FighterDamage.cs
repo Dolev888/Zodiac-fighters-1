@@ -11,17 +11,32 @@ public class FighterDamage : MonoBehaviour
     [SerializeField] private MatchManager matchManager;
 
     [SerializeField] private bool isPlayer;
+    private playermain pmain;
+    private float stunClock;
+    private float stunTime;
 
     public float DamagePercentage => damagePercentage;
     public float MaxDamage => maxDamage;
     private HashSet<int> takenId = new HashSet<int>();
 
+    private void Start()
+    {
+        pmain = GetComponent<playermain>();
+    }
     private void Update()
     {
         if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
             TakeDamage(10f,888,4);
+        }
+        switch (pmain.CurentState)
+        {
+            case playermain.STATE.STUN:
+                StunTimer();
+                break;
+            default:
+                break;
         }
     }
     public void TakeDamage (float amount, int id,float cooldown)
@@ -66,6 +81,27 @@ public class FighterDamage : MonoBehaviour
         return false;
     
     }
+    public void TakeStun(float stunDuretion)
+    {
+        if(pmain == null) return;
+        stunTime = stunDuretion;
+        stunClock = 0;
+        pmain.EnterStun();
 
+    }
+    private void StunTimer()
+    {
+        if( stunClock>= stunTime)
+        {
+            stunTime = 0;
+            stunClock = 0;
+            pmain.ExitStun();
+        }
+        stunClock += Time.deltaTime;
+    }
+    public void TakeKnockback(Vector2 nockForce)
+    {
+        pmain.rigidP.linearVelocity = nockForce;
+    }
    
 }
