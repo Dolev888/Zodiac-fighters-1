@@ -111,7 +111,7 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
 
             // calculate how far the detected platform is from the enemy horizontaly
             float platformDistanceX = upperPlatformposition.x - transform.position.x;
-
+            Debug.Log($"ABOVE | found:{foundUpperplatform} target:{upperPlatformposition} dirX:{platformDistanceX} grounded:{enemyMovement.IsGrounded()}");
             // if valip upper platform found move towrads it horizontal
             if (foundUpperplatform)
             {
@@ -133,11 +133,11 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
             if (chosenDirection != 0)
             {
                 Vector2 checkPosition = new Vector2(
-                    transform.position.x + (edgeCheckOffset * chosenDirection), upperPlatformposition.y);
+       transform.position.x + (edgeCheckOffset * chosenDirection), edgeCheck.position.y);
 
                 RaycastHit2D groundAhead =
                     Physics2D.Raycast( checkPosition, Vector2.down,edgeCheckDistance, groundLayer );
-
+                Debug.Log($"groundAhead:{groundAhead.collider != null} rayStart:{checkPosition}");
                 if (groundAhead.collider != null)
                 {
                     //continue moving horizantally towards the platform selected by the canner.
@@ -152,7 +152,18 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
                 }
                 else
                 {
-                    enemyMovement.StopMove();
+                    if (enemyMovement.IsGrounded() && Time.time >= nextJumpTime)
+                    {
+                        // at the edge: jump toward the target platform
+                        enemyMovement.JumpTowards(chosenDirection);
+                        nextJumpTime = Time.time + jumpCooldown;
+                    }
+
+                    else if (enemyMovement.IsGrounded())
+                    {
+                        enemyMovement.StopMove();
+                    }
+                    // in the air: do nothing, so the jump's horizontal speed isn't wiped;
                 }
             }
             else
