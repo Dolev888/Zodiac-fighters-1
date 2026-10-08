@@ -1,17 +1,19 @@
 using UnityEngine;
 
 
+
 public class playermain : MonoBehaviour
 {
-    [SerializeField] private playermovment pmove;
+    [SerializeField] public playermovment pmove;
 
-    [SerializeField] private playerimput pimput;
+    [SerializeField] public playerimput pimput;
     [SerializeField] private playerattack pattack;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator _animator;
     [Header("hit box list")]
     [SerializeField] public GameObject[] _hitBoxlist;
     private Collider2D[] _carentColiders;
+    [SerializeField] public GameObject _pushColideOb;
     [Header("else")]
     public GameObject player;
     public Rigidbody2D rigidP;
@@ -22,9 +24,10 @@ public class playermain : MonoBehaviour
     public STATE CurentState => curentState;
     private STATE previesState;
     public STATE PreviesState => previesState;
+    public float OGgravity;
 
     [SerializeField] private int _airJumpMax;
-    private int _airJumpCounter;
+    public int _airJumpCounter;
     public bool routatelock;
     public bool isleft;
     public bool canAirAttack;
@@ -45,17 +48,24 @@ public class playermain : MonoBehaviour
     [SerializeField] private Vector2 _groundCheckSise;
     [SerializeField] private Vector3 _groundCheckOffSet;
 
+    [Header("idel setings")]
+    [SerializeField] private float _idleTime;
+    private float ideleTick;
+    private bool isIdle;
+
     void Start()
     {
+        rigidP = GetComponent<Rigidbody2D>();
         curentState = STATE.AIR;
         hitboxttagset();
         SetHitbox(0);
         spawnPoint = transform.position;
+        OGgravity = rigidP.gravityScale;
     }
 
     void Update()
     {
-
+        TimeKiper();
     }
     private void FixedUpdate()
     {
@@ -74,6 +84,7 @@ public class playermain : MonoBehaviour
         else
         {
             _isGrounded = false;
+           
             switch (curentState)
             {
                 case STATE.GROUND:
@@ -84,7 +95,13 @@ public class playermain : MonoBehaviour
             }
 
         }
-        if(_FallLine>= transform.position.y)
+        _animator.SetBool("fall", !_isGrounded);
+        float direct;
+        if (rigidP.linearVelocityY > 0) { direct = 0; }
+        else { direct = 1; }
+        
+        _animator.SetFloat("im falling", direct);
+        if (_FallLine>= transform.position.y)
         {
             transform.position = spawnPoint;
             GetComponent<FighterDamage>().TakeDamage(20, -1, 0);
@@ -201,12 +218,16 @@ public class playermain : MonoBehaviour
             case STATE.GROUND:
                 if (direction == 0)
                 {
-                    
-                    idelAnimation(true);
+                    isIdle = true;
+
+                    _animator.SetFloat("walking", 0);
                 }
                 else
                 {
+                    isIdle = false;
+                    
                     idelAnimation(false);
+                    _animator.SetFloat("walking",1);
                 }
 
                 pmove.GroundMove(direction);
@@ -218,10 +239,11 @@ public class playermain : MonoBehaviour
                 {
                     pmove.idle();
                 }
+                _animator.SetFloat("walking", 0);
                 pmove.AirMove(direction);
                 break;
             default:
-
+                _animator.SetFloat("walking", 0);
                 break;
         }
     }
@@ -235,6 +257,11 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 pmove.Jump();
+                if (pimput !=null)
+                {
+                    pimput.JumpSucseed();
+                    _animator.Play("jump");
+                }
                 break;
 
             case STATE.AIR:
@@ -242,6 +269,10 @@ public class playermain : MonoBehaviour
                 {
                     _airJumpCounter--;
                     pmove.AirJump();
+                    if (pimput != null)
+                    {
+                        pimput.JumpSucseed();
+                    }
                 }
                 break;
             default:
@@ -294,7 +325,7 @@ public class playermain : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero, 0, _groundLayer);
 
-        Debug.Log(_carentColiders.Length);
+        
         for (int i = 0; i < _carentColiders.Length; i++)
         {
             if (_carentColiders[i].IsTouchingLayers(_groundLayer))
@@ -340,7 +371,7 @@ public class playermain : MonoBehaviour
 
         if (hitbox >= 0 && hitbox< _hitBoxlist.Length)
         {
-            Debug.Log(hitbox);
+            
             _hitBoxlist[hitbox].gameObject.SetActive(true);
             Collider2D[] tempcolid= _hitBoxlist[hitbox].GetComponents<Collider2D>();
             _carentColiders = new Collider2D[tempcolid.Length];
@@ -354,7 +385,11 @@ public class playermain : MonoBehaviour
     }
     private void idelAnimation(bool B)
     {
-        _animator.SetBool("idel", B);  
+        _animator.SetBool("idel", B); 
+        if (!B)
+        {
+            ideleTick = _idleTime;
+        }
     }
     public void setColiders(Collider2D[] tempcolid)
     {
@@ -371,6 +406,29 @@ public class playermain : MonoBehaviour
     public void ExitStun()
     {
         ChangeState(STATE.NUTRAL);
+    }
+    public void SetGravity(float gravity)
+    {
+        rigidP.gravityScale = gravity;
+    }
+    public void ResetGravity()
+    {
+        rigidP.gravityScale = OGgravity;
+    }
+    private void TimeKiper(/*call from update*/)
+    {
+        if (isIdle)
+        {
+
+            if (ideleTick <= 0)
+            {
+                idelAnimation(true);
+            }
+            else
+            {
+                ideleTick -= Time.deltaTime;
+            }
+        }
     }
 
 }

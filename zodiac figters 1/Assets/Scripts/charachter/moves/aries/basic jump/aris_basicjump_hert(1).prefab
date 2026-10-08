@@ -193,8 +193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
   _damage: 3
-  _stanTime: 0
+  _stnTime: 1
   _knokBack: 0
+  _knockBackEngel: 0
   hitlayer:
     serializedVersion: 2
     m_Bits: 320

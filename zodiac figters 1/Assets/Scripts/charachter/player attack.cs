@@ -27,6 +27,9 @@ public class playerattack : MonoBehaviour
     private Collider2D AttackDitectCollider;
     private float[] _coldownList= new float[4];
     private float[] _coldowntick= new float[4];
+    private float[] _ChainBafer = new float[4];
+    private float[] _chainBaferTick= new float[4];
+    private float[] _chainCount= new float[4];
 
     private HashSet<ColInt> colidDetectList;
 
@@ -37,6 +40,8 @@ public class playerattack : MonoBehaviour
         for (int i = 0; i < _attackList.Length; i++)
         {
             _coldownList[i] = _attackList[i]._cooldown;
+            _ChainBafer[i] = _attackList[i]._chainCount;
+            _chainBaferTick[i] = 0;
         }
     }
 
@@ -55,10 +60,32 @@ public class playerattack : MonoBehaviour
             pmain.FinishAttack();
             return;
         }
+        if(pmain.pimput != null)
+        {
+            pmain.pimput.BasicAttackSucseed();
+        }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
+
+        switch (_chainCount[D])
+        {
+            case 0:
+                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+                _chainBaferTick[D] = _ChainBafer[D];
+                _chainCount[D] = 1;
+                break;
+            case 1:
+                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 1));
+                _chainBaferTick[D] = _ChainBafer[D];
+                _chainCount[D] = 2;
+                break;
+            case 2:
+                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 2));
+                _chainBaferTick[D] = _ChainBafer[D];
+                _chainCount[D] = 0;
+                break;
+        }
         
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
     }
     public void BasicAttackAir()
     {
@@ -68,9 +95,13 @@ public class playerattack : MonoBehaviour
             pmain.FinishAttack();
             return;
         }
+        if (pmain.pimput != null)
+        {
+            pmain.pimput.BasicAttackSucseed();
+        }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
         
     }
     public void SpaicleAttack()
@@ -81,9 +112,13 @@ public class playerattack : MonoBehaviour
             pmain.FinishAttack();
             return;
         }
+        if (pmain.pimput != null)
+        {
+            pmain.pimput.SpeicelAttackSucseed();
+        }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
     }
     public void SpaicleAttackAir() 
     {
@@ -93,9 +128,13 @@ public class playerattack : MonoBehaviour
             pmain.FinishAttack();
             return;
         }
+        if (pmain.pimput != null)
+        {
+            pmain.pimput.SpeicelAttackSucseed();
+        }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D]));
+        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
     }
     public void ChangeHitBox(GameObject frame)
     {
@@ -168,7 +207,7 @@ public class playerattack : MonoBehaviour
             }
         }
     }
-    public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate )
+    public void ObjectInstantPlayer(GameObject Ob, Vector2 offset, float routate,int ID )
     {
        GameObject iob = Instantiate(Ob);
         if (pmain.gameObject.transform.rotation.y != 0)
@@ -183,21 +222,26 @@ public class playerattack : MonoBehaviour
             projectile._pmain = pmain;
             projectile._pattack = this;
             projectile.playerTag= gameObject.tag;
+            projectile._moveID = ID;
         }
     }
-    public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate)
+    public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate, int ID)
     {
-        if (pmain.gameObject.transform.rotation.y > 0)
-        {
-            position.x = position.x * (-1);
-        }
+        //if (pmain.gameObject.transform.rotation.y > 0)
+        //{
+        //    position.x = position.x * (-1);
+        //}
         GameObject iob = Instantiate(Ob);
         iob.transform.position=position;
         iob.transform.rotation = Quaternion.Euler(0, 0, routate);
         if (iob.GetComponent<projectileParent>() != null)
         {
-           
-            iob.GetComponent<projectileParent>()._pmain = pmain;
+            projectileParent projectile = iob.GetComponent<projectileParent>();
+            projectile._pmain = pmain;
+            projectile._pattack = this;
+            projectile.playerTag = gameObject.tag;
+            projectile._moveID = ID;
+
         }
     }
     private void cooldownCounter()
@@ -210,6 +254,18 @@ public class playerattack : MonoBehaviour
                 _coldowntick[i] += Time.deltaTime;
             }
 
+        }
+        for (int i = 0; i < _chainBaferTick.Length; i++)
+        {
+            if (_chainBaferTick[i] >0)
+            {
+                _chainBaferTick[i] -= Time.deltaTime;
+                if(_chainBaferTick[i] <= 0)
+                {
+                    _chainCount[i] = 0;
+                }
+            }
+            
         }
     }
     public void StopAttack()

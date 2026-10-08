@@ -116,10 +116,10 @@ TextureImporter:
       name: bifor pansh_0
       rect:
         serializedVersion: 2
-        x: 237
+        x: 231
         y: 48
-        width: 118
-        height: 268
+        width: 154
+        height: 319
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

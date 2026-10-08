@@ -6,4 +6,5 @@ public class projectileParent : MonoBehaviour
     
     public playerattack _pattack;
     public playermain _pmain;
+    public int _moveID;
 }
