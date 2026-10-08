@@ -251,7 +251,7 @@ public class playermain : MonoBehaviour
     }
     public void AttackHandel(int imp)
     {
-
+        Debug.Log($"AttackHandel on {name} | imp:{imp} state:{curentState} canAirAttack:{canAirAttack}");
         switch (curentState)
         {
             case STATE.GROUND:

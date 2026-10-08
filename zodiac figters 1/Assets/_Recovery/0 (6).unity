@@ -1279,8 +1279,6 @@ MonoBehaviour:
   jumpCooldown: 0.5
   platformScanner: {fileID: 200605362}
   jumpHorizontalRange: 40
-  headHeight: 20
-  debugLog: 0
 --- !u!114 &200605361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1324,10 +1322,6 @@ MonoBehaviour:
   lowerCheckVertical: 20
   upperScanWidth: 40
   upperScanheight: 30
-  maxClimbHeight: 21
-  landingInset: 5
-  dropReach: 15
-  dropCheckDistance: 60
 --- !u!114 &200605363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,7 +1503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
   pausePanel: {fileID: 578945197}
   commandList: {fileID: 689850904}
-  matchManager: {fileID: 912550999}
+  matchManager: {fileID: 0}
 --- !u!114 &278790987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2186,7 +2180,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2253,7 +2247,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &383986958
@@ -2323,7 +2317,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Grounded Normal Attack: Z'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2390,7 +2384,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &407897966
@@ -2460,7 +2454,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2527,7 +2521,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &432274343
@@ -2904,7 +2898,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 44.06583
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2929,7 +2923,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.749999, y: 17.849998, z: -10}
+  m_LocalPosition: {x: 22.9, y: 32.4, z: -10}
   m_LocalScale: {x: 6.037348, y: 6.3868074, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3183,10 +3177,6 @@ MonoBehaviour:
   lowerCheckVertical: 20
   upperScanWidth: 40
   upperScanheight: 25
-  maxClimbHeight: 21
-  landingInset: 5
-  dropReach: 15
-  dropCheckDistance: 60
 --- !u!114 &549164777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3257,8 +3247,6 @@ MonoBehaviour:
   jumpCooldown: 0.5
   platformScanner: {fileID: 549164776}
   jumpHorizontalRange: 10
-  headHeight: 20
-  debugLog: 0
 --- !u!114 &549164780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3725,7 +3713,7 @@ Transform:
   m_GameObject: {fileID: 573293504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.749999, y: 17.849998, z: 0}
+  m_LocalPosition: {x: 22.9, y: 32.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4862,7 +4850,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: YOU WON!!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 054e70c5df569b1449004f02c84bd147, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4929,7 +4917,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &799519994
@@ -5231,7 +5219,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Rematch
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5298,7 +5286,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &858639365
@@ -5459,7 +5447,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Grounded Special Attack: X'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5526,7 +5514,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &863392020
@@ -5734,7 +5722,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Command List
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 054e70c5df569b1449004f02c84bd147, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5801,7 +5789,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &930306894
@@ -6009,7 +5997,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Jump: \u2191 / Spacebar"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6076,7 +6064,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1123847307
@@ -6146,7 +6134,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Move: \u2190 \u2192"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6213,7 +6201,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1124311842
@@ -6997,7 +6985,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7064,7 +7052,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1280358722
@@ -7598,7 +7586,7 @@ Transform:
   m_GameObject: {fileID: 1403930270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.644301, y: 17.849998, z: -10}
+  m_LocalPosition: {x: 22.794302, y: 32.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8243,7 +8231,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Aerial Normal Attack: Z (While Airborne)'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8310,7 +8298,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 1.6882076, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1671623875
@@ -8898,7 +8886,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Paused
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 054e70c5df569b1449004f02c84bd147, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8965,7 +8953,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -19.90593, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1822801635
@@ -9035,7 +9023,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Aerial Special Attack: X (While Airborne)'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9102,7 +9090,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1824970250
@@ -9886,7 +9874,7 @@ Transform:
   m_GameObject: {fileID: 1890744644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.1, y: 4.9, z: 0}
+  m_LocalPosition: {x: -39.7, y: 31.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10111,6 +10099,7 @@ GameObject:
   - component: {fileID: 2013260094}
   - component: {fileID: 2013260093}
   - component: {fileID: 2013260092}
+  - component: {fileID: 2013260104}
   m_Layer: 8
   m_Name: ENEMY
   m_TagString: Enemy
@@ -10139,12 +10128,8 @@ MonoBehaviour:
   upperCheckVertical: 12
   lowerCheckHorizontal: 8
   lowerCheckVertical: 20
-  upperScanWidth: 150
+  upperScanWidth: 40
   upperScanheight: 25
-  maxClimbHeight: 21
-  landingInset: 5
-  dropReach: 15
-  dropCheckDistance: 60
 --- !u!114 &2013260093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10160,7 +10145,7 @@ MonoBehaviour:
   rigidP: {fileID: 2013260099}
   groundSpeed: 50
   airSpeed: 3
-  jumpPower: 80
+  jumpPower: 70
   enemyCollider: {fileID: 2013260098}
   groundLayer:
     serializedVersion: 2
@@ -10203,7 +10188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI_LoactePlayer
   pmain: {fileID: 2013260100}
-  stopDistance: 10
+  stopDistance: 5
   edgeCheck: {fileID: 1595378319}
   edgeCheckDistance: 3
   groundLayer:
@@ -10215,8 +10200,6 @@ MonoBehaviour:
   jumpCooldown: 0.5
   platformScanner: {fileID: 2013260092}
   jumpHorizontalRange: 10
-  headHeight: 20
-  debugLog: 0
 --- !u!114 &2013260096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10400,7 +10383,7 @@ Transform:
   m_GameObject: {fileID: 2013260091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.6, y: 30.8, z: 0}
+  m_LocalPosition: {x: 85.5, y: 32.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10411,6 +10394,22 @@ Transform:
   - {fileID: 1595378319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2013260104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013260091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809b60581fe7498489019784a77ddb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
+  damagePercentage: 0
+  maxDamage: 100
+  matchManager: {fileID: 912550999}
+  isPlayer: 0
 --- !u!1 &2039992431
 GameObject:
   m_ObjectHideFlags: 0
@@ -10470,7 +10469,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Command List
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10537,7 +10536,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2039992434
@@ -10698,7 +10697,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Main Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b7287373ce3d4e14eb52355890eede4b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10765,7 +10764,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2121847093
