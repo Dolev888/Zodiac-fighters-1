@@ -227,10 +227,10 @@ public class playerattack : MonoBehaviour
     }
     public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate, int ID)
     {
-        if (pmain.gameObject.transform.rotation.y > 0)
-        {
-            position.x = position.x * (-1);
-        }
+        //if (pmain.gameObject.transform.rotation.y > 0)
+        //{
+        //    position.x = position.x * (-1);
+        //}
         GameObject iob = Instantiate(Ob);
         iob.transform.position=position;
         iob.transform.rotation = Quaternion.Euler(0, 0, routate);

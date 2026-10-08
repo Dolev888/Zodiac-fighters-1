@@ -17,6 +17,6 @@ MonoBehaviour:
   _hertBoxList: []
   _hitBoxList: []
   _timePuse:
-  - 0.5
-  - 0.2
+  - 0.25
+  - 3
   _icaGazer: {fileID: 625072148542136418, guid: 126791a1bf0b0734b9fb08108cf2ba0d, type: 3}

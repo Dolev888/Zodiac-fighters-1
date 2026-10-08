@@ -18,5 +18,5 @@ MonoBehaviour:
   - {fileID: 2575448853303119373, guid: ba2fb34f96ed6ae43882486d009f2cec, type: 3}
   _hitBoxList: []
   _timePuse:
-  - 0.23
-  - 0.17
+  - 0.41
+  - 0.33

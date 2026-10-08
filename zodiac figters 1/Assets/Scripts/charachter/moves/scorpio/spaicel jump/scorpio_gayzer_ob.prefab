@@ -52,29 +52,29 @@ MonoBehaviour:
   _pattack: {fileID: 0}
   _pmain: {fileID: 0}
   _moveID: 0
-  _damage: 0
+  _damage: 5
   _stanTime: 0
   _knokBack: 0
   hitlayer:
     serializedVersion: 2
     m_Bits: 0
   _color: {r: 1, g: 1, b: 0, a: 1}
-  _hitFlag: 0
+  _hitFlag: 1
   _coolDown: 0
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  _offset: {x: 0, y: 2, z: 0}
+  _offset: {x: -2, y: -12.5, z: 0}
   _origin: {x: -9, y: 40}
   _size: {x: 5, y: 0}
-  _lazerSpeed: 20
+  _lazerSpeed: 40
   _lazer: {fileID: 5211368348547957164}
   _gayzerSpeed: 40
   _gayzerRetractionSpeed: 80
-  _gayzerCount: 2
-  _gayzerSpred: 10
+  _gayzerCount: 3
+  _gayzerSpred: 20
   _gayzerSize: {x: 5, y: 20}
-  _gayzerDeminish: 5
+  _gayzerDeminish: 7
   _gayzerDelay: 0.1
   _gazer: {fileID: 3868604240904156845}
   _upFoum: {fileID: 3913251014871390005}

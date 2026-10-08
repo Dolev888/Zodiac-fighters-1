@@ -21,9 +21,10 @@ public class attak_scorpio_spaiceljump  : AttackPearent
         Playerattack.pmain.SetGravity(0);
         //Playerattack.ChangeHitBox(_hitBoxList[0]);
         //Playerattack.ChangeHertBox(_hertBoxList[0], ID);
-
+        Playerattack.pmain.PlayAttackAnimation(3);
         yield return new WaitForSeconds(_timePuse[0]);
         Playerattack.ObjectInstantWorld(_icaGazer,Playerattack.pmain.transform.position,0,ID);
+        Debug.Log("so  " + Playerattack.pmain.transform.position);
         float clock = _timePuse[1];
         _canhit = true;
         while (!_ifhit && clock>0  )
@@ -31,6 +32,9 @@ public class attak_scorpio_spaiceljump  : AttackPearent
             clock -=Time.deltaTime;
             yield return null;
         }
+        Debug.Log(_ifhit +"  "+ clock);
+        _canhit = false;
+        _ifhit = false;
         // finish fase 
         //Playerattack.DestroyHitBox();
         //Playerattack.DestroyHertBox();

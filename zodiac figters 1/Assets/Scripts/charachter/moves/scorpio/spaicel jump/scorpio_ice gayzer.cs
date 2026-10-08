@@ -43,13 +43,20 @@ public class scorpio_icegayzer : projectileParent
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _origin= transform.position + _offset;
+        if (_pmain.isleft)
+        {
+            _offset.x = _offset.x*-1;
+        }
+       _origin = transform.position + _offset;
+        Debug.Log("position "+ transform.position);
+        Debug.Log("_origin " +_origin);
         if (_pmain.isleft)
         {
             _gayzerSpred = _gayzerSpred * -1;
             
         }
         Lazer = Instantiate(_lazer,_origin, Quaternion.Euler(0,0,-90));
+        Debug.Log("lazer " + Lazer.transform.position);
         Lazer.transform.localScale = new Vector2(_size.x, 0); 
         Lazer.SetActive(true);
 
