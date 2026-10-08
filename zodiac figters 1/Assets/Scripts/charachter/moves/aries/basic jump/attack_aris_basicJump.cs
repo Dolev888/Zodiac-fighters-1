@@ -13,7 +13,7 @@ public class attack_aris_basicJump : AttackPearent
     private bool _canhit = false;
 
 
-    public override IEnumerator UseMove(playerattack Playerattack,int ID)
+    public override IEnumerator UseMove(playerattack Playerattack,int ID, int ver)
     {
         Debug.Log(ID);
         Playerattack.SetVelocity(Vector2.zero);    

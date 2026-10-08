@@ -116,10 +116,10 @@ TextureImporter:
       name: iydal_0
       rect:
         serializedVersion: 2
-        x: 46
+        x: 61
         y: 43
-        width: 281
-        height: 282
+        width: 266
+        height: 333
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

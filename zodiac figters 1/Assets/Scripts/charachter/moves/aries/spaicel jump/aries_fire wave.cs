@@ -19,7 +19,6 @@ public class aries_firewave : projectileParent
     
     
     private float _time;
-    public int _moveID;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

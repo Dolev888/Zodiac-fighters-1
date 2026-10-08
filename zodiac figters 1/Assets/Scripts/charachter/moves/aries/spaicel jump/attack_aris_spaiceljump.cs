@@ -14,15 +14,18 @@ public class attack_aris_spaiceljump  : AttackPearent
     [SerializeField] private float _engel;
 
 
-    public override IEnumerator UseMove(playerattack Playerattack, int ID)
+    public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
         Playerattack.SetVelocity(Vector2.zero);
+        Playerattack.pmain.SetGravity(0);
 
-        Playerattack.ObjectInstantPlayer(_fireWaveOB, _offSet, _engel);
+        Playerattack.pmain.PlayAttackAnimation(3);
 
         yield return new WaitForSeconds(_timePuse[0]);
-
-
+        Playerattack.ObjectInstantPlayer(_fireWaveOB, _offSet, _engel, ID);
+        yield return new WaitForSeconds(_timePuse[1]);
+        Playerattack.pmain.StopAttackAnimation();
+        Playerattack.pmain.ResetGravity();
         Playerattack.pmain.FinishAttack();
     }
     public override void anoncehit(Collider2D collision)

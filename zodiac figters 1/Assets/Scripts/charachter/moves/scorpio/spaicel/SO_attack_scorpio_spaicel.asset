@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f766677e4f99fe247aabe8ae2016a872, type: 3}
+  m_Name: SO_attack_scorpio_spaicel
+  m_EditorClassIdentifier: Assembly-CSharp::attack_scorpio_spaicel
+  _cooldown: 0.5
+  _chainCount: 0
+  _hertBoxList:
+  - {fileID: 2575448853303119373, guid: ba2fb34f96ed6ae43882486d009f2cec, type: 3}
+  _hitBoxList: []
+  _timePuse:
+  - 0.23
+  - 0.17

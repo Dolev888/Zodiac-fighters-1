@@ -13,11 +13,11 @@ public class attack_aries_spaicel : AttackPearent
     [SerializeField] private float _engel;
 
 
-    public override IEnumerator UseMove(playerattack Playerattack, int ID)
+    public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
         Playerattack.SetVelocity(Vector2.zero);
 
-        Playerattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel);
+        Playerattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel, ID);
 
         yield return new WaitForSeconds(_timePuse[0]);
       
