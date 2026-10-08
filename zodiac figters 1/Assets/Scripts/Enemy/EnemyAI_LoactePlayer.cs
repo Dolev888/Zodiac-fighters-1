@@ -4,6 +4,9 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
 {
     [SerializeField] private playermain pmain;
     [SerializeField] private float stopDistance = 5f;
+    // if the player is closer than this (same platform) he steps back so he never stands on top of the player.
+    // keep it smaller than Stop Distance, otherwise he would back away and walk forward again in a loop
+    [SerializeField] private float personalSpace = 3.5f;
     [SerializeField] private Transform edgeCheck;
     [SerializeField] private float edgeCheckDistance = 3f;
     [SerializeField] private LayerMask groundLayer;
@@ -12,11 +15,13 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     [SerializeField] private float samePlatformHeight = 5f;
     [SerializeField] private float jumpCooldown = 0.5f;
     [SerializeField] private EnemyPlatformScanner platformScanner;
-    [SerializeField] private float jumpHorizontalRange = 10f; // no longer used, kept so the Inspector doesn't change
     // height of the enemy's body (feet to head), used so he doesn't steer into the platform he just left
     [SerializeField] private float headHeight = 20f;
-    // tick this in the Inspector to print the AI's decisions to the Console
-    [SerializeField] private bool debugLog = false;
+
+    // while he is attacking / stunned / knocked back, those systems move him, so the movement AI waits.
+    // safety: if one of those states lasts longer than this (seconds) the AI takes over again
+    [SerializeField] private float busyTimeout = 3f;
+    private float busySince;
 
     private float nextJumpTime;
 
@@ -90,7 +95,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
         dropOriginBottom = dir < 0 ? leftBottom : rightBottom;
         dropAirborne = false;
 
-        if (debugLog) Debug.Log($"DROP | chose dir:{dir} landingX:{dropLandingX} (left ok:{leftOk}, right ok:{rightOk})");
 
         enemyMovement.GroundMove(dir);
         return true;
@@ -103,7 +107,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
         // landed on the lower platform: forget the finished drop so the next one can be chosen
         if (dropDir != 0 && dropAirborne && grounded && edgeCheck.position.y < dropOriginBottom)
         {
-            if (debugLog) Debug.Log("DROP | landed");
             dropDir = 0;
             dropAirborne = false;
         }
@@ -115,7 +118,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
 
             if (!ChooseDropEdge())
             {
-                if (debugLog) Debug.Log("DROP | no platform below either edge");
                 enemyMovement.StopMove();
             }
             return;
@@ -130,7 +132,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
                 return;
             }
             dropAirborne = true;        // we have left the platform
-            if (debugLog) Debug.Log("DROP | left the platform");
         }
 
         // in the air: steer toward the landing spot
@@ -149,6 +150,17 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     void Update()
     {
         if (player == null)
+            return;
+
+        // ------------------------------------------------------------
+        // ATTACK / STUN / KNOCKBACK: the movement AI waits
+        // ------------------------------------------------------------
+        playermain.STATE currentState = pmain.CurentState;
+        bool busy = currentState == playermain.STATE.ATTACK
+                 || currentState == playermain.STATE.STUN
+                 || currentState == playermain.STATE.KNOKCBACK;
+        if (!busy) busySince = Time.time;
+        if (busy && Time.time - busySince < busyTimeout)
             return;
 
         // ------------------------------------------------------------
@@ -218,11 +230,33 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
                 else
                 {
                     enemyMovement.StopMove();
+                    enemyMovement.FaceTowards(distanceX);   // at an edge: still face the player
                 }
+            }
+            else if (Mathf.Abs(distanceX) < personalSpace)
+            {
+                // too close (the player walked into him, or an attack carried him onto the player):
+                // step back, keep facing the player, and never walk off the edge while doing it
+                int away = distanceX < 0 ? 1 : -1;
+
+                Vector2 behindCheck = new Vector2(
+                    transform.position.x + (edgeCheckOffset * away),
+                    edgeCheck.position.y
+                );
+
+                bool groundBehind = Physics2D.Raycast(behindCheck, Vector2.down, edgeCheckDistance, groundLayer).collider != null;
+
+                if (groundBehind)
+                    enemyMovement.Retreat(away);
+                else
+                    enemyMovement.StopMove();               // cornered at an edge: just stand
+
+                enemyMovement.FaceTowards(distanceX);
             }
             else
             {
                 enemyMovement.StopMove();
+                enemyMovement.FaceTowards(distanceX);       // good distance: stand still but face the player
             }
         }
 
@@ -236,7 +270,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
 
             if (!foundUpperplatform)
             {
-                if (debugLog) Debug.Log("ABOVE | no reachable platform found");
                 enemyMovement.StopMove();
                 return;
             }
@@ -255,9 +288,6 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
                 edgeCheckDistance,
                 groundLayer
             );
-
-            if (debugLog)
-                Debug.Log($"ABOVE | target:{upperPlatformposition} enemyX:{transform.position.x} groundAhead:{groundAhead.collider != null} grounded:{enemyMovement.IsGrounded()} cooldownReady:{Time.time >= nextJumpTime}");
 
             if (groundAhead.collider != null)
             {

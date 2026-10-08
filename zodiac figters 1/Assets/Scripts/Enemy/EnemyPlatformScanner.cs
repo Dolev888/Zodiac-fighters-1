@@ -4,14 +4,7 @@ public class EnemyPlatformScanner : MonoBehaviour
 {
     //the layer containing all platform the AI is allowed to navigate on
     [SerializeField] private LayerMask groundLayer;
-    // how far in front of the enemy we check
-    [SerializeField] private float forwardCheckDistance = 3f;
-    // how far downward we search for a platform
-    [SerializeField] private float downwardCheckDistance = 4f;
-    [SerializeField] private float upperCheckHorizontal = 8f;
-    [SerializeField] private float upperCheckVertical = 12f;
-    [SerializeField] private float lowerCheckHorizontal = 8f;
-    [SerializeField] private float lowerCheckVertical = 20f;
+    // size of the area above the enemy that is searched for platforms to jump to
     [SerializeField] private float upperScanWidth = 40f;
     [SerializeField] private float upperScanheight = 25f;
 
@@ -27,69 +20,12 @@ public class EnemyPlatformScanner : MonoBehaviour
     // how far down we look for that lower platform
     [SerializeField] private float dropCheckDistance = 60f;
 
-    public bool HasGroundAhead(int direction)
+    // shows the search area in the Scene view (editor only, no effect on the game)
+    private void OnDrawGizmosSelected()
     {
-        Vector2 checkPosition = new Vector2(transform.position.x + forwardCheckDistance * direction, transform.position.y);
-        RaycastHit2D groundHit = Physics2D.Raycast(checkPosition, Vector2.down, downwardCheckDistance, groundLayer);
-        return groundHit.collider != null;
-    }
-
-    private void OnDrawGizmos()
-    {
-        Vector3 leftStart = transform.position + Vector3.left * forwardCheckDistance;
-        Gizmos.DrawLine(leftStart, leftStart + Vector3.down * downwardCheckDistance);
-
-        Vector3 rightStart = transform.position + Vector3.right * forwardCheckDistance;
-        Gizmos.DrawLine(rightStart, rightStart + Vector3.down * downwardCheckDistance);
-
-        Vector3 upperLeftStart = transform.position + Vector3.left * upperCheckHorizontal;
-        Gizmos.DrawLine(upperLeftStart, upperLeftStart + Vector3.up * upperCheckVertical);
-
-        Vector3 upperRightStart = transform.position + Vector3.right * upperCheckHorizontal;
-        Gizmos.DrawLine(upperRightStart, upperRightStart + Vector3.up * upperCheckVertical);
-
-        Vector3 lowerLeftStart = transform.position + Vector3.left * lowerCheckHorizontal;
-        Gizmos.DrawLine(lowerLeftStart, lowerLeftStart + Vector3.down * lowerCheckVertical);
-
-        Vector3 lowerRightStart = transform.position + Vector3.right * lowerCheckHorizontal;
-        Gizmos.DrawLine(lowerRightStart, lowerRightStart + Vector3.down * lowerCheckVertical);
-
-        // the large search area (debug only)
-        Vector3 upperScanCenter = new Vector3(transform.position.x, transform.position.y + (upperScanheight / 2f), transform.position.z);
+        Vector3 center = new Vector3(transform.position.x, transform.position.y + (upperScanheight / 2f), transform.position.z);
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(upperScanCenter, new Vector3(upperScanWidth, upperScanheight, 1f));
-    }
-
-    public bool HasPlatformAbove(int direction)
-    {
-        Vector2 startPosition = new Vector2(transform.position.x + upperCheckHorizontal * direction, transform.position.y);
-        RaycastHit2D platformHit = Physics2D.Raycast(startPosition, Vector2.up, upperCheckVertical, groundLayer);
-        return platformHit.collider != null;
-    }
-
-    // old version: picks the platform closest to the ENEMY (no longer used by the AI)
-    public bool TryFindingUpperPlatform(out Vector2 platformPosition)
-    {
-        platformPosition = Vector2.zero;
-        Vector2 scanCenter = new Vector2(transform.position.x, transform.position.y + (upperScanheight / 2f));
-        Collider2D[] platforms = Physics2D.OverlapBoxAll(scanCenter, new Vector2(upperScanWidth, upperScanheight), 0f, groundLayer);
-        float closeDistance = Mathf.Infinity;
-        bool foundPlatform = false;
-
-        foreach (Collider2D platform in platforms)
-        {
-            if (platform.bounds.center.y <= transform.position.y) continue;
-
-            Vector2 candidatePosition = new Vector2(platform.bounds.center.x, platform.bounds.max.y);
-            float distance = Vector2.Distance(transform.position, candidatePosition);
-            if (distance < closeDistance)
-            {
-                closeDistance = distance;
-                platformPosition = candidatePosition;
-                foundPlatform = true;
-            }
-        }
-        return foundPlatform;
+        Gizmos.DrawWireCube(center, new Vector3(upperScanWidth, upperScanheight, 1f));
     }
 
     // picks the reachable platform whose landing point is closest to the target (the player)
@@ -161,12 +97,5 @@ public class EnemyPlatformScanner : MonoBehaviour
             }
         }
         return false;
-    }
-
-    public bool HasPlatformBelow(int direction)
-    {
-        Vector2 startPosition = new Vector2(transform.position.x + (lowerCheckHorizontal * direction), transform.position.y);
-        RaycastHit2D platformHit = Physics2D.Raycast(startPosition, Vector2.down, lowerCheckVertical, groundLayer);
-        return platformHit.collider != null;
     }
 }
