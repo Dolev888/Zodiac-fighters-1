@@ -15,13 +15,18 @@ public class attack_scorpio_basicjump  : AttackPearent
     {
         // start fase
         Playerattack.SetVelocity(Vector2.zero);
-        //Playerattack.ChangeHitBox(_hitBoxList[0]);
+        Playerattack.pmain.SetGravity(0);
+        Playerattack.ChangeHitBox(_hitBoxList[0]);
         Playerattack.ChangeHertBox(_hertBoxList[0], ID);
-
+        Playerattack.pmain.PlayAttackAnimation(1);
         yield return new WaitForSeconds(_timePuse[0]);
+        Playerattack.ChangeHitBox(_hitBoxList[1]);
+        yield return new WaitForSeconds(_timePuse[1]);
 
         // finish fase 
-        //Playerattack.DestroyHitBox();
+        Playerattack.pmain.StopAttackAnimation();
+        Playerattack.pmain.ResetGravity();
+        Playerattack.DestroyHitBox();
         Playerattack.DestroyHertBox();
         Playerattack.pmain.FinishAttack();
     }

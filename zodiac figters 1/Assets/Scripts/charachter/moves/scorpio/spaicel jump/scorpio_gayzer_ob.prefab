@@ -52,15 +52,16 @@ MonoBehaviour:
   _pattack: {fileID: 0}
   _pmain: {fileID: 0}
   _moveID: 0
-  _damage: 5
-  _stanTime: 0
-  _knokBack: 0
+  _damage: 0.5
+  _stanTime: 1
+  _knokBack: 1
+  _knockBackEngel: 70
   hitlayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _color: {r: 1, g: 1, b: 0, a: 1}
   _hitFlag: 1
-  _coolDown: 0
+  _coolDown: 0.04
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -69,7 +70,7 @@ MonoBehaviour:
   _size: {x: 5, y: 0}
   _lazerSpeed: 40
   _lazer: {fileID: 5211368348547957164}
-  _gayzerSpeed: 40
+  _gayzerSpeed: 60
   _gayzerRetractionSpeed: 80
   _gayzerCount: 3
   _gayzerSpred: 20

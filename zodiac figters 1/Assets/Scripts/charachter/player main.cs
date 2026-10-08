@@ -260,8 +260,9 @@ public class playermain : MonoBehaviour
                 if (pimput !=null)
                 {
                     pimput.JumpSucseed();
-                    _animator.Play("jump");
+                   
                 }
+                _animator.Play("jump");
                 break;
 
             case STATE.AIR:
@@ -325,16 +326,17 @@ public class playermain : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero, 0, _groundLayer);
 
+       
+            //for (int i = 0; i < _carentColiders.Length; i++)
+            //{
+            //    if (_carentColiders[i].IsTouchingLayers(_groundLayer))
+            //    {
+
+                    return hit.collider != null;
+            //    }
+            //}
         
-        for (int i = 0; i < _carentColiders.Length; i++)
-        {
-            if (_carentColiders[i].IsTouchingLayers(_groundLayer))
-            {
-                
-             return hit.collider != null;
-            }
-        }
-        return false;
+        //return false;
         
     }
     private void OnDrawGizmosSelected()
@@ -344,6 +346,7 @@ public class playermain : MonoBehaviour
     }
     public void PlayAttackAnimation(int A)
     {
+        _animator.SetBool("fall",false);
         _animator.Play("defult");
         _animator.SetInteger("move choose", A);
         _animator.SetBool("attaking", true);
@@ -385,9 +388,16 @@ public class playermain : MonoBehaviour
     }
     private void idelAnimation(bool B)
     {
+        
         _animator.SetBool("idel", B); 
+        if (B && _hitBoxlist.Length>=2)
+        {
+            SetHitbox(1);
+        }
         if (!B)
         {
+            SetHitbox(0);
+
             ideleTick = _idleTime;
         }
     }

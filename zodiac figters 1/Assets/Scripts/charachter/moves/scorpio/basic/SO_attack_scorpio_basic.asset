@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3ff368caac63247bd34d791d1a0538, type: 3}
   m_Name: SO_attack_scorpio_basic
   m_EditorClassIdentifier: Assembly-CSharp::attack_scorpio_basic
-  _cooldown: 0.6
+  _cooldown: 0.1
   _chainCount: 0
   _hertBoxList:
   - {fileID: 2014287058692062523, guid: 7737c66996d07c741b12fe678fc9d071, type: 3}
   _hitBoxList: []
   _timePuse:
-  - 0.33
+  - 0.166
+  - 0.15

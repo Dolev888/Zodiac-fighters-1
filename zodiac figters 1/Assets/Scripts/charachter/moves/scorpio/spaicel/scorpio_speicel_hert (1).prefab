@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1975112757126370013}
   - component: {fileID: 410561223691244698}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: scorpio_speicel_hert (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,12 +46,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
   _damage: 2
-  _stnTime: 0
+  _stnTime: 0.2
   _knokBack: 0
   _knockBackEngel: 0
   hitlayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 256
   _color: {r: 0, g: 0, b: 0, a: 0}
   _hitFlag: 0
   _coolDown: 10
@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 2392306169551952328}
   - component: {fileID: 3450282349395487946}
   - component: {fileID: 748039774685858411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lazer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
