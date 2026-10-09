@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     private int twinklecount=0;
    public void Playgame()
     {
-        SceneManager.LoadScene(GamePlayScene);
+        SceneManager.LoadScene("Character Selection Screen");
     }
 
     public void OpenCommandList()

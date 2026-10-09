@@ -3880,8 +3880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetup
   characterPrefabs:
-  - {fileID: 519629754821511140, guid: ba79da165b7102e468724e09d700b69c, type: 3}
   - {fileID: 5194764169379169647, guid: eda3417c3bf48ce439ad6dd9c3a99a5e, type: 3}
+  - {fileID: 519629754821511140, guid: ba79da165b7102e468724e09d700b69c, type: 3}
   playerSpawn: {fileID: 1140005140}
   enemySpawn: {fileID: 724239703}
   matchManager: {fileID: 912550999}
