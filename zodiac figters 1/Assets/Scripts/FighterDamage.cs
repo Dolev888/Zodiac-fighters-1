@@ -114,5 +114,11 @@ public class FighterDamage : MonoBehaviour
             TakeKnockback(nockForce);
         }
     }
-   
+
+    public void Setup(MatchManager mm, bool player)
+    {
+        matchManager = mm;
+        isPlayer = player;
+    }
+
 }

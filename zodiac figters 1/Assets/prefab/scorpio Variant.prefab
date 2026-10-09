@@ -93,10 +93,49 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9014034838655349730}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2346921747084259387}
   m_SourcePrefab: {fileID: 100100000, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+--- !u!1 &519629754821511140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+  m_PrefabInstance: {fileID: 3036619153114143229}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-2346921747084259387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519629754821511140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac60c210d8aecf419c953a45755001c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FighterRole
+  extraPlayerOnly:
+  - PlayerInput
+  extraEnemyOnly:
+  - EnemyMovement
+  - EnemyAI_LoactePlayer
+  - EnemyPlatformScanner
+  - EnemyAttack_AI
+  fighterDamage: {fileID: 5577717762689979762}
 --- !u!4 &1365133294310427856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
   m_PrefabInstance: {fileID: 3036619153114143229}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5577717762689979762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7443383413974879375, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+  m_PrefabInstance: {fileID: 3036619153114143229}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519629754821511140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 809b60581fe7498489019784a77ddb8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
