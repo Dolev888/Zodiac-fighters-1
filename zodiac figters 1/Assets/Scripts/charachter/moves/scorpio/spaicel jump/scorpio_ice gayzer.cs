@@ -8,6 +8,7 @@ public class scorpio_icegayzer : projectileParent
     [SerializeField] private float _damage;
     [SerializeField] private float _stanTime;
     [SerializeField] private float _knokBack;
+    [SerializeField] private float _knockBackEngel;
     [SerializeField] private LayerMask hitlayer;
     [SerializeField] private Color _color;
     [SerializeField] private bool _hitFlag;
@@ -48,15 +49,14 @@ public class scorpio_icegayzer : projectileParent
             _offset.x = _offset.x*-1;
         }
        _origin = transform.position + _offset;
-        Debug.Log("position "+ transform.position);
-        Debug.Log("_origin " +_origin);
+       
         if (_pmain.isleft)
         {
             _gayzerSpred = _gayzerSpred * -1;
             
         }
         Lazer = Instantiate(_lazer,_origin, Quaternion.Euler(0,0,-90));
-        Debug.Log("lazer " + Lazer.transform.position);
+        
         Lazer.transform.localScale = new Vector2(_size.x, 0); 
         Lazer.SetActive(true);
 
@@ -78,8 +78,8 @@ public class scorpio_icegayzer : projectileParent
     {
         Vector2 boxCenter = _origin + Vector2.up * (_size.y );
         
-        Collider2D hit = Physics2D.OverlapBox( boxCenter, _size, 0f,groundLayer);
-        if (hit) { Debug.Log(hit); }
+        Collider2D hit = Physics2D.OverlapBox( boxCenter, _size, 0f, groundLayer | hitlayer);
+        
         Lazer.transform.localScale = new Vector2(drawSize.y/3.6f, _size.x);
         Lazer.transform.position = new Vector2(_origin.x, _origin.y + drawSize.y/2);
 
@@ -91,14 +91,14 @@ public class scorpio_icegayzer : projectileParent
             GroundHit(hit);
     
             hitPosition = hit.ClosestPoint(_origin);
-            Debug.Log("hit: " + hitPosition);
+           
             lazerOn = false;
             Vector2 pointCheck = hitPosition;
             pointCheck.x += _gayzerSpred;
             pointCheck.y -= 0.1f;
-            Debug.Log("chek: " +  pointCheck);
+           
             Collider2D ground = Physics2D.OverlapPoint(pointCheck, groundLayer);
-            Debug.Log(ground);
+          
             Destroy(Lazer);
             if (ground != null)
             {
@@ -110,11 +110,15 @@ public class scorpio_icegayzer : projectileParent
                 Destroy(gameObject);
             }
         }
+        else if(hit != null && hit.gameObject.CompareTag("hit"))
+        {
+            HitTarget(hit);
+        }
 
     }
     private IEnumerator Gayzer(Vector2 gayzerSize, Vector2 spawnPoint)
     {
-        Debug.Log("poi");
+        
         Vector2 gayzerCarentSize = gayzerSize;
         gayzerCarentSize.y = 0;
         GameObject downfoum = Instantiate(_downFoum, spawnPoint, Quaternion.identity);
@@ -130,11 +134,11 @@ public class scorpio_icegayzer : projectileParent
         yield return new WaitForSeconds(_gayzerDelay);
         while (gayzerCarentSize.y < gayzerSize.y)
         {
-            Debug.Log(gayzerCarentSize);
+           
             Vector2 boxCenter = spawnPoint + Vector2.up * (gayzerCarentSize.y / 2f);
 
-            RaycastHit2D hit = Physics2D.BoxCast( boxCenter, gayzerCarentSize, 0f, Vector2.up,0f );
-
+            RaycastHit2D hit = Physics2D.BoxCast( boxCenter, gayzerCarentSize, 0f, Vector2.up,0f, hitlayer);
+            if (hit) HitTarget(hit.collider);
             drawSize = gayzerCarentSize;
             drawPoint = boxCenter;
             gazer.transform.localScale = new Vector2(gayzerCarentSize.x, gayzerCarentSize.y / 3.9f);
@@ -150,8 +154,8 @@ public class scorpio_icegayzer : projectileParent
         {
             Vector2 boxCenter = spawnPoint + Vector2.up * (gayzerCarentSize.y / 2f);
 
-            RaycastHit2D hit = Physics2D.BoxCast(boxCenter, gayzerCarentSize, 0f, Vector2.up, 0f);
-
+            RaycastHit2D hit = Physics2D.BoxCast(boxCenter, gayzerCarentSize, 0f, Vector2.up, 0f, hitlayer);
+            if (hit) HitTarget(hit.collider);
             drawSize = gayzerCarentSize;
             drawPoint = boxCenter;
             gazer.transform.localScale = new Vector2(gayzerCarentSize.x, gayzerCarentSize.y / 4);
@@ -169,7 +173,17 @@ public class scorpio_icegayzer : projectileParent
             _gayzerCount--;
             gayzerCarentSize.y = gayzerSize.y - _gayzerDeminish;
             spawnPoint.x += _gayzerSpred;
-            StartCoroutine(Gayzer(_gayzerSize, spawnPoint));
+            
+
+            Collider2D ground = Physics2D.OverlapPoint(spawnPoint, groundLayer);
+            if (ground)
+            {
+                StartCoroutine(Gayzer(_gayzerSize, spawnPoint));
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else 
         {
@@ -193,5 +207,38 @@ public class scorpio_icegayzer : projectileParent
         {
             _pattack.AttackHitDetected(collision, _moveID);
         }
+    }
+    private void HitTarget(Collider2D collision)
+    {
+        if (collision.tag != playerTag && collision.gameObject.layer == LayerMask.NameToLayer("hit") && collision.GetComponentInParent<FighterDamage>() != null)
+        {
+            collision.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
+            if (_stanTime != 0)
+            {
+                Stan(collision);
+            }
+            if (_knokBack != 0)
+            {
+                Knocback(collision);
+            }
+
+        }
+    }
+    private void Stan(Collider2D hit)
+    {
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime);
+    }
+    private void Knocback(Collider2D hit)
+    {
+        float x = Mathf.Cos(_knockBackEngel * Mathf.Deg2Rad) * _knokBack;
+        float y = Mathf.Sin(_knockBackEngel * Mathf.Deg2Rad) * _knokBack;
+
+        if (hit.GetComponentInParent<FighterDamage>().transform.position.x < _pmain.transform.position.x)
+        {
+            x = -x;
+        }
+
+        Vector2 knockBackForce = new Vector2(x, y);
+        hit.GetComponentInParent<FighterDamage>().addKnockback(knockBackForce);
     }
 }

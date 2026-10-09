@@ -103,5 +103,16 @@ public class FighterDamage : MonoBehaviour
     {
         pmain.rigidP.linearVelocity = nockForce;
     }
+    public void addKnockback(Vector2 nockForce)
+    {
+        if(pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
+        {
+            pmain.rigidP.linearVelocity += nockForce;
+        }
+        else
+        {
+            TakeKnockback(nockForce);
+        }
+    }
    
 }

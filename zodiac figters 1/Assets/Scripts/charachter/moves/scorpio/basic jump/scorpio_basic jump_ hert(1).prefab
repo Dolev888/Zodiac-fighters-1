@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a66cb34827cad479acd02f5e84c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
-  _damage: 2
-  _stnTime: 0
-  _knokBack: 0
-  _knockBackEngel: 0
+  _damage: 3
+  _stnTime: 0.5
+  _knokBack: 40
+  _knockBackEngel: 30
   hitlayer:
     serializedVersion: 2
     m_Bits: 256
@@ -149,8 +149,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.27, y: 1.27, z: 1.27}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7555122525549633536}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

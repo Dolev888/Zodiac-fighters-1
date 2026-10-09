@@ -5,11 +5,11 @@ public class playerimput : MonoBehaviour
     [SerializeField] private playermovment pmove;
     [SerializeField] private playermain pmain;
     [SerializeField] private float _jumpBuferTime;
-    public float _jumpBuferTick;
+    [HideInInspector]public float _jumpBuferTick=0;
     [SerializeField] private float _basicAttackBuferTime;
-    public float _basicAttackBuferTick;
+    [HideInInspector] public float _basicAttackBuferTick=0;
     [SerializeField] private float _specialAttackBuferTime;
-    public float _specialAttackBuferTick;
+    [HideInInspector] public float _specialAttackBuferTick = 0;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,6 +71,11 @@ public class playerimput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X))
         {
             pmain.AttackHandel(2);
+            if (_specialAttackBuferTick <= 0 && pmain.CurentState == playermain.STATE.ATTACK)
+            {
+                _specialAttackBuferTick = _specialAttackBuferTime;
+
+            }
         }
         if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
         {

@@ -1147,11 +1147,11 @@ GameObject:
   - component: {fileID: 708526515}
   m_Layer: 8
   m_Name: player
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &708526508
 Transform:
   m_ObjectHideFlags: 0
@@ -1161,7 +1161,7 @@ Transform:
   m_GameObject: {fileID: 708526507}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.9, y: 34.54, z: 0}
+  m_LocalPosition: {x: 24.3, y: 34.54, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1272,19 +1272,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708526507}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c8d3ca580c96144fbb3d3aeb83b3bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerimput
   pmove: {fileID: 708526511}
   pmain: {fileID: 708526513}
-  _jumpBuferTime: 0
-  _jumpBuferTick: 0
-  _basicAttackBuferTime: 0
-  _basicAttackBuferTick: 0
-  _specialAttackBuferTime: 0
-  _specialAttackBuferTick: 0
+  _jumpBuferTime: 0.1
+  _jumpBuferTick: 5
+  _basicAttackBuferTime: 0.2
+  _basicAttackBuferTick: 5
+  _specialAttackBuferTime: 0.2
+  _specialAttackBuferTick: 5
 --- !u!114 &708526513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,7 +1697,7 @@ Transform:
   m_GameObject: {fileID: 821851397}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.7, y: 34.7, z: 0}
+  m_LocalPosition: {x: 41.4, y: 49.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
