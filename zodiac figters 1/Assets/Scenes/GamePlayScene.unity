@@ -1865,7 +1865,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.85, y: 32.635, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 6.037348, y: 6.3868074, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2342,7 +2342,7 @@ Transform:
   m_GameObject: {fileID: 573293504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.85, y: 32.635, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3880,8 +3880,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetup
   characterPrefabs:
-  - {fileID: 5194764169379169647, guid: eda3417c3bf48ce439ad6dd9c3a99a5e, type: 3}
   - {fileID: 519629754821511140, guid: ba79da165b7102e468724e09d700b69c, type: 3}
+  - {fileID: 5194764169379169647, guid: eda3417c3bf48ce439ad6dd9c3a99a5e, type: 3}
   playerSpawn: {fileID: 1140005140}
   enemySpawn: {fileID: 724239703}
   matchManager: {fileID: 912550999}
@@ -5631,7 +5631,7 @@ Transform:
   m_GameObject: {fileID: 1403930270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.744303, y: 32.635, z: -10}
+  m_LocalPosition: {x: -0.10569763, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

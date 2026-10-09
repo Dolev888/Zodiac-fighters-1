@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: -9030009041601537823, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: edgeCheck
       value: 
-      objectReference: {fileID: 1365133294310427856}
+      objectReference: {fileID: 9014034838655349730}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_Name
       value: scorpio Variant
@@ -86,6 +86,10 @@ PrefabInstance:
     - target: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7551668421570069352, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: jumpPower
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

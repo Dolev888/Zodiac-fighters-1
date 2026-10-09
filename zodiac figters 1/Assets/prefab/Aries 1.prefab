@@ -404,7 +404,7 @@ MonoBehaviour:
   pmain: {fileID: 3058125793361097330}
   stopDistance: 5
   personalSpace: 3.5
-  edgeCheck: {fileID: 7861051628767314739}
+  edgeCheck: {fileID: 7260416915282645243}
   edgeCheckDistance: 3
   groundLayer:
     serializedVersion: 2
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   rigidP: {fileID: 1762099896455915236}
   groundSpeed: 50
-  jumpPower: 70
+  jumpPower: 80
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
