@@ -24,6 +24,47 @@ public class FighterRole : MonoBehaviour
     public bool IsPlayer { get; private set; }
     public FighterDamage Damage { get { return fighterDamage; } }
 
+    // --- gravity safety net -------------------------------------------------------------------
+    // some attacks change the gravity (SetGravity) and give it back at the end (ResetGravity).
+    // if an attack is cut short (stun, knockback...) the gravity can stay changed, and the fighter
+    // floats in the air or drifts away. If the gravity stays different from normal for too long, restore it.
+    [Header("Gravity safety net (seconds)")]
+    [SerializeField] private float maxChangedGravityTime = 1f;      // normal states
+    [SerializeField] private float maxChangedGravityInAttack = 3f;  // while attacking
+
+    private Rigidbody2D body;
+    private playermain main;
+    private float gravityChangedSince = -1f;
+
+    private void Awake()
+    {
+        body = GetComponent<Rigidbody2D>();
+        main = GetComponent<playermain>();
+    }
+
+    private void Update()
+    {
+        if (body == null || main == null) return;
+
+        bool changed = !Mathf.Approximately(body.gravityScale, main.OGgravity);
+        if (!changed)
+        {
+            gravityChangedSince = -1f;
+            return;
+        }
+
+        if (gravityChangedSince < 0f) gravityChangedSince = Time.time;
+
+        float limit = main.CurentState == playermain.STATE.ATTACK ? maxChangedGravityInAttack : maxChangedGravityTime;
+        if (Time.time - gravityChangedSince > limit)
+        {
+            Debug.Log("GRAVITY RESTORED on " + name + " (was " + body.gravityScale + ", state " + main.CurentState + ")");
+            main.ResetGravity();
+            gravityChangedSince = -1f;
+        }
+    }
+    // -----------------------------------------------------------------------------------------
+
     public void Assign(bool isPlayer, MatchManager matchManager)
     {
         IsPlayer = isPlayer;
