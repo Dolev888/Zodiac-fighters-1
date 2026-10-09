@@ -3,8 +3,8 @@ using UnityEngine;
 public class EnemyAttack_AI : MonoBehaviour
 {
     [SerializeField] private playermain pmain;
-    // the player collider that the enemy will check before deciding if the player is close enough to attack
-    [SerializeField] private Collider2D targetCollider;
+    // the player he attacks: found by the "Player" tag when this script switches on (nothing to assign)
+    private Transform target;
     [SerializeField] private float samePlatformHeight = 5f;
     [SerializeField] private float attackRangeGN = 5f; //GN stands for ground normal since it has diffrent range then the aerial
     [SerializeField] private EnemyAI_LoactePlayer locatePlayer;
@@ -38,6 +38,9 @@ public class EnemyAttack_AI : MonoBehaviour
     void Start()
     {
         enemyMovement = GetComponent<EnemyMovement>();
+
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null) target = playerObject.transform;
     }
 
     // turn toward the player right before attacking, so the attack (and its push) goes the right way
@@ -49,13 +52,13 @@ public class EnemyAttack_AI : MonoBehaviour
     void Update()
     {
         // making sure the references exist
-        if (locatePlayer == null || targetCollider == null)
+        if (locatePlayer == null || target == null)
         {
             return;
         }
 
-        // find the horizontal distance between enemy and player's collider
-        float distanceX = targetCollider.transform.position.x - transform.position.x;
+        // find the horizontal distance between enemy and player
+        float distanceX = target.position.x - transform.position.x;
         float absDistanceX = Mathf.Abs(distanceX);
 
         // only GROUND and AIR can start an attack; in any other state (ATTACK, NUTRAL, STUN...) a request would be ignored
