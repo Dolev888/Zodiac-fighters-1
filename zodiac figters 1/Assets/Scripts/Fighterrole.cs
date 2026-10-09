@@ -5,8 +5,9 @@ using UnityEngine;
 // Scripts are found by their NAME, so there is nothing to drag into lists.
 public class FighterRole : MonoBehaviour
 {
-    // switched ON only for the player (the Unity "Player Input" component is called PlayerInput)
-    private static readonly string[] playerOnlyDefault = { "PlayerInput" };
+    // switched ON only for the player: "playerimput" is your script that reads the keyboard
+    // ("PlayerInput" is Unity's own Player Input component, in case a prefab has one)
+    private static readonly string[] playerOnlyDefault = { "playerimput", "PlayerInput" };
 
     // switched ON only for the enemy (the AI scripts)
     private static readonly string[] enemyOnlyDefault =
