@@ -21,6 +21,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log("ESC pressed, paused=" + isPaused);
         if (Input.GetKeyDown(KeyCode.Escape) && !matchManager.MatchEnded)
         {
             if (commandList.activeSelf) CloseCommandList(); // making sure the command list isn't immdiatly open when pausing;
