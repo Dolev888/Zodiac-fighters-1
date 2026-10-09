@@ -1,12 +1,13 @@
-using UnityEngine;
 using TMPro;
+
+using UnityEngine;
 
 public class DamageDisplay : MonoBehaviour
 {
     [SerializeField] private FighterDamage fighterDamage;
     [SerializeField] private TMP_Text damageText;
     [SerializeField] private GameObject[] _healthBarsList;
-    private int barNumber;
+    private int barNumber=20;
 
     private int lastShown = -1;
 
@@ -27,90 +28,93 @@ public class DamageDisplay : MonoBehaviour
 
         lastShown = current;
         damageText.text = current + "%";
+        Debug.Log("hy there " + barNumber);
         SetBars();
     }
     private void SetBars()
     {
+        Debug.Log("notice me "+barNumber);
         float divide = lastShown / 100;
+        
         if (true)
         {
-            if (divide > 0.95f)
+            if (divide < 0.05f)
             {
                 barNumber = 20;
             }
-            else if (divide > 0.90f)
+            else if (divide < 0.10f)
             {
                 barNumber = 19;
             }
-            else if (divide > 0.85f)
+            else if (divide < 0.15f)
             {
                 barNumber = 18;
             }
-            else if (divide > 0.80f)
+            else if (divide < 0.20f)
             {
                 barNumber = 17;
             }
-            else if (divide > 0.75f)
+            else if (divide < 0.25f)
             {
                 barNumber = 16;
             }
-            else if (divide > 0.70f)
+            else if (divide < 0.30f)
             {
                 barNumber = 15;
             }
-            else if (divide > 0.65f)
+            else if (divide < 0.35f)
             {
                 barNumber = 14;
             }
-            else if (divide > 0.60f)
+            else if (divide < 0.40f)
             {
                 barNumber = 13;
             }
-            else if (divide > 0.55f)
+            else if (divide < 0.45f)
             {
                 barNumber = 12;
             }
-            else if (divide > 0.50f)
+            else if (divide < 0.50f)
             {
                 barNumber = 11;
             }
-            else if (divide > 0.45f)
+            else if (divide < 0.55f)
             {
                 barNumber = 10;
             }
-            else if (divide > 0.40f)
+            else if (divide < 0.60f)
             {
                 barNumber = 9;
             }
-            else if (divide > 0.35f)
+            else if (divide < 0.65f)
             {
                 barNumber = 8;
             }
-            else if (divide > 0.30f)
+            else if (divide < 0.70f)
             {
                 barNumber = 7;
             }
-            else if (divide > 0.25f)
+            else if (divide < 0.75f)
             {
                 barNumber = 6;
             }
-            else if (divide > 0.20f)
+            else if (divide < 0.80f)
             {
                 barNumber = 5;
             }
-            else if (divide > 0.15f)
+            else if (divide < 0.85f)
             {
                 barNumber = 4;
             }
-            else if (divide > 0.10f)
+            else if (divide < 0.90f)
             {
                 barNumber = 3;
             }
-            else if (divide > 0.05f)
+            else if (divide < 0.95f)
             {
                 barNumber = 2;
             }
-            else if (divide > 0f)
+            else if (divide <= 1f)
             {
                 barNumber = 1;
             }
@@ -118,6 +122,8 @@ public class DamageDisplay : MonoBehaviour
             {
                 barNumber = 0;
             }
+
+       
         }
         for (int i = 0; i < _healthBarsList.Length  ; i++)
         {
