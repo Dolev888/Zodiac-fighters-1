@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAI_LoactePlayer
   pmain: {fileID: 3058125793361097330}
-  stopDistance: 5
+  stopDistance: 7.5
   personalSpace: 3.5
   edgeCheck: {fileID: 7260416915282645243}
   edgeCheckDistance: 3
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttack_AI
   pmain: {fileID: 3058125793361097330}
   samePlatformHeight: 5
-  attackRangeGN: 5
+  attackRangeGN: 7.5
   locatePlayer: {fileID: 4697061710465320927}
   attackCoolDownGN: 1.5
   attackRangeGS: 15
@@ -503,6 +503,8 @@ MonoBehaviour:
   - EnemyPlatformScanner
   - EnemyAttack_AI
   fighterDamage: {fileID: 3803191161726067500}
+  maxChangedGravityTime: 1
+  maxChangedGravityInAttack: 3
 --- !u!1 &5198100614074316629
 GameObject:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
   _damage: 2
-  _stnTime: 0.2
+  _stnTime: 0.8
   _knokBack: 0
   _knockBackEngel: 0
   hitlayer:

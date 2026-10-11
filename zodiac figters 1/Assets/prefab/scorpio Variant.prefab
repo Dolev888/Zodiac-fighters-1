@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: edgeCheck
       value: 
       objectReference: {fileID: 9014034838655349730}
+    - target: {fileID: -9030009041601537823, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: stopDistance
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8020416158265074732, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: attackRangeGN
+      value: 7.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_Name
       value: scorpio Variant
@@ -127,6 +135,8 @@ MonoBehaviour:
   - EnemyPlatformScanner
   - EnemyAttack_AI
   fighterDamage: {fileID: 5577717762689979762}
+  maxChangedGravityTime: 1
+  maxChangedGravityInAttack: 3
 --- !u!4 &1365133294310427856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}

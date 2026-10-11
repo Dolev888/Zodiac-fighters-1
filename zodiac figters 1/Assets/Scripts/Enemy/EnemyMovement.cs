@@ -7,18 +7,35 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 70f;
     [SerializeField] private LayerMask groundLayer;
 
-    // the enemy's own playermain (found automatically, nothing to assign in the Inspector)
+    // the enemy's own playermain and animator (found automatically, nothing to assign in the Inspector)
     private playermain pmain;
+    private Animator animator;
+
+    private static readonly int WalkingParam = Animator.StringToHash("walking");
+    private static readonly int IdleParam = Animator.StringToHash("idel");
 
     void Awake()
     {
         pmain = GetComponent<playermain>();
+        animator = GetComponentInChildren<Animator>();
 
         // start with isleft matching the way the enemy is currently facing
         if (pmain != null)
         {
             pmain.isleft = Mathf.Abs(Mathf.DeltaAngle(transform.eulerAngles.y, 180f)) < 1f;
         }
+    }
+
+    // The player's walk animation is started by playermain.WalkHandel, which the AI never calls
+    // (it moves the body directly), so the animation is driven from here: walk while he really moves on the ground.
+    void Update()
+    {
+        if (animator == null || pmain == null) return;
+
+        bool walking = pmain.CurentState == playermain.STATE.GROUND && Mathf.Abs(rigidP.linearVelocityX) > 1f;
+
+        animator.SetFloat(WalkingParam, walking ? 1f : 0f);
+        if (walking) animator.SetBool(IdleParam, false);   // leave the idle animation when he starts walking
     }
 
     public void GroundMove(float direction)
