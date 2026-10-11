@@ -1,17 +1,13 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+
+using UnityEngine;
 
 public class DamageDisplay : MonoBehaviour
 {
     [SerializeField] private FighterDamage fighterDamage;
     [SerializeField] private TMP_Text damageText;
-
-    [Header("Stripe bar (optional)")]
-    // the image with all the stripes: Image Type = Filled, Fill Method = Horizontal
-    [SerializeField] private Image stripeBar;
-    [SerializeField] private int stripeCount = 20;        // how many stripes the art has
-    [SerializeField] private int percentPerStripe = 5;    // 1 stripe disappears for every 5% damage
+    [SerializeField] private GameObject[] _healthBarsList;
+    private int barNumber=20;
 
     private int lastShown = -1;
 
@@ -20,6 +16,7 @@ public class DamageDisplay : MonoBehaviour
     {
         fighterDamage = fighter;
         lastShown = -1;   // force a refresh
+
     }
 
     private void Update()
@@ -31,12 +28,114 @@ public class DamageDisplay : MonoBehaviour
 
         lastShown = current;
         damageText.text = current + "%";
-
-        if (stripeBar != null)
+        Debug.Log("hy there " + barNumber);
+        SetBars();
+    }
+    private void SetBars()
+    {
+        Debug.Log("notice me "+barNumber);
+        float divide = lastShown / 100;
+        
+        if (true)
         {
-            int stripesLost = current / percentPerStripe;                       // 0-4% = 0, 5-9% = 1, ...
-            int stripesLeft = Mathf.Clamp(stripeCount - stripesLost, 0, stripeCount);
-            stripeBar.fillAmount = (float)stripesLeft / stripeCount;            // always lands on a stripe edge
+            if (divide < 0.05f)
+            {
+                barNumber = 20;
+            }
+            else if (divide < 0.10f)
+            {
+                barNumber = 19;
+            }
+            else if (divide < 0.15f)
+            {
+                barNumber = 18;
+            }
+            else if (divide < 0.20f)
+            {
+                barNumber = 17;
+            }
+            else if (divide < 0.25f)
+            {
+                barNumber = 16;
+            }
+            else if (divide < 0.30f)
+            {
+                barNumber = 15;
+            }
+            else if (divide < 0.35f)
+            {
+                barNumber = 14;
+            }
+            else if (divide < 0.40f)
+            {
+                barNumber = 13;
+            }
+            else if (divide < 0.45f)
+            {
+                barNumber = 12;
+            }
+            else if (divide < 0.50f)
+            {
+                barNumber = 11;
+            }
+            else if (divide < 0.55f)
+            {
+                barNumber = 10;
+            }
+            else if (divide < 0.60f)
+            {
+                barNumber = 9;
+            }
+            else if (divide < 0.65f)
+            {
+                barNumber = 8;
+            }
+            else if (divide < 0.70f)
+            {
+                barNumber = 7;
+            }
+            else if (divide < 0.75f)
+            {
+                barNumber = 6;
+            }
+            else if (divide < 0.80f)
+            {
+                barNumber = 5;
+            }
+            else if (divide < 0.85f)
+            {
+                barNumber = 4;
+            }
+            else if (divide < 0.90f)
+            {
+                barNumber = 3;
+            }
+            else if (divide < 0.95f)
+            {
+                barNumber = 2;
+            }
+            else if (divide <= 1f)
+            {
+                barNumber = 1;
+            }
+            else
+            {
+                barNumber = 0;
+            }
+
+       
         }
+        for (int i = 0; i < _healthBarsList.Length  ; i++)
+        {
+            if (i < barNumber)
+            {
+                _healthBarsList[i].SetActive(true);
+            }
+            else
+            {
+                _healthBarsList[i].SetActive(false);
+            }
+        }
+       
     }
 }
