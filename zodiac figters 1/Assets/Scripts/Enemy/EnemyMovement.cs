@@ -63,6 +63,15 @@ public class EnemyMovement : MonoBehaviour
         rigidP.linearVelocityY = jumpPower;
     }
 
+    // how high one jump takes his feet (physics: v^2 / 2g), used by the platform scanner
+    public float MaxJumpHeight()
+    {
+        float gravityScale = pmain != null ? pmain.OGgravity : rigidP.gravityScale;
+        float g = Mathf.Abs(Physics2D.gravity.y) * gravityScale;
+        if (g <= 0.01f) return 0f;
+        return jumpPower * jumpPower / (2f * g);
+    }
+
     // A small box at his feet, the same place and size as the ground-check box on his Playermain
     // (offset -0.17, -10.88 / size 2.56 x 0.69). It only sees ground UNDER him, so a platform's side
     // or underside no longer counts, and it doesn't depend on which collider is enabled or assigned.

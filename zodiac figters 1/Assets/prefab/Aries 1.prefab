@@ -454,7 +454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   rigidP: {fileID: 1762099896455915236}
   groundSpeed: 50
-  jumpPower: 80
+  jumpPower: 95
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -478,11 +478,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   upperScanWidth: 150
-  upperScanheight: 25
+  autoClimbHeight: 1
+  jumpSafety: 0.95
   maxClimbHeight: 21
+  feetBelowPivot: 10.8
   landingInset: 5
   dropReach: 15
   dropCheckDistance: 60
+  debugLog: 1
 --- !u!114 &2127499861492621400
 MonoBehaviour:
   m_ObjectHideFlags: 0

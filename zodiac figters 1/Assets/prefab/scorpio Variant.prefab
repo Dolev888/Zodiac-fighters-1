@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7551668421570069352, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: jumpPower
-      value: 80
+      value: 95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

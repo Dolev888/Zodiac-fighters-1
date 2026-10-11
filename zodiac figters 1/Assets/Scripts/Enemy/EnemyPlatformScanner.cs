@@ -4,13 +4,21 @@ public class EnemyPlatformScanner : MonoBehaviour
 {
     //the layer containing all platform the AI is allowed to navigate on
     [SerializeField] private LayerMask groundLayer;
-    // size of the area above the enemy that is searched for platforms to jump to
-    [SerializeField] private float upperScanWidth = 40f;
-    [SerializeField] private float upperScanheight = 25f;
+
+    [Header("scan area (above the enemy's feet)")]
+    // how wide the search area is (centered on the enemy). If platforms are far apart, make this bigger
+    [SerializeField] private float upperScanWidth = 120f;
 
     [Header("climbing")]
-    // platforms higher than this above the enemy's pivot are skipped (too high for one jump)
-    [SerializeField] private float maxClimbHeight = 21f;
+    // ON = the maximum climb height is worked out from his real jump (jump power and gravity),
+    // so it stays right when the platforms or the jump are changed. OFF = use Max Climb Height below
+    [SerializeField] private bool autoClimbHeight = true;
+    // how much of the calculated jump height we trust (0.95 = 95%)
+    [SerializeField] private float jumpSafety = 0.95f;
+    // only used when Auto Climb Height is OFF. Measured from his FEET to the platform's top
+    [SerializeField] private float maxClimbHeight = 30f;
+    // distance from his pivot down to his feet (the Edge Check child sits at -10.8)
+    [SerializeField] private float feetBelowPivot = 10.8f;
     // keeps the landing point away from the platform's edges
     [SerializeField] private float landingInset = 5f;
 
@@ -20,31 +28,70 @@ public class EnemyPlatformScanner : MonoBehaviour
     // how far down we look for that lower platform
     [SerializeField] private float dropCheckDistance = 60f;
 
+    [Header("debug")]
+    // writes to the Console why no platform was chosen (once every 2 seconds)
+    [SerializeField] private bool debugLog = true;
+    private float nextLogTime;
+
+    private EnemyMovement movement;
+
+    private void Awake()
+    {
+        movement = GetComponent<EnemyMovement>();
+    }
+
+    private float MaxRise()
+    {
+        if (autoClimbHeight && movement != null)
+        {
+            float h = movement.MaxJumpHeight() * jumpSafety;
+            if (h > 1f) return h;
+        }
+        return maxClimbHeight;
+    }
+
     // shows the search area in the Scene view (editor only, no effect on the game)
     private void OnDrawGizmosSelected()
     {
-        Vector3 center = new Vector3(transform.position.x, transform.position.y + (upperScanheight / 2f), transform.position.z);
+        float rise = Application.isPlaying ? MaxRise() : maxClimbHeight;
+        float feetY = transform.position.y - feetBelowPivot;
+        Vector3 center = new Vector3(transform.position.x, feetY + rise * 0.5f, transform.position.z);
         Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(center, new Vector3(upperScanWidth, upperScanheight, 1f));
+        Gizmos.DrawWireCube(center, new Vector3(upperScanWidth, rise, 1f));
     }
 
     // picks the reachable platform whose landing point is closest to the target (the player)
     public bool TryFindingPlatformTowards(Vector2 targetPoint, out Vector2 platformPosition)
     {
         platformPosition = Vector2.zero;
-        Vector2 scanCenter = new Vector2(transform.position.x, transform.position.y + (upperScanheight / 2f));
-        Collider2D[] platforms = Physics2D.OverlapBoxAll(scanCenter, new Vector2(upperScanWidth, upperScanheight), 0f, groundLayer);
+
+        float maxRise = MaxRise();
+        float feetY = transform.position.y - feetBelowPivot;
+
+        // the area from his feet up to the highest point he can reach
+        Vector2 scanCenter = new Vector2(transform.position.x, feetY + maxRise * 0.5f + 1f);
+        Collider2D[] platforms = Physics2D.OverlapBoxAll(scanCenter, new Vector2(upperScanWidth, maxRise + 2f), 0f, groundLayer);
 
         float best = Mathf.Infinity;
         bool found = false;
+        int tooLow = 0, tooHigh = 0;
+        float lowestTooHigh = Mathf.Infinity;
 
         foreach (Collider2D platform in platforms)
         {
             float top = platform.bounds.max.y;
-            float rise = top - transform.position.y;
+            float rise = top - feetY;
 
-            // skip platforms that are not above us, or too high for one jump
-            if (rise <= 0f || rise > maxClimbHeight) continue;
+            // the platform he is standing on (or anything not really above his feet)
+            if (rise <= 1.5f) { tooLow++; continue; }
+
+            // too high for one jump
+            if (rise > maxRise)
+            {
+                tooHigh++;
+                if (rise < lowestTooHigh) lowestTooHigh = rise;
+                continue;
+            }
 
             // landing point = the spot on this platform's top closest (in X) to the player, away from the edges
             float minX = platform.bounds.min.x + landingInset;
@@ -61,6 +108,40 @@ public class EnemyPlatformScanner : MonoBehaviour
                 found = true;
             }
         }
+
+        if (!found && debugLog && Time.time >= nextLogTime)
+        {
+            nextLogTime = Time.time + 2f;
+
+            // extra diagnosis: look much higher, and also at every layer, to find the platform he should be reaching
+            string nearestOnLayer = "none on the Ground Layer";
+            Collider2D[] tall = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, feetY + 150f), new Vector2(upperScanWidth, 300f), 0f, groundLayer);
+            float nearestRise = Mathf.Infinity;
+            foreach (Collider2D c in tall)
+            {
+                float r = c.bounds.max.y - feetY;
+                if (r > 1.5f && r < nearestRise) { nearestRise = r; nearestOnLayer = c.name + " needs a rise of " + r.ToString("F1"); }
+            }
+
+            string otherLayers = "";
+            Collider2D[] everything = Physics2D.OverlapBoxAll(new Vector2(transform.position.x, feetY + 150f), new Vector2(upperScanWidth, 300f), 0f);
+            foreach (Collider2D c in everything)
+            {
+                if (((1 << c.gameObject.layer) & groundLayer.value) == 0 && c.name.ToLower().Contains("platform"))
+                    otherLayers += c.name + " (layer " + LayerMask.LayerToName(c.gameObject.layer) + ") ";
+            }
+
+           // Debug.Log("PLATFORM DIAGNOSIS: nearest platform above = " + nearestOnLayer
+           //     + " | platforms NOT on the Ground Layer: " + (otherLayers == "" ? "none" : otherLayers));
+
+           // Debug.Log("NO PLATFORM TO JUMP TO on " + name
+             //   + " | max jump rise = " + maxRise.ToString("F1")
+             //   + " | platforms in scan area = " + platforms.Length
+             //   + " (own/too low " + tooLow + ", too high " + tooHigh
+            //    + (tooHigh > 0 ? ", lowest of those needs " + lowestTooHigh.ToString("F1") : "") + ")"
+            //    + " | scan width " + upperScanWidth);
+        }
+
         return found;
     }
 

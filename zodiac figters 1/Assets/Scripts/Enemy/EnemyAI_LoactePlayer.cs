@@ -270,7 +270,19 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
 
             if (!foundUpperplatform)
             {
-                enemyMovement.StopMove();
+                // no platform in reach from here: walk toward the player (never off an edge) so one comes into range
+                int towardPlayer = distanceX < 0 ? -1 : 1;
+                Vector2 searchCheck = new Vector2(
+                    transform.position.x + (edgeCheckOffset * towardPlayer),
+                    edgeCheck.position.y
+                );
+
+                bool groundTowardPlayer = Physics2D.Raycast(searchCheck, Vector2.down, edgeCheckDistance, groundLayer).collider != null;
+
+                if (groundTowardPlayer && Mathf.Abs(distanceX) > stopDistance)
+                    enemyMovement.GroundMove(towardPlayer);
+                else
+                    enemyMovement.StopMove();
                 return;
             }
 
