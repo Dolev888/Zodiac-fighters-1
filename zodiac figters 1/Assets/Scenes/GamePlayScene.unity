@@ -547,7 +547,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7600566510164625012, guid: abd3edd0860d489479869edd0f3328f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1368,7 +1368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageDisplay
   fighterDamage: {fileID: 0}
   damageText: {fileID: 1829973893}
-  _healthBarsList:
+  stripeBar:
   - {fileID: 615140518}
   - {fileID: 1810115014}
   - {fileID: 2140672766}
@@ -1389,6 +1389,8 @@ MonoBehaviour:
   - {fileID: 2002359140}
   - {fileID: 1755007013}
   - {fileID: 928856922}
+  stripeCount: 20
+  percentPerStripe: 5
 --- !u!114 &348737226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6211,7 +6213,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -8600968226281342722, guid: c176fc1f273c0df4583b4c6e25efd851, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6284,26 +6286,26 @@ RectTransform:
   m_LocalScale: {x: 77.2, y: 109.407814, z: 96.643196}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 2044297612}
-  - {fileID: 1107280653}
-  - {fileID: 1221906269}
-  - {fileID: 471083831}
-  - {fileID: 1966712061}
-  - {fileID: 1205460862}
-  - {fileID: 894184220}
-  - {fileID: 91067705}
-  - {fileID: 1436346828}
-  - {fileID: 944330187}
-  - {fileID: 1906849586}
-  - {fileID: 1063124872}
-  - {fileID: 1273289612}
-  - {fileID: 218665995}
-  - {fileID: 1063136442}
-  - {fileID: 994701441}
-  - {fileID: 67650629}
-  - {fileID: 1954071428}
-  - {fileID: 1012336793}
   - {fileID: 1257153056}
+  - {fileID: 1012336793}
+  - {fileID: 1954071428}
+  - {fileID: 67650629}
+  - {fileID: 994701441}
+  - {fileID: 1063136442}
+  - {fileID: 218665995}
+  - {fileID: 1273289612}
+  - {fileID: 1063124872}
+  - {fileID: 1906849586}
+  - {fileID: 944330187}
+  - {fileID: 1436346828}
+  - {fileID: 91067705}
+  - {fileID: 894184220}
+  - {fileID: 1205460862}
+  - {fileID: 1966712061}
+  - {fileID: 471083831}
+  - {fileID: 1221906269}
+  - {fileID: 1107280653}
+  - {fileID: 2044297612}
   m_Father: {fileID: 386316354}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -7358,8 +7360,8 @@ Transform:
   m_GameObject: {fileID: 1310514377}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.7703, y: 47.1772, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 50.3911, y: 56.2, z: 0}
+  m_LocalScale: {x: 1.8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 484204795}
@@ -8051,7 +8053,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7311941884375689388, guid: 159e5e74495ef62428c0e1442c4ea56f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8797,7 +8799,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1860891678728463156, guid: 545a9b1d600ac694a98897567ed97dad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8863,7 +8865,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DamageDisplay
   fighterDamage: {fileID: 0}
   damageText: {fileID: 1843938003}
-  _healthBarsList:
+  stripeBar:
   - {fileID: 1257153055}
   - {fileID: 1012336792}
   - {fileID: 1954071427}
@@ -8884,6 +8886,8 @@ MonoBehaviour:
   - {fileID: 1221906268}
   - {fileID: 1107280652}
   - {fileID: 2044297611}
+  stripeCount: 20
+  percentPerStripe: 5
 --- !u!114 &1769051995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9154,8 +9158,8 @@ Transform:
   m_GameObject: {fileID: 1812968771}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 98.9995, y: 18.2588, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 133.7, y: 18.2588, z: 0}
+  m_LocalScale: {x: 1.9, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 343125835}
@@ -11304,7 +11308,7 @@ Transform:
   m_GameObject: {fileID: 2144482444}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.5729, y: -6.7518005, z: 0}
+  m_LocalPosition: {x: 51.7, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -1,6 +1,6 @@
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
+
 
 public class DamageDisplay : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class DamageDisplay : MonoBehaviour
 
     [Header("Stripe bar (optional)")]
     // the image with all the stripes: Image Type = Filled, Fill Method = Horizontal
-    [SerializeField] private Image stripeBar;
+    [SerializeField] private GameObject[] stripeBar;
     [SerializeField] private int stripeCount = 20;        // how many stripes the art has
     [SerializeField] private int percentPerStripe = 5;    // 1 stripe disappears for every 5% damage
 
@@ -34,9 +34,21 @@ public class DamageDisplay : MonoBehaviour
 
         if (stripeBar != null)
         {
-            int stripesLost = current / percentPerStripe;                       // 0-4% = 0, 5-9% = 1, ...
-            int stripesLeft = Mathf.Clamp(stripeCount - stripesLost, 0, stripeCount);
-            stripeBar.fillAmount = (float)stripesLeft / stripeCount;            // always lands on a stripe edge
+
+            int stripchek = current / percentPerStripe;
+            for (int i = 0; i < stripeBar.Length; i++)
+            {
+                if (stripchek < stripeCount-i)
+                {
+                    stripeBar[i].SetActive(true);    
+                }
+                else
+                {
+                    stripeBar[i].SetActive(false);
+                }
+            }
+           
+                       // always lands on a stripe edge
         }
     }
 }
