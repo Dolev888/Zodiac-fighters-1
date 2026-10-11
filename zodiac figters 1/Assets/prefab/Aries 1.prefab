@@ -240,8 +240,8 @@ MonoBehaviour:
   pimput: {fileID: 8205274374357495928}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 70
-  _doubleJumpPower: 55
+  _jumpPower: 80
+  _doubleJumpPower: 60
   player: {fileID: 5194764169379169647}
   rigidP: {fileID: 1762099896455915236}
 --- !u!114 &3058125793361097330
