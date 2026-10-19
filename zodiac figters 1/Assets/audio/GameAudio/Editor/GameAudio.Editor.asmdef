@@ -1,0 +1,18 @@
+{
+    "name": "GameAudio.Editor",
+    "rootNamespace": "GameAudio.EditorTools",
+    "references": [
+        "GameAudio"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

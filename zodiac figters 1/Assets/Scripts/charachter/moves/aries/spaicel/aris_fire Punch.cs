@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
+using GameAudio;
 public class aris_firePunch : projectileParent
 {
     [SerializeField]  private float _existensTime;
@@ -15,8 +16,10 @@ public class aris_firePunch : projectileParent
     [SerializeField] private bool _hitFlag;
     [SerializeField] private float _coolDown;
     private Rigidbody2D rb;
-    
-    
+
+    //public SoundEvent firePunch;
+
+
     private float _time;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,4 +57,6 @@ public class aris_firePunch : projectileParent
 
         }
     }
+
+
 }
