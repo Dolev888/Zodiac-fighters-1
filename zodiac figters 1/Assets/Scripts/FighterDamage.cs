@@ -49,6 +49,7 @@ public class FighterDamage : MonoBehaviour
         }
         if (amount <= 0f) return;
         damagePercentage += amount;
+        pmain.playhert();
 
        if (damagePercentage >= maxDamage)
         {

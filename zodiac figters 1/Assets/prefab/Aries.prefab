@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 6405216360561352262}
   - component: {fileID: 4660371759244261245}
   - component: {fileID: 1734646256285989758}
+  - component: {fileID: 4765288240241789196}
   m_Layer: 0
   m_Name: pixil-frame-85 (1)_0
   m_TagString: Untagged
@@ -339,6 +340,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4765288240241789196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629451478393464699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91a09133b0a0d94fa48c8f8451558d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::universalAnimationControler
+  _ObList: []
+  _SummonList: []
+  _spawnList: []
 --- !u!1 &5057001074938515449
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +683,7 @@ MonoBehaviour:
   _pushColideOb: {fileID: 3369110983112080872}
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
+  curentState: 0
   OGgravity: 0
   _airJumpMax: 1
   _airJumpCounter: 0
@@ -674,7 +691,7 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
-  _groundCheckSise: {x: 2.56, y: 0.69}
+  _groundCheckSise: {x: 2.56, y: 1.02}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
   _idleTime: 0.5
 --- !u!50 &2694609988024503921
@@ -876,11 +893,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   upperScanWidth: 150
-  upperScanheight: 25
+  autoClimbHeight: 1
+  jumpSafety: 0.95
   maxClimbHeight: 21
+  feetBelowPivot: 10.8
   landingInset: 5
   dropReach: 15
   dropCheckDistance: 60
+  debugLog: 1
 --- !u!1 &8922668908256878529
 GameObject:
   m_ObjectHideFlags: 0
