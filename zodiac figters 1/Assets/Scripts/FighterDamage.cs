@@ -26,10 +26,6 @@ public class FighterDamage : MonoBehaviour
     private void Update()
     {
         if (Time.timeScale == 0f) return;
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(10f,888,4);
-        }
         switch (pmain.CurentState)
         {
             case playermain.STATE.STUN:
@@ -39,25 +35,25 @@ public class FighterDamage : MonoBehaviour
                 break;
         }
     }
-    public void TakeDamage (float amount, int id,float cooldown)
+    public void TakeDamage(float amount, int id, float cooldown)
     {
-        
+
         if (CheckId(id)) return;
-        if (cooldown != 0) 
+        if (cooldown != 0)
         {
-            StartCoroutine(countdown(cooldown,id));
+            StartCoroutine(countdown(cooldown, id));
         }
         if (amount <= 0f) return;
         damagePercentage += amount;
 
-       if (damagePercentage >= maxDamage)
+        if (damagePercentage >= maxDamage)
         {
             damagePercentage = maxDamage; //insurinng damage can't be higher then maxdamge;
             Lose(); // if reached max damge you lose
         }
         Debug.Log($"{gameObject.name} Damage: {damagePercentage} %");
     }
-    private IEnumerator countdown(float time,int id)
+    private IEnumerator countdown(float time, int id)
     {
         takenId.Add(id);
         yield return new WaitForSeconds(time);
@@ -66,24 +62,24 @@ public class FighterDamage : MonoBehaviour
 
     private void Lose()
     {
-        Debug.Log($"{gameObject.name} has lost ") ;
+        Debug.Log($"{gameObject.name} has lost ");
         if (matchManager == null)
         {
             return;
-           
+
         }
         // if this fighter is the player then player lost and if it is the enemy then player won.
         matchManager.EndMatch(!isPlayer, gameObject);
     }
-    private bool CheckId(int id) 
+    private bool CheckId(int id)
     {
         if (takenId.Contains(id)) return true;
         return false;
-    
+
     }
     public void TakeStun(float stunDuretion)
     {
-        if(pmain == null) return;
+        if (pmain == null) return;
         stunTime = stunDuretion;
         stunClock = 0;
         pmain.EnterStun();
@@ -91,7 +87,7 @@ public class FighterDamage : MonoBehaviour
     }
     private void StunTimer()
     {
-        if( stunClock>= stunTime)
+        if (stunClock >= stunTime)
         {
             stunTime = 0;
             stunClock = 0;
@@ -105,7 +101,7 @@ public class FighterDamage : MonoBehaviour
     }
     public void addKnockback(Vector2 nockForce)
     {
-        if(pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
+        if (pmain.CurentState == playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
         {
             pmain.rigidP.linearVelocity += nockForce;
         }

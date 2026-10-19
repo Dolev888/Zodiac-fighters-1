@@ -30,7 +30,9 @@ public class DamageDisplay : MonoBehaviour
         if (current == lastShown) return;
 
         lastShown = current;
-        damageText.text = current + "%";
+
+        // the number counts DOWN: 100% at the start, 0% when the fighter loses
+        damageText.text = Mathf.Max(0, Mathf.RoundToInt(fighterDamage.MaxDamage - fighterDamage.DamagePercentage)) + "%";
 
         if (stripeBar != null)
         {
@@ -38,17 +40,17 @@ public class DamageDisplay : MonoBehaviour
             int stripchek = current / percentPerStripe;
             for (int i = 0; i < stripeBar.Length; i++)
             {
-                if (stripchek < stripeCount-i)
+                if (stripchek < stripeCount - i)
                 {
-                    stripeBar[i].SetActive(true);    
+                    stripeBar[i].SetActive(true);
                 }
                 else
                 {
                     stripeBar[i].SetActive(false);
                 }
             }
-           
-                       // always lands on a stripe edge
+
+            // always lands on a stripe edge
         }
     }
 }
