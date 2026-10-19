@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 4179f3d55a2603a40abdd41815e35a92
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5304013919569092768
+    second: ice swing 2.3_0
+  - first:
+      213: 3213864587616890832
+    second: ice swing 2.3_1
+  - first:
+      213: -6420103724167339263
+    second: ice swing 2.3_2
+  - first:
+      213: 6605510499227407408
+    second: ice swing 2.3_3
+  - first:
+      213: -1341824987776280192
+    second: ice swing 2.3_4
+  - first:
+      213: 5616055572211121527
+    second: ice swing 2.3_5
+  - first:
+      213: -3778332425241798864
+    second: ice swing 2.3_6
+  - first:
+      213: 1511532876134788614
+    second: ice swing 2.3_7
+  - first:
+      213: -2346899799781267203
+    second: ice swing 2.3_8
+  - first:
+      213: -2958202478630518365
+    second: ice swing 2.3_9
+  - first:
+      213: -2249365186551421292
+    second: ice swing 2.3_10
+  - first:
+      213: 769520855929439739
+    second: ice swing 2.3_11
+  - first:
+      213: 2155339534288305895
+    second: ice swing 2.3_12
+  - first:
+      213: -8199524659980926257
+    second: ice swing 2.3_13
+  - first:
+      213: -6975169889212975316
+    second: ice swing 2.3_14
+  - first:
+      213: 2404540986904349631
+    second: ice swing 2.3_15
+  - first:
+      213: 4584885090284936774
+    second: ice swing 2.3_16
+  - first:
+      213: -977820653848150499
+    second: ice swing 2.3_17
+  - first:
+      213: 5445902618208729928
+    second: ice swing 2.3_18
+  - first:
+      213: -1377404787300064797
+    second: ice swing 2.3_19
+  - first:
+      213: 7973996854250047461
+    second: ice swing 2.3_20
+  - first:
+      213: 9171363597259876398
+    second: ice swing 2.3_21
+  - first:
+      213: 3290380120691282123
+    second: ice swing 2.3_22
+  - first:
+      213: -6764191813400494895
+    second: ice swing 2.3_23
+  - first:
+      213: 4070680039649460250
+    second: ice swing 2.3_24
+  - first:
+      213: -6401342088277373803
+    second: ice swing 2.3_25
+  - first:
+      213: 3087743246455435378
+    second: ice swing 2.3_26
+  - first:
+      213: -902290026411500250
+    second: ice swing 2.3_27
+  - first:
+      213: 8744301430863688211
+    second: ice swing 2.3_28
+  - first:
+      213: -3067119867563529148
+    second: ice swing 2.3_29
+  - first:
+      213: 8417126479114565517
+    second: ice swing 2.3_30
+  - first:
+      213: -409738867631394555
+    second: ice swing 2.3_31
+  - first:
+      213: -186468153074985920
+    second: ice swing 2.3_32
+  - first:
+      213: 5698687064059324060
+    second: ice swing 2.3_33
+  - first:
+      213: 7470054984462951969
+    second: ice swing 2.3_34
+  - first:
+      213: -3429546761308679242
+    second: ice swing 2.3_35
+  - first:
+      213: -726700564412101346
+    second: ice swing 2.3_36
+  - first:
+      213: 8306455925366098281
+    second: ice swing 2.3_37
+  - first:
+      213: 5702628382303090107
+    second: ice swing 2.3_38
+  - first:
+      213: 1912268789037402903
+    second: ice swing 2.3_39
+  - first:
+      213: 8055801898441611074
+    second: ice swing 2.3_40
+  - first:
+      213: 2477008384112407618
+    second: ice swing 2.3_41
+  - first:
+      213: -3012908412695529368
+    second: ice swing 2.3_42
+  - first:
+      213: -7415338918921382742
+    second: ice swing 2.3_43
+  - first:
+      213: 4390529756581106799
+    second: ice swing 2.3_44
+  - first:
+      213: -5285035806848725780
+    second: ice swing 2.3_45
+  - first:
+      213: -7723514330436625768
+    second: ice swing 2.3_46
+  - first:
+      213: -8744883467633733188
+    second: ice swing 2.3_47
+  - first:
+      213: 7296412709876914420
+    second: ice swing 2.3_48
+  - first:
+      213: 4470209908273369851
+    second: ice swing 2.3_49
+  - first:
+      213: 6772525318462618981
+    second: ice swing 2.3_50
+  - first:
+      213: -1452224213681490025
+    second: ice swing 2.3_51
+  - first:
+      213: 3905401453094208292
+    second: ice swing 2.3_52
+  - first:
+      213: 8514135668068661854
+    second: ice swing 2.3_53
+  - first:
+      213: 6434274825367836456
+    second: ice swing 2.3_54
+  - first:
+      213: 5082450460514635820
+    second: ice swing 2.3_55
+  - first:
+      213: 3927988993922530166
+    second: ice swing 2.3_56
+  - first:
+      213: -8751368797944659405
+    second: ice swing 2.3_57
+  - first:
+      213: 7415726812064213564
+    second: ice swing 2.3_58
+  - first:
+      213: -2847371438201047126
+    second: ice swing 2.3_59
+  - first:
+      213: -1652127402819094517
+    second: ice swing 2.3_60
+  - first:
+      213: 865182828901216997
+    second: ice swing 2.3_61
+  - first:
+      213: 1241880564401930537
+    second: ice swing 2.3_62
+  - first:
+      213: 8837225652828341784
+    second: ice swing 2.3_63
+  - first:
+      213: -8777894301599875294
+    second: ice swing 2.3_64
+  - first:
+      213: -2259406049237985705
+    second: ice swing 2.3_65
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ice swing 2.3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 1200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a0a4a7de84ab9940800000000000000
+      internalID: 5304013919569092768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 86b03e35316ea8b4aa5f9a2bde325a95
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1200.0,"y":1200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ice swing 2.3_0: 5304013919569092768
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

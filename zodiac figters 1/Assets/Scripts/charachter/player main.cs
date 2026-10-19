@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 
@@ -20,7 +21,7 @@ public class playermain : MonoBehaviour
     private bool _isGrounded;
     public bool IsGrounded => _isGrounded;
 
-    private STATE curentState;
+    [SerializeField]  private STATE curentState;
     public STATE CurentState => curentState;
     private STATE previesState;
     public STATE PreviesState => previesState;
@@ -163,9 +164,11 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.KNOKCBACK:
+                _animator.SetBool("hit",false);
                 break;
 
             case STATE.STUN:
+                _animator.SetBool("hit", false);
                 break;
 
             case STATE.ATTACK:
@@ -190,10 +193,12 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.KNOKCBACK:
+                _animator.SetBool("hit", true);
                 break;
 
             case STATE.STUN:
                 pattack.StopAttack();
+                _animator.SetBool("hit", true);
                 break;
 
             case STATE.ATTACK:
@@ -441,4 +446,8 @@ public class playermain : MonoBehaviour
         }
     }
 
+    public void playhert()
+    {
+        _animator.Play("read hit");
+    }
 }

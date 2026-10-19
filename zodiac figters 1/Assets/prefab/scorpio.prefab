@@ -546,11 +546,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   upperScanWidth: 150
-  upperScanheight: 25
+  autoClimbHeight: 1
+  jumpSafety: 0.95
   maxClimbHeight: 21
+  feetBelowPivot: 10.8
   landingInset: 5
   dropReach: 15
   dropCheckDistance: 60
+  debugLog: 1
 --- !u!1 &6804011877725011052
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +565,7 @@ GameObject:
   - component: {fileID: 2817387019108044338}
   - component: {fileID: 3407591943296228936}
   - component: {fileID: 1884664067162094675}
+  - component: {fileID: 2420161531916673198}
   m_Layer: 0
   m_Name: scorpio sprite
   m_TagString: Untagged
@@ -665,6 +669,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2420161531916673198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6804011877725011052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91a09133b0a0d94fa48c8f8451558d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::universalAnimationControler
+  _ObList:
+  - {fileID: 6804011877725011052}
+  _SummonList:
+  - {fileID: 8569156216855880117, guid: 7cd663352d543174aa8b59733e68c34c, type: 3}
+  - {fileID: 4673638888243508785, guid: 4daac2276fd821942a9303b98b20570a, type: 3}
+  - {fileID: 5513039193770107464, guid: e2ae19e9e7fd9a34498c620a94e75e1c, type: 3}
+  _spawnList:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
 --- !u!1 &8441536336644777367
 GameObject:
   m_ObjectHideFlags: 0
