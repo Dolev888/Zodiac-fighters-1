@@ -1,4 +1,5 @@
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 
 
@@ -18,6 +19,7 @@ public class playermain : MonoBehaviour
     public GameObject player;
     public Rigidbody2D rigidP;
     private bool _isGrounded;
+    public bool _isInvincable=true;
     public bool IsGrounded => _isGrounded;
 
     [SerializeField]  private STATE curentState;
@@ -28,6 +30,8 @@ public class playermain : MonoBehaviour
 
     [SerializeField] private int _airJumpMax;
     public int _airJumpCounter;
+    [SerializeField] private int _airDashMax;
+    public int _airDashCounter;
     public bool routatelock;
     public bool isleft;
     public bool canAirAttack;
@@ -55,6 +59,7 @@ public class playermain : MonoBehaviour
 
     void Start()
     {
+        _isInvincable = false;
         rigidP = GetComponent<Rigidbody2D>();
         curentState = STATE.AIR;
         hitboxttagset();
@@ -183,6 +188,7 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 _airJumpCounter = _airJumpMax;
+                _airDashCounter = _airDashMax;
                 canAirAttack = true;
                 _isGrounded = true;
                 break;
@@ -285,9 +291,28 @@ public class playermain : MonoBehaviour
                 break;
         }
     }
-    public void DashHandle()
+    public void DashHandle(bool back)
     {
+        switch (curentState)
+        {
+            case STATE.GROUND:
+                ChangeState(STATE.ATTACK);
+                pattack.Dash(back ? 1:0);
+                break;
 
+            case STATE.AIR:
+                if (_airDashCounter > 0)
+                {
+                    _airDashCounter--;
+                    ChangeState(STATE.ATTACK);
+                    pattack.Dash(back ? 1 : 0);
+                }
+                
+                break;
+            default:
+                break;
+        }
+        
     }
     public void AttackHandel(int imp)
     {
@@ -452,5 +477,13 @@ public class playermain : MonoBehaviour
     public void playhert()
     {
         _animator.Play("read hit");
+    }
+    public void Setinvincible(bool invincible)
+    {
+        _isInvincable = invincible;
+    }
+    public void playDash()
+    {
+        _animator.Play("dash");
     }
 }

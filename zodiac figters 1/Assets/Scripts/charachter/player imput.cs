@@ -57,7 +57,7 @@ public class playerimput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
             _specialAttackBuferTick = _specialAttackBuferTime;
-        if(Input.GetKeyDown(KeyCode.C)) 
+        if(Input.GetKeyDown(KeyCode.C) ) 
             _dashBuferTick = _dashBuferTime;
 
         // Attempt buffered actions until they succeed or expire
@@ -70,6 +70,13 @@ public class playerimput : MonoBehaviour
         if (_specialAttackBuferTick > 0)
             pmain.AttackHandel(2);
         if (_dashBuferTick > 0)
+        {
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                pmain.DashHandle(true);
+            }
+            pmain.DashHandle(false);
+        }
             
 
         // Rotation lock
@@ -110,5 +117,8 @@ public class playerimput : MonoBehaviour
     {
         _specialAttackBuferTick = -0.1f;
     }
-
+    public void DashSucseed()
+    {
+        _dashBuferTick = -0.1f;
+    }
 }

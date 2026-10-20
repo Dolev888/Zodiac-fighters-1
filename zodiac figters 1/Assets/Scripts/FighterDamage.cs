@@ -42,7 +42,7 @@ public class FighterDamage : MonoBehaviour
     public void TakeDamage (float amount, int id,float cooldown)
     {
         
-        if (CheckId(id)) return;
+        if (CheckId(id) || pmain._isInvincable) return;
         if (cooldown != 0) 
         {
             StartCoroutine(countdown(cooldown,id));
@@ -84,7 +84,7 @@ public class FighterDamage : MonoBehaviour
     }
     public void TakeStun(float stunDuretion)
     {
-        if(pmain == null) return;
+        if(pmain == null || pmain._isInvincable) return;
         stunTime = stunDuretion;
         stunClock = 0;
         pmain.EnterStun();
@@ -102,11 +102,13 @@ public class FighterDamage : MonoBehaviour
     }
     public void TakeKnockback(Vector2 nockForce)
     {
+        if (pmain._isInvincable) return;
         pmain.rigidP.linearVelocity = nockForce;
     }
     public void addKnockback(Vector2 nockForce)
     {
-        if(pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
+        if (pmain._isInvincable) return;
+        if (pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
         {
             pmain.rigidP.linearVelocity += nockForce;
         }

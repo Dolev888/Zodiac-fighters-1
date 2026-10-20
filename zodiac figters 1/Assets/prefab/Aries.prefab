@@ -173,7 +173,7 @@ CapsuleCollider2D:
     m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 503
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -638,7 +638,7 @@ MonoBehaviour:
   _basicAttackBuferTick: 5
   _specialAttackBuferTime: 0.2
   _specialAttackBuferTick: 5
-  _dashBuferTime: 0
+  _dashBuferTime: 0.001
   _dashBuferTick: 0
 --- !u!114 &4111360677550138424
 MonoBehaviour:
@@ -685,17 +685,20 @@ MonoBehaviour:
   _pushColideOb: {fileID: 3369110983112080872}
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
+  _isInvincable: 1
   curentState: 0
   OGgravity: 0
   _airJumpMax: 1
   _airJumpCounter: 0
+  _airDashMax: 1
+  _airDashCounter: 0
   routatelock: 0
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
   _groundCheckSise: {x: 2.56, y: 1.02}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
-  _idleTime: 0.5
+  _idleTime: 1
 --- !u!50 &2694609988024503921
 Rigidbody2D:
   serializedVersion: 5
@@ -715,10 +718,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -788,13 +791,12 @@ MonoBehaviour:
   _SoundList:
   - {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
   - {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
-  firePunch: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
-  hitPunch: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
   - {fileID: 11400000, guid: 0a123c63b4f242447886bb4937650858, type: 2}
   - {fileID: 11400000, guid: 2342a60a798807847ac570f9b0c57a16, type: 2}
+  _dash: {fileID: 11400000, guid: 63568bc4acae199479a619fd18fda5de, type: 2}
 --- !u!114 &7203191859062038721
 MonoBehaviour:
   m_ObjectHideFlags: 0

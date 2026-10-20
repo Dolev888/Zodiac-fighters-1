@@ -19,20 +19,22 @@ public class playerattack : MonoBehaviour
 
     [SerializeField] private SoundEvent[] _SoundList;
 
-    private Coroutine[] IEBasicAttack=new Coroutine[4];
+    private Coroutine[] IEActiveAttack=new Coroutine[4];
+    private Coroutine IEDash;
 
     [SerializeField] AttackPearent[] _attackList;
+    [SerializeField] AttackPearent _dash;
 
     private GameObject carentHitBox;
     private GameObject carentHertBox;
-    private  int[] AttackId = new int[4];
+    private  int[] AttackId = new int[5];
     private int AttackDitectId;
     private Collider2D AttackDitectCollider;
-    private float[] _coldownList= new float[4];
-    private float[] _coldowntick= new float[4];
-    private float[] _ChainBafer = new float[4];
-    private float[] _chainBaferTick= new float[4];
-    private float[] _chainCount= new float[4];
+    private float[] _coldownList= new float[5];
+    private float[] _coldowntick= new float[5];
+    private float[] _ChainBafer = new float[5];
+    private float[] _chainBaferTick= new float[5];
+    private float[] _chainCount= new float[5];
 
     private HashSet<ColInt> colidDetectList;
 
@@ -75,17 +77,17 @@ public class playerattack : MonoBehaviour
         switch (_chainCount[D])
         {
             case 0:
-                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 1;
                 break;
             case 1:
-                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 1));
+                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 1));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 2;
                 break;
             case 2:
-                IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 2));
+                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 2));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 0;
                 break;
@@ -106,7 +108,7 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
         
     }
     public void SpaicleAttack()
@@ -123,7 +125,7 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
     }
     public void SpaicleAttackAir() 
     {
@@ -139,7 +141,22 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEBasicAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+    }
+    public void Dash(int ver)
+    {
+        int D = 4;
+        if (_coldowntick[D] < _coldownList[D])
+        {            
+            return;
+        }
+        if (pmain.pimput != null)
+        {
+            pmain.pimput.DashSucseed();
+        }
+        _coldowntick[D] = 0;
+        AttackId[D] = _dash.GeneratAttackId();
+        IEDash= StartCoroutine(_dash.UseMove(this, AttackId[D], ver));
     }
     public void ChangeHitBox(GameObject frame)
     {
@@ -278,11 +295,11 @@ public class playerattack : MonoBehaviour
     }
     public void StopAttack()
     {
-        for (int i = 0; i < IEBasicAttack.Length; i++)
+        for (int i = 0; i < IEActiveAttack.Length; i++)
         {
-            if (IEBasicAttack[i] != null)
+            if (IEActiveAttack[i] != null)
             {
-                StopCoroutine(IEBasicAttack[i]);
+                StopCoroutine(IEActiveAttack[i]);
                 
             }
         }
