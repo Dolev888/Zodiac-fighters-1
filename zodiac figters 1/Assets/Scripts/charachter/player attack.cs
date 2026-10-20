@@ -1,3 +1,4 @@
+using GameAudio;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,10 @@ public class playerattack : MonoBehaviour
     [SerializeField] GameObject hertObject;
     [SerializeField] GameObject hitObject;
     private int activeAtack;
+
+    public SoundEvent firePunch;//firePunch sund
+
+    public SoundEvent hitPunch;//firePunch sund
 
     private Coroutine[] IEBasicAttack=new Coroutine[4];
 
@@ -62,6 +67,8 @@ public class playerattack : MonoBehaviour
         }
         if(pmain.pimput != null)
         {
+            hitPunch.Play();
+
             pmain.pimput.BasicAttackSucseed();
         }
         _coldowntick[D] = 0;
@@ -223,7 +230,11 @@ public class playerattack : MonoBehaviour
             projectile._pattack = this;
             projectile.playerTag= gameObject.tag;
             projectile._moveID = ID;
+
+            firePunch.Play();
+
         }
+
     }
     public void ObjectInstantWorld(GameObject Ob, Vector2 position, float routate, int ID)
     {
@@ -281,4 +292,7 @@ public class playerattack : MonoBehaviour
         pmain.StopAttackAnimation();
         
     }
+
+
+
 }

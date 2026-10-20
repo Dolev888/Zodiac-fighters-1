@@ -368,6 +368,8 @@ MonoBehaviour:
   player: {fileID: 5194764169379169647}
   hertObject: {fileID: 8768795824921418460}
   hitObject: {fileID: 581840673481146619}
+  firePunch: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
+  hitPunch: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
