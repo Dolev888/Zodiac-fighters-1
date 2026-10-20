@@ -17,9 +17,7 @@ public class playerattack : MonoBehaviour
     [SerializeField] GameObject hitObject;
     private int activeAtack;
 
-    public SoundEvent firePunch;//firePunch sund
-
-    public SoundEvent hitPunch;//firePunch sund
+    [SerializeField] private SoundEvent[] _SoundList;
 
     private Coroutine[] IEBasicAttack=new Coroutine[4];
 
@@ -67,7 +65,7 @@ public class playerattack : MonoBehaviour
         }
         if(pmain.pimput != null)
         {
-            hitPunch.Play();
+            
 
             pmain.pimput.BasicAttackSucseed();
         }
@@ -231,7 +229,6 @@ public class playerattack : MonoBehaviour
             projectile.playerTag= gameObject.tag;
             projectile._moveID = ID;
 
-            firePunch.Play();
 
         }
 
@@ -292,7 +289,10 @@ public class playerattack : MonoBehaviour
         pmain.StopAttackAnimation();
         
     }
-
+    public void PlaySound(int Sound)
+    {
+        _SoundList[Sound].Play();
+    }
 
 
 }

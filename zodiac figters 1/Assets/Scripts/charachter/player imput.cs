@@ -10,6 +10,8 @@ public class playerimput : MonoBehaviour
     [HideInInspector] public float _basicAttackBuferTick=0;
     [SerializeField] private float _specialAttackBuferTime;
     [HideInInspector] public float _specialAttackBuferTick = 0;
+    [SerializeField] private float _dashBuferTime;
+    [HideInInspector] public float _dashBuferTick;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -17,6 +19,7 @@ public class playerimput : MonoBehaviour
         _jumpBuferTick = -0.1f;
         _basicAttackBuferTick = -0.1f;
         _specialAttackBuferTick = -0.1f;
+        _dashBuferTick = -0.1f;
     }
 
     // Update is called once per frame
@@ -54,6 +57,8 @@ public class playerimput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
             _specialAttackBuferTick = _specialAttackBuferTime;
+        if(Input.GetKeyDown(KeyCode.C)) 
+            _dashBuferTick = _dashBuferTime;
 
         // Attempt buffered actions until they succeed or expire
         if (_jumpBuferTick > 0)
@@ -64,6 +69,8 @@ public class playerimput : MonoBehaviour
 
         if (_specialAttackBuferTick > 0)
             pmain.AttackHandel(2);
+        if (_dashBuferTick > 0)
+            
 
         // Rotation lock
         if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
@@ -85,6 +92,10 @@ public class playerimput : MonoBehaviour
         if (_specialAttackBuferTick > 0)
         {
             _specialAttackBuferTick -= Time.deltaTime;
+        }
+        if (_dashBuferTick>0)
+        {
+            _dashBuferTick -= Time.deltaTime;
         }
     }
     public void JumpSucseed()

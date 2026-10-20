@@ -638,6 +638,8 @@ MonoBehaviour:
   _basicAttackBuferTick: 5
   _specialAttackBuferTime: 0.2
   _specialAttackBuferTick: 5
+  _dashBuferTime: 0
+  _dashBuferTick: 0
 --- !u!114 &4111360677550138424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +785,9 @@ MonoBehaviour:
   player: {fileID: 7615642511113472560}
   hertObject: {fileID: 3619987749655469411}
   hitObject: {fileID: 8922668908256878529}
+  _SoundList:
+  - {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
+  - {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
   firePunch: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
   hitPunch: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
   _attackList:

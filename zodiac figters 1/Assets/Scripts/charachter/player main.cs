@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 
@@ -285,6 +284,10 @@ public class playermain : MonoBehaviour
 
                 break;
         }
+    }
+    public void DashHandle()
+    {
+
     }
     public void AttackHandel(int imp)
     {
