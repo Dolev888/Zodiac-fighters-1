@@ -19,3 +19,4 @@ MonoBehaviour:
   _timePuse:
   - 0.1
   _dashPower: 200
+  _flameDash: {fileID: 3117938301113540106, guid: 10349c9d19cff0541ad43fcc0e36df37, type: 3}

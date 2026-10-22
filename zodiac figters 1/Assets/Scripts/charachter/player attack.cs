@@ -19,7 +19,7 @@ public class playerattack : MonoBehaviour
 
     [SerializeField] private SoundEvent[] _SoundList;
 
-    private Coroutine[] IEActiveAttack=new Coroutine[4];
+    private Coroutine IEActiveAttack;
     private Coroutine IEDash;
 
     [SerializeField] AttackPearent[] _attackList;
@@ -77,17 +77,17 @@ public class playerattack : MonoBehaviour
         switch (_chainCount[D])
         {
             case 0:
-                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+                IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 1;
                 break;
             case 1:
-                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 1));
+                IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 1));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 2;
                 break;
             case 2:
-                IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 2));
+                IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 2));
                 _chainBaferTick[D] = _ChainBafer[D];
                 _chainCount[D] = 0;
                 break;
@@ -108,7 +108,7 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
         
     }
     public void SpaicleAttack()
@@ -125,7 +125,7 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
     }
     public void SpaicleAttackAir() 
     {
@@ -141,7 +141,7 @@ public class playerattack : MonoBehaviour
         }
         _coldowntick[D] = 0;
         AttackId[D] = _attackList[D].GeneratAttackId();
-        IEActiveAttack[D] = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
+        IEActiveAttack = StartCoroutine(_attackList[D].UseMove(this, AttackId[D], 0));
     }
     public void Dash(int ver)
     {
@@ -184,8 +184,9 @@ public class playerattack : MonoBehaviour
             Destroy(carentHertBox);
         }
         carentHertBox = Instantiate(frame, hertObject.transform);
-        
-        carentHertBox.GetComponent<damageinflector>()._moveID = id;
+        damageinflector dinf = carentHertBox.GetComponent<damageinflector>();
+        dinf._moveID = id;
+        if (pmain.isenhanced) { DamageCalcolation(dinf); }
     }
     public void DestroyHertBox()
     {
@@ -245,6 +246,7 @@ public class playerattack : MonoBehaviour
             projectile._pattack = this;
             projectile.playerTag= gameObject.tag;
             projectile._moveID = ID;
+            DamageCalcolationProjectile(projectile);
 
 
         }
@@ -266,7 +268,7 @@ public class playerattack : MonoBehaviour
             projectile._pattack = this;
             projectile.playerTag = gameObject.tag;
             projectile._moveID = ID;
-
+            DamageCalcolationProjectile(projectile);
         }
     }
     private void cooldownCounter()
@@ -295,20 +297,32 @@ public class playerattack : MonoBehaviour
     }
     public void StopAttack()
     {
-        for (int i = 0; i < IEActiveAttack.Length; i++)
-        {
-            if (IEActiveAttack[i] != null)
+        
+            if (IEActiveAttack != null)
             {
-                StopCoroutine(IEActiveAttack[i]);
+                StopCoroutine(IEActiveAttack);
                 
             }
-        }
+        
         pmain.StopAttackAnimation();
         
     }
     public void PlaySound(int Sound)
     {
         _SoundList[Sound].Play();
+    }
+
+    private void DamageCalcolation(damageinflector dinf)
+    {
+        float damage = dinf._damage;
+        damage = damage * 2;
+        dinf._damage = damage;
+    }
+    private void DamageCalcolationProjectile(projectileParent projectile)
+    {
+        float damage = projectile._damage;
+        damage = damage * 2;
+        projectile._damage = damage;
     }
 
 

@@ -8,7 +8,7 @@ public class aris_firePunch : projectileParent
     [SerializeField] private float _existensSpeed;
 
     [Header("regular info")]
-    [SerializeField] private float _damage;
+    //[SerializeField] private float _damage;
     [SerializeField] private float _stanTime;
     [SerializeField] private float _knokBack;
     [SerializeField] private LayerMask hitlayer;

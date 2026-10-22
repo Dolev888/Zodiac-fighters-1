@@ -1,5 +1,5 @@
 using UnityEngine;
-using static Unity.Burst.Intrinsics.X86.Avx;
+
 
 
 
@@ -9,6 +9,7 @@ public class playermain : MonoBehaviour
 
     [SerializeField] public playerimput pimput;
     [SerializeField] private playerattack pattack;
+    [SerializeField] public FighterDamage fdamage;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator _animator;
     [Header("hit box list")]
@@ -47,6 +48,20 @@ public class playermain : MonoBehaviour
         ATTACK,
         NUTRAL
     }
+    [Header("type")]
+    [SerializeField] private TYPE type;
+    public TYPE Type => type;
+    public enum TYPE
+    {
+        WATER,
+        EARTH,
+        FIRE,
+        EIR,
+        NUTRAL,
+        STAR,
+    }
+    public bool isenhanced;
+    private float platformEnhancmetTick;
 
     [Header("ground check")]
     [SerializeField] private Vector2 _groundCheckSise;
@@ -472,6 +487,14 @@ public class playermain : MonoBehaviour
                 ideleTick -= Time.deltaTime;
             }
         }
+        if(platformEnhancmetTick > 0)
+        {
+            platformEnhancmetTick -= Time.deltaTime;
+            if(platformEnhancmetTick <= 0)
+            {
+                isenhanced =false;
+            }
+        }
     }
 
     public void playhert()
@@ -482,8 +505,21 @@ public class playermain : MonoBehaviour
     {
         _isInvincable = invincible;
     }
+    public void SetPush(bool ispush)
+    {
+        _pushColideOb.SetActive(ispush);
+    }
     public void playDash()
     {
         _animator.Play("dash");
+    }
+    public void SetIdleAnim(int ver)
+    {
+        _animator.SetFloat("low health", ver);
+    }
+    public void platformEnhanceSet(float time)
+    {
+        isenhanced = true;
+        platformEnhancmetTick=time;
     }
 }

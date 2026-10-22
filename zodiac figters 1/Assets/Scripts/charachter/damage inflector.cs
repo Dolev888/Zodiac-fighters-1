@@ -3,7 +3,7 @@ using UnityEngine;
 public class damageinflector : MonoBehaviour
 {
 
-    [SerializeField]private float _damage; 
+    [SerializeField]public float _damage; 
     [SerializeField] private float _stnTime;
     [SerializeField] private float _knokBack;
     [SerializeField] private float _knockBackEngel;

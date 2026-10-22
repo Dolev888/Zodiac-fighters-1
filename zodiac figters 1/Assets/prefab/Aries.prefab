@@ -675,6 +675,7 @@ MonoBehaviour:
   pmove: {fileID: 4111360677550138424}
   pimput: {fileID: 7318777143498459713}
   pattack: {fileID: 1231715721121882809}
+  fdamage: {fileID: 7203191859062038721}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -811,6 +812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
   damagePercentage: 0
   maxDamage: 100
+  _fetiugPrecent: 80
   matchManager: {fileID: 0}
   isPlayer: 0
 --- !u!114 &-9100399599192673185

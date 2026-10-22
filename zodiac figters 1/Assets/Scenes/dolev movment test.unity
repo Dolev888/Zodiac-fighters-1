@@ -870,8 +870,9 @@ GameObject:
   - component: {fileID: 881846242}
   - component: {fileID: 881846241}
   - component: {fileID: 881846240}
+  - component: {fileID: 881846243}
   m_Layer: 6
-  m_Name: Square (5)
+  m_Name: platform 1
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -997,6 +998,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881846243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881846239}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc149612f46754b47a075aee71d1635a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::platform
+  type: 2
+  _size: {x: 178.8, y: 4.17}
+  _offSet: {x: 0, y: 3.57, z: 0}
+  _color: {r: 1, g: 0, b: 0, a: 1}
+  _duration: 0.5
 --- !u!1 &988912853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1901,6 +1919,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
   damagePercentage: 0
   maxDamage: 100
+  _fetiugPrecent: 0
   matchManager: {fileID: 0}
   isPlayer: 0
 --- !u!114 &1989826841
@@ -2014,6 +2033,7 @@ MonoBehaviour:
   pmove: {fileID: 1989826845}
   pimput: {fileID: 1989826846}
   pattack: {fileID: 1989826841}
+  fdamage: {fileID: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -2034,6 +2054,8 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
+  type: 0
+  isenhanced: 0
   _groundCheckSise: {x: 2.56, y: 0.69}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
   _idleTime: 0
@@ -2192,7 +2214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2300,8 +2322,16 @@ PrefabInstance:
       value: 503
       objectReference: {fileID: 0}
     - target: {fileID: 3545120021502473413, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545120021502473413, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
       propertyPath: isleft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3545120021502473413, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3545120021502473413, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
       propertyPath: curentState

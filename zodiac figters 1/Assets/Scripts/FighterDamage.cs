@@ -8,6 +8,8 @@ public class FighterDamage : MonoBehaviour
     [SerializeField] private float damagePercentage = 0f;
     [SerializeField] private float maxDamage = 100f;
 
+    [SerializeField] private float _fetiugPrecent;
+
     [SerializeField] private MatchManager matchManager;
 
     [SerializeField] private bool isPlayer;
@@ -28,7 +30,7 @@ public class FighterDamage : MonoBehaviour
         if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10f,888,4);
+            TakeDamage(10f,-888,0);
         }
         switch (pmain.CurentState)
         {
@@ -55,6 +57,15 @@ public class FighterDamage : MonoBehaviour
         {
             damagePercentage = maxDamage; //insurinng damage can't be higher then maxdamge;
             Lose(); // if reached max damge you lose
+        }
+
+        if (damagePercentage>= _fetiugPrecent)
+        {
+            pmain.SetIdleAnim(1);
+        }
+        else
+        {
+            pmain.SetIdleAnim(0);
         }
         Debug.Log($"{gameObject.name} Damage: {damagePercentage} %");
     }

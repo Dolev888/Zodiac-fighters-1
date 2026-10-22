@@ -10,34 +10,38 @@ public class dash_aris  : AttackPearent
     [SerializeField] private GameObject[] _hitBoxList;
     [SerializeField] private float[] _timePuse;
     [SerializeField] private float _dashPower;
+    [SerializeField] private GameObject _flameDash;
 
 
-    public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
+    public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
         // start fase
+        pattack.ObjectInstantPlayer(_flameDash, Vector2.zero, 0, ID);
         switch (ver)
         {
             case 0:
-                Playerattack.SetVelocity(_dashPower * Vector2.right);
+                pattack.SetVelocity(_dashPower * Vector2.right);
                 break;
 
             case 1:
-                Playerattack.SetVelocity(_dashPower * Vector2.left);
+                pattack.SetVelocity(_dashPower * Vector2.left);
                 break;
         }
-        Playerattack.pmain.Setinvincible(true);
+        pattack.pmain.Setinvincible(true);
+        pattack.pmain.SetPush(false);
         
         //Playerattack.pmain.playDash();
         //Playerattack.ChangeHitBox(_hitBoxList[0]);
         //Playerattack.ChangeHertBox(_hertBoxList[0],ID);
 
         yield return new WaitForSeconds(_timePuse[0]);
-        Playerattack.SetVelocity(Vector2.zero);
+        pattack.SetVelocity(Vector2.zero);
         // finish fase 
         //Playerattack.DestroyHitBox();
         //Playerattack.DestroyHertBox();
-        Playerattack.pmain.Setinvincible(false);
-        Playerattack.pmain.FinishAttack();
+        pattack.pmain.Setinvincible(false);
+        pattack.pmain.SetPush(true);
+        pattack.pmain.FinishAttack();
     }
     public override void anoncehit(Collider2D collision)
     {

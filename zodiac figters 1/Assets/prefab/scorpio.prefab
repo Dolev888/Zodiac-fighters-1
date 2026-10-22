@@ -330,6 +330,7 @@ MonoBehaviour:
   pmove: {fileID: 4212444567653787034}
   pimput: {fileID: 6442586289907027962}
   pattack: {fileID: 3656398007488796000}
+  fdamage: {fileID: 7443383413974879375}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -344,6 +345,8 @@ MonoBehaviour:
   OGgravity: 0
   _airJumpMax: 1
   _airJumpCounter: 0
+  _airDashMax: 0
+  _airDashCounter: 0
   routatelock: 0
   isleft: 0
   canAirAttack: 0
