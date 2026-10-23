@@ -1,11 +1,14 @@
 using UnityEngine;
 using Unity.Cinemachine;   // if this line errors (older Cinemachine), change it to: using Cinemachine;
 
-// the choice made on the selection screen (it only has to set PlayerCharacter before loading the match scene)
+// the choices made on the selection screen (it sets both before loading the match scene)
 public static class MatchSettings
 {
-    // same order as MatchSetup.characterPrefabs: 0 = Aries, 1 = Scorpio
+    // same order as MatchSetup.characterPrefabs: 0 = Aries, 1 = Scorpio, (2 = the next character...)
     public static int PlayerCharacter = 0;
+
+    // -1 = nobody was picked (for example the match scene was started directly): the enemy is then the "next" character
+    public static int EnemyCharacter = -1;
 }
 
 // One object in the match scene. Spawns both fighters, makes one the player and the other the enemy,
@@ -37,8 +40,12 @@ public class MatchSetup : MonoBehaviour
         int playerIndex = testPlayerCharacter >= 0 ? testPlayerCharacter : MatchSettings.PlayerCharacter;
         playerIndex = Mathf.Clamp(playerIndex, 0, characterPrefabs.Length - 1);
 
-        // by default the enemy is the other character
-        int enemyIndex = testEnemyCharacter >= 0 ? testEnemyCharacter : (playerIndex + 1) % characterPrefabs.Length;
+        // the enemy is the one picked on the selection screen; if none was picked, the next character in the list
+        int enemyIndex;
+        if (testEnemyCharacter >= 0) enemyIndex = testEnemyCharacter;
+        else if (MatchSettings.EnemyCharacter >= 0) enemyIndex = MatchSettings.EnemyCharacter;
+        else enemyIndex = (playerIndex + 1) % characterPrefabs.Length;
+        enemyIndex = Mathf.Clamp(enemyIndex, 0, characterPrefabs.Length - 1);
 
         player = Spawn(playerIndex, playerSpawn, true);
         enemy = Spawn(enemyIndex, enemySpawn, false);
