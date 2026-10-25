@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29c6dc70fc33434ea150aa43f3c64ff, type: 3}
+  m_Name: lam pansh
+  m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
+  clips:
+  - {fileID: 8300000, guid: fbdd2693897e3c346911f634c51efb4f, type: 3}
+  - {fileID: 8300000, guid: 80f1044dfdb6d3e47a7f46ef6db7a42a, type: 3}
+  - {fileID: 8300000, guid: 7b6ed5325c9d54a418ded0fbbd838372, type: 3}
+  - {fileID: 8300000, guid: 001ef1122466bdb448626c926ebbd56e, type: 3}
+  - {fileID: 8300000, guid: ef1530fe674c13742a904213455a433f, type: 3}
+  avoidRepeat: 1
+  volume: 1
+  volumeVariation: 0
+  pitchMin: 0.95
+  pitchMax: 1.05
+  loop: 0
+  channel: 2
+  mixerGroup: {fileID: 0}
+  priority: 128
+  ignoreListenerPause: 0
+  spatialBlend: 0
+  minDistance: 1
+  maxDistance: 30
+  rolloff: 1
+  maxSimultaneous: 4
+  minInterval: 0.05

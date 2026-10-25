@@ -10,14 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e29c6dc70fc33434ea150aa43f3c64ff, type: 3}
-  m_Name: lam pansh
+  m_Name: axe spin 1
   m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
   clips:
-  - {fileID: 8300000, guid: 2bdb721a57730b741a36d37fe94c9bae, type: 3}
-  - {fileID: 8300000, guid: 4e3345d92633c9e47b4b8d032327385c, type: 3}
-  - {fileID: 8300000, guid: a4a04ba6a814c5d4ebe85cf8fc35b40a, type: 3}
-  - {fileID: 8300000, guid: a32ebdd43ed0f2248b0b6b4dc97ba720, type: 3}
-  - {fileID: 8300000, guid: 7951a7f0537325146b67b87884cdcab6, type: 3}
+  - {fileID: 8300000, guid: 800f0f1d34bf721419fdd56801ce6f1f, type: 3}
   avoidRepeat: 1
   volume: 1
   volumeVariation: 0

@@ -313,6 +313,7 @@ MonoBehaviour:
   _doubleJumpPower: 55
   player: {fileID: 3247699537490877977}
   rigidP: {fileID: 245598514421257358}
+  jumpSound: {fileID: 11400000, guid: 6f55af8de0787e84180f46375351dcf6, type: 2}
 --- !u!114 &1703335413070672281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,6 +437,8 @@ MonoBehaviour:
   player: {fileID: 3247699537490877977}
   hertObject: {fileID: 8441536336644777367}
   hitObject: {fileID: 3062941139060350586}
+  firePunch: {fileID: 0}
+  hitPunch: {fileID: 0}
   _attackList:
   - {fileID: 11400000, guid: 2f63240e56770b7438557698d7d98def, type: 2}
   - {fileID: 11400000, guid: cf2ca1b8dcfae74459752238d7dce7e6, type: 2}
@@ -546,11 +549,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   upperScanWidth: 150
-  upperScanheight: 25
+  autoClimbHeight: 1
+  jumpSafety: 0.95
   maxClimbHeight: 21
+  feetBelowPivot: 10.8
   landingInset: 5
   dropReach: 15
   dropCheckDistance: 60
+  debugLog: 1
 --- !u!1 &6804011877725011052
 GameObject:
   m_ObjectHideFlags: 0

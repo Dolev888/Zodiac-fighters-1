@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attack_aris_basic", menuName = "Attacks/aries/basic")]
 
@@ -8,12 +9,14 @@ public class attack_aris_basic : AttackPearent
     [SerializeField] private GameObject[] _hertBoxList;
     [SerializeField] private GameObject[] _hitBoxList;
     [SerializeField] private float[] _timePuse;
-    
-     
-   
+
+
+    public SoundEvent firepnshSound;
 
     public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
+        firepnshSound.Play();
+
         switch (ver)
         {
             case 0:

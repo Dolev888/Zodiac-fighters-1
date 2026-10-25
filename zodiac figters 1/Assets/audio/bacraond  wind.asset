@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: bacraond  wind
   m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
   clips:
-  - {fileID: 8300000, guid: 1d5c33435df192f4c899231a3fba76b9, type: 3}
+  - {fileID: 8300000, guid: 82018aea01b7a124e8971fd5c7762863, type: 3}
   avoidRepeat: 1
   volume: 1
   volumeVariation: 0

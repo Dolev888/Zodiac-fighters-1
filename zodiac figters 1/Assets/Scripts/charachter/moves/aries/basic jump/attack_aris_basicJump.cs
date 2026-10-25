@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "attack_aris_basicJump", menuName = "Attacks/aries/basic jump")]
@@ -12,6 +13,7 @@ public class attack_aris_basicJump : AttackPearent
     private bool _ifhit=false;
     private bool _canhit = false;
 
+    public SoundEvent fireShieldSound;
 
     public override IEnumerator UseMove(playerattack Playerattack,int ID, int ver)
     {
@@ -24,6 +26,9 @@ public class attack_aris_basicJump : AttackPearent
         Playerattack.SetVelocity(_velocitiAdd);
         float clock = _timePuse[1];
         _canhit =true;
+
+        fireShieldSound.Play();
+
         while (!_ifhit && clock > 0 && !Playerattack.pmain.IsGrounded)
         {
             

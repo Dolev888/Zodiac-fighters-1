@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attack_aris_spaiceljump", menuName = "Attacks/aries/special")]
 
@@ -11,7 +12,7 @@ public class attack_aries_spaicel : AttackPearent
     [SerializeField] private GameObject _firePunchOB;
     [SerializeField] private Vector2 _offSet;
     [SerializeField] private float _engel;
-
+    public SoundEvent fireBallSound;
 
     public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
@@ -20,12 +21,15 @@ public class attack_aries_spaicel : AttackPearent
         Playerattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel, ID);
 
         yield return new WaitForSeconds(_timePuse[0]);
-      
-        
+
+        fireBallSound.Play();
+
         Playerattack.pmain.FinishAttack();
     }
     public override void anoncehit(Collider2D collision)
     {
         return;
+   
     }
+    
 }

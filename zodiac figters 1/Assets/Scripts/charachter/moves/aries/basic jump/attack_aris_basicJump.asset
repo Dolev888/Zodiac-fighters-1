@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: attack_aris_basicJump
   m_EditorClassIdentifier: Assembly-CSharp::attack_aris_basicJump
   _cooldown: 0.5
+  _chainCount: 0
   _hertBoxList:
   - {fileID: 5994614329599020332, guid: d46197be1b985ae41b303e790b739e5e, type: 3}
   _hitBoxList:
@@ -21,3 +22,4 @@ MonoBehaviour:
   - 0.1
   - 3
   _velocitiAdd: {x: 110, y: -70}
+  fireShieldSound: {fileID: 11400000, guid: 6db8c26f84e331a47b6776cdc3b07a5e, type: 2}

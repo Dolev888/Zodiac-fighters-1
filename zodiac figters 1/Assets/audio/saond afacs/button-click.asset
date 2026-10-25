@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e29c6dc70fc33434ea150aa43f3c64ff, type: 3}
-  m_Name: 2 faiar ball
+  m_Name: button-click
   m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
-  clips:
-  - {fileID: 8300000, guid: d52ad82376e464447bcce02bead56724, type: 3}
+  clips: []
   avoidRepeat: 1
   volume: 1
   volumeVariation: 0
