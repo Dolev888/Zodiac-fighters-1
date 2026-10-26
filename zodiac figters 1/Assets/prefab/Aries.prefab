@@ -656,8 +656,8 @@ MonoBehaviour:
   pimput: {fileID: 7318777143498459713}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 70
-  _doubleJumpPower: 55
+  _jumpPower: 80
+  _doubleJumpPower: 60
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
 --- !u!114 &3545120021502473413
@@ -697,6 +697,8 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
+  type: 0
+  isenhanced: 0
   _groundCheckSise: {x: 2.56, y: 1.02}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
   _idleTime: 1
