@@ -84,9 +84,9 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 4014033274348876098, guid: e2f1746defff879499cf3b16d3b0caaa, type: 3}
+  m_Sprite: {fileID: -2606786810987870882, guid: 3e624e0dba12b4249b40c6eb755735a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -132,7 +132,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 20, y: 20}
+    oldSize: {x: 7.8, y: 20}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -140,13 +140,13 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.5, y: 4}
-      - {x: -1.5, y: 6}
-      - {x: -0.5, y: 0}
-      - {x: -1.5, y: -6}
-      - {x: 0.5, y: -4}
-      - {x: 1.5, y: -2}
-      - {x: 1.5, y: 2}
+    - - {x: 1.5, y: 6.5}
+      - {x: -1.5, y: 10}
+      - {x: -0.5, y: -0.3}
+      - {x: -1.5, y: -9.5}
+      - {x: 1, y: -6.5}
+      - {x: 3, y: -2.5}
+      - {x: 3, y: 2.5}
   m_UseDelaunayMesh: 1
 --- !u!114 &8138694554384190919
 MonoBehaviour:
@@ -163,9 +163,10 @@ MonoBehaviour:
   playerTag: 
   _pattack: {fileID: 0}
   _pmain: {fileID: 0}
+  _moveID: 0
+  _damage: 3
   _existensTime: 10
   _existensSpeed: 100
-  _damage: 3
   _stanTime: 0
   _knokBack: 0
   hitlayer:
@@ -175,7 +176,6 @@ MonoBehaviour:
   _hitFlag: 0
   _coolDown: 2
   _rotation: -24
-  _moveID: 0
 --- !u!50 &7094613875154680790
 Rigidbody2D:
   serializedVersion: 5

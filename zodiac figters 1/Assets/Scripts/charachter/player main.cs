@@ -397,7 +397,12 @@ public class playermain : MonoBehaviour
         _animator.SetBool("fall",false);
         _animator.Play("defult");
         _animator.SetInteger("move choose", A);
+        _animator.SetFloat("attack ver", 0);
         _animator.SetBool("attaking", true);
+    }
+    public void SetAttackAnimationVersion(int A)
+    {
+        _animator.SetFloat("attack ver", A);
     }
     public void StopAttackAnimation()
     {
