@@ -8,12 +8,7 @@ public class aries_firewave : projectileParent
 
     [Header("regular info")]
     
-    [SerializeField] private float _stanTime;
-    [SerializeField] private float _knokBack;
-    [SerializeField] private LayerMask hitlayer;
-    [SerializeField] private Color _color;
-    [SerializeField] private bool _hitFlag;
-    [SerializeField] private float _coolDown;
+
     [SerializeField] private float _rotation;
     private Rigidbody2D rb;
     

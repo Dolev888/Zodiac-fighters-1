@@ -354,7 +354,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5851916965663169968, guid: a31ea5a0b5f6caf4caf4ba13aed372d5, type: 3}
+  m_Sprite: {fileID: 8003063361622546671, guid: 8d836777dfb9e664986f9372a13aeb93, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.5019608}
   m_FlipX: 0
   m_FlipY: 0
@@ -376,13 +376,13 @@ GameObject:
   - component: {fileID: 497685725}
   - component: {fileID: 497685726}
   - component: {fileID: 497685727}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &497685724
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,13 +1281,30 @@ MonoBehaviour:
   _pmain: {fileID: 329908473}
   _moveID: 0
   _damage: 0
+  _stanTime: 0
+  _knokBack: 0
+  _knockBackEngel: 0
+  hitlayer:
+    serializedVersion: 2
+    m_Bits: 0
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  _hitFlag: 0
+  _coolDown: 0
+  _hitBoxParmeter: []
+  _hitBoxOb: []
   _axeSpeed: 10
   _axeOb: {fileID: 1895325773}
   _wallHealth: 3
   _wallOffset: {x: 7, y: 0, z: 0}
   _wallOb: {fileID: 497685723}
   _trigerColider: {fileID: 497685726}
-  _ignoredColider: {fileID: 497685727}
+  _ignoredColider:
+  - {fileID: 497685727}
+  - {fileID: 497685726}
+  _exploRadius: 0
+  _exploOffset: {x: 0, y: 0, z: 0}
+  _exlpoTime: 0
+  _expoDamageCooldown: 0
 --- !u!1 &988912853
 GameObject:
   m_ObjectHideFlags: 0
@@ -1598,7 +1615,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7386459849670392478, guid: a1556c0d70e917148bcef547df4fa4cf, type: 3}
+  m_Sprite: {fileID: 8207772986526121334, guid: 25a23dcc968e0154c937cf8f4be49a3d, type: 3}
   m_Color: {r: 0, g: 0, b: 1, a: 0.49803922}
   m_FlipX: 0
   m_FlipY: 0
@@ -2184,7 +2201,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -2284,7 +2301,7 @@ Transform:
   m_GameObject: {fileID: 1986747825}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.52, y: 34.88, z: 0}
+  m_LocalPosition: {x: -60.9, y: 34.88, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3024,7 +3041,7 @@ Transform:
   m_GameObject: {fileID: 4304370893466132101}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.9, y: 35.81, z: 0}
+  m_LocalPosition: {x: 13.3, y: 37.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

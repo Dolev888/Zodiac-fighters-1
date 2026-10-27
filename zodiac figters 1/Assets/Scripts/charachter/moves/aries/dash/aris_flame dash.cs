@@ -3,11 +3,10 @@ using UnityEngine;
 
 public class aris_flamedash : projectileParent
 {
-    [SerializeField] private GameObject[] _hitBoxOb;
-    [SerializeField] private LayerMask hitlayer;
+    
     [SerializeField] private float _existancTime;
     //[SerializeField] private float _damage;
-    [SerializeField] private float _coolDown;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

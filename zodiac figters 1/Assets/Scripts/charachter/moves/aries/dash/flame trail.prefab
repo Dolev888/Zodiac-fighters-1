@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4660343788301970545}
   m_Layer: 8
   m_Name: flame trail
-  m_TagString: Untagged
+  m_TagString: hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,11 +155,18 @@ MonoBehaviour:
   _pattack: {fileID: 0}
   _pmain: {fileID: 0}
   _moveID: 0
-  _hitBoxOb:
-  - {fileID: 3117938301113540106}
+  _damage: 0.2
+  _stanTime: 0
+  _knokBack: 0
+  _knockBackEngel: 0
   hitlayer:
     serializedVersion: 2
     m_Bits: 256
-  _existancTime: 1
-  _damage: 0.2
+  _color: {r: 0, g: 0, b: 0, a: 0}
+  _hitFlag: 0
   _coolDown: 0.1
+  pattack: {fileID: 0}
+  _hitBoxParmeter: []
+  _hitBoxOb:
+  - {fileID: 3117938301113540106}
+  _existancTime: 1

@@ -6,13 +6,7 @@ public class scorpio_icegayzer : projectileParent
 {
     [Header("regular info")]
     //[SerializeField] private float _damage;
-    [SerializeField] private float _stanTime;
-    [SerializeField] private float _knokBack;
-    [SerializeField] private float _knockBackEngel;
-    [SerializeField] private LayerMask hitlayer;
-    [SerializeField] private Color _color;
-    [SerializeField] private bool _hitFlag;
-    [SerializeField] private float _coolDown;
+   
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Vector3 _offset;
 

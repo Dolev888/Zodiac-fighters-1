@@ -21,7 +21,8 @@ public class damageinflector : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       pmain = GetComponentInParent<playermain>();
+        hitlayer |= (1 << LayerMask.NameToLayer("obstecal"));
+        pmain = GetComponentInParent<playermain>();
         pattack = GetComponentInParent<playerattack>();
         
     }
@@ -102,6 +103,11 @@ public class damageinflector : MonoBehaviour
                     {
                         Hit(hit);
                     }
+                    else if (hit.gameObject.layer == LayerMask.NameToLayer("obstecal"))
+                    {
+                        
+                        obstacleHit(hit);
+                    }
 
                 }
             }
@@ -119,7 +125,15 @@ public class damageinflector : MonoBehaviour
                 {
                     Collider2D hit = results[p];
 
-                    Hit(hit);
+                   
+                    if (hit.gameObject.layer == LayerMask.NameToLayer("obstecal"))
+                    {
+                        obstacleHit(hit);
+                    }
+                    else 
+                    {
+                        Hit(hit);
+                    }
                 }
             }
         }
@@ -181,7 +195,7 @@ public class damageinflector : MonoBehaviour
         {
             return;
         }
-        
+        hit.gameObject.SendMessage("OnRaycastHit", GetComponent<GameObject>(), SendMessageOptions.DontRequireReceiver);
         hit.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
         
         if (_stnTime != 0)
@@ -192,5 +206,15 @@ public class damageinflector : MonoBehaviour
         {
             Knocback(hit);
         }
+    }
+    private void obstacleHit(Collider2D hit)
+    {
+        if (hit.transform.parent != null)
+            hit.transform.parent.gameObject.SendMessage("OnRaycastHit", gameObject, SendMessageOptions.DontRequireReceiver);
+        else
+        {
+            hit.gameObject.SendMessage("OnRaycastHit", gameObject, SendMessageOptions.DontRequireReceiver);
+        }
+        DamgaeFlag(hit);
     }
 }

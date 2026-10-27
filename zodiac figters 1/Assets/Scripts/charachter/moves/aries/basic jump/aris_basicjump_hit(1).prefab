@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7492634963088594123}
   m_Layer: 8
   m_Name: aris_basicjump_hit(1)
-  m_TagString: Untagged
+  m_TagString: hit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

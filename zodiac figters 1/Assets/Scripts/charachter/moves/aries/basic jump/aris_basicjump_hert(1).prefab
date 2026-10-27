@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5835046731291025193}
   m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: hert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,9 +100,9 @@ GameObject:
   - component: {fileID: 7360959018351580443}
   - component: {fileID: 5444793724806855276}
   - component: {fileID: 3911911554973667581}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: aris_basicjump_hert(1)
-  m_TagString: Untagged
+  m_TagString: hert
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
