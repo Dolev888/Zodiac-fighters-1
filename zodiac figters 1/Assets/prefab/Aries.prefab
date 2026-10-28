@@ -698,6 +698,8 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
+  type: 0
+  isenhanced: 0
   _groundCheckSise: {x: 2.56, y: 1.02}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
   _idleTime: 1
@@ -793,6 +795,8 @@ MonoBehaviour:
   _SoundList:
   - {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
   - {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
+  - {fileID: 11400000, guid: 545ce54badf394646a13bba8ff75bda6, type: 2}
+  - {fileID: 11400000, guid: 6db8c26f84e331a47b6776cdc3b07a5e, type: 2}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
