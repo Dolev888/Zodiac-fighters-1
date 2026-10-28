@@ -50,6 +50,8 @@ public class MatchSetup : MonoBehaviour
         player = Spawn(playerIndex, playerSpawn, true);
         enemy = Spawn(enemyIndex, enemySpawn, false);
 
+        CollectedDataAnalysis.MatchStart(playerIndex, enemyIndex, player.Damage, enemy.Damage);
+
         stageCenter = (playerSpawn.position + enemySpawn.position) * 0.5f;
 
         if (playerHealth != null) playerHealth.SetFighter(player.Damage);

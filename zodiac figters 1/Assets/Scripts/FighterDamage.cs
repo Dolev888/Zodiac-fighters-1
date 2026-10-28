@@ -44,6 +44,7 @@ public class FighterDamage : MonoBehaviour
             StartCoroutine(countdown(cooldown, id));
         }
         if (amount <= 0f) return;
+        CollectedDataAnalysis.Hit(isPlayer, amount);   // playtest log: this fighter was hit
         damagePercentage += amount;
 
         if (damagePercentage >= maxDamage)

@@ -20,6 +20,9 @@ public class MatchManager : MonoBehaviour
 
         matchEnded = true;
 
+        // playtest log: result, duration and the winner's health (before the loser is destroyed)
+        CollectedDataAnalysis.MatchEnd(playerWon);
+
         // remove the defeated fighter
         if (loser != null)
         {

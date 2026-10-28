@@ -43,6 +43,7 @@ public class CharacterSelect : MonoBehaviour
         {
             // step 1: this is the player's fighter, now pick the opponent
             MatchSettings.PlayerCharacter = characterIndex;
+            CollectedDataAnalysis.PlayerPick(characterIndex);
             choosingOpponent = true;
             RefreshTitle();
             return;
@@ -50,6 +51,7 @@ public class CharacterSelect : MonoBehaviour
 
         // step 2: this is the enemy, start the match (MatchSetup reads both choices when the scene loads)
         MatchSettings.EnemyCharacter = characterIndex;
+        CollectedDataAnalysis.EnemyPick(characterIndex);
         Time.timeScale = 1f;
         SceneManager.LoadScene(matchSceneName);
     }
