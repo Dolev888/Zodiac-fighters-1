@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16b71ec5cf96ddd4b95b2a11f05867e6, type: 3}
+  m_Name: SO_attack_taurus_spaicel
+  m_EditorClassIdentifier: Assembly-CSharp::attack_taurus_spaicel
+  _cooldown: 0.8
+  _chainCount: 0
+  _hertBoxList: []
+  _hitBoxList: []
+  _timePuse:
+  - 0.683
+  - 0.15
+  _earthWave: {fileID: 2018475860411080148, guid: b0c873fcc8015ed4599a9f958f6f2db5, type: 3}
+  _offSet: {x: 20, y: -3}
+  _engel: 0

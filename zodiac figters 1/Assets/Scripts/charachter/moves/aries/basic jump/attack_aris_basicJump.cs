@@ -13,29 +13,30 @@ public class attack_aris_basicJump : AttackPearent
     private bool _canhit = false;
 
 
-    public override IEnumerator UseMove(playerattack Playerattack,int ID, int ver)
+    public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
         Debug.Log(ID);
-        Playerattack.SetVelocity(Vector2.zero);    
-        Playerattack.ChangeHitBox(_hitBoxList[0]);
-        Playerattack.ChangeHertBox(_hertBoxList[0], ID);
+        pattack.SetVelocity(Vector2.zero);
+        pattack.ChangeHitBox(_hitBoxList[0]);
+        pattack.ChangeHertBox(_hertBoxList[0], ID);
         yield return new WaitForSeconds(_timePuse[0]);
-        Playerattack.pmain.PlayAttackAnimation(1);
-        Playerattack.SetVelocity(_velocitiAdd);
+        pattack.pmain.PlayAttackAnimation(1);
+        pattack.SetVelocity(_velocitiAdd);
         float clock = _timePuse[1];
-        _canhit =true;
-        while (!_ifhit && clock > 0 && !Playerattack.pmain.IsGrounded)
+        _canhit = true;
+        while (!_ifhit && clock > 0 && !pattack.pmain.IsGrounded)
         {
-            
+
             clock -= Time.deltaTime;
             yield return null;
         }
+       
         _ifhit = false;
         _canhit = false;
-        Playerattack.pmain.StopAttackAnimation();
-        Playerattack.DestroyHitBox();
-        Playerattack.DestroyHertBox();
-        Playerattack.pmain.FinishAttack();
+        pattack.pmain.StopAttackAnimation();
+        pattack.DestroyHitBox();
+        pattack.DestroyHertBox();
+        pattack.pmain.FinishAttack();
     }
     private bool CheckHit(playerattack Playerattack, int ID)
     {

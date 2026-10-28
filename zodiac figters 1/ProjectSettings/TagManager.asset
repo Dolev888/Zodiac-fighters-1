@@ -8,6 +8,7 @@ TagManager:
   - hert
   - hit
   - Enemy
+  - obstecal
   layers:
   - Default
   - TransparentFX

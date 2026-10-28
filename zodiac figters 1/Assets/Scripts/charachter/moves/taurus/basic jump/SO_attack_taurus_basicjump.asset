@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 774a5ba17802aed4e8fe0377d5da7aa1, type: 3}
+  m_Name: SO_attack_taurus_basicjump
+  m_EditorClassIdentifier: Assembly-CSharp::attack_taurus_basicjump
+  _cooldown: 4
+  _chainCount: 0
+  _hertBoxList:
+  - {fileID: 6160366339751568505, guid: 6ffacc43b30699a4d9199bc7b7b10dee, type: 3}
+  - {fileID: 6984988124822321692, guid: 68224267f7df67645859e9307c2e2d4f, type: 3}
+  _hitBoxList: []
+  _timePuse:
+  - 0.3
+  - 10
+  - 0.2
+  _downForce: {x: 0, y: -50}

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a18a71efe15444d9f7433f57a4f3bf, type: 3}
+  m_Name: SO_attack_taurus_spaiceljump
+  m_EditorClassIdentifier: Assembly-CSharp::attack_taurus_spaiceljump
+  _cooldown: 1
+  _chainCount: 0
+  _hertBoxList: []
+  _hitBoxList: []
+  _timePuse:
+  - 0.75
+  - 0.083
+  _rockWallOb: {fileID: 654127508061141641, guid: a522a64b510de2f4b9c76f24c1ae018b, type: 3}
+  _WallOffset: {x: 7.5, y: -4}

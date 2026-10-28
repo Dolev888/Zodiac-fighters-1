@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class damageinflector : MonoBehaviour
@@ -16,12 +17,13 @@ public class damageinflector : MonoBehaviour
     private playerattack pattack;
     [SerializeField] private Vector4[] _hitBoxParmeter;
     [SerializeField] private GameObject[] _hitBoxOb;
-
+    private LayerMask obstacleMask;
     public int _moveID;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hitlayer |= (1 << LayerMask.NameToLayer("obstecal"));
+        obstacleMask = (1 << LayerMask.NameToLayer("obstecal"));
         pmain = GetComponentInParent<playermain>();
         pattack = GetComponentInParent<playerattack>();
         
@@ -90,14 +92,27 @@ public class damageinflector : MonoBehaviour
             
             if (_hitBoxOb[i].GetComponent<BoxCollider2D>() !=null )
             {
-                Vector2 point = new Vector2(_hitBoxOb[i].transform.position.x, _hitBoxOb[i].transform.position.y);
-
                 BoxCollider2D box = _hitBoxOb[i].GetComponent<BoxCollider2D>();
+                Vector2 point = box.transform.TransformPoint(box.offset);
                 Vector2 size = box.bounds.size;
                 Collider2D[] hits = Physics2D.OverlapBoxAll(point, size, 0f, hitlayer);
 
                 foreach (Collider2D hit in hits)
                 {
+                    Vector2 targetPoint = hit.bounds.center;
+                    Vector2 start = new Vector2(point.x + (pmain.isleft ? size.x / 2f : -size.x / 2f), point.y);
+                    Vector2 direction = targetPoint - start;
+                   
+                    float distance = direction.magnitude;
+                    RaycastHit2D obstacle = Physics2D.Raycast(start, direction.normalized, distance, obstacleMask);
+                    if (obstacle.collider != null)
+                    {
+                        if (hit.gameObject.layer == LayerMask.NameToLayer("obstecal"))
+                        {
+                            obstacleHit(hit);
+                        }
+                        continue;
+                    }
                     Debug.Log(hit.gameObject.name);
                     if (hit.GetComponentInParent<FighterDamage>() != null)
                     {
@@ -107,6 +122,7 @@ public class damageinflector : MonoBehaviour
                     {
                         
                         obstacleHit(hit);
+
                     }
 
                 }
@@ -136,25 +152,49 @@ public class damageinflector : MonoBehaviour
                     }
                 }
             }
+            else if(_hitBoxOb[i].GetComponent<CircleCollider2D>() != null)
+            {
+                CircleCollider2D circle = _hitBoxOb[i].GetComponent<CircleCollider2D>();
+                Vector2 point = circle.transform.TransformPoint(circle.offset);
+
+
+                float size = circle.radius;
+                Collider2D[] hits = Physics2D.OverlapCircleAll(point, size, hitlayer);
+                foreach (Collider2D hit in hits)
+                {
+                    Debug.Log(hit.gameObject.name);
+                    if (hit.GetComponentInParent<FighterDamage>() != null)
+                    {
+                        Hit(hit);
+                    }
+                    else if (hit.gameObject.layer == LayerMask.NameToLayer("obstecal"))
+                    {
+
+                        obstacleHit(hit);
+
+                    }
+
+                }
+            }
         }
         
     }
     private void DrawHitBox()
     {
-        Gizmos.color = Color.yellow;
+        Gizmos.color = _color;
         for (int i = 0; i < _hitBoxOb.Length; i++)
         {
             if (_hitBoxOb[i].GetComponent<BoxCollider2D>() != null)
             {
-                Vector2 point = new Vector2(_hitBoxOb[i].transform.position.x, _hitBoxOb[i].transform.position.y);
-
-                BoxCollider2D box = _hitBoxOb[i].GetComponent<BoxCollider2D>();
-                Vector2 size = box.bounds.size;
-                Gizmos.DrawCube(point, size);
+                DrawBox(i);
             }
             else if (_hitBoxOb[i].GetComponent<PolygonCollider2D>() != null)
             {
                 DrawPoligon(i);
+            }
+            else if (_hitBoxOb[i].GetComponent<CircleCollider2D>() !=null)
+            {
+                DrawCircle(i);
             }
         }
     }
@@ -180,10 +220,28 @@ public class damageinflector : MonoBehaviour
             }
         }
     }
+    private void DrawBox(int obje)
+    {
+        BoxCollider2D box = _hitBoxOb[obje].GetComponent<BoxCollider2D>();
+        Vector2 point = box.transform.TransformPoint(box.offset);
+
+
+        Vector2 size = box.bounds.size;
+        Gizmos.DrawCube(point, size);
+    }
+    private void DrawCircle(int obje)
+    {
+        CircleCollider2D circle = _hitBoxOb[obje].GetComponent<CircleCollider2D>();
+        Vector2 point = circle.transform.TransformPoint(circle.offset);
+
+
+        float size = circle.radius;
+        Gizmos.DrawWireSphere(point, size);
+    }
     private void DamgaeFlag(Collider2D collision)
     {
        
-        if (_hitFlag && pattack != null)
+        if (_hitFlag && pattack != null && collision.gameObject.tag != pmain.gameObject.tag)
         {
             pattack.AttackHitDetected(collision, _moveID);
         }
@@ -215,6 +273,20 @@ public class damageinflector : MonoBehaviour
         {
             hit.gameObject.SendMessage("OnRaycastHit", gameObject, SendMessageOptions.DontRequireReceiver);
         }
+        obstacleDamage ObD = hit.gameObject.GetComponentInParent<obstacleDamage>();
+        if (ObD != null)
+        {
+            ObD.takeDamage(_damage, _moveID, _coolDown);
+        }
+        else 
+        {
+            ObD = hit.gameObject.GetComponent<obstacleDamage>();
+            if (ObD != null)
+            {
+                ObD.takeDamage(_damage, _moveID, _coolDown);
+            }
+        }
+        
         DamgaeFlag(hit);
     }
 }

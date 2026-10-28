@@ -46,7 +46,30 @@ public class aris_firePunch : projectileParent
         {
             Destroy(gameObject);
         }
-        if(collision.tag !=playerTag && collision.gameObject.layer == LayerMask.NameToLayer("hit") && collision.GetComponentInParent<FighterDamage>() !=null)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("obstecal"))
+        {
+            if (collision.transform.parent != null)
+                collision.transform.parent.gameObject.SendMessage("OnRaycastHit", gameObject, SendMessageOptions.DontRequireReceiver);
+            else
+            {
+                collision.gameObject.SendMessage("OnRaycastHit", gameObject, SendMessageOptions.DontRequireReceiver);
+            }
+            obstacleDamage ObD = collision.gameObject.GetComponentInParent<obstacleDamage>();
+            if (ObD != null)
+            {
+                ObD.takeDamage(_damage, _moveID, _coolDown);
+            }
+            else
+            {
+                ObD = collision.gameObject.GetComponent<obstacleDamage>();
+                if (ObD != null)
+                {
+                    ObD.takeDamage(_damage, _moveID, _coolDown);
+                }
+            }
+            Destroy(gameObject);
+        }
+        if (collision.tag !=playerTag && collision.gameObject.layer == LayerMask.NameToLayer("hit") && collision.GetComponentInParent<FighterDamage>() !=null)
         {
             collision.GetComponentInParent<FighterDamage>().TakeDamage(_damage, _moveID, _coolDown);
             Destroy(gameObject);
