@@ -5,7 +5,7 @@ using UnityEngine;
 public class scorpio_icegayzer : projectileParent
 {
     [Header("regular info")]
-    [SerializeField] private float _damage;
+    //[SerializeField] private float _damage;
     [SerializeField] private float _stanTime;
     [SerializeField] private float _knokBack;
     [SerializeField] private float _knockBackEngel;

@@ -173,7 +173,7 @@ CapsuleCollider2D:
     m_Bits: 512
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 503
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 6405216360561352262}
   - component: {fileID: 4660371759244261245}
   - component: {fileID: 1734646256285989758}
+  - component: {fileID: 4765288240241789196}
   m_Layer: 0
   m_Name: pixil-frame-85 (1)_0
   m_TagString: Untagged
@@ -339,6 +340,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4765288240241789196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629451478393464699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c91a09133b0a0d94fa48c8f8451558d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::universalAnimationControler
+  _ObList: []
+  _SummonList: []
+  _spawnList: []
 --- !u!1 &5057001074938515449
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +638,8 @@ MonoBehaviour:
   _basicAttackBuferTick: 5
   _specialAttackBuferTime: 0.2
   _specialAttackBuferTick: 5
+  _dashBuferTime: 0.001
+  _dashBuferTick: 0
 --- !u!114 &4111360677550138424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -658,6 +676,7 @@ MonoBehaviour:
   pmove: {fileID: 4111360677550138424}
   pimput: {fileID: 7318777143498459713}
   pattack: {fileID: 1231715721121882809}
+  fdamage: {fileID: 7203191859062038721}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -668,16 +687,20 @@ MonoBehaviour:
   _pushColideOb: {fileID: 3369110983112080872}
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
+  _isInvincable: 1
+  curentState: 0
   OGgravity: 0
   _airJumpMax: 1
   _airJumpCounter: 0
+  _airDashMax: 1
+  _airDashCounter: 0
   routatelock: 0
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
-  _groundCheckSise: {x: 2.56, y: 0.69}
+  _groundCheckSise: {x: 2.56, y: 1.02}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
-  _idleTime: 0.5
+  _idleTime: 1
 --- !u!50 &2694609988024503921
 Rigidbody2D:
   serializedVersion: 5
@@ -697,10 +720,10 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -767,13 +790,15 @@ MonoBehaviour:
   player: {fileID: 7615642511113472560}
   hertObject: {fileID: 3619987749655469411}
   hitObject: {fileID: 8922668908256878529}
-  firePunch: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
-  hitPunch: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
+  _SoundList:
+  - {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
+  - {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
   - {fileID: 11400000, guid: 0a123c63b4f242447886bb4937650858, type: 2}
   - {fileID: 11400000, guid: 2342a60a798807847ac570f9b0c57a16, type: 2}
+  _dash: {fileID: 11400000, guid: 63568bc4acae199479a619fd18fda5de, type: 2}
 --- !u!114 &7203191859062038721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -788,6 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
   damagePercentage: 0
   maxDamage: 100
+  _fetiugPrecent: 80
   matchManager: {fileID: 0}
   isPlayer: 0
 --- !u!114 &-9100399599192673185

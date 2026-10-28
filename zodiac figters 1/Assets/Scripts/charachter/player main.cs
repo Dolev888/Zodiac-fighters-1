@@ -2,12 +2,14 @@ using UnityEngine;
 
 
 
+
 public class playermain : MonoBehaviour
 {
     [SerializeField] public playermovment pmove;
 
     [SerializeField] public playerimput pimput;
     [SerializeField] private playerattack pattack;
+    [SerializeField] public FighterDamage fdamage;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator _animator;
     [Header("hit box list")]
@@ -18,9 +20,10 @@ public class playermain : MonoBehaviour
     public GameObject player;
     public Rigidbody2D rigidP;
     private bool _isGrounded;
+    public bool _isInvincable=true;
     public bool IsGrounded => _isGrounded;
 
-    private STATE curentState;
+    [SerializeField]  private STATE curentState;
     public STATE CurentState => curentState;
     private STATE previesState;
     public STATE PreviesState => previesState;
@@ -28,6 +31,8 @@ public class playermain : MonoBehaviour
 
     [SerializeField] private int _airJumpMax;
     public int _airJumpCounter;
+    [SerializeField] private int _airDashMax;
+    public int _airDashCounter;
     public bool routatelock;
     public bool isleft;
     public bool canAirAttack;
@@ -43,6 +48,20 @@ public class playermain : MonoBehaviour
         ATTACK,
         NUTRAL
     }
+    [Header("type")]
+    [SerializeField] private TYPE type;
+    public TYPE Type => type;
+    public enum TYPE
+    {
+        WATER,
+        EARTH,
+        FIRE,
+        EIR,
+        NUTRAL,
+        STAR,
+    }
+    public bool isenhanced;
+    private float platformEnhancmetTick;
 
     [Header("ground check")]
     [SerializeField] private Vector2 _groundCheckSise;
@@ -55,6 +74,7 @@ public class playermain : MonoBehaviour
 
     void Start()
     {
+        _isInvincable = false;
         rigidP = GetComponent<Rigidbody2D>();
         curentState = STATE.AIR;
         hitboxttagset();
@@ -163,9 +183,11 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.KNOKCBACK:
+                _animator.SetBool("hit",false);
                 break;
 
             case STATE.STUN:
+                _animator.SetBool("hit", false);
                 break;
 
             case STATE.ATTACK:
@@ -181,6 +203,7 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 _airJumpCounter = _airJumpMax;
+                _airDashCounter = _airDashMax;
                 canAirAttack = true;
                 _isGrounded = true;
                 break;
@@ -190,10 +213,12 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.KNOKCBACK:
+                _animator.SetBool("hit", true);
                 break;
 
             case STATE.STUN:
                 pattack.StopAttack();
+                _animator.SetBool("hit", true);
                 break;
 
             case STATE.ATTACK:
@@ -281,6 +306,29 @@ public class playermain : MonoBehaviour
                 break;
         }
     }
+    public void DashHandle(bool back)
+    {
+        switch (curentState)
+        {
+            case STATE.GROUND:
+                ChangeState(STATE.ATTACK);
+                pattack.Dash(back ? 1:0);
+                break;
+
+            case STATE.AIR:
+                if (_airDashCounter > 0)
+                {
+                    _airDashCounter--;
+                    ChangeState(STATE.ATTACK);
+                    pattack.Dash(back ? 1 : 0);
+                }
+                
+                break;
+            default:
+                break;
+        }
+        
+    }
     public void AttackHandel(int imp)
     {
         Debug.Log($"AttackHandel on {name} | imp:{imp} state:{curentState} canAirAttack:{canAirAttack}");
@@ -349,7 +397,12 @@ public class playermain : MonoBehaviour
         _animator.SetBool("fall",false);
         _animator.Play("defult");
         _animator.SetInteger("move choose", A);
+        _animator.SetFloat("attack ver", 0);
         _animator.SetBool("attaking", true);
+    }
+    public void SetAttackAnimationVersion(int A)
+    {
+        _animator.SetFloat("attack ver", A);
     }
     public void StopAttackAnimation()
     {
@@ -439,6 +492,39 @@ public class playermain : MonoBehaviour
                 ideleTick -= Time.deltaTime;
             }
         }
+        if(platformEnhancmetTick > 0)
+        {
+            platformEnhancmetTick -= Time.deltaTime;
+            if(platformEnhancmetTick <= 0)
+            {
+                isenhanced =false;
+            }
+        }
     }
 
+    public void playhert()
+    {
+        _animator.Play("read hit");
+    }
+    public void Setinvincible(bool invincible)
+    {
+        _isInvincable = invincible;
+    }
+    public void SetPush(bool ispush)
+    {
+        _pushColideOb.SetActive(ispush);
+    }
+    public void playDash()
+    {
+        _animator.Play("dash");
+    }
+    public void SetIdleAnim(int ver)
+    {
+        _animator.SetFloat("low health", ver);
+    }
+    public void platformEnhanceSet(float time)
+    {
+        isenhanced = true;
+        platformEnhancmetTick=time;
+    }
 }

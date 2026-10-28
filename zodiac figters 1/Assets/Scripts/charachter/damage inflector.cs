@@ -3,7 +3,7 @@ using UnityEngine;
 public class damageinflector : MonoBehaviour
 {
 
-    [SerializeField]private float _damage; 
+    [SerializeField]public float _damage; 
     [SerializeField] private float _stnTime;
     [SerializeField] private float _knokBack;
     [SerializeField] private float _knockBackEngel;
@@ -140,17 +140,18 @@ public class damageinflector : MonoBehaviour
             }
             else if (_hitBoxOb[i].GetComponent<PolygonCollider2D>() != null)
             {
-                DrawPoligon();
+                DrawPoligon(i);
             }
         }
     }
-    private void DrawPoligon()
+    private void DrawPoligon(int obje)
     {
-        PolygonCollider2D polygon = GetComponent<PolygonCollider2D>();
 
+        PolygonCollider2D polygon = _hitBoxOb[obje].GetComponent<PolygonCollider2D>();
         if (polygon == null) return;
+
         Gizmos.color = _color;
-        Gizmos.matrix = transform.localToWorldMatrix;
+        Gizmos.matrix = _hitBoxOb[obje].transform.localToWorldMatrix;
 
         for (int p = 0; p < polygon.pathCount; p++)
         {

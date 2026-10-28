@@ -10,11 +10,16 @@ public class playerimput : MonoBehaviour
     [HideInInspector] public float _basicAttackBuferTick=0;
     [SerializeField] private float _specialAttackBuferTime;
     [HideInInspector] public float _specialAttackBuferTick = 0;
+    [SerializeField] private float _dashBuferTime;
+    [HideInInspector] public float _dashBuferTick;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        _jumpBuferTick = -0.1f;
+        _basicAttackBuferTick = -0.1f;
+        _specialAttackBuferTick = -0.1f;
+        _dashBuferTick = -0.1f;
     }
 
     // Update is called once per frame
@@ -35,57 +40,51 @@ public class playerimput : MonoBehaviour
     }
     private void InputHandel()
     {
+        // Movement
         if (Input.GetKey(KeyCode.LeftArrow))
-        {
             pmain.WalkHandel(-1);
-        }
         else if (Input.GetKey(KeyCode.RightArrow))
-        {
             pmain.WalkHandel(1);
-        }
         else
-        {
             pmain.WalkHandel(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || _jumpBuferTick>0)
-        {
-            
-            pmain.JumpHandle();
-            
-            if (_jumpBuferTick <= 0 && pmain._airJumpCounter <1 && pmain.CurentState== playermain.STATE. AIR)
-            {
-                _jumpBuferTick = _jumpBuferTime;
-                
-            }
-        }
+
+        // Record inputs immediately
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+            _jumpBuferTick = _jumpBuferTime;
+
         if (Input.GetKeyDown(KeyCode.Z))
-        {
-            pmain.AttackHandel(1);
-            
-            if (_basicAttackBuferTick <= 0 && pmain.CurentState == playermain.STATE.ATTACK)
-            {
-                _basicAttackBuferTick = _basicAttackBuferTime;
+            _basicAttackBuferTick = _basicAttackBuferTime;
 
-            }
-        }
         if (Input.GetKeyDown(KeyCode.X))
-        {
+            _specialAttackBuferTick = _specialAttackBuferTime;
+        if(Input.GetKeyDown(KeyCode.C) ) 
+            _dashBuferTick = _dashBuferTime;
+
+        // Attempt buffered actions until they succeed or expire
+        if (_jumpBuferTick > 0)
+            pmain.JumpHandle();
+
+        if (_basicAttackBuferTick > 0)
+            pmain.AttackHandel(1);
+
+        if (_specialAttackBuferTick > 0)
             pmain.AttackHandel(2);
-            if (_specialAttackBuferTick <= 0 && pmain.CurentState == playermain.STATE.ATTACK)
+        if (_dashBuferTick > 0)
+        {
+            if (Input.GetKey(KeyCode.DownArrow))
             {
-                _specialAttackBuferTick = _specialAttackBuferTime;
-
+                pmain.DashHandle(true);
             }
+            pmain.DashHandle(false);
         }
-        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            pmain.routatelock = true;
-        }
-        if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            pmain.routatelock = false;
-        }
+            
 
+        // Rotation lock
+        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
+            pmain.routatelock = true;
+
+        if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
+            pmain.routatelock = false;
     }
     private void bafferTimer()
     {
@@ -101,18 +100,25 @@ public class playerimput : MonoBehaviour
         {
             _specialAttackBuferTick -= Time.deltaTime;
         }
+        if (_dashBuferTick>0)
+        {
+            _dashBuferTick -= Time.deltaTime;
+        }
     }
     public void JumpSucseed()
     {
-        _jumpBuferTick = 0;
+        _jumpBuferTick = -0.1f;
     }
     public void BasicAttackSucseed()
     {
-        _basicAttackBuferTick = 0;
+        _basicAttackBuferTick = -0.1f;
     }
     public void SpeicelAttackSucseed()
     {
-        _specialAttackBuferTick = 0;
+        _specialAttackBuferTick = -0.1f;
     }
-
+    public void DashSucseed()
+    {
+        _dashBuferTick = -0.1f;
+    }
 }

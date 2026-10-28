@@ -8,6 +8,8 @@ public class FighterDamage : MonoBehaviour
     [SerializeField] private float damagePercentage = 0f;
     [SerializeField] private float maxDamage = 100f;
 
+    [SerializeField] private float _fetiugPrecent;
+
     [SerializeField] private MatchManager matchManager;
 
     [SerializeField] private bool isPlayer;
@@ -28,7 +30,7 @@ public class FighterDamage : MonoBehaviour
         if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10f,888,4);
+            TakeDamage(10f,-888,0);
         }
         switch (pmain.CurentState)
         {
@@ -42,18 +44,28 @@ public class FighterDamage : MonoBehaviour
     public void TakeDamage (float amount, int id,float cooldown)
     {
         
-        if (CheckId(id)) return;
+        if (CheckId(id) || pmain._isInvincable) return;
         if (cooldown != 0) 
         {
             StartCoroutine(countdown(cooldown,id));
         }
         if (amount <= 0f) return;
         damagePercentage += amount;
+        pmain.playhert();
 
        if (damagePercentage >= maxDamage)
         {
             damagePercentage = maxDamage; //insurinng damage can't be higher then maxdamge;
             Lose(); // if reached max damge you lose
+        }
+
+        if (damagePercentage>= _fetiugPrecent)
+        {
+            pmain.SetIdleAnim(1);
+        }
+        else
+        {
+            pmain.SetIdleAnim(0);
         }
         Debug.Log($"{gameObject.name} Damage: {damagePercentage} %");
     }
@@ -83,7 +95,7 @@ public class FighterDamage : MonoBehaviour
     }
     public void TakeStun(float stunDuretion)
     {
-        if(pmain == null) return;
+        if(pmain == null || pmain._isInvincable) return;
         stunTime = stunDuretion;
         stunClock = 0;
         pmain.EnterStun();
@@ -101,11 +113,13 @@ public class FighterDamage : MonoBehaviour
     }
     public void TakeKnockback(Vector2 nockForce)
     {
+        if (pmain._isInvincable) return;
         pmain.rigidP.linearVelocity = nockForce;
     }
     public void addKnockback(Vector2 nockForce)
     {
-        if(pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
+        if (pmain._isInvincable) return;
+        if (pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
         {
             pmain.rigidP.linearVelocity += nockForce;
         }

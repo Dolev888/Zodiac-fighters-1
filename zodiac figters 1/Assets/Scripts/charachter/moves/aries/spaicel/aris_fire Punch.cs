@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 
 using GameAudio;
@@ -8,7 +8,7 @@ public class aris_firePunch : projectileParent
     [SerializeField] private float _existensSpeed;
 
     [Header("regular info")]
-    [SerializeField] private float _damage;
+    //[SerializeField] private float _damage;
     [SerializeField] private float _stanTime;
     [SerializeField] private float _knokBack;
     [SerializeField] private LayerMask hitlayer;
@@ -27,9 +27,9 @@ public class aris_firePunch : projectileParent
     {
         rb = GetComponent<Rigidbody2D>();
         float direction = _pmain.gameObject.transform.rotation.y;
-        if (direction !=0)
+        if (_pmain.isleft)
         {
-
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             rb.linearVelocityX = _existensSpeed *(-1);
         }
         else  rb.linearVelocityX = _existensSpeed;

@@ -84,8 +84,8 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.40632713, b: 0, a: 1}
+  m_Sprite: {fileID: 3164157433846763558, guid: de99de911c2c0ab489560133a2aba371, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -128,7 +128,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.53, y: 0}
   m_Radius: 0.5
 --- !u!50 &9050960524614150719
 Rigidbody2D:
@@ -172,9 +172,10 @@ MonoBehaviour:
   playerTag: 
   _pattack: {fileID: 0}
   _pmain: {fileID: 0}
+  _moveID: 0
+  _damage: 2
   _existensTime: 1
   _existensSpeed: 50
-  _damage: 2
   _stanTime: 0
   _knokBack: 0
   hitlayer:
@@ -183,4 +184,3 @@ MonoBehaviour:
   _color: {r: 0, g: 0, b: 0, a: 0}
   _hitFlag: 0
   _coolDown: 2
-  _moveID: 0

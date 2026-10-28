@@ -1,0 +1,397 @@
+fileFormatVersion: 2
+guid: 9da0d98f01e58e34493b60fdec613353
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5066535294159907550
+    second: low health animation  (2)_0
+  - first:
+      213: -1311497629694275332
+    second: low health animation  (2)_1
+  - first:
+      213: 5486522115942950528
+    second: low health animation  (2)_2
+  - first:
+      213: -5072690762676571658
+    second: low health animation  (2)_3
+  - first:
+      213: 8445516877304444699
+    second: low health animation  (2)_4
+  - first:
+      213: 7415155514039399618
+    second: low health animation  (2)_5
+  - first:
+      213: 3796919087606904168
+    second: low health animation  (2)_6
+  - first:
+      213: -8581271156648457452
+    second: low health animation  (2)_7
+  - first:
+      213: 5176365192365364873
+    second: low health animation  (2)_8
+  - first:
+      213: -5275072699418168966
+    second: low health animation  (2)_9
+  - first:
+      213: 5026280712541309616
+    second: low health animation  (2)_10
+  - first:
+      213: -3461173087308882331
+    second: low health animation  (2)_11
+  - first:
+      213: -7970702769990319124
+    second: low health animation  (2)_12
+  - first:
+      213: 5504678631468801902
+    second: low health animation  (2)_13
+  - first:
+      213: -4682271850920158227
+    second: low health animation  (2)_14
+  - first:
+      213: -3872976218405540063
+    second: low health animation  (2)_15
+  - first:
+      213: 7196671734486309521
+    second: low health animation  (2)_16
+  - first:
+      213: -1490448144257182960
+    second: low health animation  (2)_17
+  - first:
+      213: 2695425235776118300
+    second: low health animation  (2)_18
+  - first:
+      213: -7293490832858018707
+    second: low health animation  (2)_19
+  - first:
+      213: -7406942335737541534
+    second: low health animation  (2)_20
+  - first:
+      213: -4211186750883617035
+    second: low health animation  (2)_21
+  - first:
+      213: 125831313843143164
+    second: low health animation  (2)_22
+  - first:
+      213: -6583846376958734750
+    second: low health animation  (2)_23
+  - first:
+      213: 1248656288080976952
+    second: low health animation  (2)_24
+  - first:
+      213: -2995172190450952899
+    second: low health animation  (2)_25
+  - first:
+      213: 3372414399003146430
+    second: low health animation  (2)_26
+  - first:
+      213: 4871998423705942517
+    second: low health animation  (2)_27
+  - first:
+      213: 8052678884853730365
+    second: low health animation  (2)_28
+  - first:
+      213: -3892590443777867657
+    second: low health animation  (2)_29
+  - first:
+      213: 5918415528084731194
+    second: low health animation  (2)_30
+  - first:
+      213: -5905740105532802976
+    second: low health animation  (2)_31
+  - first:
+      213: 5123783790705179298
+    second: low health animation  (2)_32
+  - first:
+      213: -8579827392502698805
+    second: low health animation  (2)_33
+  - first:
+      213: 8744080343503095442
+    second: low health animation  (2)_34
+  - first:
+      213: -1651807213084150885
+    second: low health animation  (2)_35
+  - first:
+      213: -8893982746476489558
+    second: low health animation  (2)_36
+  - first:
+      213: 4526771435764304046
+    second: low health animation  (2)_37
+  - first:
+      213: 6316662574566105043
+    second: low health animation  (2)_38
+  - first:
+      213: 8318194896301643167
+    second: low health animation  (2)_39
+  - first:
+      213: 184593008387282920
+    second: low health animation  (2)_40
+  - first:
+      213: -3086503344555547906
+    second: low health animation  (2)_41
+  - first:
+      213: 8750697165406368899
+    second: low health animation  (2)_42
+  - first:
+      213: -316004422255793259
+    second: low health animation  (2)_43
+  - first:
+      213: 4609514059245295034
+    second: low health animation  (2)_44
+  - first:
+      213: -2190762590664384778
+    second: low health animation  (2)_45
+  - first:
+      213: 4961717640913728082
+    second: low health animation  (2)_46
+  - first:
+      213: -4290376024047732231
+    second: low health animation  (2)_47
+  - first:
+      213: 7154796783417256471
+    second: low health animation  (2)_48
+  - first:
+      213: -4595795130094273445
+    second: low health animation  (2)_49
+  - first:
+      213: -3604539694424588712
+    second: low health animation  (2)_50
+  - first:
+      213: -1500704587745052297
+    second: low health animation  (2)_51
+  - first:
+      213: -6953521932276277284
+    second: low health animation  (2)_52
+  - first:
+      213: -6389123083378350109
+    second: low health animation  (2)_53
+  - first:
+      213: -2043427685786697650
+    second: low health animation  (2)_54
+  - first:
+      213: -7297765726502107004
+    second: low health animation  (2)_55
+  - first:
+      213: 368690832554470753
+    second: low health animation  (2)_56
+  - first:
+      213: -3569482670823172929
+    second: low health animation  (2)_57
+  - first:
+      213: 1026041365456540801
+    second: low health animation  (2)_58
+  - first:
+      213: -5995284330303880907
+    second: low health animation  (2)_59
+  - first:
+      213: 7749296448580101484
+    second: low health animation  (2)_60
+  - first:
+      213: -7800456167820878342
+    second: low health animation  (2)_61
+  - first:
+      213: -3938877855262805841
+    second: low health animation  (2)_62
+  - first:
+      213: 5834932035777038652
+    second: low health animation  (2)_63
+  - first:
+      213: -3493301393991287341
+    second: low health animation  (2)_64
+  - first:
+      213: 1415792844670763754
+    second: low health animation  (2)_65
+  - first:
+      213: 3134235009342161012
+    second: low health animation  (2)_66
+  - first:
+      213: 7539897416485147329
+    second: low health animation  (2)_67
+  - first:
+      213: 743878491116599691
+    second: low health animation  (2)_68
+  - first:
+      213: -2870646965532658319
+    second: low health animation  (2)_69
+  - first:
+      213: -8170200608780351501
+    second: low health animation  (2)_70
+  - first:
+      213: 9099414381855405083
+    second: low health animation  (2)_71
+  - first:
+      213: -3662264520676080265
+    second: low health animation  (2)_72
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: low health animation  (2)_0
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2259e9d5efc00b9b0800000000000000
+      internalID: -5066535294159907550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: low health animation  (2)_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf05e4abadf9ccde0800000000000000
+      internalID: -1311497629694275332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 45b7654899e632a478d78ddea5c39d39
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      low health animation  (2)_0: -5066535294159907550
+      low health animation  (2)_1: -1311497629694275332
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
