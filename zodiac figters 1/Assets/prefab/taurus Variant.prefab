@@ -44,6 +44,10 @@ PrefabInstance:
       value: taurus Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
+    - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
       propertyPath: _jumpPower
       value: 95
       objectReference: {fileID: 0}
@@ -238,6 +242,7 @@ MonoBehaviour:
   fighterDamage: {fileID: 8123624838364226610}
   maxChangedGravityTime: 1
   maxChangedGravityInAttack: 3
+  main: {fileID: 0}
 --- !u!50 &7479249446153785140 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 574207404279256767, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}

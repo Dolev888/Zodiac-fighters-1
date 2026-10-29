@@ -476,3 +476,62 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 00:12:24 | Run 20 | SCENE_LOADED | Scene: dolev movment test
+=== Run 20 summary (2026-10-30 00:12:31) ===
+Session length: 00:00:06
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:16:19 | Run 21 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 00:16:22 | Run 21 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 00:16:22 | Run 21 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 00:16:23 | Run 21 | MATCH_START | Player: Taurus | AI: Taurus | Scene: GamePlayScene
+2026-10-30 00:16:24 | Run 21 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:16:35 | Run 21 | MATCH_ABANDONED | Player: Taurus | AI: Taurus | Duration: 00:00:11 | Scene: GamePlayScene
+=== Run 21 summary (2026-10-30 00:16:35) ===
+Session length: 00:00:16
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:17:09 | Run 22 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 00:17:14 | Run 22 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 00:17:17 | Run 22 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 00:17:18 | Run 22 | MATCH_START | Player: Taurus | AI: Aries | Scene: GamePlayScene
+2026-10-30 00:17:18 | Run 22 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:18:09 | Run 22 | MATCH_END | Winner: AI (Aries) | Player: Taurus | AI: Aries | Duration: 00:00:51 | Winner health left: 9% | Scene: GamePlayScene
+=== Run 22 summary (2026-10-30 00:18:15) ===
+Session length: 00:01:05
+Matches: 1 started, 1 finished, 0 abandoned
+Wins: player 0, AI 1
+Player picks: Taurus 1 (100%)
+Opponent picks: Aries 1 (100%)
+Wins per character:
+  - Taurus (player): 0 of 1 (0%)
+  - Aries (AI): 1 of 1 (100%)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  - Match 1: Taurus vs Aries | winner AI (Aries) | 00:00:51 | winner health left 9%
+===================================
