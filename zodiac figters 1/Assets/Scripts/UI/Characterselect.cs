@@ -22,7 +22,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private string opponentTitle = "CHOOSE YOUR OPPONENT";
 
     // how many characters exist (only used by the Random button). Raise it when the new character is added
-    [SerializeField] private int characterCount = 2;
+    [SerializeField] private int characterCount = 3;
 
     private bool choosingOpponent;
 

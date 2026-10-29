@@ -43,6 +43,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: taurus Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
+      propertyPath: _jumpPower
+      value: 95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
+      propertyPath: _doubleJumpPower
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 8573687039583604319, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -51.3
@@ -186,7 +194,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   retreatSpeedMultiplier: 0.6
-  feetBoxOffset: {x: -0.17, y: -10.88}
+  feetBoxOffset: {x: -0.17, y: -13.01}
   feetBoxSize: {x: 2.56, y: 0.69}
   maxRiseSpeedWhenGrounded: 1
 --- !u!114 &3438032874511142503
@@ -208,7 +216,7 @@ MonoBehaviour:
   autoClimbHeight: 1
   jumpSafety: 0.95
   maxClimbHeight: 30
-  feetBelowPivot: 13.3
+  feetBelowPivot: 13.1
   landingInset: 5
   dropReach: 15
   dropCheckDistance: 60
