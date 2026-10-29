@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attak_scorpio_spaiceljump" , menuName = "Attacks/scorpio/spaiceljump")]
 
@@ -12,7 +13,7 @@ public class attak_scorpio_spaiceljump  : AttackPearent
     [SerializeField] private GameObject _icaGazer;
     private bool _ifhit = false;
     private bool _canhit = false;
-
+    [SerializeField] private SoundEvent _attacksound;
 
     public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
@@ -24,6 +25,7 @@ public class attak_scorpio_spaiceljump  : AttackPearent
         Playerattack.pmain.PlayAttackAnimation(3);
         yield return new WaitForSeconds(_timePuse[0]);
         Playerattack.ObjectInstantWorld(_icaGazer,Playerattack.pmain.transform.position,0,ID);
+        _attacksound.Play();
         Debug.Log("so  " + Playerattack.pmain.transform.position);
         float clock = _timePuse[1];
         _canhit = true;

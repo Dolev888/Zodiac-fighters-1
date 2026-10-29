@@ -21,3 +21,4 @@ MonoBehaviour:
   - 0.083
   _rockWallOb: {fileID: 654127508061141641, guid: a522a64b510de2f4b9c76f24c1ae018b, type: 3}
   _WallOffset: {x: 7.5, y: -4}
+  _attacksound: {fileID: 11400000, guid: 22b768e48a8fc6a4aa06eef89d13e158, type: 2}

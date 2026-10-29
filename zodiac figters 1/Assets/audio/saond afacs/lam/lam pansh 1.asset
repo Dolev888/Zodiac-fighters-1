@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: lam pansh
   m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
   clips:
-  - {fileID: 8300000, guid: fbdd2693897e3c346911f634c51efb4f, type: 3}
-  - {fileID: 8300000, guid: 80f1044dfdb6d3e47a7f46ef6db7a42a, type: 3}
   - {fileID: 8300000, guid: 7b6ed5325c9d54a418ded0fbbd838372, type: 3}
   - {fileID: 8300000, guid: 001ef1122466bdb448626c926ebbd56e, type: 3}
   - {fileID: 8300000, guid: ef1530fe674c13742a904213455a433f, type: 3}

@@ -24,4 +24,4 @@ MonoBehaviour:
   _timePuse:
   - 0.05
   - 0.2
-  firepnshSound: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
+  _attacksound: {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}

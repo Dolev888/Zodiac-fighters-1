@@ -22,3 +22,4 @@ MonoBehaviour:
   _earthWave: {fileID: 2018475860411080148, guid: b0c873fcc8015ed4599a9f958f6f2db5, type: 3}
   _offSet: {x: 20, y: -3}
   _engel: 0
+  _attacksound: {fileID: 11400000, guid: cf1acece67bdb5d4fa958f4422a0a985, type: 2}

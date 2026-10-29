@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 
 [CreateAssetMenu(fileName = "attack_aris_basicJump", menuName = "Attacks/aries/basic jump")]
@@ -11,7 +12,7 @@ public class attack_aris_basicJump : AttackPearent
     [SerializeField] private Vector2 _velocitiAdd;
     private bool _ifhit=false;
     private bool _canhit = false;
-
+    [SerializeField] private SoundEvent _attacksound;
 
     public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
@@ -22,6 +23,7 @@ public class attack_aris_basicJump : AttackPearent
         yield return new WaitForSeconds(_timePuse[0]);
         pattack.pmain.PlayAttackAnimation(1);
         pattack.SetVelocity(_velocitiAdd);
+        _attacksound.Play();
         float clock = _timePuse[1];
         _canhit = true;
         while (!_ifhit && clock > 0 && !pattack.pmain.IsGrounded)

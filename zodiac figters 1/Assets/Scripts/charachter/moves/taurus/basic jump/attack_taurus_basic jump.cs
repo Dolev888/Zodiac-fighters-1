@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attack_taurus_basicjump" , menuName = "Attacks/taurus/basic jump")]
 
@@ -12,7 +13,7 @@ public class attack_taurus_basicjump  : AttackPearent
     [SerializeField] private Vector2 _downForce;
     private bool _ifhit = false;
     private bool _canhit = false;
-
+    [SerializeField] private SoundEvent _attacksound;
     public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
         // start fase
@@ -38,6 +39,7 @@ public class attack_taurus_basicjump  : AttackPearent
         _ifhit = false;
         _canhit = false;
         pattack.ChangeHertBox(_hertBoxList[1], ID);
+        _attacksound.Play();
         yield return new WaitForSeconds(_timePuse[2]);
         pattack.pmain.Setinvincible(false);
         // finish fase 

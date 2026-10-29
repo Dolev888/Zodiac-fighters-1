@@ -11,15 +11,16 @@ public class attack_aris_basic : AttackPearent
     [SerializeField] private float[] _timePuse;
 
 
-    public SoundEvent firepnshSound;
+    [SerializeField] private SoundEvent _attacksound;
 
     public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
     {
-        firepnshSound.Play();
+        
 
         switch (ver)
         {
             case 0:
+                _attacksound.Play();
                 Playerattack.SetVelocity(Vector2.zero);
                 Playerattack.pmain.PlayAttackAnimation(0);
                 Playerattack.ChangeHitBox(_hitBoxList[0]);
@@ -33,7 +34,9 @@ public class attack_aris_basic : AttackPearent
                 Playerattack.DestroyHitBox();
                 Playerattack.DestroyHertBox();
                 break;
-                case 2:
+            case 2:
+                _attacksound.Play();
+                
                 Playerattack.SetVelocity(Vector2.zero);
                 Playerattack.pmain.PlayAttackAnimation(0);
                 Playerattack.pmain.SetAttackAnimationVersion(2);
@@ -49,7 +52,8 @@ public class attack_aris_basic : AttackPearent
                 Playerattack.DestroyHertBox();
 
                 break;
-                default:
+            default:
+                _attacksound.Play();
                 Playerattack.SetVelocity(Vector2.zero);
                 Playerattack.pmain.PlayAttackAnimation(0);
                 Playerattack.ChangeHitBox(_hitBoxList[0]);
@@ -64,10 +68,10 @@ public class attack_aris_basic : AttackPearent
                 Playerattack.DestroyHertBox();
                 break;
         }
-        
-        
-       
-        
+
+
+
+
     }
 
     public override void anoncehit(Collider2D collision)

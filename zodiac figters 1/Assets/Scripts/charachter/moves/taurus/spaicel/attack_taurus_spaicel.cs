@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attack_taurus_spaicel" , menuName = "Attacks/taurus/spaicel")]
 
@@ -12,7 +13,7 @@ public class attack_taurus_spaicel  : AttackPearent
     [SerializeField] private GameObject _earthWave;
     [SerializeField] private Vector2 _offSet;
     [SerializeField] private float _engel;
-
+    [SerializeField] private SoundEvent _attacksound;
 
     public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
@@ -24,6 +25,7 @@ public class attack_taurus_spaicel  : AttackPearent
         pattack.pmain.PlayAttackAnimation(2);
         yield return new WaitForSeconds(_timePuse[0]);
         pattack.ObjectInstantPlayer(_earthWave, _offSet, _engel, ID);
+        _attacksound.Play();
         yield return new WaitForSeconds(_timePuse[1]);
 
         // finish fase 

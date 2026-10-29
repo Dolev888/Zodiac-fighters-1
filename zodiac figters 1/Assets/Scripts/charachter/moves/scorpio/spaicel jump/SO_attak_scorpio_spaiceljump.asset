@@ -20,3 +20,4 @@ MonoBehaviour:
   - 0.25
   - 3
   _icaGazer: {fileID: 625072148542136418, guid: 126791a1bf0b0734b9fb08108cf2ba0d, type: 3}
+  _attacksound: {fileID: 11400000, guid: 96a77ef223fe98c4b86709b0caf17606, type: 2}

@@ -22,4 +22,4 @@ MonoBehaviour:
   - 0.1
   - 3
   _velocitiAdd: {x: 110, y: -70}
-  fireShieldSound: {fileID: 11400000, guid: 6db8c26f84e331a47b6776cdc3b07a5e, type: 2}
+  _attacksound: {fileID: 11400000, guid: 6db8c26f84e331a47b6776cdc3b07a5e, type: 2}

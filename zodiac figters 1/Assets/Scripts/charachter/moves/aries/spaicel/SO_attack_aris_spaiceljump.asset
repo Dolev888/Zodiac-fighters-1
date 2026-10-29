@@ -21,4 +21,4 @@ MonoBehaviour:
   _firePunchOB: {fileID: 7603133519670263296, guid: 5efb197cb3abece44b69ae2f1733045d, type: 3}
   _offSet: {x: 5, y: 2.5}
   _engel: 0
-  fireBallSound: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
+  _attacksound: {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}

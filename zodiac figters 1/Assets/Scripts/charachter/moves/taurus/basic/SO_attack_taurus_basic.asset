@@ -27,3 +27,4 @@ MonoBehaviour:
   - 0.383
   - 0.166
   - 0.083
+  _attacksound: {fileID: 11400000, guid: d140a19d4db373140a5020531411d711, type: 2}

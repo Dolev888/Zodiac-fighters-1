@@ -2079,6 +2079,7 @@ MonoBehaviour:
   _doubleJumpPower: 55
   player: {fileID: 1989826839}
   rigidP: {fileID: 1989826843}
+  jumpSound: {fileID: 0}
 --- !u!114 &1989826846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,6 +3048,7 @@ MonoBehaviour:
   _doubleJumpPower: 55
   player: {fileID: 4304370893466132101}
   rigidP: {fileID: 8604458625168546500}
+  jumpSound: {fileID: 0}
 --- !u!50 &8604458625168546500
 Rigidbody2D:
   serializedVersion: 5

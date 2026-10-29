@@ -20,3 +20,4 @@ MonoBehaviour:
   _timePuse:
   - 0.41
   - 0.33
+  _attacksound: {fileID: 11400000, guid: 96a77ef223fe98c4b86709b0caf17606, type: 2}

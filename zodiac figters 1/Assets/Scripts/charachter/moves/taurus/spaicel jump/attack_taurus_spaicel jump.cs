@@ -1,5 +1,6 @@
-using UnityEngine;
+using GameAudio;
 using System.Collections;
+using UnityEngine;
 
 [CreateAssetMenu(fileName = "attack_taurus_spaiceljump" , menuName = "Attacks/taurus/spaiceljump")]
 
@@ -11,7 +12,7 @@ public class attack_taurus_spaiceljump  : AttackPearent
     [SerializeField] private float[] _timePuse;
     [SerializeField] private GameObject _rockWallOb;
     [SerializeField] private Vector2 _WallOffset;
-    
+    [SerializeField] private SoundEvent _attacksound;
 
 
     public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
@@ -22,6 +23,7 @@ public class attack_taurus_spaiceljump  : AttackPearent
         pattack.pmain.PlayAttackAnimation(3);
         yield return new WaitForSeconds(_timePuse[0]);
         pattack.ObjectInstantPlayer(_rockWallOb, _WallOffset, 0, ID);
+        _attacksound.Play();
         yield return new WaitForSeconds(_timePuse[1]);
 
 
