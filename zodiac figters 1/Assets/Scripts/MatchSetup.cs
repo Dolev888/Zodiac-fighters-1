@@ -51,7 +51,7 @@ public class MatchSetup : MonoBehaviour
 
         player = Spawn(playerIndex, playerSpawn, true);
         enemy = Spawn(enemyIndex, enemySpawn, false);
-
+        
         CollectedDataAnalysis.MatchStart(playerIndex, enemyIndex, player.Damage, enemy.Damage);
 
         stageCenter = (playerSpawn.position + enemySpawn.position) * 0.5f;
@@ -64,6 +64,7 @@ public class MatchSetup : MonoBehaviour
             targetGroup.AddMember(player.transform, 1f, 5f);
             targetGroup.AddMember(enemy.transform, 1f, 5f);
         }
+        _upgradeManager.SetActive(true);
     }
 
     private void Update()

@@ -13,8 +13,8 @@ public class upgrademanager : MonoBehaviour
     [SerializeField] private GameObject[] _upgradeButton1;
     [SerializeField] private GameObject[] _upgradeButton2;
     [SerializeField] private GameObject[] _upgradeButton3;
-    [SerializeField] private TextMeshPro[] _titleList;
-    [SerializeField] private TextMeshPro[] _TEXTlIST;
+    [SerializeField] private TextMeshProUGUI[] _titleList;
+    [SerializeField] private TextMeshProUGUI[] _textList;
     [SerializeField] private GameObject[] _fireBack;
     [SerializeField] private GameObject[] _airBack;
     [SerializeField] private GameObject[] _waterBack;
@@ -24,7 +24,7 @@ public class upgrademanager : MonoBehaviour
     [SerializeField] private upgradedeta[] _airisList;
     [SerializeField] private upgradedeta[] _scorpioList;
     [SerializeField] private upgradedeta[] _taurusList;
-    private HashSet<upgradedeta> _List;
+    private HashSet<upgradedeta> _List = new HashSet<upgradedeta>();
     [SerializeField] private MatchSetup _match;
     
     
@@ -35,6 +35,7 @@ public class upgrademanager : MonoBehaviour
         _playerPmain = _match.player.main;
         if (_playerPmain != null) 
         upgradeSetUp();
+        Time.timeScale = 0;
     }
 
     // Update is called once per frame
@@ -46,14 +47,20 @@ public class upgrademanager : MonoBehaviour
     {
         Debug.Log("1");
         _playerPmain.pattack._upgradeBoolList[upgradeNum[0]]=true;
+        Time.timeScale = 1.0f;
+        gameObject.SetActive(false);
     }
     public void Upgrade2Push()
     {
         _playerPmain.pattack._upgradeBoolList[upgradeNum[1]] = true;
+        Time.timeScale = 1.0f;
+        gameObject.SetActive(false);
     }
     public void Upgrade3Push()
     {
         _playerPmain.pattack._upgradeBoolList[upgradeNum[2]] = true;
+        Time.timeScale = 1.0f;
+        gameObject.SetActive(false);
     }
     private void upgradeSetUp()
     {
@@ -90,7 +97,12 @@ public class upgrademanager : MonoBehaviour
                     _upgradeButton1[i].GetComponent<Image>().color = _earthPalet[i];
                     _upgradeButton2[i].GetComponent<Image>().color = _earthPalet[i];
                     _upgradeButton3[i].GetComponent<Image>().color = _earthPalet[i];
-                    _waterBack[i].SetActive(true);
+                    _earthBack[i].SetActive(true);
+                    
+                }
+                for (int i = 0; i < 3; i++)
+                {
+                    setText(i);
                 }
                 break;
             case (playermain.TYPE.WATER):
@@ -105,9 +117,13 @@ public class upgrademanager : MonoBehaviour
                     _upgradeButton1[i].GetComponent<Image>().color = _waterPalet[i];
                     _upgradeButton2[i].GetComponent<Image>().color = _waterPalet[i];
                     _upgradeButton3[i].GetComponent<Image>().color = _waterPalet[i];
-                    _earthBack[i].SetActive(true);
+                    _waterBack[i].SetActive(true);
                 }
-                
+                for (int i = 0; i < 3; i++)
+                {
+                    setText(i);
+                }
+
                 break;
             case (playermain.TYPE.AIR):
                 break;
@@ -116,10 +132,12 @@ public class upgrademanager : MonoBehaviour
     }
     private void setText(int num)
     {
+        if (_List.Count == 0) return;
         int rund = Random.Range(0, _List.Count);
         upgradedeta[] list = _List.ToArray();
         _titleList[num].text = list[rund]._title;
-        _TEXTlIST[num].text = list[rund]._text;
+        _textList[num].text = list[rund]._text;
         upgradeNum[num] = list[rund]._effectNum;
+        _List.Remove(list[rund]);
     }
 }
