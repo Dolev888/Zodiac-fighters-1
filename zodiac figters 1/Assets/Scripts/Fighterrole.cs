@@ -33,7 +33,7 @@ public class FighterRole : MonoBehaviour
     [SerializeField] private float maxChangedGravityInAttack = 3f;  // while attacking
 
     private Rigidbody2D body;
-    private playermain main;
+    [HideInInspector] public playermain main;
     private float gravityChangedSince = -1f;
 
     private void Awake()

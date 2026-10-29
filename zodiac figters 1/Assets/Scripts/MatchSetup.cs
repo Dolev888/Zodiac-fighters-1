@@ -31,8 +31,8 @@ public class MatchSetup : MonoBehaviour
     [SerializeField] private int testPlayerCharacter = -1;
     [SerializeField] private int testEnemyCharacter = -1;
 
-    private FighterRole player;
-    private FighterRole enemy;
+    [HideInInspector]public FighterRole player;
+    [HideInInspector] public FighterRole enemy;
     private Vector2 stageCenter;
 
     private void Awake()
