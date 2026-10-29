@@ -2665,7 +2665,7 @@ GameObject:
   - component: {fileID: 3601438048840905844}
   m_Layer: 8
   m_Name: taurus
-  m_TagString: Enemy
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2873,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615642511113472560, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -9100399599192673185, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
@@ -2936,7 +2936,7 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
-  type: 2
+  type: 1
   isenhanced: 0
   _groundCheckSise: {x: 3.88, y: 1.02}
   _groundCheckOffSet: {x: 0, y: -13.28, z: 0}
@@ -3046,11 +3046,11 @@ MonoBehaviour:
   pimput: {fileID: 4007505542928228084}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 70
-  _doubleJumpPower: 55
+  _jumpPower: 80
+  _doubleJumpPower: 60
   player: {fileID: 4304370893466132101}
   rigidP: {fileID: 8604458625168546500}
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
 --- !u!50 &8604458625168546500
 Rigidbody2D:
   serializedVersion: 5

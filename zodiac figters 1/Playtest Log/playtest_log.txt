@@ -100,3 +100,83 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-29 23:54:44 | Run 7 | SCENE_LOADED | Scene: dolev movment test
+=== Run 7 summary (2026-10-29 23:54:50) ===
+Session length: 00:00:07
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 23:56:31 | Run 8 | SCENE_LOADED | Scene: dolev movment test
+=== Run 8 summary (2026-10-29 23:56:40) ===
+Session length: 00:00:09
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 23:57:34 | Run 9 | SCENE_LOADED | Scene: dolev movment test
+=== Run 9 summary (2026-10-29 23:58:30) ===
+Session length: 00:00:56
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 23:59:15 | Run 10 | SCENE_LOADED | Scene: dolev movment test
+=== Run 10 summary (2026-10-29 23:59:19) ===
+Session length: 00:00:04
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:01:07 | Run 11 | SCENE_LOADED | Scene: dolev movment test
+=== Run 11 summary (2026-10-30 00:02:09) ===
+Session length: 00:01:02
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
