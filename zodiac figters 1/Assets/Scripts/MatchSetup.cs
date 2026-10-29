@@ -23,6 +23,7 @@ public class MatchSetup : MonoBehaviour
     [SerializeField] private CinemachineTargetGroup targetGroup;
     [SerializeField] private DamageDisplay playerHealth;      // the box at the bottom-left
     [SerializeField] private DamageDisplay enemyHealth;       // the box at the bottom-right
+    [SerializeField] private GameObject _upgradeManager;
 
     [Header("Safety net: a fighter that flies this far from the middle of the stage goes back to his spawn point")]
     [SerializeField] private float maxDistanceFromCenter = 300f;
@@ -34,6 +35,7 @@ public class MatchSetup : MonoBehaviour
     [HideInInspector]public FighterRole player;
     [HideInInspector] public FighterRole enemy;
     private Vector2 stageCenter;
+
 
     private void Awake()
     {
