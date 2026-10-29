@@ -32,7 +32,7 @@ public class upgrademanager : MonoBehaviour
     public void Upgrade1Push()
     {
         Debug.Log("1");
-        _playerPmain.pattack._upgradeBoolList[upgradeNum]=true;
+        _playerPmain.pattack._upgradeBoolList[upgradeNum[0]]=true;
     }
     public void Upgrade2Push()
     {
