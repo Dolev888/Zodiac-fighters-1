@@ -34,7 +34,7 @@ public class CollectedDataAnalysis : MonoBehaviour
     public static CollectedDataAnalysis Instance { get; private set; }
 
     // same order as MatchSetup.characterPrefabs and the numbers the selection buttons use. Add the new character here.
-    private static readonly string[] CharacterNames = { "Aries", "Scorpio" };
+    private static readonly string[] CharacterNames = { "Aries", "Scorpio", "Taurus" };
 
     private const string RunNumberPrefKey = "CollectedDataAnalysis.RunNumber";
     private const string LogFolderName = "Playtest Log";
