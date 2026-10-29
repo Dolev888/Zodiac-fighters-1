@@ -12,13 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b24b84b3c3416a42923af29c53f845a, type: 3}
   m_Name: SO_attack_taurus_basic
   m_EditorClassIdentifier: Assembly-CSharp::attack_taurus_basic
-  _cooldown: 0.7
-  _chainCount: 0
+  _cooldown: 0.65
+  _chainCount: 0.75
   _hertBoxList:
+  - {fileID: 786146834042028847, guid: bc2baf1b078aa4e49b897cfb27fd5077, type: 3}
+  - {fileID: 1213614636736238012, guid: 654a1d4eda144bf41b74c04455b88b45, type: 3}
   - {fileID: 1213614636736238012, guid: 15681ce0a5d50c548aae6c6319418bc4, type: 3}
   - {fileID: 786146834042028847, guid: 23b5a37be879aa04fb1e5b8f6802495a, type: 3}
   _hitBoxList: []
   _timePuse:
-  - 0.6
+  - 0.25
+  - 0.133
+  - 0.116
+  - 0.383
+  - 0.166
   - 0.083
-  - 0.15

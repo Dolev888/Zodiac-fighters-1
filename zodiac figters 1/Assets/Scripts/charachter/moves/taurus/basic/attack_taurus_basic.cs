@@ -31,6 +31,23 @@ public class attack_taurus_basic  : AttackPearent
                 Playerattack.pmain.StopAttackAnimation();
                 Playerattack.pmain.FinishAttack();
                 break;
+            case 1:
+                // start fase
+                Playerattack.SetVelocity(Vector2.zero);
+                Playerattack.pmain.PlayAttackAnimation(0);
+                Playerattack.pmain.SetAttackAnimationVersion(1);
+                yield return new WaitForSeconds(_timePuse[3]);
+                Playerattack.ChangeHertBox(_hertBoxList[2], ID);
+                yield return new WaitForSeconds(_timePuse[4]);
+                Playerattack.ChangeHertBox(_hertBoxList[3], ID);
+                yield return new WaitForSeconds(_timePuse[5]);
+
+                // finish fase 
+                Playerattack.DestroyHitBox();
+                Playerattack.DestroyHertBox();
+                Playerattack.pmain.StopAttackAnimation();
+                Playerattack.pmain.FinishAttack();
+                break;
             default:
                 Playerattack.SetVelocity(Vector2.zero);
                 Playerattack.pmain.PlayAttackAnimation(0);

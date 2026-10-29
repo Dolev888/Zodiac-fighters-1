@@ -230,14 +230,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a66cb34827cad479acd02f5e84c0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
-  _damage: 10
+  _damage: 8
   _stnTime: 0.4
-  _knokBack: 30
+  _knokBack: 40
   _knockBackEngel: 30
   hitlayer:
     serializedVersion: 2
     m_Bits: 256
-  _color: {r: 0, g: 0, b: 0, a: 0}
+  _color: {r: 0.9029851, g: 1, b: 0, a: 0.40392157}
   _hitFlag: 0
   _coolDown: 1
   _hitBoxParmeter: []

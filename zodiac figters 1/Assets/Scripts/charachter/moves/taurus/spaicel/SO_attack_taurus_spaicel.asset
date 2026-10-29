@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b71ec5cf96ddd4b95b2a11f05867e6, type: 3}
   m_Name: SO_attack_taurus_spaicel
   m_EditorClassIdentifier: Assembly-CSharp::attack_taurus_spaicel
-  _cooldown: 0.8
+  _cooldown: 1.5
   _chainCount: 0
   _hertBoxList: []
   _hitBoxList: []

@@ -42,8 +42,11 @@ public class taurus_rockwall : projectileParent
         rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = new Vector2(0, _axeSpeed * (-1));
 
-        if (_pmain == null)
-            return;
+        if (_pmain != null)
+        {
+            isleft = _pmain.isleft;
+        }
+            
 
         wallColliders = _ignoredColider;
         playerColliders = _pmain.gameObject.GetComponentsInChildren<Collider2D>();
