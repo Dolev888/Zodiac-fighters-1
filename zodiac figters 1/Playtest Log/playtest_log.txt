@@ -535,3 +535,102 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   - Match 1: Taurus vs Aries | winner AI (Aries) | 00:00:51 | winner health left 9%
 ===================================
+2026-10-30 00:27:31 | Run 23 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 00:27:33 | Run 23 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 00:27:34 | Run 23 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 00:27:36 | Run 23 | MATCH_START | Player: Aries | AI: Aries | Scene: GamePlayScene
+2026-10-30 00:27:36 | Run 23 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:27:43 | Run 23 | MATCH_ABANDONED | Player: Aries | AI: Aries | Duration: 00:00:05 | Scene: Character Selection Screen
+=== Run 23 summary (2026-10-30 00:27:49) ===
+Session length: 00:00:18
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Aries 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:33:18 | Run 24 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 00:33:20 | Run 24 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 00:33:21 | Run 24 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 00:33:23 | Run 24 | MATCH_START | Player: Aries | AI: Aries | Scene: GamePlayScene
+2026-10-30 00:33:23 | Run 24 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:33:37 | Run 24 | MATCH_ABANDONED | Player: Aries | AI: Aries | Duration: 00:00:02 | Scene: GamePlayScene
+=== Run 24 summary (2026-10-30 00:33:37) ===
+Session length: 00:00:19
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Aries 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:34:11 | Run 25 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 00:34:11 | Run 25 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:34:18 | Run 25 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 00:34:21 | Run 25 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:04 | Scene: GamePlayScene
+=== Run 25 summary (2026-10-30 00:34:21) ===
+Session length: 00:00:10
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 1 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:34:33 | Run 26 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 00:34:33 | Run 26 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:34:37 | Run 26 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 00:34:40 | Run 26 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:01 | Scene: GamePlayScene
+=== Run 26 summary (2026-10-30 00:34:40) ===
+Session length: 00:00:07
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 1 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 00:35:16 | Run 27 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 00:35:16 | Run 27 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:35:21 | Run 27 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 00:35:29 | Run 27 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:02 | Scene: GamePlayScene
+=== Run 27 summary (2026-10-30 00:35:29) ===
+Session length: 00:00:13
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 1 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
