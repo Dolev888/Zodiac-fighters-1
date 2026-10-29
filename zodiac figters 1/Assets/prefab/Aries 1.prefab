@@ -262,6 +262,7 @@ MonoBehaviour:
   pmove: {fileID: 6702008052654339928}
   pimput: {fileID: 8205274374357495928}
   pattack: {fileID: 3017120604000354861}
+  fdamage: {fileID: 0}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -283,6 +284,8 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
+  type: 0
+  isenhanced: 0
   _groundCheckSise: {x: 2.56, y: 0.69}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
   _idleTime: 0.5
@@ -381,7 +384,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}
   - {fileID: 11400000, guid: 0a123c63b4f242447886bb4937650858, type: 2}
   - {fileID: 11400000, guid: 2342a60a798807847ac570f9b0c57a16, type: 2}
-  _dash: {fileID: 0}
+  _dash: {fileID: 11400000, guid: 63568bc4acae199479a619fd18fda5de, type: 2}
+  _upgradeBoolList: 0000000000
 --- !u!114 &3803191161726067500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,6 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FighterDamage
   damagePercentage: 0
   maxDamage: 100
+  _fetiugPrecent: 0
   matchManager: {fileID: 0}
   isPlayer: 0
 --- !u!114 &4697061710465320927
