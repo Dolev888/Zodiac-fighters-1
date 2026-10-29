@@ -434,3 +434,24 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 00:07:53 | Run 18 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 00:07:55 | Run 18 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 00:07:56 | Run 18 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 00:07:58 | Run 18 | MATCH_START | Player: Taurus | AI: Taurus | Scene: GamePlayScene
+2026-10-30 00:07:58 | Run 18 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 00:08:02 | Run 18 | MATCH_ABANDONED | Player: Taurus | AI: Taurus | Duration: 00:00:04 | Scene: GamePlayScene
+=== Run 18 summary (2026-10-30 00:08:02) ===
+Session length: 00:00:10
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
