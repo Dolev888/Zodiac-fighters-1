@@ -660,6 +660,7 @@ MonoBehaviour:
   _doubleJumpPower: 60
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
+  jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
 --- !u!114 &3545120021502473413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -794,6 +795,8 @@ MonoBehaviour:
   _SoundList:
   - {fileID: 11400000, guid: a74dbb5b642ac614ba99f175e5353dea, type: 2}
   - {fileID: 11400000, guid: 72dafc43566e9ed45a162030eb9bee16, type: 2}
+  - {fileID: 11400000, guid: 545ce54badf394646a13bba8ff75bda6, type: 2}
+  - {fileID: 11400000, guid: 6db8c26f84e331a47b6776cdc3b07a5e, type: 2}
   _attackList:
   - {fileID: 11400000, guid: 19ea5296965275a44b09ed813fe2f037, type: 2}
   - {fileID: 11400000, guid: 105d2ece177e0344d9f4c4a201f6d850, type: 2}

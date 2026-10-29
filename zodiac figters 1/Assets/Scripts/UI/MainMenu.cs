@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private float _whaitTime;
     private float timer;
     private int twinklecount=0;
+
    public void Playgame()
     {
         SceneManager.LoadScene("Character Selection Screen");

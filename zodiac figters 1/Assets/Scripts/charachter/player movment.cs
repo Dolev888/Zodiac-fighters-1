@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using GameAudio;
 public class playermovment : MonoBehaviour
 {
     
@@ -11,6 +11,9 @@ public class playermovment : MonoBehaviour
     public float _doubleJumpPower;
     public GameObject player;
     public Rigidbody2D rigidP;
+
+    public SoundEvent jumpSound;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +39,8 @@ public class playermovment : MonoBehaviour
     public void Jump()
     {
         rigidP.linearVelocityY = _jumpPower;
+
+        jumpSound.Play();
     }
     public void AirJump()
     {
@@ -60,4 +65,6 @@ public class playermovment : MonoBehaviour
             }
         }
     }
+
+
 }

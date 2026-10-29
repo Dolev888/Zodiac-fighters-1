@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e29c6dc70fc33434ea150aa43f3c64ff, type: 3}
-  m_Name: "\u200Fscorpion  grown attack"
+  m_Name: up axe
   m_EditorClassIdentifier: GameAudio::GameAudio.SoundEvent
   clips:
-  - {fileID: 8300000, guid: 3ecdb5ebb7851f845ac4f7f658397b1b, type: 3}
-  - {fileID: 8300000, guid: 1685572fa48eb384eb78f0c40bbcd035, type: 3}
-  - {fileID: 8300000, guid: 4eef7d68fd8cb264281d05cbc1f11fa9, type: 3}
+  - {fileID: 8300000, guid: d009ce5697fa88947ba16445fb3d1f0f, type: 3}
   avoidRepeat: 1
   volume: 1
   volumeVariation: 0

@@ -246,6 +246,7 @@ MonoBehaviour:
   _doubleJumpPower: 60
   player: {fileID: 5194764169379169647}
   rigidP: {fileID: 1762099896455915236}
+  jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
 --- !u!114 &3058125793361097330
 MonoBehaviour:
   m_ObjectHideFlags: 0

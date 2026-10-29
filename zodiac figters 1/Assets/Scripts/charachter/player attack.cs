@@ -67,7 +67,6 @@ public class playerattack : MonoBehaviour
         }
         if(pmain.pimput != null)
         {
-            
 
             pmain.pimput.BasicAttackSucseed();
         }
