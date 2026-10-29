@@ -4880,7 +4880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MatchSetup
   characterPrefabs:
-  - {fileID: 5194764169379169647, guid: eda3417c3bf48ce439ad6dd9c3a99a5e, type: 3}
+  - {fileID: 7615642511113472560, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
   - {fileID: 519629754821511140, guid: ba79da165b7102e468724e09d700b69c, type: 3}
   playerSpawn: {fileID: 1140005140}
   enemySpawn: {fileID: 724239703}
@@ -4889,7 +4889,7 @@ MonoBehaviour:
   playerHealth: {fileID: 348737225}
   enemyHealth: {fileID: 1769051994}
   maxDistanceFromCenter: 300
-  testPlayerCharacter: -1
+  testPlayerCharacter: 0
   testEnemyCharacter: -1
 --- !u!4 &952632179
 Transform:
