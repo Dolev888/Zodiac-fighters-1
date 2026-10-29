@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using System.Security.Cryptography.X509Certificates;
 
 public class MatchManager : MonoBehaviour
 {
@@ -9,9 +8,9 @@ public class MatchManager : MonoBehaviour
     [SerializeField] private TMP_Text resultText;
 
     private bool matchEnded = false;
-    
+
     public bool MatchEnded
-    {  get { return matchEnded; } }
+    { get { return matchEnded; } }
 
     public void EndMatch(bool playerWon, GameObject loser)
     {
@@ -20,6 +19,9 @@ public class MatchManager : MonoBehaviour
             return;
 
         matchEnded = true;
+
+        // playtest log: result, duration and the winner's health (before the loser is destroyed)
+        CollectedDataAnalysis.MatchEnd(playerWon);
 
         // remove the defeated fighter
         if (loser != null)
@@ -41,8 +43,6 @@ public class MatchManager : MonoBehaviour
         {
             resultText.text = "YOU LOSE!";
         }
-
-        matchEnded = true;
     }
 
     public void Rematch()
@@ -58,6 +58,6 @@ public class MatchManager : MonoBehaviour
         // Restore normal game speed
         Time.timeScale = 1f;
 
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("MainMenu");
     }
 }
