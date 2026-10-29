@@ -1,0 +1,102 @@
+2026-10-29 14:38:11 | Run 1 | MATCH_START | Player: Aries | AI: Scorpio | Scene: dolev upgrade screen
+2026-10-29 14:38:11 | Run 1 | SCENE_LOADED | Scene: dolev upgrade screen
+2026-10-29 14:38:37 | Run 1 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:17 | Scene: dolev upgrade screen
+=== Run 1 summary (2026-10-29 14:38:37) ===
+Session length: 00:00:26
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 14:39:55 | Run 2 | MATCH_START | Player: Aries | AI: Scorpio | Scene: dolev upgrade screen
+2026-10-29 14:39:55 | Run 2 | SCENE_LOADED | Scene: dolev upgrade screen
+2026-10-29 14:40:26 | Run 2 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:29 | Scene: dolev upgrade screen
+=== Run 2 summary (2026-10-29 14:40:26) ===
+Session length: 00:00:31
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 19:34:37 | Run 3 | MATCH_START | Player: Aries | AI: Scorpio | Scene: dolev upgrade screen
+2026-10-29 19:34:37 | Run 3 | SCENE_LOADED | Scene: dolev upgrade screen
+2026-10-29 19:34:42 | Run 3 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:02 | Scene: dolev upgrade screen
+=== Run 3 summary (2026-10-29 19:34:42) ===
+Session length: 00:00:04
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 21:02:32 | Run 4 | SCENE_LOADED | Scene: dolev movment test
+=== Run 4 summary (2026-10-29 21:02:41) ===
+Session length: 00:00:09
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 21:03:48 | Run 5 | SCENE_LOADED | Scene: dolev movment test
+=== Run 5 summary (2026-10-29 21:03:58) ===
+Session length: 00:00:09
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-29 21:04:19 | Run 6 | SCENE_LOADED | Scene: dolev movment test
+=== Run 6 summary (2026-10-29 21:05:52) ===
+Session length: 00:01:33
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================

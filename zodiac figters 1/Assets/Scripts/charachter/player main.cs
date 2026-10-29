@@ -8,7 +8,7 @@ public class playermain : MonoBehaviour
     [SerializeField] public playermovment pmove;
 
     [SerializeField] public playerimput pimput;
-    [SerializeField] private playerattack pattack;
+    [SerializeField] public playerattack pattack;
     [SerializeField] public FighterDamage fdamage;
     [SerializeField] private LayerMask _groundLayer;
     [SerializeField] private Animator _animator;
@@ -56,7 +56,7 @@ public class playermain : MonoBehaviour
         WATER,
         EARTH,
         FIRE,
-        EIR,
+        AIR,
         NUTRAL,
         STAR,
     }

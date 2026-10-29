@@ -37,6 +37,8 @@ public class playerattack : MonoBehaviour
     private float[] _chainCount= new float[5];
 
     private HashSet<ColInt> colidDetectList;
+    [Header("upgrade shit")]
+    public bool[] _upgradeBoolList =new bool[5]; /*1 basic 2 basic jump 3 speicel 4 speicel jump*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -308,6 +310,7 @@ public class playerattack : MonoBehaviour
     }
     public void PlaySound(int Sound)
     {
+        if(_SoundList[Sound] !=null)
         _SoundList[Sound].Play();
     }
 

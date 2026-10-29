@@ -1945,6 +1945,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0a123c63b4f242447886bb4937650858, type: 2}
   - {fileID: 11400000, guid: 2342a60a798807847ac570f9b0c57a16, type: 2}
   _dash: {fileID: 0}
+  _upgradeBoolList: 0000000000
 --- !u!61 &1989826842
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2668,7 +2669,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4835721314514236940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2694,6 +2695,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8d5c1fdbc52ae824581da599a4c5dcfa, type: 2}
   - {fileID: 11400000, guid: a7c54f00a03584f468792b7626a326ce, type: 2}
   _dash: {fileID: 11400000, guid: bc68aa4f97b5cf840a868c96d375dc8f, type: 2}
+  _upgradeBoolList: 0000000000
 --- !u!95 &5340903648983461835
 Animator:
   serializedVersion: 7
@@ -2871,7 +2873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7615642511113472560, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -9100399599192673185, guid: 6ba11d337cd1aa9429cbe2eb6eb40c05, type: 3}
