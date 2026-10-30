@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: upgrade_aries_basic
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
   _title: Flame Punch +
-  _text: Aries's gronded normal (Z on ground) incres its nock back and the 3rd hit
-    combo gain damage and stun boost
+  _text: Aries's gronded normal (Z on ground)  the 3rd hit combo gain damage, knock
+    back and stun boost
   _effectNum: 1
   _type: 2

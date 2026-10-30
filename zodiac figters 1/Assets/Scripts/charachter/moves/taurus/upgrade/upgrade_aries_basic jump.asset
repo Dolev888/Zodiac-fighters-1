@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
   m_Name: upgrade_aries_basic jump
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: Flame Crash +
-  _text: 'Aries''s aerial normal (Z in the air) gain damage and stun boost '
+  _title: 404
+  _text: you know the filling when your brain is liquid
   _effectNum: 2
   _type: 1

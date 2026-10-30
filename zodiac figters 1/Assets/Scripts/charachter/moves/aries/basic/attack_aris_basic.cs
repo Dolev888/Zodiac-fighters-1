@@ -7,13 +7,14 @@ using UnityEngine;
 public class attack_aris_basic : AttackPearent
 {
     [SerializeField] private GameObject[] _hertBoxList;
+    [SerializeField] private GameObject[] _hertBoxListUpgraded;
     [SerializeField] private GameObject[] _hitBoxList;
     [SerializeField] private float[] _timePuse;
 
 
     [SerializeField] private SoundEvent _attacksound;
 
-    public override IEnumerator UseMove(playerattack Playerattack, int ID, int ver)
+    public override IEnumerator UseMove(playerattack pattack, int ID, int ver)
     {
         
 
@@ -21,51 +22,52 @@ public class attack_aris_basic : AttackPearent
         {
             case 0:
                 _attacksound.Play();
-                Playerattack.SetVelocity(Vector2.zero);
-                Playerattack.pmain.PlayAttackAnimation(0);
-                Playerattack.ChangeHitBox(_hitBoxList[0]);
-                Playerattack.ChangeHertBox(_hertBoxList[0], ID);
+                pattack.SetVelocity(Vector2.zero);
+                pattack.pmain.PlayAttackAnimation(0);
+                pattack.ChangeHitBox(_hitBoxList[0]);
+                pattack.ChangeHertBox(_hertBoxList[0], ID);
                 yield return new WaitForSeconds(_timePuse[0]);
 
-                Playerattack.ChangeHertBox(_hertBoxList[1], ID);
+                pattack.ChangeHertBox(_hertBoxList[1], ID);
                 yield return new WaitForSeconds(_timePuse[1]);
-                Playerattack.pmain.StopAttackAnimation();
-                Playerattack.pmain.FinishAttack();
-                Playerattack.DestroyHitBox();
-                Playerattack.DestroyHertBox();
+                pattack.pmain.StopAttackAnimation();
+                pattack.pmain.FinishAttack();
+                pattack.DestroyHitBox();
+                pattack.DestroyHertBox();
                 break;
             case 2:
                 _attacksound.Play();
                 
-                Playerattack.SetVelocity(Vector2.zero);
-                Playerattack.pmain.PlayAttackAnimation(0);
-                Playerattack.pmain.SetAttackAnimationVersion(2);
-                Playerattack.ChangeHitBox(_hitBoxList[0]);
-                Playerattack.ChangeHertBox(_hertBoxList[2], ID);
+                pattack.SetVelocity(Vector2.zero);
+                pattack.pmain.PlayAttackAnimation(0);
+                pattack.pmain.SetAttackAnimationVersion(2);
+                pattack.ChangeHitBox(_hitBoxList[0]);
+                pattack.ChangeHertBox(_hertBoxList[2], ID);
                 yield return new WaitForSeconds(_timePuse[0]);
-
-                Playerattack.ChangeHertBox(_hertBoxList[3], ID);
+                if (pattack._upgradeBoolList[1]) pattack.ChangeHertBox(_hertBoxListUpgraded[0], ID);
+                else
+                       pattack.ChangeHertBox(_hertBoxList[3], ID);
                 yield return new WaitForSeconds(_timePuse[1]);
-                Playerattack.pmain.StopAttackAnimation();
-                Playerattack.pmain.FinishAttack();
-                Playerattack.DestroyHitBox();
-                Playerattack.DestroyHertBox();
+                pattack.pmain.StopAttackAnimation();
+                pattack.pmain.FinishAttack();
+                pattack.DestroyHitBox();
+                pattack.DestroyHertBox();
 
                 break;
             default:
                 _attacksound.Play();
-                Playerattack.SetVelocity(Vector2.zero);
-                Playerattack.pmain.PlayAttackAnimation(0);
-                Playerattack.ChangeHitBox(_hitBoxList[0]);
-                Playerattack.ChangeHertBox(_hertBoxList[0], ID);
+                pattack.SetVelocity(Vector2.zero);
+                pattack.pmain.PlayAttackAnimation(0);
+                pattack.ChangeHitBox(_hitBoxList[0]);
+                pattack.ChangeHertBox(_hertBoxList[0], ID);
                 yield return new WaitForSeconds(_timePuse[0]);
 
-                Playerattack.ChangeHertBox(_hertBoxList[1], ID);
+                pattack.ChangeHertBox(_hertBoxList[1], ID);
                 yield return new WaitForSeconds(_timePuse[1]);
-                Playerattack.pmain.StopAttackAnimation();
-                Playerattack.pmain.FinishAttack();
-                Playerattack.DestroyHitBox();
-                Playerattack.DestroyHertBox();
+                pattack.pmain.StopAttackAnimation();
+                pattack.pmain.FinishAttack();
+                pattack.DestroyHitBox();
+                pattack.DestroyHertBox();
                 break;
         }
 

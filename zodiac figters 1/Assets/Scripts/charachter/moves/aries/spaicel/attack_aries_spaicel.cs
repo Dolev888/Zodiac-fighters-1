@@ -20,6 +20,11 @@ public class attack_aries_spaicel : AttackPearent
 
         _attacksound.Play();
         pattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel, ID);
+        if (pattack._upgradeBoolList[3])
+        {
+            pattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel+45, ID);
+            pattack.ObjectInstantPlayer(_firePunchOB, _offSet, _engel-45, ID);
+        }
 
         yield return new WaitForSeconds(_timePuse[0]);
       

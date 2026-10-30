@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
   m_Name: upgrade_aries_basic
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: Flame Punch +
-  _text: Aries's gronded normal (Z on ground) incres its nock back and the 3rd hit
-    combo gain damage and stun boost
+  _title: 404
+  _text: we are no strangers to love
   _effectNum: 1
   _type: 1

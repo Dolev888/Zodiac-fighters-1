@@ -38,6 +38,12 @@ public class scorpio_icegayzer : projectileParent
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (_pattack._upgradeBoolList[4])
+        {
+            _gayzerCount++;
+            _gayzerSize.x = _gayzerSize.x * 1.5f;
+            _gayzerSpred = _gayzerSpred * 1.5f;
+        }
         if (_pmain.isleft)
         {
             _offset.x = _offset.x*-1;

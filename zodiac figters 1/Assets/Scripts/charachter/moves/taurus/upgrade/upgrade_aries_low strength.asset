@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
   m_Name: upgrade_aries_low strength
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: power +
-  _text: all moves have minor damage boost
+  _title: streangth +
+  _text: minor damage boost to all damage
   _effectNum: 0
   _type: 1

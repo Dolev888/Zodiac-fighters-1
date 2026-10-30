@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
   m_Name: upgrade_aries_basic jump
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: taurus +
-  _text: thomthing is stronger
+  _title: 404
+  _text: its facking 2 am right now
   _effectNum: 2
   _type: 0

@@ -7,6 +7,7 @@ using UnityEngine;
 public class attack_aris_basicJump : AttackPearent
 {
     [SerializeField] private GameObject[] _hertBoxList;
+    [SerializeField] private GameObject[] _hertBoxListUpgrade;
     [SerializeField] private GameObject[] _hitBoxList;
     [SerializeField] private float[] _timePuse;
     [SerializeField] private Vector2 _velocitiAdd;
@@ -19,7 +20,9 @@ public class attack_aris_basicJump : AttackPearent
         Debug.Log(ID);
         pattack.SetVelocity(Vector2.zero);
         pattack.ChangeHitBox(_hitBoxList[0]);
-        pattack.ChangeHertBox(_hertBoxList[0], ID);
+        if (pattack._upgradeBoolList[2]) pattack.ChangeHertBox(_hertBoxListUpgrade[0], ID);
+        else
+            pattack.ChangeHertBox(_hertBoxList[0], ID);
         yield return new WaitForSeconds(_timePuse[0]);
         pattack.pmain.PlayAttackAnimation(1);
         pattack.SetVelocity(_velocitiAdd);

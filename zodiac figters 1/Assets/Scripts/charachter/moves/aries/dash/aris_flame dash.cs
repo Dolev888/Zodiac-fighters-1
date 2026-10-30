@@ -15,6 +15,12 @@ public class aris_flamedash : projectileParent
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
         }
+        if (_pmain.pattack._upgradeBoolList[5])
+        {
+            _existancTime = _existancTime * 2;
+            _damage = _damage * 1.5f;
+        }
+        
     }
 
     // Update is called once per frame

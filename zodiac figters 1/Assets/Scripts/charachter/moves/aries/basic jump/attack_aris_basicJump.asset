@@ -16,6 +16,8 @@ MonoBehaviour:
   _chainCount: 0
   _hertBoxList:
   - {fileID: 5994614329599020332, guid: d46197be1b985ae41b303e790b739e5e, type: 3}
+  _hertBoxListUpgrade:
+  - {fileID: 5994614329599020332, guid: fc37b326657108544b43b49c1303dac1, type: 3}
   _hitBoxList:
   - {fileID: 7920069725995306000, guid: c7356d35b32d70c40af2f2ad54172fd9, type: 3}
   _timePuse:

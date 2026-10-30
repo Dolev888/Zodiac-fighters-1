@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
   m_Name: upgrade_aries_spaicel
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: Fire Ball +
-  _text: Aries's gronded spaicel (X on the ground) travel faster and shot in a fork
+  _title: 404
+  _text: the cake is a lie
   _effectNum: 3
   _type: 1
