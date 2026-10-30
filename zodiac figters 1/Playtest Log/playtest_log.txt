@@ -3660,3 +3660,120 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 10:07:28 | Player adbd96 | Run 54 | SCENE_LOADED | Scene: dolev movment test
+2026-10-30 10:07:41 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:07:43 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:07:48 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:07:49 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:07:49 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:07:50 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:07:51 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: air special | Scene: dolev movment test
+2026-10-30 10:07:56 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: air special | Scene: dolev movment test
+2026-10-30 10:07:59 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: air special | Scene: dolev movment test
+2026-10-30 10:08:02 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:08:03 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:08:05 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:08:08 | Player adbd96 | Run 54 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+=== Player adbd96 | Run 54 summary (2026-10-30 10:08:38) ===
+Session length: 17758041:53:04
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 13, AI 0
+Hit rate (hits landed / attacks used): player 0/13 (0%), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 10:08:43 | Player adbd96 | Run 55 | SCENE_LOADED | Scene: dolev movment test
+2026-10-30 10:08:53 | Player adbd96 | Run 55 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:08:54 | Player adbd96 | Run 55 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:08:56 | Player adbd96 | Run 55 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:08:58 | Player adbd96 | Run 55 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+=== Player adbd96 | Run 55 summary (2026-10-30 10:09:11) ===
+Session length: 00:00:28
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 4, AI 0
+  - Player ground normal: 1
+  - Player ground special: 3
+Hit rate (hits landed / attacks used): player 0/4 (0%), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 10:11:04 | Player adbd96 | Run 56 | SCENE_LOADED | Scene: dolev movment test
+2026-10-30 10:11:06 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:11:08 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: air special | Scene: dolev movment test
+2026-10-30 10:11:19 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:11:21 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:11:23 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:11:25 | Player adbd96 | Run 56 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+=== Player adbd96 | Run 56 summary (2026-10-30 10:15:20) ===
+Session length: 17758041:53:04
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 6, AI 0
+Hit rate (hits landed / attacks used): player 0/6 (0%), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 10:15:26 | Player adbd96 | Run 57 | SCENE_LOADED | Scene: dolev movment test
+2026-10-30 10:15:35 | Player adbd96 | Run 57 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:15:37 | Player adbd96 | Run 57 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:15:38 | Player adbd96 | Run 57 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+=== Player adbd96 | Run 57 summary (2026-10-30 10:15:42) ===
+Session length: 00:00:16
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 3, AI 0
+  - Player ground special: 3
+Hit rate (hits landed / attacks used): player 0/3 (0%), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 10:17:06 | Player adbd96 | Run 58 | SCENE_LOADED | Scene: dolev movment test
+2026-10-30 10:17:09 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:17:45 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground normal | Scene: dolev movment test
+2026-10-30 10:17:46 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:17:47 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:17:49 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+2026-10-30 10:17:50 | Player adbd96 | Run 58 | ATTACK | Side: Player | Type: ground special | Scene: dolev movment test
+=== Player adbd96 | Run 58 summary (2026-10-30 10:17:53) ===
+Session length: 00:00:47
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 6, AI 0
+  - Player ground special: 5
+  - Player ground normal: 1
+Hit rate (hits landed / attacks used): player 0/6 (0%), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================

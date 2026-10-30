@@ -21,18 +21,27 @@ public class aris_firePunch : projectileParent
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        float rotation = transform.eulerAngles.z;
+
         if (_pattack._upgradeBoolList[3])
         {
-            _existensSpeed = _existensSpeed * 1.5f;
+            _existensSpeed *= 1.5f;
         }
+
         rb = GetComponent<Rigidbody2D>();
-        float direction = _pmain.gameObject.transform.rotation.y;
-        if (_pmain.isleft)
+        bool isLeft = _pmain.isleft;
+
+        float adj = Mathf.Cos(rotation * Mathf.Deg2Rad) * _existensSpeed;
+        float ops = Mathf.Sin(rotation * Mathf.Deg2Rad) * _existensSpeed;
+
+        if (isLeft)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-            rb.linearVelocityX = _existensSpeed *(-1);
+            adj = -adj;
         }
-        else  rb.linearVelocityX = _existensSpeed;
+
+        rb.linearVelocity = new Vector2(adj, ops);
+
+        transform.rotation = Quaternion.Euler(0, isLeft ? 180 : 0, rotation);
     }
 
     // Update is called once per frame
