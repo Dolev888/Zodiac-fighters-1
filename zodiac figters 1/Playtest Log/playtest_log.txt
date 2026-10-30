@@ -344,3 +344,36 @@ Fights:
 ===================================
 2026-10-30 01:58:30 | Run 28 | SCENE_LOADED | Scene: MainMenu
 2026-10-30 01:58:36 | Run 28 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 02:03:48 | Run 29 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 02:03:57 | Run 29 | SCENE_LOADED | Scene: Character Selection Screen
+=== Run 29 summary (2026-10-30 02:04:01) ===
+Session length: 00:00:13
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 02:07:08 | Run 30 | SCENE_LOADED | Scene: dolev movment test
+=== Run 30 summary (2026-10-30 02:07:13) ===
+Session length: 00:00:05
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================

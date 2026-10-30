@@ -1145,6 +1145,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterSelect
   matchSceneName: GamePlayScene
   mainMenuSceneName: MainMenu
+  titleText: {fileID: 462692420}
+  fighterTitle: CHOOSE YOUR FIGHTER
+  opponentTitle: CHOOSE YOUR OPPONENT
+  characterCount: 3
 --- !u!4 &1328551489
 Transform:
   m_ObjectHideFlags: 0
