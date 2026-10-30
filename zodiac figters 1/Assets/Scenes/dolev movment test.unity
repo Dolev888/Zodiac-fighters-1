@@ -2103,6 +2103,8 @@ MonoBehaviour:
   _specialAttackBuferTick: 0
   _dashBuferTime: 0
   _dashBuferTick: 0
+  _stickDeadzone: 0.2
+  _stickDownForBackDash: 0.5
 --- !u!4 &1989826847
 Transform:
   m_ObjectHideFlags: 0
@@ -2277,7 +2279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_TagString
@@ -2640,6 +2642,8 @@ MonoBehaviour:
   _specialAttackBuferTick: 5
   _dashBuferTime: 0.001
   _dashBuferTick: 0
+  _stickDeadzone: 0.2
+  _stickDownForBackDash: 0.5
 --- !u!4 &4238512753671384933
 Transform:
   m_ObjectHideFlags: 0
