@@ -122,7 +122,7 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
-  type: 2
+  type: 1
   isenhanced: 0
   _groundCheckSise: {x: 3.88, y: 1.02}
   _groundCheckOffSet: {x: 0, y: -13.28, z: 0}

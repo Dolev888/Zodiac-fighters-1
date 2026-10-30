@@ -762,3 +762,85 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 02:12:51 | Run 29 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 02:12:54 | Run 29 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 02:12:57 | Run 29 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 02:13:02 | Run 29 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 02:13:02 | Run 29 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 02:13:02 | Run 29 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:13:13 | Run 29 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:00 | Scene: GamePlayScene
+=== Run 29 summary (2026-10-30 02:13:13) ===
+Session length: 00:00:22
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 02:15:39 | Run 30 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 02:15:41 | Run 30 | PLAYER_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 02:15:42 | Run 30 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 02:15:42 | Run 30 | MATCH_START | Player: Scorpio | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 02:15:42 | Run 30 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:16:11 | Run 30 | MATCH_ABANDONED | Player: Scorpio | AI: Scorpio | Duration: 00:00:28 | Scene: GamePlayScene
+=== Run 30 summary (2026-10-30 02:16:11) ===
+Session length: 00:00:31
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Scorpio 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 02:16:17 | Run 31 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 02:16:19 | Run 31 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 02:16:20 | Run 31 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 02:16:20 | Run 31 | MATCH_START | Player: Taurus | AI: Taurus | Scene: GamePlayScene
+2026-10-30 02:16:20 | Run 31 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:16:35 | Run 31 | MATCH_ABANDONED | Player: Taurus | AI: Taurus | Duration: 00:00:13 | Scene: GamePlayScene
+=== Run 31 summary (2026-10-30 02:16:35) ===
+Session length: 00:00:17
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 02:17:28 | Run 32 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 02:17:28 | Run 32 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:17:42 | Run 32 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:06 | Scene: GamePlayScene
+=== Run 32 summary (2026-10-30 02:17:42) ===
+Session length: 00:00:13
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================

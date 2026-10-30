@@ -284,7 +284,7 @@ MonoBehaviour:
   isleft: 0
   canAirAttack: 0
   _FallLine: -70
-  type: 0
+  type: 2
   isenhanced: 0
   _groundCheckSise: {x: 2.56, y: 0.69}
   _groundCheckOffSet: {x: -0.17, y: -10.88, z: 0}
@@ -522,6 +522,7 @@ MonoBehaviour:
   fighterDamage: {fileID: 3803191161726067500}
   maxChangedGravityTime: 1
   maxChangedGravityInAttack: 3
+  main: {fileID: 0}
 --- !u!1 &5198100614074316629
 GameObject:
   m_ObjectHideFlags: 0
