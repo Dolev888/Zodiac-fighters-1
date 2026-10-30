@@ -909,3 +909,23 @@ Controls list opened: 2 times, 8.3 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 02:46:58 | Player 82d563 | Run 32 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 02:46:58 | Player 82d563 | Run 32 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:47:05 | Player 82d563 | Run 32 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 02:47:07 | Player 82d563 | Run 32 | CONTROLS_CLOSE | Seconds open: 1.4 | Scene: GamePlayScene
+2026-10-30 02:47:10 | Player 82d563 | Run 32 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:01 | Scene: GamePlayScene
+=== Player 82d563 | Run 32 summary (2026-10-30 02:47:10) ===
+Session length: 00:00:11
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 1 times, 1.4 seconds in total
+Fights:
+  (none finished)
+===================================
