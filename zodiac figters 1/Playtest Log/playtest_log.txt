@@ -2810,3 +2810,53 @@ Controls list opened: 2 times, 4.1 seconds in total
 Fights:
   - Match 1: Aries vs Taurus | winner Player (Aries) | 00:00:25 | winner health left 100%
 ===================================
+2026-10-30 04:03:32 | Player 82d563 | Run 42 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 04:03:50 | Player 82d563 | Run 42 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 04:03:54 | Player 82d563 | Run 42 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 04:03:56 | Player 82d563 | Run 42 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 04:03:56 | Player 82d563 | Run 42 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 04:03:58 | Player 82d563 | Run 42 | MATCH_START | Player: Aries | AI: Aries | Scene: GamePlayScene
+2026-10-30 04:03:58 | Player 82d563 | Run 42 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 04:03:58 | Player 82d563 | Run 42 | MATCH_ABANDONED | Player: Aries | AI: Aries | Duration: 00:00:00 | Scene: GamePlayScene
+2026-10-30 04:03:58 | Player 82d563 | Run 42 | MATCH_START | Player: Aries | AI: Aries | Scene: GamePlayScene
+2026-10-30 04:04:15 | Player 82d563 | Run 42 | MATCH_ABANDONED | Player: Aries | AI: Aries | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player 82d563 | Run 42 summary (2026-10-30 04:04:15) ===
+Session length: 00:00:42
+Matches: 2 started, 0 finished, 2 abandoned
+Wins: player 0, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Aries 2 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 04:04:27 | Player 82d563 | Run 43 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 04:04:34 | Player 82d563 | Run 43 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 04:04:35 | Player 82d563 | Run 43 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 04:04:38 | Player 82d563 | Run 43 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 04:04:38 | Player 82d563 | Run 43 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 04:04:39 | Player 82d563 | Run 43 | MATCH_START | Player: Aries | AI: Taurus | Scene: GamePlayScene
+2026-10-30 04:04:39 | Player 82d563 | Run 43 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 04:04:39 | Player 82d563 | Run 43 | MATCH_ABANDONED | Player: Aries | AI: Taurus | Duration: 00:00:00 | Scene: GamePlayScene
+2026-10-30 04:04:39 | Player 82d563 | Run 43 | MATCH_START | Player: Aries | AI: Taurus | Scene: GamePlayScene
+2026-10-30 04:04:59 | Player 82d563 | Run 43 | MATCH_ABANDONED | Player: Aries | AI: Taurus | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player 82d563 | Run 43 summary (2026-10-30 04:04:59) ===
+Session length: 00:00:32
+Matches: 2 started, 0 finished, 2 abandoned
+Wins: player 0, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Taurus 2 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================

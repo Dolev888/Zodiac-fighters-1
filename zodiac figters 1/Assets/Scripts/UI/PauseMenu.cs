@@ -32,6 +32,15 @@ public class PauseMenu : MonoBehaviour
         bool pausePressed = Input.GetKeyDown(KeyCode.Escape)
             || (Gamepad.current != null && Gamepad.current.startButton.wasPressedThisFrame);
 
+        // East button (Circle on PlayStation, B on Xbox) = one step back: close the command list, or close the pause menu
+        Gamepad pad = Gamepad.current;
+        if (pad != null && pad.buttonEast.wasPressedThisFrame && !matchManager.MatchEnded)
+        {
+            if (commandList.activeSelf) CloseCommandList();
+            else if (controllerCommandList != null && controllerCommandList.activeSelf) CloseControllerCommandList();
+            else if (isPaused) ResumeGame();
+        }
+
         if (pausePressed && !matchManager.MatchEnded)
         {
             // making sure a command list isn't immdiatly open when pausing;

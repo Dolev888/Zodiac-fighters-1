@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;   // controller
 
 public class MainMenu : MonoBehaviour
 {
@@ -59,6 +60,13 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // East button (Circle on PlayStation, B on Xbox) closes an open command list
+        if (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
+        {
+            if (commandListPanel != null && commandListPanel.activeSelf) CloseCommandList();
+            else if (controllerCommandListPanel != null && controllerCommandListPanel.activeSelf) CloseControllerCommandList();
+        }
+
         timer += Time.deltaTime;
         if (timer >= _whaitTime)
         {

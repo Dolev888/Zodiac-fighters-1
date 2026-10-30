@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;   // controller
 using TMPro;
 
 // Goes on any object in the "Character Selection Screen" scene.
@@ -7,7 +9,7 @@ using TMPro;
 // Each character button calls ChooseCharacter in its OnClick list:
 //   Aries button   -> ChooseCharacter, argument 0
 //   Scorpio button -> ChooseCharacter, argument 1
-//   new character  -> ChooseCharacter, argument 2   (its prefab goes in MatchSetup's Character Prefabs list, in the same order)
+//   Taurus button  -> ChooseCharacter, argument 2   (its prefab goes in MatchSetup's Character Prefabs list, in the same order)
 //   optional "Random" button -> ChooseCharacter, argument -1
 // The Back button calls GoBack: from the opponent step it returns to the fighter step, from the fighter step to the main menu.
 public class CharacterSelect : MonoBehaviour
@@ -21,8 +23,16 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private string fighterTitle = "CHOOSE YOUR FIGHTER";
     [SerializeField] private string opponentTitle = "CHOOSE YOUR OPPONENT";
 
-    // how many characters exist (only used by the Random button). Raise it when the new character is added
+    // how many characters exist (only used by the Random button). Raise it when a new character is added
     [SerializeField] private int characterCount = 3;
+
+    [Header("Who the PLAYER is allowed to pick (0 = Aries, 1 = Scorpio, 2 = Taurus). Empty = everyone.")]
+    [Tooltip("The upgrade screen needs upgrade assets for the player's character. Add a number here when that character's assets are ready. The opponent can always be anyone.")]
+    [SerializeField] private int[] playableCharacters = { };
+
+    [Header("Optional: the character buttons in character order (Aries, Scorpio, Taurus...)")]
+    [Tooltip("If filled, the buttons of locked characters are greyed out while the player picks his fighter, and all buttons work again for the opponent step.")]
+    [SerializeField] private Button[] characterButtons;
 
     private bool choosingOpponent;
 
@@ -31,21 +41,48 @@ public class CharacterSelect : MonoBehaviour
         Time.timeScale = 1f;
         choosingOpponent = false;
         MatchSettings.EnemyCharacter = -1;
-        RefreshTitle();
+        Refresh();
+    }
+
+    private void Update()
+    {
+        // East button (Circle on PlayStation, B on Xbox) = Back
+        if (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
+            GoBack();
+    }
+
+    private bool IsPlayable(int characterIndex)
+    {
+        if (playableCharacters == null || playableCharacters.Length == 0) return true;
+
+        foreach (int allowed in playableCharacters)
+        {
+            if (allowed == characterIndex) return true;
+        }
+        return false;
     }
 
     public void ChooseCharacter(int characterIndex)
     {
-        // -1 = random
-        if (characterIndex < 0) characterIndex = Random.Range(0, characterCount);
+        // -1 = random (while picking the fighter, only among the characters the player may use)
+        if (characterIndex < 0)
+        {
+            if (!choosingOpponent && playableCharacters != null && playableCharacters.Length > 0)
+                characterIndex = playableCharacters[Random.Range(0, playableCharacters.Length)];
+            else
+                characterIndex = Random.Range(0, characterCount);
+        }
 
         if (!choosingOpponent)
         {
+            // a locked character can't be the player's fighter: ignore the click
+            if (!IsPlayable(characterIndex)) return;
+
             // step 1: this is the player's fighter, now pick the opponent
             MatchSettings.PlayerCharacter = characterIndex;
             CollectedDataAnalysis.PlayerPick(characterIndex);
             choosingOpponent = true;
-            RefreshTitle();
+            Refresh();
             return;
         }
 
@@ -63,7 +100,7 @@ public class CharacterSelect : MonoBehaviour
             // back to picking the fighter
             choosingOpponent = false;
             MatchSettings.EnemyCharacter = -1;
-            RefreshTitle();
+            Refresh();
             return;
         }
 
@@ -71,8 +108,16 @@ public class CharacterSelect : MonoBehaviour
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
-    private void RefreshTitle()
+    // updates the title text and which buttons can be pressed
+    private void Refresh()
     {
         if (titleText != null) titleText.text = choosingOpponent ? opponentTitle : fighterTitle;
+
+        if (characterButtons == null) return;
+        for (int i = 0; i < characterButtons.Length; i++)
+        {
+            if (characterButtons[i] != null)
+                characterButtons[i].interactable = choosingOpponent || IsPlayable(i);
+        }
     }
 }
