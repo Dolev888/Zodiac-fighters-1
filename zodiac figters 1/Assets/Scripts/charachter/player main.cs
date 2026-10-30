@@ -20,10 +20,10 @@ public class playermain : MonoBehaviour
     public GameObject player;
     public Rigidbody2D rigidP;
     private bool _isGrounded;
-    public bool _isInvincable=true;
+    public bool _isInvincable = true;
     public bool IsGrounded => _isGrounded;
 
-    [SerializeField]  private STATE curentState;
+    [SerializeField] private STATE curentState;
     public STATE CurentState => curentState;
     private STATE previesState;
     public STATE PreviesState => previesState;
@@ -104,7 +104,7 @@ public class playermain : MonoBehaviour
         else
         {
             _isGrounded = false;
-           
+
             switch (curentState)
             {
                 case STATE.GROUND:
@@ -119,10 +119,11 @@ public class playermain : MonoBehaviour
         float direct;
         if (rigidP.linearVelocityY > 0) { direct = 0; }
         else { direct = 1; }
-        
+
         _animator.SetFloat("im falling", direct);
-        if (_FallLine>= transform.position.y)
+        if (_FallLine >= transform.position.y)
         {
+            CollectedDataAnalysis.Fall(CompareTag("Player"));   // playtest log
             transform.position = spawnPoint;
             GetComponent<FighterDamage>().TakeDamage(20, -1, 0);
         }
@@ -148,7 +149,7 @@ public class playermain : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        
+
         //if (collision.gameObject.CompareTag("ground"))
         //{
         //    _isGrounded = false;
@@ -172,7 +173,7 @@ public class playermain : MonoBehaviour
 
     private void ExitState(STATE state)
     {
-        
+
         switch (state)
         {
             case STATE.GROUND:
@@ -183,7 +184,7 @@ public class playermain : MonoBehaviour
                 break;
 
             case STATE.KNOKCBACK:
-                _animator.SetBool("hit",false);
+                _animator.SetBool("hit", false);
                 break;
 
             case STATE.STUN:
@@ -198,7 +199,7 @@ public class playermain : MonoBehaviour
     }
     private void EnterState(STATE state)
     {
-        Debug.Log("enter"+state);
+        Debug.Log("enter" + state);
         switch (state)
         {
             case STATE.GROUND:
@@ -250,9 +251,9 @@ public class playermain : MonoBehaviour
                 else
                 {
                     isIdle = false;
-                    
+
                     idelAnimation(false);
-                    _animator.SetFloat("walking",1);
+                    _animator.SetFloat("walking", 1);
                 }
 
                 pmove.GroundMove(direction);
@@ -282,10 +283,10 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 pmove.Jump();
-                if (pimput !=null)
+                if (pimput != null)
                 {
                     pimput.JumpSucseed();
-                   
+
                 }
                 _animator.Play("jump");
                 break;
@@ -312,7 +313,8 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 ChangeState(STATE.ATTACK);
-                pattack.Dash(back ? 1:0);
+                CollectedDataAnalysis.Dash(CompareTag("Player"), false, back);   // playtest log
+                pattack.Dash(back ? 1 : 0);
                 break;
 
             case STATE.AIR:
@@ -320,14 +322,15 @@ public class playermain : MonoBehaviour
                 {
                     _airDashCounter--;
                     ChangeState(STATE.ATTACK);
+                    CollectedDataAnalysis.Dash(CompareTag("Player"), true, back);   // playtest log
                     pattack.Dash(back ? 1 : 0);
                 }
-                
+
                 break;
             default:
                 break;
         }
-        
+
     }
     public void AttackHandel(int imp)
     {
@@ -336,6 +339,7 @@ public class playermain : MonoBehaviour
         {
             case STATE.GROUND:
                 ChangeState(STATE.ATTACK);
+                CollectedDataAnalysis.Attack(CompareTag("Player"), false, imp != 1);   // playtest log
                 if (imp == 1)
                 {
                     pattack.BasicAttack();
@@ -349,6 +353,7 @@ public class playermain : MonoBehaviour
                 if (!canAirAttack) { break; }
                 ChangeState(STATE.ATTACK);
                 canAirAttack = false;
+                CollectedDataAnalysis.Attack(CompareTag("Player"), true, imp != 1);   // playtest log
                 if (imp == 1)
                 {
                     pattack.BasicAttackAir();
@@ -374,18 +379,18 @@ public class playermain : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(player.transform.position + _groundCheckOffSet, _groundCheckSise, 0, Vector2.zero, 0, _groundLayer);
 
-       
-            //for (int i = 0; i < _carentColiders.Length; i++)
-            //{
-            //    if (_carentColiders[i].IsTouchingLayers(_groundLayer))
-            //    {
 
-                    return hit.collider != null;
-            //    }
-            //}
-        
+        //for (int i = 0; i < _carentColiders.Length; i++)
+        //{
+        //    if (_carentColiders[i].IsTouchingLayers(_groundLayer))
+        //    {
+
+        return hit.collider != null;
+        //    }
+        //}
+
         //return false;
-        
+
     }
     private void OnDrawGizmosSelected()
     {
@@ -394,7 +399,7 @@ public class playermain : MonoBehaviour
     }
     public void PlayAttackAnimation(int A)
     {
-        _animator.SetBool("fall",false);
+        _animator.SetBool("fall", false);
         _animator.Play("defult");
         _animator.SetInteger("move choose", A);
         _animator.SetFloat("attack ver", 0);
@@ -425,25 +430,25 @@ public class playermain : MonoBehaviour
         }
 
 
-        if (hitbox >= 0 && hitbox< _hitBoxlist.Length)
+        if (hitbox >= 0 && hitbox < _hitBoxlist.Length)
         {
-            
+
             _hitBoxlist[hitbox].gameObject.SetActive(true);
-            Collider2D[] tempcolid= _hitBoxlist[hitbox].GetComponents<Collider2D>();
+            Collider2D[] tempcolid = _hitBoxlist[hitbox].GetComponents<Collider2D>();
             _carentColiders = new Collider2D[tempcolid.Length];
-            
-            for (int i = 0; i< tempcolid.Length; i++)
+
+            for (int i = 0; i < tempcolid.Length; i++)
             {
                 _carentColiders[i] = tempcolid[i];
             }
-            
+
         }
     }
     private void idelAnimation(bool B)
     {
-        
-        _animator.SetBool("idel", B); 
-        if (B && _hitBoxlist.Length>=2)
+
+        _animator.SetBool("idel", B);
+        if (B && _hitBoxlist.Length >= 2)
         {
             SetHitbox(1);
         }
@@ -492,12 +497,12 @@ public class playermain : MonoBehaviour
                 ideleTick -= Time.deltaTime;
             }
         }
-        if(platformEnhancmetTick > 0)
+        if (platformEnhancmetTick > 0)
         {
             platformEnhancmetTick -= Time.deltaTime;
-            if(platformEnhancmetTick <= 0)
+            if (platformEnhancmetTick <= 0)
             {
-                isenhanced =false;
+                isenhanced = false;
             }
         }
     }
@@ -525,6 +530,6 @@ public class playermain : MonoBehaviour
     public void platformEnhanceSet(float time)
     {
         isenhanced = true;
-        platformEnhancmetTick=time;
+        platformEnhancmetTick = time;
     }
 }

@@ -30,7 +30,7 @@ public class FighterDamage : MonoBehaviour
         if (Time.timeScale == 0f) return;
         if (Input.GetKeyDown(KeyCode.H))
         {
-            TakeDamage(10f,-888,0);
+            TakeDamage(10f, -888, 0);
         }
         switch (pmain.CurentState)
         {
@@ -41,25 +41,26 @@ public class FighterDamage : MonoBehaviour
                 break;
         }
     }
-    public void TakeDamage (float amount, int id,float cooldown)
+    public void TakeDamage(float amount, int id, float cooldown)
     {
-        
+
         if (CheckId(id) || pmain._isInvincable) return;
-        if (cooldown != 0) 
+        if (cooldown != 0)
         {
-            StartCoroutine(countdown(cooldown,id));
+            StartCoroutine(countdown(cooldown, id));
         }
         if (amount <= 0f) return;
+        if (id != -1) CollectedDataAnalysis.Hit(isPlayer, amount);   // playtest log: id -1 is the fall damage, not a hit from the other fighter
         damagePercentage += amount;
         pmain.playhert();
 
-       if (damagePercentage >= maxDamage)
+        if (damagePercentage >= maxDamage)
         {
             damagePercentage = maxDamage; //insurinng damage can't be higher then maxdamge;
             Lose(); // if reached max damge you lose
         }
 
-        if (damagePercentage>= _fetiugPrecent)
+        if (damagePercentage >= _fetiugPrecent)
         {
             pmain.SetIdleAnim(1);
         }
@@ -69,7 +70,7 @@ public class FighterDamage : MonoBehaviour
         }
         Debug.Log($"{gameObject.name} Damage: {damagePercentage} %");
     }
-    private IEnumerator countdown(float time,int id)
+    private IEnumerator countdown(float time, int id)
     {
         takenId.Add(id);
         yield return new WaitForSeconds(time);
@@ -78,24 +79,24 @@ public class FighterDamage : MonoBehaviour
 
     private void Lose()
     {
-        Debug.Log($"{gameObject.name} has lost ") ;
+        Debug.Log($"{gameObject.name} has lost ");
         if (matchManager == null)
         {
             return;
-           
+
         }
         // if this fighter is the player then player lost and if it is the enemy then player won.
         matchManager.EndMatch(!isPlayer, gameObject);
     }
-    private bool CheckId(int id) 
+    private bool CheckId(int id)
     {
         if (takenId.Contains(id)) return true;
         return false;
-    
+
     }
     public void TakeStun(float stunDuretion)
     {
-        if(pmain == null || pmain._isInvincable) return;
+        if (pmain == null || pmain._isInvincable) return;
         stunTime = stunDuretion;
         stunClock = 0;
         pmain.EnterStun();
@@ -103,7 +104,7 @@ public class FighterDamage : MonoBehaviour
     }
     private void StunTimer()
     {
-        if( stunClock>= stunTime)
+        if (stunClock >= stunTime)
         {
             stunTime = 0;
             stunClock = 0;
@@ -119,7 +120,7 @@ public class FighterDamage : MonoBehaviour
     public void addKnockback(Vector2 nockForce)
     {
         if (pmain._isInvincable) return;
-        if (pmain.CurentState ==playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
+        if (pmain.CurentState == playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
         {
             pmain.rigidP.linearVelocity += nockForce;
         }

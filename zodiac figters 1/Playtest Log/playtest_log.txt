@@ -342,3 +342,5 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 01:58:30 | Run 28 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 01:58:36 | Run 28 | SCENE_LOADED | Scene: Character Selection Screen

@@ -34,7 +34,7 @@ public class CollectedDataAnalysis : MonoBehaviour
     public static CollectedDataAnalysis Instance { get; private set; }
 
     // same order as MatchSetup.characterPrefabs and the numbers the selection buttons use. Add the new character here.
-    private static readonly string[] CharacterNames = { "Aries", "Scorpio" };
+    private static readonly string[] CharacterNames = { "Aries", "Scorpio", "Taurus" };
 
     private const string RunNumberPrefKey = "CollectedDataAnalysis.RunNumber";
     private const string LogFolderName = "Playtest Log";
@@ -146,6 +146,12 @@ public class CollectedDataAnalysis : MonoBehaviour
         if (Instance != null) Instance.DoAttack(isPlayer, air, special);
     }
 
+    // a dash attack (forward dash counts as an attack, a back dash is only recorded)
+    public static void Dash(bool isPlayer, bool air, bool back)
+    {
+        if (Instance != null) Instance.DoDash(isPlayer, air, back);
+    }
+
     // victimIsPlayer = who was hit
     public static void Hit(bool victimIsPlayer, float damage)
     {
@@ -247,9 +253,22 @@ public class CollectedDataAnalysis : MonoBehaviour
 
     private void DoAttack(bool isPlayer, bool air, bool special)
     {
-        string type = (air ? "air " : "ground ") + (special ? "special" : "normal");
+        RecordAttack(isPlayer, (air ? "air " : "ground ") + (special ? "special" : "normal"), true);
+    }
+
+    private void DoDash(bool isPlayer, bool air, bool back)
+    {
+        // a forward dash is an attack and counts in the attack totals; a back dash is only recorded
+        RecordAttack(isPlayer, (air ? "air " : "ground ") + (back ? "back dash" : "dash"), !back);
+    }
+
+    private void RecordAttack(bool isPlayer, string type, bool countInTotals)
+    {
         Add(attackCounts, Side(isPlayer) + " " + type);
-        if (isPlayer) attacksByPlayer++; else attacksByAI++;
+        if (countInTotals)
+        {
+            if (isPlayer) attacksByPlayer++; else attacksByAI++;
+        }
         Log("ATTACK", "Side: " + Side(isPlayer) + " | Type: " + type);
     }
 
