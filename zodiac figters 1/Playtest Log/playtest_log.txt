@@ -2650,3 +2650,25 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   - Match 1: Aries vs Taurus | winner Player (Aries) | 00:00:22 | winner health left 78%
 ===================================
+2026-10-30 03:28:31 | Player 82d563 | Run 38 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 03:28:33 | Player 82d563 | Run 38 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 03:28:35 | Player 82d563 | Run 38 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 03:28:36 | Player 82d563 | Run 38 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 03:28:38 | Player 82d563 | Run 38 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 03:28:38 | Player 82d563 | Run 38 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 03:28:52 | Player 82d563 | Run 38 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player 82d563 | Run 38 summary (2026-10-30 03:28:52) ===
+Session length: 00:00:21
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
