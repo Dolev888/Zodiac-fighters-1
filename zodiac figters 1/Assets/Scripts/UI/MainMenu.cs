@@ -60,6 +60,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (UnityEngine.InputSystem.Gamepad.current != null && UnityEngine.InputSystem.Gamepad.current.buttonEast.wasPressedThisFrame) Debug.Log("EAST pressed");
         // East button (Circle on PlayStation, B on Xbox) closes an open command list
         if (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
         {
