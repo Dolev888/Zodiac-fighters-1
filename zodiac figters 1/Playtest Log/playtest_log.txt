@@ -2567,3 +2567,86 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   - Match 1: Taurus vs Taurus | winner Player (Taurus) | 00:00:25 | winner health left 70%
 ===================================
+2026-10-30 03:22:32 | Player 82d563 | Run 37 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 03:22:38 | Player 82d563 | Run 37 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 03:22:42 | Player 82d563 | Run 37 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 03:22:43 | Player 82d563 | Run 37 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 03:22:45 | Player 82d563 | Run 37 | MATCH_START | Player: Aries | AI: Taurus | Scene: GamePlayScene
+2026-10-30 03:22:45 | Player 82d563 | Run 37 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 03:22:54 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:22:54 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 3 | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 3 | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 3 | Scene: GamePlayScene
+2026-10-30 03:22:55 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:22:56 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:22:57 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:22:58 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: air special | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:00 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:01 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:02 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:02 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:23:02 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:03 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:03 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 10 | Scene: GamePlayScene
+2026-10-30 03:23:03 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:04 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:04 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:04 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:04 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:04 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:05 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:05 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:06 | Player 82d563 | Run 37 | FALL | Who: AI | Scene: GamePlayScene
+2026-10-30 03:23:07 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 03:23:07 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: air special | Scene: GamePlayScene
+2026-10-30 03:23:08 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 4.5 | Scene: GamePlayScene
+2026-10-30 03:23:08 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:08 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:08 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:09 | Player 82d563 | Run 37 | HIT | Side: AI | Victim: Player | Damage: 7.5 | Scene: GamePlayScene
+2026-10-30 03:23:10 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:10 | Player 82d563 | Run 37 | HIT | Side: AI | Victim: Player | Damage: 7.5 | Scene: GamePlayScene
+2026-10-30 03:23:10 | Player 82d563 | Run 37 | HIT | Side: AI | Victim: Player | Damage: 7.5 | Scene: GamePlayScene
+2026-10-30 03:23:10 | Player 82d563 | Run 37 | ATTACK | Side: AI | Type: air normal | Scene: GamePlayScene
+2026-10-30 03:23:11 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 03:23:11 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 3 | Scene: GamePlayScene
+2026-10-30 03:23:11 | Player 82d563 | Run 37 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 03:23:11 | Player 82d563 | Run 37 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 03:23:11 | Player 82d563 | Run 37 | MATCH_END | Winner: Player (Aries) | Player: Aries | AI: Taurus | Duration: 00:00:22 | Winner health left: 78% | Scene: GamePlayScene
+=== Player 82d563 | Run 37 summary (2026-10-30 03:23:19) ===
+Session length: 00:00:47
+Matches: 1 started, 1 finished, 0 abandoned
+Wins: player 1, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  - Aries (player): 1 of 1 (100%)
+  - Taurus (AI): 0 of 1 (0%)
+Attacks used: player 23, AI 9
+  - Player ground special: 3
+  - AI ground special: 3
+  - Player ground normal: 17
+  - AI ground normal: 5
+  - Player air special: 2
+  - AI air normal: 1
+  - Player air normal: 1
+Hit rate (hits landed / attacks used): player 17/23 (74%), AI 3/9 (33%)
+Falls from the arena: player 0, AI 1
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  - Match 1: Aries vs Taurus | winner Player (Aries) | 00:00:22 | winner health left 78%
+===================================
