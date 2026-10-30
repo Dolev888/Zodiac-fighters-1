@@ -3221,3 +3221,61 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 08:00:20 | Player 82d563 | Run 52 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 08:00:22 | Player 82d563 | Run 52 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 08:00:23 | Player 82d563 | Run 52 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 08:00:23 | Player 82d563 | Run 52 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 08:00:23 | Player 82d563 | Run 52 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 08:00:38 | Player 82d563 | Run 52 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:12 | Scene: GamePlayScene
+=== Player 82d563 | Run 52 summary (2026-10-30 08:00:38) ===
+Session length: 00:00:18
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:00:44 | Player 82d563 | Run 53 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 08:00:47 | Player 82d563 | Run 53 | PLAYER_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 08:00:48 | Player 82d563 | Run 53 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 08:00:49 | Player 82d563 | Run 53 | MATCH_START | Player: Scorpio | AI: Taurus | Scene: GamePlayScene
+2026-10-30 08:00:50 | Player 82d563 | Run 53 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 08:01:03 | Player 82d563 | Run 53 | MATCH_ABANDONED | Player: Scorpio | AI: Taurus | Duration: 00:00:11 | Scene: GamePlayScene
+=== Player 82d563 | Run 53 summary (2026-10-30 08:01:03) ===
+Session length: 00:00:18
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Scorpio 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:02:02 | Player 82d563 | Run 54 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player 82d563 | Run 54 summary (2026-10-30 08:02:32) ===
+Session length: 00:00:29
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
