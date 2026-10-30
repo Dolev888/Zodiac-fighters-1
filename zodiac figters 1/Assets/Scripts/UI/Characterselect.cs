@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;   // controller
 using TMPro;
+using UnityEngine.EventSystems;
 
 // Goes on any object in the "Character Selection Screen" scene.
 // The SAME character buttons are used twice: first you pick your fighter, then you pick your opponent.
@@ -20,8 +21,8 @@ public class CharacterSelect : MonoBehaviour
 
     [Header("Optional: a text that tells the player which step he is on")]
     [SerializeField] private TMP_Text titleText;
-    [SerializeField] private string fighterTitle = "CHOOSE YOUR FIGHTER";
-    [SerializeField] private string opponentTitle = "CHOOSE YOUR OPPONENT";
+    [SerializeField] private string fighterTitle = "CHOOSE YOUR \nFIGHTER";
+    [SerializeField] private string opponentTitle = "CHOOSE YOUR \n OPPONENT";
 
     // how many characters exist (only used by the Random button). Raise it when a new character is added
     [SerializeField] private int characterCount = 3;
@@ -33,6 +34,7 @@ public class CharacterSelect : MonoBehaviour
     [Header("Optional: the character buttons in character order (Aries, Scorpio, Taurus...)")]
     [Tooltip("If filled, the buttons of locked characters are greyed out while the player picks his fighter, and all buttons work again for the opponent step.")]
     [SerializeField] private Button[] characterButtons;
+    [SerializeField] private Animator _animator;
 
     private bool choosingOpponent;
 
@@ -118,6 +120,29 @@ public class CharacterSelect : MonoBehaviour
         {
             if (characterButtons[i] != null)
                 characterButtons[i].interactable = choosingOpponent || IsPlayable(i);
+        }
+    }
+
+    [SerializeField] private GameObject button1;
+    [SerializeField] private GameObject button2;
+    [SerializeField] private GameObject button3;
+
+    public void HoverButton(int num)
+    {
+        Debug.Log("Hovered button: " + num);
+        _animator.SetInteger("fighter", num);
+        switch (num)
+        {
+            case 0:
+                
+                Debug.Log("Hovering button 1");
+                break;
+            case 1:
+                Debug.Log("Hovering button 2");
+                break;
+            case 2:
+                Debug.Log("Hovering button 3");
+                break;
         }
     }
 }

@@ -3221,3 +3221,442 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 07:55:00 | Player adbd96 | Run 33 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 07:55:09 | Player adbd96 | Run 33 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 07:55:12 | Player adbd96 | Run 33 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 07:55:12 | Player adbd96 | Run 33 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 07:55:12 | Player adbd96 | Run 33 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 07:55:25 | Player adbd96 | Run 33 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:04 | Scene: GamePlayScene
+=== Player adbd96 | Run 33 summary (2026-10-30 07:55:25) ===
+Session length: 00:00:25
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 07:57:28 | Player adbd96 | Run 34 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 07:57:34 | Player adbd96 | Run 34 | PLAYER_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 07:57:35 | Player adbd96 | Run 34 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 07:57:35 | Player adbd96 | Run 34 | MATCH_START | Player: Scorpio | AI: Taurus | Scene: GamePlayScene
+2026-10-30 07:57:36 | Player adbd96 | Run 34 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 07:57:41 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 07:57:41 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: ground special | Scene: GamePlayScene
+2026-10-30 07:57:43 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: ground dash | Scene: GamePlayScene
+2026-10-30 07:57:44 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: air special | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:46 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 07:57:49 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 07:57:49 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 3 | Scene: GamePlayScene
+2026-10-30 07:57:51 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 07:57:53 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 07:57:53 | Player adbd96 | Run 34 | HIT | Side: Player | Victim: AI | Damage: 5 | Scene: GamePlayScene
+2026-10-30 07:57:53 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: air special | Scene: GamePlayScene
+2026-10-30 07:57:56 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: air normal | Scene: GamePlayScene
+2026-10-30 07:57:57 | Player adbd96 | Run 34 | HIT | Side: AI | Victim: Player | Damage: 7.5 | Scene: GamePlayScene
+2026-10-30 07:58:01 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 07:58:03 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: air special | Scene: GamePlayScene
+2026-10-30 07:58:06 | Player adbd96 | Run 34 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 07:58:11 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 07:58:12 | Player adbd96 | Run 34 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 07:58:12 | Player adbd96 | Run 34 | HIT | Side: AI | Victim: Player | Damage: 7.5 | Scene: GamePlayScene
+2026-10-30 07:58:46 | Player adbd96 | Run 34 | MATCH_ABANDONED | Player: Scorpio | AI: Taurus | Duration: 00:00:34 | Scene: GamePlayScene
+=== Player adbd96 | Run 34 summary (2026-10-30 07:58:46) ===
+Session length: 00:01:18
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Scorpio 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 8, AI 6
+  - Player ground normal: 2
+  - Player ground special: 1
+  - Player ground dash: 1
+  - Player air special: 1
+  - Player air normal: 3
+  - AI air special: 2
+  - AI air normal: 1
+  - AI ground special: 2
+  - AI ground normal: 1
+Hit rate (hits landed / attacks used): player 8/8 (100%), AI 2/6 (33%)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:03:06 | Player adbd96 | Run 35 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 35 summary (2026-10-30 08:03:12) ===
+Session length: 00:00:06
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:09:31 | Player adbd96 | Run 36 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 08:09:41 | Player adbd96 | Run 36 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 08:09:42 | Player adbd96 | Run 36 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 08:09:43 | Player adbd96 | Run 36 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 08:09:43 | Player adbd96 | Run 36 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 08:10:32 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 08:10:33 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 08:10:34 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: ground normal | Scene: GamePlayScene
+2026-10-30 08:10:43 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 08:10:43 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: air special | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: Player | Victim: AI | Damage: 2 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:44 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:10:48 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: air normal | Scene: GamePlayScene
+2026-10-30 08:10:51 | Player adbd96 | Run 36 | ATTACK | Side: Player | Type: ground special | Scene: GamePlayScene
+2026-10-30 08:10:51 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 08:10:51 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 2 | Scene: GamePlayScene
+2026-10-30 08:10:52 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 08:10:52 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 5 | Scene: GamePlayScene
+2026-10-30 08:10:54 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: air normal | Scene: GamePlayScene
+2026-10-30 08:10:56 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: air special | Scene: GamePlayScene
+2026-10-30 08:11:00 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: ground special | Scene: GamePlayScene
+2026-10-30 08:11:01 | Player adbd96 | Run 36 | FALL | Who: Player | Scene: GamePlayScene
+2026-10-30 08:11:02 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: air special | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | HIT | Side: AI | Victim: Player | Damage: 0.75 | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | ATTACK | Side: AI | Type: ground normal | Scene: GamePlayScene
+2026-10-30 08:11:03 | Player adbd96 | Run 36 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:34 | Scene: GamePlayScene
+=== Player adbd96 | Run 36 summary (2026-10-30 08:11:03) ===
+Session length: 00:01:32
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 6, AI 8
+  - Player ground normal: 3
+  - Player air normal: 2
+  - AI air special: 3
+  - Player ground special: 1
+  - AI ground special: 2
+  - AI ground normal: 2
+  - AI air normal: 1
+Hit rate (hits landed / attacks used): player 1/6 (17%), AI 13/8 (163%)
+Falls from the arena: player 1, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:56:01 | Player adbd96 | Run 37 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 37 summary (2026-10-30 08:56:32) ===
+Session length: 00:00:31
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 08:56:37 | Player adbd96 | Run 38 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 38 summary (2026-10-30 08:57:04) ===
+Session length: 00:00:27
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:01:25 | Player adbd96 | Run 39 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 39 summary (2026-10-30 09:01:53) ===
+Session length: 00:00:28
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:05:24 | Player adbd96 | Run 40 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 40 summary (2026-10-30 09:05:33) ===
+Session length: 00:00:09
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:05:47 | Player adbd96 | Run 41 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 09:05:50 | Player adbd96 | Run 41 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 41 summary (2026-10-30 09:05:58) ===
+Session length: 00:00:11
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:10:17 | Player adbd96 | Run 42 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 42 summary (2026-10-30 09:10:26) ===
+Session length: 00:00:08
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:10:42 | Player adbd96 | Run 43 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 43 summary (2026-10-30 09:12:13) ===
+Session length: 00:01:31
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:13:00 | Player adbd96 | Run 44 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:13:24 | Player adbd96 | Run 44 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 09:13:26 | Player adbd96 | Run 44 | ENEMY_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 09:13:26 | Player adbd96 | Run 44 | MATCH_START | Player: Taurus | AI: Aries | Scene: GamePlayScene
+2026-10-30 09:13:26 | Player adbd96 | Run 44 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 09:13:31 | Player adbd96 | Run 44 | MATCH_ABANDONED | Player: Taurus | AI: Aries | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player adbd96 | Run 44 summary (2026-10-30 09:13:31) ===
+Session length: 00:00:31
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Aries 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:17:05 | Player adbd96 | Run 45 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 45 summary (2026-10-30 09:17:38) ===
+Session length: 00:00:33
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:18:17 | Player adbd96 | Run 46 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 46 summary (2026-10-30 09:18:22) ===
+Session length: 00:00:05
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:19:55 | Player adbd96 | Run 47 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:20:12 | Player adbd96 | Run 47 | SCENE_LOADED | Scene: MainMenu
+=== Player adbd96 | Run 47 summary (2026-10-30 09:20:14) ===
+Session length: 00:00:19
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:20:21 | Player adbd96 | Run 48 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:20:41 | Player adbd96 | Run 48 | SCENE_LOADED | Scene: MainMenu
+=== Player adbd96 | Run 48 summary (2026-10-30 09:20:45) ===
+Session length: 00:00:23
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:27:41 | Player adbd96 | Run 49 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:28:04 | Player adbd96 | Run 49 | PLAYER_PICK | Character: Scorpio | Scene: Character Selection Screen
+=== Player adbd96 | Run 49 summary (2026-10-30 09:28:17) ===
+Session length: 00:00:35
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: Scorpio 1 (100%)
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:29:19 | Player adbd96 | Run 50 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:29:47 | Player adbd96 | Run 50 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 09:29:48 | Player adbd96 | Run 50 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 09:29:49 | Player adbd96 | Run 50 | MATCH_START | Player: Taurus | AI: Taurus | Scene: GamePlayScene
+2026-10-30 09:29:49 | Player adbd96 | Run 50 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 09:29:54 | Player adbd96 | Run 50 | MATCH_ABANDONED | Player: Taurus | AI: Taurus | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player adbd96 | Run 50 summary (2026-10-30 09:29:54) ===
+Session length: 00:00:35
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Taurus 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:29:58 | Player adbd96 | Run 51 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 09:30:16 | Player adbd96 | Run 51 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 09:30:26 | Player adbd96 | Run 51 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 09:30:26 | Player adbd96 | Run 51 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 09:30:26 | Player adbd96 | Run 51 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 09:30:45 | Player adbd96 | Run 51 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:18 | Scene: GamePlayScene
+=== Player adbd96 | Run 51 summary (2026-10-30 09:30:45) ===
+Session length: 00:00:47
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Aries 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:32:50 | Player adbd96 | Run 52 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 52 summary (2026-10-30 09:33:01) ===
+Session length: 00:00:11
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 09:35:44 | Player adbd96 | Run 53 | SCENE_LOADED | Scene: Character Selection Screen
+=== Player adbd96 | Run 53 summary (2026-10-30 09:36:30) ===
+Session length: 00:00:46
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
