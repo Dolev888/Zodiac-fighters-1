@@ -267,9 +267,22 @@ public class CollectedDataAnalysis : MonoBehaviour
         RecordAttack(isPlayer, (air ? "air " : "ground ") + (back ? "back dash" : "dash"), !back);
     }
 
+    // the same attack by the same side can't really start more often than this (seconds); faster repeats are not counted
+    private const float MinSecondsBetweenSameAttack = 0.2f;
+    private readonly Dictionary<string, float> lastAttackAt = new Dictionary<string, float>();
+
     private void RecordAttack(bool isPlayer, string type, bool countInTotals)
     {
-        Add(attackCounts, Side(isPlayer) + " " + type);
+        // no real attack starts while the game is paused
+        if (Time.timeScale == 0f) return;
+
+        string key = Side(isPlayer) + " " + type;
+        float now = Time.unscaledTime;
+        float last;
+        if (lastAttackAt.TryGetValue(key, out last) && now - last < MinSecondsBetweenSameAttack) return;
+        lastAttackAt[key] = now;
+
+        Add(attackCounts, key);
         if (countInTotals)
         {
             if (isPlayer) attacksByPlayer++; else attacksByAI++;
