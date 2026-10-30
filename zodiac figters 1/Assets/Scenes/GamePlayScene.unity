@@ -10933,7 +10933,7 @@ Transform:
   m_GameObject: {fileID: 1403930270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09259033, y: 0, z: -10}
+  m_LocalPosition: {x: -0.10569763, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12930,8 +12930,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 278790986}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: CloseControllerCommandList
         m_Mode: 1
         m_Arguments:
