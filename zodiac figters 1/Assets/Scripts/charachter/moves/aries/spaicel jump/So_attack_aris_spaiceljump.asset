@@ -20,6 +20,7 @@ MonoBehaviour:
   - 0.5
   - 0.1
   _fireWaveOB: {fileID: 4144203621852744289, guid: 4eae313578370c946a0e4a63b8d2e441, type: 3}
+  _fireWaveOBPlus: {fileID: 4144203621852744289, guid: 2e4a2389ae79dcf41b9fe3c59a5fe406, type: 3}
   _offSet: {x: 4.5, y: -3.5}
   _engel: 45
   _attacksound: {fileID: 11400000, guid: 545ce54badf394646a13bba8ff75bda6, type: 2}

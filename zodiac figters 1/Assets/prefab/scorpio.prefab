@@ -287,13 +287,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::playerimput
   pmove: {fileID: 4212444567653787034}
   pmain: {fileID: 1703335413070672281}
-  _jumpBuferTime: 0
+  _jumpBuferTime: 0.2
   _jumpBuferTick: 0
-  _basicAttackBuferTime: 0
+  _basicAttackBuferTime: 0.2
   _basicAttackBuferTick: 0
-  _specialAttackBuferTime: 0
+  _specialAttackBuferTime: 0.2
   _specialAttackBuferTick: 0
-  _dashBuferTime: 0
+  _dashBuferTime: 0.001
   _dashBuferTick: 0
 --- !u!114 &4212444567653787034
 MonoBehaviour:
@@ -456,7 +456,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf2ca1b8dcfae74459752238d7dce7e6, type: 2}
   - {fileID: 11400000, guid: 0263b4ee5148a2149b000d381dc52678, type: 2}
   - {fileID: 11400000, guid: 3ebe579a13088bf4abd68ec7db4f8c07, type: 2}
-  _dash: {fileID: 0}
+  _dash: {fileID: 11400000, guid: fc978d74a7bd31648b336b38db11791b, type: 2}
+  _upgradeBoolList: 00000000000000000000
 --- !u!114 &7443383413974879375
 MonoBehaviour:
   m_ObjectHideFlags: 0

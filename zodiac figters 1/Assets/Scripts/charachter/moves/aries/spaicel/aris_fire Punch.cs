@@ -21,6 +21,10 @@ public class aris_firePunch : projectileParent
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (_pattack._upgradeBoolList[3])
+        {
+            _existensSpeed = _existensSpeed * 1.5f;
+        }
         rb = GetComponent<Rigidbody2D>();
         float direction = _pmain.gameObject.transform.rotation.y;
         if (_pmain.isleft)

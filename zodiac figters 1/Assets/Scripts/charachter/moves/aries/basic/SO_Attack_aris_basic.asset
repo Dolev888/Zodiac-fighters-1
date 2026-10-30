@@ -19,6 +19,8 @@ MonoBehaviour:
   - {fileID: 786146834042028847, guid: 4cb0fda573d4a5446a3f12f5834f3e95, type: 3}
   - {fileID: 1213614636736238012, guid: f8091d35f438a2b40849977341d2bf34, type: 3}
   - {fileID: 786146834042028847, guid: b522c82afe37804449bbdb484defd628, type: 3}
+  _hertBoxListUpgraded:
+  - {fileID: 786146834042028847, guid: f447ab839efcc674b898db8fb762b292, type: 3}
   _hitBoxList:
   - {fileID: 722629788844720676, guid: c6511be220100ab478164e65170056e7, type: 3}
   _timePuse:

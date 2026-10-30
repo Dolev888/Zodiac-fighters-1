@@ -38,7 +38,7 @@ public class playerattack : MonoBehaviour
 
     private HashSet<ColInt> colidDetectList;
     [Header("upgrade shit")]
-    public bool[] _upgradeBoolList =new bool[6]; /*1 basic 2 basic jump 3 speicel 4 speicel jump*/
+    public bool[] _upgradeBoolList =new bool[10]; /*1 basic 2 basic jump 3 speicel 4 speicel jump*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -187,6 +187,10 @@ public class playerattack : MonoBehaviour
         carentHertBox = Instantiate(frame, hertObject.transform);
         damageinflector dinf = carentHertBox.GetComponent<damageinflector>();
         dinf._moveID = id;
+        if (_upgradeBoolList[0])
+        {
+            dinf._damage += 2;
+        }
         if (pmain.isenhanced) { DamageCalcolation(dinf); }
     }
     public void DestroyHertBox()
@@ -317,13 +321,13 @@ public class playerattack : MonoBehaviour
     private void DamageCalcolation(damageinflector dinf)
     {
         float damage = dinf._damage;
-        damage = damage * 2;
+        damage = damage * 1.5f;
         dinf._damage = damage;
     }
     private void DamageCalcolationProjectile(projectileParent projectile)
     {
         float damage = projectile._damage;
-        damage = damage * 2;
+        damage = damage * 1.5f;
         projectile._damage = damage;
     }
 

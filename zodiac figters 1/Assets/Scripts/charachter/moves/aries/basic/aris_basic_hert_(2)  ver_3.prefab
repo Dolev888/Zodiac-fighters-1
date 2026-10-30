@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::damageinflector
   _damage: 10
   _stnTime: 0.4
-  _knokBack: 80
+  _knokBack: 60
   _knockBackEngel: 30
   hitlayer:
     serializedVersion: 2

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08e1f607fd4b1864895d30f1f37d0c45, type: 3}
-  m_Name: upgrade_aries_low strength
+  m_Name: upgrade_scorpio_low strength
   m_EditorClassIdentifier: Assembly-CSharp::upgradedeta
-  _title: taurus +
-  _text: thomthing is stronger
+  _title: strength +
+  _text: minor boost to most damage
   _effectNum: 0
   _type: 0
