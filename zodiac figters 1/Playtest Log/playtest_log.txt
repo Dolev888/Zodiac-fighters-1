@@ -879,3 +879,33 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 02:38:49 | Run 31 | SCENE_LOADED | Scene: 0 (15)
+2026-10-30 02:38:51 | Run 31 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 02:38:54 | Run 31 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 02:38:56 | Run 31 | ENEMY_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 02:38:57 | Run 31 | MATCH_START | Player: Taurus | AI: Taurus | Scene: GamePlayScene
+2026-10-30 02:38:57 | Run 31 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 02:39:11 | Run 31 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 02:39:18 | Run 31 | CONTROLS_CLOSE | Seconds open: 7.1 | Scene: GamePlayScene
+2026-10-30 02:39:20 | Run 31 | CONTROLS_OPEN | Scene: GamePlayScene
+2026-10-30 02:39:21 | Run 31 | CONTROLS_CLOSE | Seconds open: 1.2 | Scene: GamePlayScene
+2026-10-30 02:39:25 | Run 31 | MATCH_ABANDONED | Player: Taurus | AI: Taurus | Duration: 00:00:04 | Scene: Character Selection Screen
+2026-10-30 02:39:28 | Run 31 | PLAYER_PICK | Character: Aries | Scene: Character Selection Screen
+2026-10-30 02:39:29 | Run 31 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 02:39:30 | Run 31 | MATCH_START | Player: Aries | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 02:39:42 | Run 31 | MATCH_ABANDONED | Player: Aries | AI: Scorpio | Duration: 00:00:01 | Scene: GamePlayScene
+=== Run 31 summary (2026-10-30 02:39:42) ===
+Session length: 00:00:52
+Matches: 2 started, 0 finished, 2 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (50%), Aries 1 (50%)
+Opponent picks: Taurus 1 (50%), Scorpio 1 (50%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 2 times, 8.3 seconds in total
+Fights:
+  (none finished)
+===================================
