@@ -37,6 +37,7 @@ public class CollectedDataAnalysis : MonoBehaviour
     private static readonly string[] CharacterNames = { "Aries", "Scorpio", "Taurus" };
 
     private const string RunNumberPrefKey = "CollectedDataAnalysis.RunNumber";
+    private const string PlayerIdPrefKey = "CollectedDataAnalysis.PlayerId";
     private const string LogFolderName = "Playtest Log";
     private const string LogFileName = "playtest_log.txt";
     private const string NewLine = "\r\n";   // same on every OS
@@ -58,6 +59,7 @@ public class CollectedDataAnalysis : MonoBehaviour
     private DateTime sessionStart;
     private readonly HashSet<string> loggedScenes = new HashSet<string>();
     private string workingFolder;          // the folder that worked for writing
+    private string playerId;               // anonymous random id of this computer, so files from different testers can be told apart
 
     // ---------------------------------------------------------------- current match
     private bool matchActive;
@@ -121,6 +123,9 @@ public class CollectedDataAnalysis : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // a command list that was still open when the scene changed can't stay "open" for the next scene
+        if (controlsOpenedAt >= 0f) DoControlsClosed();
+
         // the first load of each scene is logged once
         if (loggedScenes.Add(scene.name))
             Log("SCENE_LOADED", "Scene: " + scene.name, false);
@@ -307,17 +312,25 @@ public class CollectedDataAnalysis : MonoBehaviour
     {
         if (runNumber != 0) return;
 
+        // anonymous id: made once on this computer, no personal information in it
+        playerId = PlayerPrefs.GetString(PlayerIdPrefKey, "");
+        if (string.IsNullOrEmpty(playerId))
+        {
+            playerId = Guid.NewGuid().ToString("N").Substring(0, 6);
+            PlayerPrefs.SetString(PlayerIdPrefKey, playerId);
+        }
+
         runNumber = PlayerPrefs.GetInt(RunNumberPrefKey, 0) + 1;
         PlayerPrefs.SetInt(RunNumberPrefKey, runNumber);
         PlayerPrefs.Save();
     }
 
-    // "time | Run n | EVENT [| detail] | Scene: name"
+    // "time | Player id | Run n | EVENT [| detail] | Scene: name"
     private void Log(string eventName, string detail = null, bool includeScene = true)
     {
         StartRunIfNeeded();
 
-        string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " | Run " + runNumber + " | " + eventName;
+        string line = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + " | Player " + playerId + " | Run " + runNumber + " | " + eventName;
         if (detail != null) line += " | " + detail;
         if (includeScene) line += " | Scene: " + SceneManager.GetActiveScene().name;
 
@@ -332,7 +345,7 @@ public class CollectedDataAnalysis : MonoBehaviour
         if (runNumber == 0) return;   // nothing happened this launch
 
         var sb = new StringBuilder();
-        sb.Append("=== Run " + runNumber + " summary (" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ") ===").Append(NewLine);
+        sb.Append("=== Player " + playerId + " | Run " + runNumber + " summary (" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + ") ===").Append(NewLine);
         sb.Append("Session length: " + FormatTime((float)(DateTime.Now - sessionStart).TotalSeconds)).Append(NewLine);
 
         sb.Append("Matches: " + matchesStarted + " started, " + matchesFinished + " finished, " + matchesAbandoned + " abandoned").Append(NewLine);
