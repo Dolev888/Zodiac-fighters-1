@@ -2672,3 +2672,41 @@ Controls list opened: 0 times, 0.0 seconds in total
 Fights:
   (none finished)
 ===================================
+2026-10-30 03:29:20 | Player 82d563 | Run 39 | SCENE_LOADED | Scene: MainMenu
+2026-10-30 03:29:22 | Player 82d563 | Run 39 | SCENE_LOADED | Scene: Character Selection Screen
+2026-10-30 03:29:24 | Player 82d563 | Run 39 | PLAYER_PICK | Character: Taurus | Scene: Character Selection Screen
+2026-10-30 03:29:25 | Player 82d563 | Run 39 | ENEMY_PICK | Character: Scorpio | Scene: Character Selection Screen
+2026-10-30 03:29:26 | Player 82d563 | Run 39 | MATCH_START | Player: Taurus | AI: Scorpio | Scene: GamePlayScene
+2026-10-30 03:29:26 | Player 82d563 | Run 39 | SCENE_LOADED | Scene: GamePlayScene
+2026-10-30 03:29:51 | Player 82d563 | Run 39 | MATCH_ABANDONED | Player: Taurus | AI: Scorpio | Duration: 00:00:00 | Scene: GamePlayScene
+=== Player 82d563 | Run 39 summary (2026-10-30 03:29:51) ===
+Session length: 00:00:31
+Matches: 1 started, 0 finished, 1 abandoned
+Wins: player 0, AI 0
+Player picks: Taurus 1 (100%)
+Opponent picks: Scorpio 1 (100%)
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
+2026-10-30 03:30:00 | Player 82d563 | Run 40 | SCENE_LOADED | Scene: MainMenu
+=== Player 82d563 | Run 40 summary (2026-10-30 03:30:02) ===
+Session length: 00:00:02
+Matches: 0 started, 0 finished, 0 abandoned
+Wins: player 0, AI 0
+Player picks: none
+Opponent picks: none
+Wins per character:
+  (no finished matches)
+Attacks used: player 0, AI 0
+Hit rate (hits landed / attacks used): player 0/0 (n/a), AI 0/0 (n/a)
+Falls from the arena: player 0, AI 0
+Controls list opened: 0 times, 0.0 seconds in total
+Fights:
+  (none finished)
+===================================
