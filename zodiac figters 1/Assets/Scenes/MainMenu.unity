@@ -1333,6 +1333,7 @@ GameObject:
   - component: {fileID: 205946043}
   - component: {fileID: 205946045}
   - component: {fileID: 205946044}
+  - component: {fileID: 205946046}
   m_Layer: 5
   m_Name: CommandList_Controller
   m_TagString: Untagged
@@ -1406,6 +1407,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205946042}
   m_CullTransparentMesh: 1
+--- !u!114 &205946046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205946042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be3734e3d7b1584abcfeee3c3731913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControllerBackButton
+  onBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 205946042}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  debugLog: 1
 --- !u!1 &224433955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,6 +1912,7 @@ GameObject:
   - component: {fileID: 470406534}
   - component: {fileID: 470406536}
   - component: {fileID: 470406535}
+  - component: {fileID: 470406537}
   m_Layer: 5
   m_Name: CommandListPanel
   m_TagString: Untagged
@@ -1956,6 +1986,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 470406533}
   m_CullTransparentMesh: 1
+--- !u!114 &470406537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470406533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be3734e3d7b1584abcfeee3c3731913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ControllerBackButton
+  onBack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 470406533}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  debugLog: 1
 --- !u!1 &495243354
 GameObject:
   m_ObjectHideFlags: 0
