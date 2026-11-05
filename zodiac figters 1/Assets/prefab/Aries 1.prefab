@@ -430,6 +430,7 @@ MonoBehaviour:
   enemyMovement: {fileID: 5337511965245432184}
   samePlatformHeight: 5
   jumpCooldown: 0.5
+  debugDrop: 1
   platformScanner: {fileID: 4345458634389891758}
   headHeight: 20
   busyTimeout: 3
@@ -471,7 +472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   rigidP: {fileID: 1762099896455915236}
   groundSpeed: 50
-  jumpPower: 95
+  jumpPower: 115
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -500,7 +501,7 @@ MonoBehaviour:
   maxClimbHeight: 21
   feetBelowPivot: 10.8
   landingInset: 5
-  dropReach: 15
+  dropReach: 30
   dropCheckDistance: 150
   debugLog: 1
 --- !u!114 &2127499861492621400

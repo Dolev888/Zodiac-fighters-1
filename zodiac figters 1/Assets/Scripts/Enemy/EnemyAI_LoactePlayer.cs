@@ -14,6 +14,8 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     [SerializeField] private EnemyMovement enemyMovement;
     [SerializeField] private float samePlatformHeight = 5f;
     [SerializeField] private float jumpCooldown = 0.5f;
+    [SerializeField] private bool debugDrop = true;   // prints "DROP STATE" to the Console once a second while he is trying to drop
+    private float nextDropStateLog;
     [SerializeField] private EnemyPlatformScanner platformScanner;
     // height of the enemy's body (feet to head), used so he doesn't steer into the platform he just left
     [SerializeField] private float headHeight = 20f;
@@ -103,6 +105,14 @@ public class EnemyAI_LoactePlayer : MonoBehaviour
     private void HandleDropDown()
     {
         bool grounded = enemyMovement.IsGrounded();
+
+        if (debugDrop && Time.time >= nextDropStateLog)
+        {
+            nextDropStateLog = Time.time + 1f;
+            Debug.Log("DROP STATE on " + name + ": grounded=" + grounded + " dropDir=" + dropDir + " airborne=" + dropAirborne
+                + " landingX=" + dropLandingX.ToString("F1") + " myX=" + transform.position.x.ToString("F1")
+                + " playerDY=" + (player.position.y - transform.position.y).ToString("F1"));
+        }
 
         // landed on the lower platform: forget the finished drop so the next one can be chosen
         if (dropDir != 0 && dropAirborne && grounded && edgeCheck.position.y < dropOriginBottom)

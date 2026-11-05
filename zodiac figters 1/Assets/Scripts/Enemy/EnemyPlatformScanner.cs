@@ -32,6 +32,7 @@ public class EnemyPlatformScanner : MonoBehaviour
     // writes to the Console why no platform was chosen (once every 2 seconds)
     [SerializeField] private bool debugLog = true;
     private float nextLogTime;
+    private float nextDropLogTime;
 
     private EnemyMovement movement;
 
@@ -155,8 +156,19 @@ public class EnemyPlatformScanner : MonoBehaviour
         originBottomY = 0f;
         edgeX = 0f;
 
-        RaycastHit2D standing = Physics2D.Raycast(feet + Vector2.up * 0.5f, Vector2.down, 2f, groundLayer);
-        if (standing.collider == null) return false;
+        // the platform under his feet (a generous ray, so a few units of error in the feet position don't matter)
+        // use the body's X, not the Edge Check's: the Edge Check sits in front of him and is already past the platform's edge when he stops there
+        Vector2 underBody = new Vector2(transform.position.x, feet.y);
+        RaycastHit2D standing = Physics2D.Raycast(underBody + Vector2.up * 3f, Vector2.down, 8f, groundLayer);
+        if (standing.collider == null)
+        {
+            if (debugLog && Time.time >= nextDropLogTime)
+            {
+                nextDropLogTime = Time.time + 2f;
+                Debug.Log("NO DROP: no ground found under his feet at " + feet + " (checked 3 above to 5 below, layer mask " + groundLayer.value + ")");
+            }
+            return false;
+        }
 
         Bounds origin = standing.collider.bounds;
         originBottomY = origin.min.y;
@@ -198,6 +210,21 @@ public class EnemyPlatformScanner : MonoBehaviour
             }
         }
         if (found) return true;
+
+        if (debugLog && Time.time >= nextDropLogTime)
+        {
+            nextDropLogTime = Time.time + 2f;
+            string report = "";
+            Collider2D[] allBelow = Physics2D.OverlapBoxAll(new Vector2(edgeX, origin.min.y - 100f), new Vector2(400f, 200f), 0f, groundLayer);
+            foreach (Collider2D c in allBelow)
+            {
+                if (c == standing.collider || c.bounds.max.y > origin.min.y) continue;
+                float nx = direction < 0 ? c.bounds.max.x : c.bounds.min.x;
+                report += c.name + " (gap " + (direction * (nx - edgeX)).ToString("F1") + ", " + (origin.min.y - c.bounds.max.y).ToString("F1") + " below) ";
+            }
+            Debug.Log("NO DROP " + (direction < 0 ? "LEFT" : "RIGHT") + " from '" + standing.collider.name + "' edgeX " + edgeX.ToString("F1")
+                + " | Drop Reach " + dropReach + " | platforms below: " + (report == "" ? "none found" : report));
+        }
         return false;
     }
 }
