@@ -60,7 +60,7 @@ public class FighterDamage : MonoBehaviour
             Lose(); // if reached max damge you lose
         }
 
-        if (damagePercentage >= _fetiugPrecent)
+        if (damagePercentage <= _fetiugPrecent)
         {
             pmain.SetIdleAnim(1);
         }

@@ -71,7 +71,7 @@ MonoBehaviour:
   _serchTime: 4
   _origin: {x: -9, y: 40}
   _size: {x: 5, y: 0}
-  _lazerSpeed: 40
+  _lazerSpeed: 80
   _lazer: {fileID: 5211368348547957164}
   _gayzerSpeed: 60
   _gayzerRetractionSpeed: 80
