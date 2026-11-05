@@ -13,9 +13,41 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private float _whaitTime;
     private float timer;
     private int twinklecount = 0;
+    [Header("Play panel (opens when PLAY is pressed)")]
+    [SerializeField] private GameObject playModePanel;   // the panel with: Player vs Player, Player vs CPU, Back
+
+    // PLAY button -> opens the panel with the two game modes
+    public void OpenPlayModePanel()
+    {
+        mainMenuBcakground.SetActive(false);
+        playModePanel.SetActive(true);
+    }
+
+    // Back button of the panel (also wire it to the Controller Back Button on the panel)
+    public void ClosePlayModePanel()
+    {
+        playModePanel.SetActive(false);
+        mainMenuBcakground.SetActive(true);
+    }
+
+    // "Player vs CPU" button
+    public void StartVsCpu()
+    {
+        GameMode.Versus = false;
+        SceneManager.LoadScene("Character Selection Screen");
+    }
+
+    // "Player vs Player" button
+    public void StartVersus()
+    {
+        GameMode.Versus = true;
+        SceneManager.LoadScene("Character Selection Screen");
+    }
+
+    // old PLAY button wiring: behaves like Player vs CPU, so nothing breaks if it is still connected
     public void Playgame()
     {
-        SceneManager.LoadScene("Character Selection Screen");
+        StartVsCpu();
     }
 
     public void OpenCommandList()
@@ -60,7 +92,6 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UnityEngine.InputSystem.Gamepad.current != null && UnityEngine.InputSystem.Gamepad.current.buttonEast.wasPressedThisFrame) Debug.Log("EAST pressed");
         // East button (Circle on PlayStation, B on Xbox) closes an open command list
         if (Gamepad.current != null && Gamepad.current.buttonEast.wasPressedThisFrame)
         {

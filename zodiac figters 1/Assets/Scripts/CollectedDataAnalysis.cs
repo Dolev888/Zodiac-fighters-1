@@ -135,39 +135,39 @@ public class CollectedDataAnalysis : MonoBehaviour
     }
 
     // ================================================================ static calls (use these from other scripts)
-    public static void PlayerPick(int characterIndex) { if (Instance != null) Instance.DoPick(true, characterIndex); }
-    public static void EnemyPick(int characterIndex) { if (Instance != null) Instance.DoPick(false, characterIndex); }
+    public static void PlayerPick(int characterIndex) { if (Instance != null && !GameMode.Versus) Instance.DoPick(true, characterIndex); }
+    public static void EnemyPick(int characterIndex) { if (Instance != null && !GameMode.Versus) Instance.DoPick(false, characterIndex); }
 
     public static void MatchStart(int playerCharacter, int enemyCharacter, FighterDamage player, FighterDamage enemy)
     {
-        if (Instance != null) Instance.DoMatchStart(playerCharacter, enemyCharacter, player, enemy);
+        if (Instance != null && !GameMode.Versus) Instance.DoMatchStart(playerCharacter, enemyCharacter, player, enemy);
     }
 
-    public static void MatchEnd(bool playerWon) { if (Instance != null) Instance.DoMatchEnd(playerWon); }
+    public static void MatchEnd(bool playerWon) { if (Instance != null && !GameMode.Versus) Instance.DoMatchEnd(playerWon); }
 
     // isPlayer = who attacks (true = the player, false = the AI)
     public static void Attack(bool isPlayer, bool air, bool special)
     {
-        if (Instance != null) Instance.DoAttack(isPlayer, air, special);
+        if (Instance != null && !GameMode.Versus) Instance.DoAttack(isPlayer, air, special);
     }
 
     // a dash attack (forward dash counts as an attack, a back dash is only recorded)
     public static void Dash(bool isPlayer, bool air, bool back)
     {
-        if (Instance != null) Instance.DoDash(isPlayer, air, back);
+        if (Instance != null && !GameMode.Versus) Instance.DoDash(isPlayer, air, back);
     }
 
     // victimIsPlayer = who was hit
     public static void Hit(bool victimIsPlayer, float damage)
     {
-        if (Instance != null) Instance.DoHit(victimIsPlayer, damage);
+        if (Instance != null && !GameMode.Versus) Instance.DoHit(victimIsPlayer, damage);
     }
 
     // isPlayer = who fell off the arena
-    public static void Fall(bool isPlayer) { if (Instance != null) Instance.DoFall(isPlayer); }
+    public static void Fall(bool isPlayer) { if (Instance != null && !GameMode.Versus) Instance.DoFall(isPlayer); }
 
-    public static void ControlsOpened() { if (Instance != null) Instance.DoControlsOpened(); }
-    public static void ControlsClosed() { if (Instance != null) Instance.DoControlsClosed(); }
+    public static void ControlsOpened() { if (Instance != null && !GameMode.Versus) Instance.DoControlsOpened(); }
+    public static void ControlsClosed() { if (Instance != null && !GameMode.Versus) Instance.DoControlsClosed(); }
 
     // ================================================================ the work
     public static string CharacterName(int index)
@@ -433,6 +433,9 @@ public class CollectedDataAnalysis : MonoBehaviour
 
     private void WriteLine(string text)
     {
+        // Player vs Player (trailer mode): nothing is written to the playtest log
+        if (GameMode.Versus) return;
+
         // use the folder that worked before; otherwise try the game folder first, then the fallback
         string[] candidates = workingFolder != null
             ? new[] { workingFolder }

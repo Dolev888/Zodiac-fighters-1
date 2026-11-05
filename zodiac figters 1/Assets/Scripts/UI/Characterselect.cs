@@ -24,6 +24,10 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private string fighterTitle = "CHOOSE YOUR \nFIGHTER";
     [SerializeField] private string opponentTitle = "CHOOSE YOUR \n OPPONENT";
 
+    [Header("Titles used when the screen was opened from Player vs Player")]
+    [SerializeField] private string player1Title = "PLAYER 1";
+    [SerializeField] private string player2Title = "PLAYER 2";
+
     // how many characters exist (only used by the Random button). Raise it when a new character is added
     [SerializeField] private int characterCount = 3;
 
@@ -113,7 +117,11 @@ public class CharacterSelect : MonoBehaviour
     // updates the title text and which buttons can be pressed
     private void Refresh()
     {
-        if (titleText != null) titleText.text = choosingOpponent ? opponentTitle : fighterTitle;
+        if (titleText != null)
+        {
+            if (GameMode.Versus) titleText.text = choosingOpponent ? player2Title : player1Title;
+            else titleText.text = choosingOpponent ? opponentTitle : fighterTitle;
+        }
 
         if (characterButtons == null) return;
         for (int i = 0; i < characterButtons.Length; i++)
@@ -134,7 +142,7 @@ public class CharacterSelect : MonoBehaviour
         switch (num)
         {
             case 0:
-                
+
                 Debug.Log("Hovering button 1");
                 break;
             case 1:
