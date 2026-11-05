@@ -23,7 +23,7 @@ public class EnemyPlatformScanner : MonoBehaviour
     [SerializeField] private float landingInset = 5f;
 
     [Header("dropping down")]
-    // how far past a platform's edge we look for a lower platform to land on
+    // how far past a platform's edge a lower platform may be and still be a drop target (raise it if he picks a nearer platform instead of the one the player is on)
     [SerializeField] private float dropReach = 15f;
     // how far down we look for that lower platform
     [SerializeField] private float dropCheckDistance = 60f;
@@ -131,15 +131,15 @@ public class EnemyPlatformScanner : MonoBehaviour
                     otherLayers += c.name + " (layer " + LayerMask.LayerToName(c.gameObject.layer) + ") ";
             }
 
-           // Debug.Log("PLATFORM DIAGNOSIS: nearest platform above = " + nearestOnLayer
-           //     + " | platforms NOT on the Ground Layer: " + (otherLayers == "" ? "none" : otherLayers));
+            Debug.Log("PLATFORM DIAGNOSIS: nearest platform above = " + nearestOnLayer
+                + " | platforms NOT on the Ground Layer: " + (otherLayers == "" ? "none" : otherLayers));
 
-           // Debug.Log("NO PLATFORM TO JUMP TO on " + name
-             //   + " | max jump rise = " + maxRise.ToString("F1")
-             //   + " | platforms in scan area = " + platforms.Length
-             //   + " (own/too low " + tooLow + ", too high " + tooHigh
-            //    + (tooHigh > 0 ? ", lowest of those needs " + lowestTooHigh.ToString("F1") : "") + ")"
-            //    + " | scan width " + upperScanWidth);
+            Debug.Log("NO PLATFORM TO JUMP TO on " + name
+                + " | max jump rise = " + maxRise.ToString("F1")
+                + " | platforms in scan area = " + platforms.Length
+                + " (own/too low " + tooLow + ", too high " + tooHigh
+                + (tooHigh > 0 ? ", lowest of those needs " + lowestTooHigh.ToString("F1") : "") + ")"
+                + " | scan width " + upperScanWidth);
         }
 
         return found;
@@ -162,21 +162,42 @@ public class EnemyPlatformScanner : MonoBehaviour
         originBottomY = origin.min.y;
         edgeX = direction < 0 ? origin.min.x : origin.max.x;
 
-        // look for a platform below, a few units past the edge
-        for (float d = 3f; d <= dropReach; d += 3f)
+        // every platform below this one that sticks out into the area past the edge (up to Drop Reach, down to Drop Check Distance)
+        float boxLeft = direction < 0 ? edgeX - dropReach : edgeX;
+        Vector2 boxCenter = new Vector2(boxLeft + dropReach * 0.5f, origin.min.y - 0.5f - dropCheckDistance * 0.5f);
+        Collider2D[] below = Physics2D.OverlapBoxAll(boxCenter, new Vector2(dropReach, dropCheckDistance), 0f, groundLayer);
+
+        float best = Mathf.Infinity;
+        bool found = false;
+        foreach (Collider2D c in below)
         {
-            Vector2 start = new Vector2(edgeX + direction * d, origin.min.y - 0.5f);
-            RaycastHit2D below = Physics2D.Raycast(start, Vector2.down, dropCheckDistance, groundLayer);
-            if (below.collider != null)
+            if (c == standing.collider) continue;
+            Bounds b = c.bounds;
+            if (b.max.y > origin.min.y) continue;               // not below the platform we stand on
+
+            // the platform's point closest to our edge must be within reach
+            float nearestX = direction < 0 ? b.max.x : b.min.x;
+            if (direction * (nearestX - edgeX) > dropReach) continue;
+
+            float minX = b.min.x + landingInset;
+            float maxX = b.max.x - landingInset;
+            if (minX > maxX) minX = maxX = b.center.x;
+
+            // aim at the player, but never farther than we can travel from the edge
+            float x = Mathf.Clamp(targetX, minX, maxX);
+            float limit = edgeX + direction * dropReach;
+            if (direction < 0) x = Mathf.Max(x, limit); else x = Mathf.Min(x, limit);
+            x = Mathf.Clamp(x, b.min.x, b.max.x);
+
+            float d = Mathf.Abs(x - targetX);
+            if (d < best)
             {
-                Bounds b = below.collider.bounds;
-                float minX = b.min.x + landingInset;
-                float maxX = b.max.x - landingInset;
-                if (minX > maxX) minX = maxX = b.center.x;
-                landingX = Mathf.Clamp(targetX, minX, maxX);
-                return true;
+                best = d;
+                landingX = x;
+                found = true;
             }
         }
+        if (found) return true;
         return false;
     }
 }
