@@ -19,6 +19,7 @@ public class playerimput : MonoBehaviour
     [SerializeField] private float _stickDeadzone = 0.2f;
     // pushing the stick down this far while pressing dash = back dash (same as holding the Down arrow)
     [SerializeField] private float _stickDownForBackDash = 0.5f;
+    [SerializeField] private bool _isControler;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,7 +39,15 @@ public class playerimput : MonoBehaviour
 
         //            break;
         //        default:
-        InputHandel();
+        if (_isControler)
+        {
+            ControlerInputHandel();
+        }
+        else
+        {
+            KeybourdInputHandel();
+        }
+
         //        break;
         //}
         bafferTimer();
@@ -110,11 +119,131 @@ public class playerimput : MonoBehaviour
 
 
         // Rotation lock
+        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift) )
+            pmain.routatelock = true;
+
+        if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
+            pmain.routatelock = false;
+    }
+    private void KeybourdInputHandel()
+    {
+        // Controller: read it once per frame. While the game is paused (timeScale 0) the buttons belong to the menus, so they are ignored here.
+       
+
+        // Movement (keyboard first, the stick is used when no arrow is held)
+        if (Input.GetKey(KeyCode.LeftArrow))
+            pmain.WalkHandel(-1);
+        else if (Input.GetKey(KeyCode.RightArrow))
+            pmain.WalkHandel(1);
+        
+
+        // Record inputs immediately
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
+            _jumpBuferTick = _jumpBuferTime;
+
+        if (Input.GetKeyDown(KeyCode.Z) )
+            _basicAttackBuferTick = _basicAttackBuferTime;
+
+        if (Input.GetKeyDown(KeyCode.X))
+            _specialAttackBuferTick = _specialAttackBuferTime;
+        if (Input.GetKeyDown(KeyCode.C) )
+            _dashBuferTick = _dashBuferTime;
+
+        // Attempt buffered actions until they succeed or expire
+        if (_jumpBuferTick > 0)
+            pmain.JumpHandle();
+
+        if (_basicAttackBuferTick > 0)
+            pmain.AttackHandel(1);
+
+        if (_specialAttackBuferTick > 0)
+            pmain.AttackHandel(2);
+        if (_dashBuferTick > 0)
+        {
+            if (Input.GetKey(KeyCode.DownArrow) )
+            {
+                pmain.DashHandle(true);
+            }
+            pmain.DashHandle(false);
+        }
+
+
+        // Rotation lock
         if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
             pmain.routatelock = true;
 
         if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
             pmain.routatelock = false;
+    }
+    private void ControlerInputHandel()
+    {
+        // Controller: read it once per frame. While the game is paused (timeScale 0) the buttons belong to the menus, so they are ignored here.
+        Gamepad pad = Time.timeScale > 0f ? Gamepad.current : null;
+
+        float padMove = 0f;
+        bool padStickDown = false;
+        bool padJump = false, padBasic = false, padSpecial = false, padDash = false;
+
+        if (pad != null)
+        {
+            Vector2 stick = pad.leftStick.ReadValue();
+
+            // digital like the keyboard: -1, 0 or 1 (so the walk speed and animation feel the same)
+            if (stick.x <= -_stickDeadzone) padMove = -1f;
+            else if (stick.x >= _stickDeadzone) padMove = 1f;
+
+            padStickDown = stick.y <= -_stickDownForBackDash;
+
+            padJump = pad.buttonSouth.wasPressedThisFrame;        // X (PlayStation) / A (Xbox)
+            padBasic = pad.buttonWest.wasPressedThisFrame;        // Square / X
+            padSpecial = pad.buttonNorth.wasPressedThisFrame;     // Triangle / Y
+            padDash = pad.leftShoulder.wasPressedThisFrame;       // L1 / LB
+        }
+
+        // Movement (keyboard first, the stick is used when no arrow is held)
+        
+            pmain.WalkHandel(padMove);
+
+        // Record inputs immediately
+        if ( padJump)
+            _jumpBuferTick = _jumpBuferTime;
+
+        if (padBasic)
+            _basicAttackBuferTick = _basicAttackBuferTime;
+
+        if (padSpecial)
+            _specialAttackBuferTick = _specialAttackBuferTime;
+        if (padDash)
+            _dashBuferTick = _dashBuferTime;
+
+        // Attempt buffered actions until they succeed or expire
+        if (_jumpBuferTick > 0)
+            pmain.JumpHandle();
+
+        if (_basicAttackBuferTick > 0)
+            pmain.AttackHandel(1);
+
+        if (_specialAttackBuferTick > 0)
+            pmain.AttackHandel(2);
+        if (_dashBuferTick > 0)
+        {
+            if (padStickDown)
+            {
+                pmain.DashHandle(true);
+            }
+            pmain.DashHandle(false);
+        }
+
+
+        // Rotation lock
+        if (padStickDown)
+            pmain.routatelock = true;
+        else
+        {
+            pmain.routatelock = false;
+        }
+       
+            
     }
     private void bafferTimer()
     {
