@@ -112,14 +112,14 @@ MonoBehaviour:
   _moveID: 0
   _damage: 2
   _stanTime: 0.2
-  _knokBack: 20
+  _knokBack: 30
   _knockBackEngel: 60
   hitlayer:
     serializedVersion: 2
     m_Bits: 256
   _color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 0.49019608}
   _hitFlag: 0
-  _coolDown: 50
+  _coolDown: 1
   _hitBoxParmeter: []
   _hitBoxOb:
   - {fileID: 2018475860411080148}

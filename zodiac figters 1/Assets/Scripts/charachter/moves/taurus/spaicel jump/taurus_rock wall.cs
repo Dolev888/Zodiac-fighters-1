@@ -118,7 +118,7 @@ public class taurus_rockwall : projectileParent
     }
     private void Stan(Collider2D hit)
     {
-        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime, _moveID);
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime, _moveID, _coolDown);
     }
     private void Knocback(Collider2D hit)
     {
@@ -131,7 +131,7 @@ public class taurus_rockwall : projectileParent
         }
 
         Vector2 knockBackForce = new Vector2(x, y);
-        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce, _moveID);
+        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce, _moveID, _coolDown);
     }
     private void OnRaycastHit(GameObject hiter)
     {
