@@ -25,7 +25,8 @@ public class ControllerMenuCursor : MonoBehaviour
     private static ControllerMenuCursor instance;
 
     // the scene where the fight happens (the cursor is hidden there unless the game is paused)
-    private const string MatchScene = "GamePlayScene";
+    // scenes that are always menus. Any other scene (the match, a versus copy of it) only counts as a menu while paused.
+    private static readonly string[] MenuScenes = { "MainMenu", "Character Selection Screen" };
 
     private const float StickDeadzone = 0.25f;
     private const float ScreenHeightsPerSecond = 0.9f;   // cursor speed at full stick: 0.9 screen heights per second
@@ -87,7 +88,7 @@ public class ControllerMenuCursor : MonoBehaviour
         Gamepad pad = Gamepad.current;
         Mouse mouse = Mouse.current;
 
-        bool menuMode = Time.timeScale == 0f || SceneManager.GetActiveScene().name != MatchScene;
+        bool menuMode = Time.timeScale == 0f || System.Array.IndexOf(MenuScenes, SceneManager.GetActiveScene().name) >= 0;
 
         Vector2 stick = pad != null ? pad.leftStick.ReadValue() : Vector2.zero;
         bool stickMoved = stick.magnitude > StickDeadzone;
