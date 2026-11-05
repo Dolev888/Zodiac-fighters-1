@@ -2105,6 +2105,7 @@ MonoBehaviour:
   _dashBuferTick: 0
   _stickDeadzone: 0.2
   _stickDownForBackDash: 0.5
+  _isControler: 0
 --- !u!4 &1989826847
 Transform:
   m_ObjectHideFlags: 0
@@ -2644,6 +2645,7 @@ MonoBehaviour:
   _dashBuferTick: 0
   _stickDeadzone: 0.2
   _stickDownForBackDash: 0.5
+  _isControler: 0
 --- !u!4 &4238512753671384933
 Transform:
   m_ObjectHideFlags: 0
@@ -2681,7 +2683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &4835721314514236940
 MonoBehaviour:
   m_ObjectHideFlags: 0

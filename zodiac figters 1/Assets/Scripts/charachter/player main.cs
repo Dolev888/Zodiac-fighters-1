@@ -300,6 +300,7 @@ public class playermain : MonoBehaviour
                     {
                         pimput.JumpSucseed();
                     }
+                    _animator.Play("jump");
                 }
                 break;
             default:

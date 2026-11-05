@@ -135,7 +135,9 @@ public class playerimput : MonoBehaviour
             pmain.WalkHandel(-1);
         else if (Input.GetKey(KeyCode.RightArrow))
             pmain.WalkHandel(1);
-        
+        else
+            pmain.WalkHandel(0);
+
 
         // Record inputs immediately
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))

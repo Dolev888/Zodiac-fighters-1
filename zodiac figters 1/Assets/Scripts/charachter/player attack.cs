@@ -50,6 +50,7 @@ public class playerattack : MonoBehaviour
             _ChainBafer[i] = _attackList[i]._chainCount;
             _chainBaferTick[i] = 0;
         }
+        _upgradeBoolList = new bool[12];
     }
 
     // Update is called once per frame
