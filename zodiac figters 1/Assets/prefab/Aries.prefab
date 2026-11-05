@@ -640,6 +640,9 @@ MonoBehaviour:
   _specialAttackBuferTick: 5
   _dashBuferTime: 0.001
   _dashBuferTick: 0
+  _stickDeadzone: 0.2
+  _stickDownForBackDash: 0.5
+  _isControler: 0
 --- !u!114 &4111360677550138424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,8 +659,8 @@ MonoBehaviour:
   pimput: {fileID: 7318777143498459713}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 80
-  _doubleJumpPower: 60
+  _jumpPower: 105
+  _doubleJumpPower: 90
   player: {fileID: 7615642511113472560}
   rigidP: {fileID: 2694609988024503921}
   jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
@@ -718,7 +721,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

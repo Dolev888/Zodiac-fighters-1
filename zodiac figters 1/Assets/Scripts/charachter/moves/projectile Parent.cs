@@ -171,7 +171,7 @@ public class projectileParent : MonoBehaviour
     }
     private void Stan(Collider2D hit)
     {
-        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime);
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime, _moveID);
     }
     private void Knocback(Collider2D hit)
     {
@@ -184,6 +184,6 @@ public class projectileParent : MonoBehaviour
         }
 
         Vector2 knockBackForce = new Vector2(x, y);
-        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce);
+        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce, _moveID);
     }
 }

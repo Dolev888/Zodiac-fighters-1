@@ -94,9 +94,9 @@ public class FighterDamage : MonoBehaviour
         return false;
 
     }
-    public void TakeStun(float stunDuretion)
+    public void TakeStun(float stunDuretion, int id)
     {
-        if (pmain == null || pmain._isInvincable) return;
+        if (pmain == null || pmain._isInvincable || CheckId(id)) return;
         stunTime = stunDuretion;
         stunClock = 0;
         pmain.EnterStun();
@@ -112,21 +112,21 @@ public class FighterDamage : MonoBehaviour
         }
         stunClock += Time.deltaTime;
     }
-    public void TakeKnockback(Vector2 nockForce)
+    public void TakeKnockback(Vector2 nockForce,int id)
     {
-        if (pmain._isInvincable) return;
+        if (pmain._isInvincable  || CheckId(id)) return;
         pmain.rigidP.linearVelocity = nockForce;
     }
-    public void addKnockback(Vector2 nockForce)
+    public void addKnockback(Vector2 nockForce, int id)
     {
-        if (pmain._isInvincable) return;
+        if (pmain._isInvincable || CheckId(id)) return;
         if (pmain.CurentState == playermain.STATE.KNOKCBACK || pmain.CurentState == playermain.STATE.STUN)
         {
             pmain.rigidP.linearVelocity += nockForce;
         }
         else
         {
-            TakeKnockback(nockForce);
+            TakeKnockback(nockForce,id);
         }
     }
 

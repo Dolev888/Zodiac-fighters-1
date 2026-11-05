@@ -303,12 +303,15 @@ public class playerattack : MonoBehaviour
     }
     public void StopAttack()
     {
-        
-            if (IEActiveAttack != null)
-            {
-                StopCoroutine(IEActiveAttack);
-                
-            }
+
+        if (IEActiveAttack != null)
+        {
+            StopCoroutine(IEActiveAttack);
+            DestroyHitBox();
+            DestroyHertBox();
+
+
+        }
         
         pmain.StopAttackAnimation();
         

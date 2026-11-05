@@ -64,7 +64,7 @@ public class damageinflector : MonoBehaviour
     //}
     private void Stan(Collider2D hit)
     {
-        hit.GetComponentInParent<FighterDamage>().TakeStun(_stnTime);
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stnTime, _moveID);
     }
     private void Knocback(Collider2D hit)
     {
@@ -77,7 +77,7 @@ public class damageinflector : MonoBehaviour
         }
 
         Vector2 knockBackForce = new Vector2(x, y);
-        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce);
+        hit.GetComponentInParent<FighterDamage>().TakeKnockback(knockBackForce, _moveID);
     }
     private void OnDrawGizmos()
     {

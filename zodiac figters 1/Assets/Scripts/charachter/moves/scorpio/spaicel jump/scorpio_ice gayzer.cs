@@ -233,7 +233,7 @@ public class scorpio_icegayzer : projectileParent
     }
     private void Stan(Collider2D hit)
     {
-        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime);
+        hit.GetComponentInParent<FighterDamage>().TakeStun(_stanTime, _moveID);
     }
     private void Knocback(Collider2D hit)
     {
@@ -246,7 +246,7 @@ public class scorpio_icegayzer : projectileParent
         }
 
         Vector2 knockBackForce = new Vector2(x, y);
-        hit.GetComponentInParent<FighterDamage>().addKnockback(knockBackForce);
+        hit.GetComponentInParent<FighterDamage>().addKnockback(knockBackForce, _moveID);
     }
     private void OnDestroy()
     {

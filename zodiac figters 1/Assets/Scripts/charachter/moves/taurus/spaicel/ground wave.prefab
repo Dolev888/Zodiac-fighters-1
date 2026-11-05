@@ -111,15 +111,15 @@ MonoBehaviour:
   _pmain: {fileID: 0}
   _moveID: 0
   _damage: 2
-  _stanTime: 0.1
+  _stanTime: 0.2
   _knokBack: 20
-  _knockBackEngel: 20
+  _knockBackEngel: 60
   hitlayer:
     serializedVersion: 2
     m_Bits: 256
   _color: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 0.49019608}
   _hitFlag: 0
-  _coolDown: 1
+  _coolDown: 50
   _hitBoxParmeter: []
   _hitBoxOb:
   - {fileID: 2018475860411080148}
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018475860411080148}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

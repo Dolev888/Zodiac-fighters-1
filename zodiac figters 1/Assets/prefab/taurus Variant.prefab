@@ -49,11 +49,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
     - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
       propertyPath: _jumpPower
-      value: 95
+      value: 105
       objectReference: {fileID: 0}
     - target: {fileID: 4455135612991357295, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
       propertyPath: _doubleJumpPower
-      value: 65
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8573687039583604319, guid: 0c2b63eb558eec844aa2b8b28baec40f, type: 3}
       propertyPath: m_LocalPosition.x

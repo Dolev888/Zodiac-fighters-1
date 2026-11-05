@@ -245,8 +245,8 @@ MonoBehaviour:
   pimput: {fileID: 8205274374357495928}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 95
-  _doubleJumpPower: 65
+  _jumpPower: 105
+  _doubleJumpPower: 90
   player: {fileID: 5194764169379169647}
   rigidP: {fileID: 1762099896455915236}
   jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
@@ -307,7 +307,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 15
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
