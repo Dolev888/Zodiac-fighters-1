@@ -245,8 +245,8 @@ MonoBehaviour:
   pimput: {fileID: 8205274374357495928}
   _groundSpeed: 50
   _airSpeed: 3
-  _jumpPower: 80
-  _doubleJumpPower: 60
+  _jumpPower: 95
+  _doubleJumpPower: 65
   player: {fileID: 5194764169379169647}
   rigidP: {fileID: 1762099896455915236}
   jumpSound: {fileID: 11400000, guid: 44ca2db55eeba0b45aa459c2b0210ad7, type: 2}
@@ -281,7 +281,7 @@ MonoBehaviour:
   OGgravity: 0
   _airJumpMax: 1
   _airJumpCounter: 0
-  _airDashMax: 0
+  _airDashMax: 1
   _airDashCounter: 0
   routatelock: 0
   isleft: 0
