@@ -108,6 +108,7 @@ public class scorpio_icegayzer : projectileParent
             }
             else
             {
+                Destroy(Lazer);
                 Destroy(gameObject);
             }
         }
@@ -246,5 +247,12 @@ public class scorpio_icegayzer : projectileParent
 
         Vector2 knockBackForce = new Vector2(x, y);
         hit.GetComponentInParent<FighterDamage>().addKnockback(knockBackForce);
+    }
+    private void OnDestroy()
+    {
+        if(Lazer != null)
+        {
+            Destroy(Lazer);
+        }
     }
 }

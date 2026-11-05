@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: attackRangeGN
       value: 7.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1703335413070672281, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: _airDashMax
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3247699537490877977, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: m_Name
       value: scorpio Variant
@@ -97,11 +101,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4212444567653787034, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: _jumpPower
-      value: 80
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 4212444567653787034, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: _doubleJumpPower
-      value: 60
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 5007752083895055722, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: dropCheckDistance
