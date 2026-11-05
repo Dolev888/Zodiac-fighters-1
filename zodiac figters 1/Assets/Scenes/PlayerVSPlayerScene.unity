@@ -11113,7 +11113,7 @@ MonoBehaviour:
   FramingMode: 0
   FramingSize: 0.7
   CenterOffset: {x: 0, y: 0}
-  Damping: 12
+  Damping: 0
   SizeAdjustment: 2
   LateralAdjustment: 0
   FovRange: {x: 1, y: 100}
