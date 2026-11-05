@@ -38,7 +38,7 @@ public class playerattack : MonoBehaviour
 
     private HashSet<ColInt> colidDetectList;
     [Header("upgrade shit")]
-    public bool[] _upgradeBoolList =new bool[10]; /*1 basic 2 basic jump 3 speicel 4 speicel jump*/
+    [HideInInspector]public bool[] _upgradeBoolList =new bool[12]; /*1 basic 2 basic jump 3 speicel 4 speicel jump*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

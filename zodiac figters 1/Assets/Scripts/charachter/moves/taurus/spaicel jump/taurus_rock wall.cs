@@ -17,6 +17,7 @@ public class taurus_rockwall : projectileParent
     private bool isleft;
     Collider2D[] wallColliders;
     Collider2D[] playerColliders;
+    [SerializeField] private float _existantTime;
     [Header("explosion things")]
     [SerializeField] private float _exploRadius;
     [SerializeField] private Vector3 _exploOffset;
@@ -59,6 +60,11 @@ public class taurus_rockwall : projectileParent
     {
         if (isWall && !isexplo)
         {
+            _existantTime -= Time.deltaTime;
+            if (_existantTime<= 0)
+            {
+                Destroy(gameObject);
+            }
             foreach (Collider2D wallCol in wallColliders)
             {
                 foreach (Collider2D playerCol in playerColliders)

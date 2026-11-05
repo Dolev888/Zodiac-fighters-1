@@ -20,7 +20,9 @@ public class aris_flamedash : projectileParent
             _existancTime = _existancTime * 2;
             _damage = _damage * 1.5f;
         }
-        
+        distroyThemAll();
+
+
     }
 
     // Update is called once per frame
@@ -56,6 +58,17 @@ public class aris_flamedash : projectileParent
                     }
 
                 }
+            }
+        }
+    }
+    private void distroyThemAll()
+    {
+        aris_flamedash[] imposters = FindObjectsByType<aris_flamedash>(FindObjectsSortMode.None);
+        foreach (aris_flamedash die in imposters)
+        {
+            if (die != this && die._pmain == _pmain)
+            {
+                Destroy(die.gameObject);
             }
         }
     }

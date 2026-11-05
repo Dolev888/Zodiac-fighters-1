@@ -9,6 +9,7 @@ public class scorpio_icegayzer : projectileParent
    
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Vector3 _offset;
+    [SerializeField] private float _serchTime;
 
     [Header("Lazer")]
     [SerializeField] Vector2 _origin;
@@ -113,6 +114,11 @@ public class scorpio_icegayzer : projectileParent
         else if(hit != null && hit.gameObject.CompareTag("hit"))
         {
             HitTarget(hit);
+        }
+        _serchTime-= Time.deltaTime;
+        if(_serchTime <= 0)
+        {
+            Destroy(gameObject) ;
         }
 
     }
