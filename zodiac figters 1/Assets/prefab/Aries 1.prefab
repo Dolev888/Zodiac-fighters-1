@@ -224,8 +224,11 @@ MonoBehaviour:
   _basicAttackBuferTick: 5
   _specialAttackBuferTime: 0.2
   _specialAttackBuferTick: 5
-  _dashBuferTime: 0
+  _dashBuferTime: 0.001
   _dashBuferTick: 0
+  _stickDeadzone: 0.2
+  _stickDownForBackDash: 0.5
+  _isControler: 0
 --- !u!114 &6702008052654339928
 MonoBehaviour:
   m_ObjectHideFlags: 0

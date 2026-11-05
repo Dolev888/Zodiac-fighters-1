@@ -102,6 +102,7 @@ MonoBehaviour:
   _ignoredColider:
   - {fileID: 7767029018109786271}
   - {fileID: 7025955770582750356}
+  _existantTime: 12
   _exploRadius: 15
   _exploOffset: {x: 0, y: 0, z: 0}
   _exlpoTime: 0.5
