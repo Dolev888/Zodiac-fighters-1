@@ -501,7 +501,7 @@ MonoBehaviour:
   feetBelowPivot: 10.8
   landingInset: 5
   dropReach: 15
-  dropCheckDistance: 60
+  dropCheckDistance: 150
   debugLog: 1
 --- !u!114 &2127499861492621400
 MonoBehaviour:
