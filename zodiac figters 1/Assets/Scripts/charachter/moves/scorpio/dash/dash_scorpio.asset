@@ -17,5 +17,5 @@ MonoBehaviour:
   _hertBoxList: []
   _hitBoxList: []
   _timePuse:
-  - 0.1
-  _dashPower: 400
+  - 0.2
+  _dashPower: 200
