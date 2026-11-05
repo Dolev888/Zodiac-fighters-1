@@ -103,6 +103,10 @@ PrefabInstance:
       propertyPath: _doubleJumpPower
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 5007752083895055722, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: dropCheckDistance
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7551668421570069352, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: jumpPower
       value: 95
@@ -145,6 +149,7 @@ MonoBehaviour:
   fighterDamage: {fileID: 5577717762689979762}
   maxChangedGravityTime: 1
   maxChangedGravityInAttack: 3
+  main: {fileID: 0}
 --- !u!4 &1365133294310427856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4095408651687859501, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
