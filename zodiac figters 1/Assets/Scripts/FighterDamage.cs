@@ -109,13 +109,13 @@ public class FighterDamage : MonoBehaviour
     }
     private bool CheckstunId(int id)
     {
-        if (takenAttackId.Contains(id)) return true;
+        if (stunAttackId.Contains(id)) return true;
         return false;
 
     }
     private bool ChecknockId(int id)
     {
-        if (takenAttackId.Contains(id)) return true;
+        if (knocAttackId.Contains(id)) return true;
         return false;
 
     }

@@ -111,8 +111,8 @@ MonoBehaviour:
   _pmain: {fileID: 0}
   _moveID: 0
   _damage: 2
-  _stanTime: 0.2
-  _knokBack: 30
+  _stanTime: 0.3
+  _knokBack: 70
   _knockBackEngel: 60
   hitlayer:
     serializedVersion: 2
