@@ -74,6 +74,23 @@ public class MainMenu : MonoBehaviour
         mainMenuBcakground.SetActive(true);
     }
 
+    [Header("About the team panel")]
+    [SerializeField] private GameObject devTeamPanel;   // the DevTeam panel (names, roles, university logo)
+
+    // "Dev Team" button on the main menu
+    public void OpenDevTeamPanel()
+    {
+        mainMenuBcakground.SetActive(false);
+        devTeamPanel.SetActive(true);
+    }
+
+    // "Return" button of the panel (also wire it to the Controller Back Button on the panel)
+    public void CloseDevTeamPanel()
+    {
+        devTeamPanel.SetActive(false);
+        mainMenuBcakground.SetActive(true);
+    }
+
     public void Quitgame()
     {
         Debug.Log("Quit Game");

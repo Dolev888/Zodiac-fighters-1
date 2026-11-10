@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2289019d1b337f042861bb9fd3cfed3e
+guid: 2b4246000fc95c44eb3f156023b6e15d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1816018330191488116
-    second: WhatsApp Image 2026-09-16 at 19.38.17_0
+      213: -7572561707931333215
+    second: Logo_ The Open University_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WhatsApp Image 2026-09-16 at 19.38.17_0
+      name: Logo_ The Open University_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1672
-        height: 941
+        width: 756
+        height: 199
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8b965b43f43cc6e0800000000000000
-      internalID: -1816018330191488116
+      spriteID: 1ad070f6f3bd8e690800000000000000
+      internalID: -7572561707931333215
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      WhatsApp Image 2026-09-16 at 19.38.17_0: -1816018330191488116
+      Logo_ The Open University_0: -7572561707931333215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
