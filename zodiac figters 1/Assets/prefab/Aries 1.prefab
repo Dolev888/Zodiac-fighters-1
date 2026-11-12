@@ -431,7 +431,7 @@ MonoBehaviour:
   enemyMovement: {fileID: 5337511965245432184}
   samePlatformHeight: 5
   jumpCooldown: 0.5
-  debugDrop: 1
+  debugDrop: 0
   platformScanner: {fileID: 4345458634389891758}
   headHeight: 20
   busyTimeout: 3

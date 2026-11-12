@@ -40,6 +40,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -9030009041601537823, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: debugDrop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -9030009041601537823, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: edgeCheck
       value: 
       objectReference: {fileID: 9014034838655349730}
