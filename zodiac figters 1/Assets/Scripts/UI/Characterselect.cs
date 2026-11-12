@@ -28,6 +28,9 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] private string player1Title = "PLAYER 1";
     [SerializeField] private string player2Title = "PLAYER 2";
 
+    [Tooltip("Player vs Player: Player 1 picks with the mouse/keyboard, Player 2 picks with the controller (X/A). Clicks from the other device are ignored, so nobody can pick for the other player. Must match MatchSetup's devices.")]
+    [SerializeField] private bool lockPicksToDevice = true;
+
     // how many characters exist (only used by the Random button). Raise it when a new character is added
     [SerializeField] private int characterCount = 3;
 
@@ -70,6 +73,13 @@ public class CharacterSelect : MonoBehaviour
 
     public void ChooseCharacter(int characterIndex)
     {
+        // Player vs Player: only the right device may pick (Player 1 = mouse/keyboard, Player 2 = controller)
+        if (GameMode.Versus && lockPicksToDevice)
+        {
+            bool fromController = Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame;
+            if (fromController != choosingOpponent) return;
+        }
+
         // -1 = random (while picking the fighter, only among the characters the player may use)
         if (characterIndex < 0)
         {
