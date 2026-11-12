@@ -32,6 +32,19 @@ public class EnemyAttack_AI : MonoBehaviour
     // the ground special is only used when the player is at least this far away (so up close he uses the normal attack)
     [SerializeField] private float minSpecialDistanceGS = 10f;
 
+    [Header("Dash attacks")]
+    // he dashes at the player from this distance range (too close = normal attack, too far = keeps walking)
+    [SerializeField] private float dashMinDistance = 7f;
+    [SerializeField] private float dashMaxDistance = 24f;
+    [SerializeField] private float attackCoolDownDash = 4f;
+    private float nextDashTime;
+
+    [Header("Aggression (makes him harder without changing every number above)")]
+    // 1 = the cooldowns above as they are. 0.7 = he attacks about 40% more often. 0.5 = twice as often
+    [SerializeField, Range(0.3f, 1.5f)] private float cooldownScale = 0.7f;
+    // 1 = the ranges above as they are. 1.2 = he starts attacking from 20% farther away
+    [SerializeField, Range(0.8f, 1.6f)] private float rangeScale = 1.15f;
+
     // the enemy's own movement script (found automatically, nothing to assign in the Inspector)
     private EnemyMovement enemyMovement;
 
@@ -61,6 +74,12 @@ public class EnemyAttack_AI : MonoBehaviour
         float distanceX = target.position.x - transform.position.x;
         float absDistanceX = Mathf.Abs(distanceX);
 
+        // aggression: the same numbers as before, scaled
+        float rangeGN = attackRangeGN * rangeScale;
+        float rangeGS = attackRangeGS * rangeScale;
+        float rangeAN = attackRangeAN * rangeScale;
+        float rangeAS = attackRangeAS * rangeScale;
+
         // only GROUND and AIR can start an attack; in any other state (ATTACK, NUTRAL, STUN...) a request would be ignored
         // by AttackHandel but would still use up the cooldown, so do nothing
         if (pmain.CurentState != playermain.STATE.GROUND && pmain.CurentState != playermain.STATE.AIR)
@@ -69,21 +88,28 @@ public class EnemyAttack_AI : MonoBehaviour
         if (pmain.CurentState == playermain.STATE.AIR)
         {
             // aerial normal
-            if (absDistanceX <= attackRangeAN)
+            if (absDistanceX <= rangeAN)
             {
                 if (Time.time >= nextANAttackTime)
                 {
                     FaceTarget(distanceX); pmain.AttackHandel(1); // 1= normal, the air state check determines weather we will use the aerial or grounded normal
-                    nextANAttackTime = Time.time + attackCoolDownAN;
+                    nextANAttackTime = Time.time + attackCoolDownAN * cooldownScale;
                 }
             }
-            else if (absDistanceX <= attackRangeAS)
+            else if (absDistanceX <= rangeAS)
             {
                 if (Time.time >= nextASAttackTime)
                 {
                     FaceTarget(distanceX); pmain.AttackHandel(2); // 2= special
-                    nextASAttackTime = Time.time + attackCoolDownAS;
+                    nextASAttackTime = Time.time + attackCoolDownAS * cooldownScale;
                 }
+            }
+            else if (absDistanceX <= dashMaxDistance && pmain._airDashCounter > 0 && Time.time >= nextDashTime)
+            {
+                // too far for the aerial attacks: dash at the player
+                FaceTarget(distanceX);
+                pmain.DashHandle(false);
+                nextDashTime = Time.time + attackCoolDownDash * cooldownScale * Random.Range(0.8f, 1.4f);
             }
             return;
         }
@@ -92,20 +118,29 @@ public class EnemyAttack_AI : MonoBehaviour
         if (locatePlayer.isPlayerOnSamePlatform())
         {
             //ground normal
-            if (absDistanceX <= attackRangeGN)
+            if (absDistanceX <= rangeGN)
             {
                 if (Time.time >= nextGN_AtackTime)
                 {
                     FaceTarget(distanceX); pmain.AttackHandel(1);
-                    nextGN_AtackTime = Time.time + attackCoolDownGN;
+                    nextGN_AtackTime = Time.time + attackCoolDownGN * cooldownScale;
                 }
             }
-            else if (absDistanceX >= minSpecialDistanceGS && absDistanceX <= attackRangeGS)
+            else
             {
-                if (Time.time >= nextGSAttackTime)
+                bool specialReady = absDistanceX >= minSpecialDistanceGS && absDistanceX <= rangeGS && Time.time >= nextGSAttackTime;
+                bool dashReady = absDistanceX >= dashMinDistance && absDistanceX <= dashMaxDistance && Time.time >= nextDashTime;
+
+                // when both are ready, pick one at random so he is not predictable
+                if (specialReady && (!dashReady || Random.value < 0.5f))
                 {
                     FaceTarget(distanceX); pmain.AttackHandel(2);
-                    nextGSAttackTime = Time.time + attackCoolDownGS;
+                    nextGSAttackTime = Time.time + attackCoolDownGS * cooldownScale;
+                }
+                else if (dashReady)
+                {
+                    FaceTarget(distanceX); pmain.DashHandle(false);   // false = forward dash, toward the player
+                    nextDashTime = Time.time + attackCoolDownDash * cooldownScale * Random.Range(0.8f, 1.4f);
                 }
             }
         }
