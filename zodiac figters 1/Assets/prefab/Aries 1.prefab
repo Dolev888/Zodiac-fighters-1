@@ -229,6 +229,7 @@ MonoBehaviour:
   _stickDeadzone: 0.2
   _stickDownForBackDash: 0.5
   _isControler: 0
+  _controllerIndex: -1
 --- !u!114 &6702008052654339928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,6 +459,12 @@ MonoBehaviour:
   attackRangeAS: 18
   attackCoolDownAS: 5
   minSpecialDistanceGS: 10
+  dashMinDistance: 7
+  dashMaxDistance: 24
+  attackCoolDownDash: 4
+  dashTravelDistance: 20
+  cooldownScale: 0.7
+  rangeScale: 1.15
 --- !u!114 &5337511965245432184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,7 +510,7 @@ MonoBehaviour:
   landingInset: 5
   dropReach: 30
   dropCheckDistance: 150
-  debugLog: 1
+  debugLog: 0
 --- !u!114 &2127499861492621400
 MonoBehaviour:
   m_ObjectHideFlags: 0

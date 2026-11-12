@@ -112,6 +112,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5007752083895055722, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
+      propertyPath: debugLog
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5007752083895055722, guid: b00ced0b588ca6447ae220bd58caa386, type: 3}
       propertyPath: dropCheckDistance
       value: 150
       objectReference: {fileID: 0}
