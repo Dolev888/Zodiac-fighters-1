@@ -37,6 +37,9 @@ public class EnemyAttack_AI : MonoBehaviour
     [SerializeField] private float dashMinDistance = 7f;
     [SerializeField] private float dashMaxDistance = 24f;
     [SerializeField] private float attackCoolDownDash = 4f;
+    // how far a dash carries him. He only dashes when there is ground under the whole length (so he can't dash off the map).
+    // measure it once in the Scene view; if he still goes off an edge, make this bigger
+    [SerializeField] private float dashTravelDistance = 20f;
     private float nextDashTime;
 
     [Header("Aggression (makes him harder without changing every number above)")]
@@ -47,13 +50,22 @@ public class EnemyAttack_AI : MonoBehaviour
 
     // the enemy's own movement script (found automatically, nothing to assign in the Inspector)
     private EnemyMovement enemyMovement;
+    private EnemyPlatformScanner scanner;
 
     void Start()
     {
         enemyMovement = GetComponent<EnemyMovement>();
+        scanner = GetComponent<EnemyPlatformScanner>();
 
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null) target = playerObject.transform;
+    }
+
+    // false when a dash toward the player would carry him off the platform
+    private bool DashIsSafe(float distanceX, bool airborne)
+    {
+        if (scanner == null) return true;
+        return scanner.IsDashSafe(distanceX < 0 ? -1 : 1, dashTravelDistance, airborne);
     }
 
     // turn toward the player right before attacking, so the attack (and its push) goes the right way
@@ -104,7 +116,7 @@ public class EnemyAttack_AI : MonoBehaviour
                     nextASAttackTime = Time.time + attackCoolDownAS * cooldownScale;
                 }
             }
-            else if (absDistanceX <= dashMaxDistance && pmain._airDashCounter > 0 && Time.time >= nextDashTime)
+            else if (absDistanceX <= dashMaxDistance && pmain._airDashCounter > 0 && Time.time >= nextDashTime && DashIsSafe(distanceX, true))
             {
                 // too far for the aerial attacks: dash at the player
                 FaceTarget(distanceX);
@@ -129,7 +141,7 @@ public class EnemyAttack_AI : MonoBehaviour
             else
             {
                 bool specialReady = absDistanceX >= minSpecialDistanceGS && absDistanceX <= rangeGS && Time.time >= nextGSAttackTime;
-                bool dashReady = absDistanceX >= dashMinDistance && absDistanceX <= dashMaxDistance && Time.time >= nextDashTime;
+                bool dashReady = absDistanceX >= dashMinDistance && absDistanceX <= dashMaxDistance && Time.time >= nextDashTime && DashIsSafe(distanceX, false);
 
                 // when both are ready, pick one at random so he is not predictable
                 if (specialReady && (!dashReady || Random.value < 0.5f))

@@ -227,4 +227,21 @@ public class EnemyPlatformScanner : MonoBehaviour
         }
         return false;
     }
+
+    // DASH SAFETY: true when there is ground under every point of a dash of this length in this direction,
+    // so a dash can't carry him off the platform (or into a gap) and out of the map.
+    // airborne = he is in the air: the ground can then be far below, so the check looks much farther down.
+    public bool IsDashSafe(int direction, float distance, bool airborne)
+    {
+        float feetY = transform.position.y - feetBelowPivot;
+        float lookDown = airborne ? 80f : 8f;
+
+        for (float d = 3f; d <= distance + 3f; d += 3f)
+        {
+            Vector2 start = new Vector2(transform.position.x + direction * d, feetY + 3f);
+            if (Physics2D.Raycast(start, Vector2.down, 3f + lookDown, groundLayer).collider == null)
+                return false;
+        }
+        return true;
+    }
 }
