@@ -25,6 +25,25 @@ public class MatchSetup : MonoBehaviour
     [SerializeField] private DamageDisplay enemyHealth;       // the box at the bottom-right
     [SerializeField] private GameObject _upgradeManager;
 
+    // the health box art of one character. The two boxes have different colors (left = red, right = blue),
+    // so every character has one set for each side. An empty slot leaves that box as it is.
+    [System.Serializable]
+    public class HealthBoxArt
+    {
+        public string characterName;   // only a label for the Inspector (Aries, Scorpio, Taurus)
+
+        [Header("Left box (player 1, red)")]
+        public Sprite frame;           // the bar with the face on it
+        public Sprite face;            // optional separate face
+
+        [Header("Right box (player 2 / the enemy, blue)")]
+        public Sprite rightFrame;
+        public Sprite rightFace;
+    }
+
+    [Header("Health box art per character, same order as Character Prefabs (leave empty to keep the current art)")]
+    [SerializeField] private HealthBoxArt[] healthBoxArt;
+
     [Header("Safety net: a fighter that flies this far from the middle of the stage goes back to his spawn point")]
     [SerializeField] private float maxDistanceFromCenter = 300f;
 
@@ -65,12 +84,28 @@ public class MatchSetup : MonoBehaviour
         if (playerHealth != null) playerHealth.SetFighter(player.Damage);
         if (enemyHealth != null) enemyHealth.SetFighter(enemy.Damage);
 
+        ApplyHealthArt(playerHealth, playerIndex, false);
+        ApplyHealthArt(enemyHealth, enemyIndex, true);
+
         if (targetGroup != null)
         {
             targetGroup.AddMember(player.transform, 1f, 5f);
             targetGroup.AddMember(enemy.transform, 1f, 5f);
         }
         _upgradeManager.SetActive(true);
+    }
+
+    // gives a health box the art of the character it belongs to
+    private void ApplyHealthArt(DamageDisplay box, int characterIndex, bool rightBox)
+    {
+        if (box == null || healthBoxArt == null) return;
+        if (characterIndex < 0 || characterIndex >= healthBoxArt.Length) return;
+
+        HealthBoxArt art = healthBoxArt[characterIndex];
+        if (art == null) return;
+
+        if (rightBox) box.SetArt(art.rightFrame, art.rightFace);
+        else box.SetArt(art.frame, art.face);
     }
 
     private void Update()
