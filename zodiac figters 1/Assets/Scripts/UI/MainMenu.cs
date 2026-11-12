@@ -119,7 +119,6 @@ public class MainMenu : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= _whaitTime)
         {
-            Debug.Log("helo");
             timer = 0;
             _animator[_twinkleOrder[twinklecount]].Play("twinkel");
             twinklecount++;

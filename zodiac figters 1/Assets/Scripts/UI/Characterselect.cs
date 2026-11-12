@@ -147,20 +147,6 @@ public class CharacterSelect : MonoBehaviour
 
     public void HoverButton(int num)
     {
-        Debug.Log("Hovered button: " + num);
-        _animator.SetInteger("fighter", num);
-        switch (num)
-        {
-            case 0:
-
-                Debug.Log("Hovering button 1");
-                break;
-            case 1:
-                Debug.Log("Hovering button 2");
-                break;
-            case 2:
-                Debug.Log("Hovering button 3");
-                break;
-        }
+        if (_animator != null) _animator.SetInteger("fighter", num);
     }
 }

@@ -14,7 +14,6 @@ using UnityEngine.InputSystem;   // controller
 public class ControllerBackButton : MonoBehaviour
 {
     [SerializeField] private UnityEvent onBack;
-    [SerializeField] private bool debugLog = true;   // prints to the Console; untick or delete when it works
 
     private int framePanelOpened;
 
@@ -31,7 +30,6 @@ public class ControllerBackButton : MonoBehaviour
         Gamepad pad = Gamepad.current;
         if (pad != null && pad.buttonEast.wasPressedThisFrame)
         {
-            if (debugLog) Debug.Log("ControllerBackButton on '" + name + "': Circle pressed, calling " + onBack.GetPersistentEventCount() + " method(s)");
             onBack.Invoke();
         }
     }
