@@ -35,7 +35,12 @@ public class MatchManager : MonoBehaviour
         // Show result panel
         resultPanel.SetActive(true);
 
-        if (playerWon)
+        if (GameMode.Versus)
+        {
+            // Player vs Player: the second fighter is the "enemy" in the code, but he is a person
+            resultText.text = playerWon ? "PLAYER 1 WINS!" : "PLAYER 2 WINS!";
+        }
+        else if (playerWon)
         {
             resultText.text = "YOU WIN!";
         }

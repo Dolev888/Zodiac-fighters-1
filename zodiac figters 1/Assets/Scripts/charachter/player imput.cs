@@ -20,6 +20,8 @@ public class playerimput : MonoBehaviour
     // pushing the stick down this far while pressing dash = back dash (same as holding the Down arrow)
     [SerializeField] private float _stickDownForBackDash = 0.5f;
     [SerializeField] private bool _isControler;
+    // which controller this fighter reads: -1 = the one used last (one controller), 0 = first, 1 = second (two controllers)
+    [SerializeField] private int _controllerIndex = -1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,13 +41,22 @@ public class playerimput : MonoBehaviour
 
         //            break;
         //        default:
-        if (_isControler)
+        if (GameMode.Versus)
         {
-            ControlerInputHandel();
+            // Player vs Player: each fighter reads ONE device (set by MatchSetup, or by the _isControler tick)
+            if (_isControler)
+            {
+                ControlerInputHandel();
+            }
+            else
+            {
+                KeybourdInputHandel();
+            }
         }
         else
         {
-            KeybourdInputHandel();
+            // normal game: keyboard AND controller both work for the player, like before
+            InputHandel();
         }
 
         //        break;
@@ -54,10 +65,25 @@ public class playerimput : MonoBehaviour
 
 
     }
+    // MatchSetup calls this in Player vs Player to give each fighter his device
+    public void SetDevice(bool useController, int padIndex)
+    {
+        _isControler = useController;
+        _controllerIndex = padIndex;
+    }
+
+    // the controller this fighter reads (null while paused, or when it is not connected)
+    private Gamepad GetPad()
+    {
+        if (Time.timeScale <= 0f) return null;
+        if (_controllerIndex < 0) return Gamepad.current;
+        return _controllerIndex < Gamepad.all.Count ? Gamepad.all[_controllerIndex] : null;
+    }
+
     private void InputHandel()
     {
         // Controller: read it once per frame. While the game is paused (timeScale 0) the buttons belong to the menus, so they are ignored here.
-        Gamepad pad = Time.timeScale > 0f ? Gamepad.current : null;
+        Gamepad pad = GetPad();
 
         float padMove = 0f;
         bool padStickDown = false;
@@ -119,7 +145,7 @@ public class playerimput : MonoBehaviour
 
 
         // Rotation lock
-        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift) )
+        if (Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.LeftShift))
             pmain.routatelock = true;
 
         if (Input.GetKeyUp(KeyCode.RightShift) || Input.GetKeyUp(KeyCode.LeftShift))
@@ -128,7 +154,7 @@ public class playerimput : MonoBehaviour
     private void KeybourdInputHandel()
     {
         // Controller: read it once per frame. While the game is paused (timeScale 0) the buttons belong to the menus, so they are ignored here.
-       
+
 
         // Movement (keyboard first, the stick is used when no arrow is held)
         if (Input.GetKey(KeyCode.LeftArrow))
@@ -143,12 +169,12 @@ public class playerimput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
             _jumpBuferTick = _jumpBuferTime;
 
-        if (Input.GetKeyDown(KeyCode.Z) )
+        if (Input.GetKeyDown(KeyCode.Z))
             _basicAttackBuferTick = _basicAttackBuferTime;
 
         if (Input.GetKeyDown(KeyCode.X))
             _specialAttackBuferTick = _specialAttackBuferTime;
-        if (Input.GetKeyDown(KeyCode.C) )
+        if (Input.GetKeyDown(KeyCode.C))
             _dashBuferTick = _dashBuferTime;
 
         // Attempt buffered actions until they succeed or expire
@@ -162,7 +188,7 @@ public class playerimput : MonoBehaviour
             pmain.AttackHandel(2);
         if (_dashBuferTick > 0)
         {
-            if (Input.GetKey(KeyCode.DownArrow) )
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 pmain.DashHandle(true);
             }
@@ -180,7 +206,7 @@ public class playerimput : MonoBehaviour
     private void ControlerInputHandel()
     {
         // Controller: read it once per frame. While the game is paused (timeScale 0) the buttons belong to the menus, so they are ignored here.
-        Gamepad pad = Time.timeScale > 0f ? Gamepad.current : null;
+        Gamepad pad = GetPad();
 
         float padMove = 0f;
         bool padStickDown = false;
@@ -203,11 +229,11 @@ public class playerimput : MonoBehaviour
         }
 
         // Movement (keyboard first, the stick is used when no arrow is held)
-        
-            pmain.WalkHandel(padMove);
+
+        pmain.WalkHandel(padMove);
 
         // Record inputs immediately
-        if ( padJump)
+        if (padJump)
             _jumpBuferTick = _jumpBuferTime;
 
         if (padBasic)
@@ -244,8 +270,8 @@ public class playerimput : MonoBehaviour
         {
             pmain.routatelock = false;
         }
-       
-            
+
+
     }
     private void bafferTimer()
     {

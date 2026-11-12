@@ -33,7 +33,7 @@ public class FighterRole : MonoBehaviour
     [SerializeField] private float maxChangedGravityInAttack = 3f;  // while attacking
 
     private Rigidbody2D body;
-    [HideInInspector] public playermain main;
+    private playermain main;
     private float gravityChangedSince = -1f;
 
     private void Awake()
@@ -72,10 +72,13 @@ public class FighterRole : MonoBehaviour
         // the tag is set first: the AI scripts look for the "Player" tag when they start
         gameObject.tag = isPlayer ? "Player" : "Enemy";
 
-        SetEnabled(playerOnlyDefault, isPlayer);
-        SetEnabled(extraPlayerOnly, isPlayer);
-        SetEnabled(enemyOnlyDefault, !isPlayer);
-        SetEnabled(extraEnemyOnly, !isPlayer);
+        // Player vs Player: both fighters are people (they read input, no AI), but the second one is still the "Enemy" for tags and damage
+        bool human = isPlayer || GameMode.Versus;
+
+        SetEnabled(playerOnlyDefault, human);
+        SetEnabled(extraPlayerOnly, human);
+        SetEnabled(enemyOnlyDefault, !human);
+        SetEnabled(extraEnemyOnly, !human);
 
         if (fighterDamage != null)
             fighterDamage.Setup(matchManager, isPlayer);

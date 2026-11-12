@@ -28,11 +28,17 @@ public class MatchSetup : MonoBehaviour
     [Header("Safety net: a fighter that flies this far from the middle of the stage goes back to his spawn point")]
     [SerializeField] private float maxDistanceFromCenter = 300f;
 
+    [Header("Player vs Player: which device each fighter uses")]
+    [SerializeField] private bool player1UsesController = false;   // Player 1 = keyboard
+    [SerializeField] private int player1PadIndex = -1;             // -1 = the pad used last, 0 = first pad, 1 = second pad
+    [SerializeField] private bool player2UsesController = true;    // Player 2 = controller
+    [SerializeField] private int player2PadIndex = -1;
+
     [Header("Testing only (-1 = use the selection screen)")]
     [SerializeField] private int testPlayerCharacter = -1;
     [SerializeField] private int testEnemyCharacter = -1;
 
-    [HideInInspector]public FighterRole player;
+    [HideInInspector] public FighterRole player;
     [HideInInspector] public FighterRole enemy;
     private Vector2 stageCenter;
 
@@ -51,7 +57,7 @@ public class MatchSetup : MonoBehaviour
 
         player = Spawn(playerIndex, playerSpawn, true);
         enemy = Spawn(enemyIndex, enemySpawn, false);
-        
+
         CollectedDataAnalysis.MatchStart(playerIndex, enemyIndex, player.Damage, enemy.Damage);
 
         stageCenter = (playerSpawn.position + enemySpawn.position) * 0.5f;
@@ -104,6 +110,15 @@ public class MatchSetup : MonoBehaviour
         GameObject fighter = Instantiate(characterPrefabs[index], point.position, point.rotation);
         FighterRole role = fighter.GetComponent<FighterRole>();
         role.Assign(isPlayer, matchManager);
+
+        // Player vs Player: tell each fighter which device to read
+        if (GameMode.Versus)
+        {
+            playerimput input = fighter.GetComponent<playerimput>();
+            if (input != null)
+                input.SetDevice(isPlayer ? player1UsesController : player2UsesController,
+                                isPlayer ? player1PadIndex : player2PadIndex);
+        }
         return role;
     }
 }
