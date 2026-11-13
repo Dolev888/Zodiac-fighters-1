@@ -13,7 +13,7 @@ public class FighterDamage : MonoBehaviour
     [SerializeField] private MatchManager matchManager;
 
     [SerializeField] private bool isPlayer;
-    private playermain pmain;
+    [HideInInspector]public playermain pmain;
     private float stunClock;
     private float stunTime;
 

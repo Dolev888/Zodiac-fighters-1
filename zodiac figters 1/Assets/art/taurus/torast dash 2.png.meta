@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8a72b1f820c4c6c439eb9a8b9657f53f
+guid: 2799a60afb014ba48ac17d8b219fa357
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8695196556382379043
-    second: Screenshot_20261008_052823_Clip Studio_0
+      213: 9030113116922886447
+    second: torast dash 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot_20261008_052823_Clip Studio_0
+      name: torast dash 2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 2560
+        width: 400
+        height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd3e0a41dc4745780800000000000000
-      internalID: -8695196556382379043
+      spriteID: f29b8c74908615d70800000000000000
+      internalID: 9030113116922886447
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 617d107c211e44c44bd1984bb2ea80f0
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +146,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Screenshot_20261008_052823_Clip Studio_0: -8695196556382379043
+      torast dash 2_0: 9030113116922886447
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

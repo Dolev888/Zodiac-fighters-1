@@ -26,16 +26,20 @@ public class upgrademanager : MonoBehaviour
     [SerializeField] private upgradedeta[] _taurusList;
     private HashSet<upgradedeta> _List = new HashSet<upgradedeta>();
     [SerializeField] private MatchSetup _match;
+    private bool roundOne = true;
+    
     
     
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _playerPmain = _match.player.main;
-        if (_playerPmain != null) 
-        upgradeSetUp();
-        Time.timeScale = 0;
+        
+            _playerPmain = _match.player.main;
+            if (_playerPmain != null)
+                upgradeSetUp();
+            Time.timeScale = 0;
+        
     }
 
     // Update is called once per frame
@@ -47,20 +51,52 @@ public class upgrademanager : MonoBehaviour
     {
         Debug.Log("1");
         _playerPmain.pattack._upgradeBoolList[upgradeNum[0]]=true;
-        Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
+        
+        if (GameMode.Versus && roundOne )
+        {
+            _playerPmain = _match.enemy.main;
+            roundOne=false;
+            if (_playerPmain != null)
+                upgradeSetUp();
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            gameObject.SetActive(false);
+        }
+       
     }
     public void Upgrade2Push()
     {
         _playerPmain.pattack._upgradeBoolList[upgradeNum[1]] = true;
-        Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
+        if (GameMode.Versus && roundOne)
+        {
+            _playerPmain = _match.enemy.main;
+            roundOne = false;
+            if (_playerPmain != null)
+                upgradeSetUp();
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            gameObject.SetActive(false);
+        }
     }
     public void Upgrade3Push()
     {
         _playerPmain.pattack._upgradeBoolList[upgradeNum[2]] = true;
-        Time.timeScale = 1.0f;
-        gameObject.SetActive(false);
+        if (GameMode.Versus && roundOne)
+        {
+            _playerPmain = _match.enemy.main;
+            roundOne = false;
+            if (_playerPmain != null)
+                upgradeSetUp();
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            gameObject.SetActive(false);
+        }
     }
     private void upgradeSetUp()
     {

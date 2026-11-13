@@ -2106,6 +2106,7 @@ MonoBehaviour:
   _stickDeadzone: 0.2
   _stickDownForBackDash: 0.5
   _isControler: 0
+  _controllerIndex: -1
 --- !u!4 &1989826847
 Transform:
   m_ObjectHideFlags: 0
@@ -2646,6 +2647,7 @@ MonoBehaviour:
   _stickDeadzone: 0.2
   _stickDownForBackDash: 0.5
   _isControler: 0
+  _controllerIndex: -1
 --- !u!4 &4238512753671384933
 Transform:
   m_ObjectHideFlags: 0

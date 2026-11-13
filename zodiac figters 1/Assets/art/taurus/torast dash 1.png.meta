@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1ea8a6e88aff34a4a81b889ea4de0117
+guid: a3748655261717d49a6db95a54a4120c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -444405293292704524
-    second: Screenshot_20261008_053631_Clip Studio_0
+      213: 3853079093354488642
+    second: torast dash 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screenshot_20261008_053631_Clip Studio_0
+      name: torast dash 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1600
-        height: 2560
+        width: 400
+        height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fc2cf48db725d9f0800000000000000
-      internalID: -444405293292704524
+      spriteID: 243e0ea5503e87530800000000000000
+      internalID: 3853079093354488642
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 64f9b40a60541534eb5f9bffee5fe320
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +146,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":400.0,"y":400.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Screenshot_20261008_053631_Clip Studio_0: -444405293292704524
+      torast dash 1_0: 3853079093354488642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
