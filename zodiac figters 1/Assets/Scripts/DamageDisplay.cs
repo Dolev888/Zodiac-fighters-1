@@ -17,10 +17,6 @@ public class DamageDisplay : MonoBehaviour
     [Header("charachters")]
     [SerializeField] private Sprite[] _charachterBarList;
 
-    [Header("Character art (optional, MatchSetup fills it in)")]
-    [SerializeField] private Image frameImage;   // the bar's frame art (the one with the face on it)
-    [SerializeField] private Image faceImage;    // optional: a separate face image, if the face is not part of the frame
-
     private int lastShown = -1;
 
     // called by MatchSetup once the fighters exist, so each box shows the right fighter
@@ -29,14 +25,6 @@ public class DamageDisplay : MonoBehaviour
         fighterDamage = fighter;
         lastShown = -1;   // force a refresh
         setBar();
-    }
-
-    // called by MatchSetup with the art of the character this box belongs to.
-    // a missing sprite or a missing Image is skipped, so the box keeps what it already has
-    public void SetArt(Sprite frame, Sprite face)
-    {
-        if (frame != null && frameImage != null) frameImage.sprite = frame;
-        if (face != null && faceImage != null) faceImage.sprite = face;
     }
 
     private void Update()
@@ -72,24 +60,41 @@ public class DamageDisplay : MonoBehaviour
     }
     private void setBar()
     {
-        RawImage image = _healthbar.GetComponent<RawImage>();
+        // nothing to do when the art was not set up (the bar then keeps the art it has)
+        if (_healthbar == null || _charachterBarList == null || _charachterBarList.Length == 0 || fighterDamage == null) return;
+
         playermain pmain = fighterDamage.pmain;
         if (pmain == null) return;
+
+        int index;
         switch (pmain.Type)
         {
             case (playermain.TYPE.FIRE):
-                image.texture = _charachterBarList[0].texture;
+                index = 0;
                 break;
             case (playermain.TYPE.WATER):
-                image.texture = _charachterBarList[1].texture;
+                index = 1;
                 break;
             case (playermain.TYPE.EARTH):
-                image.texture = _charachterBarList[2].texture;
+                index = 2;
                 break;
             default:
-                image.texture = _charachterBarList[0].texture; break;
-
+                index = 0;
+                break;
         }
 
+        if (index >= _charachterBarList.Length || _charachterBarList[index] == null) return;
+        Sprite art = _charachterBarList[index];
+
+        // works with a normal Image (keeps the sprite's rect) and with a RawImage
+        Image image = _healthbar.GetComponent<Image>();
+        if (image != null)
+        {
+            image.sprite = art;
+            return;
+        }
+
+        RawImage rawImage = _healthbar.GetComponent<RawImage>();
+        if (rawImage != null) rawImage.texture = art.texture;
     }
 }

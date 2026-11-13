@@ -2339,7 +2339,7 @@ MonoBehaviour:
   stripeCount: 20
   percentPerStripe: 5
   _charachterBarList:
-  - {fileID: -3223458382186740911, guid: a5e7aa665349ec34daee2269b4c59ce1, type: 3}
+  - {fileID: 3035427040274777384, guid: 916b325cb9ad26a4dae1cea32cc36c02, type: 3}
   - {fileID: 7148698872743482424, guid: 5be3d2398a9af944bb6cf36c488fe935, type: 3}
   - {fileID: -2800381615319906972, guid: 0a79811c444b7174e98b32057c013445, type: 3}
 --- !u!114 &348737226
@@ -12765,7 +12765,7 @@ Transform:
   m_GameObject: {fileID: 1403930270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06944656, y: 0, z: -10}
+  m_LocalPosition: {x: -0.09259033, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
