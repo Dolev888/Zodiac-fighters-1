@@ -17,6 +17,10 @@ public class DamageDisplay : MonoBehaviour
     [Header("charachters")]
     [SerializeField] private Sprite[] _charachterBarList;
 
+    [Header("Character art (optional, MatchSetup fills it in)")]
+    [SerializeField] private Image frameImage;   // the bar's frame art (the one with the face on it)
+    [SerializeField] private Image faceImage;    // optional: a separate face image, if the face is not part of the frame
+
     private int lastShown = -1;
 
     // called by MatchSetup once the fighters exist, so each box shows the right fighter
@@ -25,6 +29,14 @@ public class DamageDisplay : MonoBehaviour
         fighterDamage = fighter;
         lastShown = -1;   // force a refresh
         setBar();
+    }
+
+    // called by MatchSetup with the art of the character this box belongs to.
+    // a missing sprite or a missing Image is skipped, so the box keeps what it already has
+    public void SetArt(Sprite frame, Sprite face)
+    {
+        if (frame != null && frameImage != null) frameImage.sprite = frame;
+        if (face != null && faceImage != null) faceImage.sprite = face;
     }
 
     private void Update()
