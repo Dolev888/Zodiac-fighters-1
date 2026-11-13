@@ -63,7 +63,8 @@ public class DamageDisplay : MonoBehaviour
         // nothing to do when the art was not set up (the bar then keeps the art it has)
         if (_healthbar == null || _charachterBarList == null || _charachterBarList.Length == 0 || fighterDamage == null) return;
 
-        playermain pmain = fighterDamage.pmain;
+        // found on the fighter itself: FighterDamage.pmain is only filled in Start(), which has not run yet when MatchSetup calls this
+        playermain pmain = fighterDamage.GetComponent<playermain>();
         if (pmain == null) return;
 
         int index;
